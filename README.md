@@ -1,20 +1,20 @@
-# Notas de Corte - Transferencia Externa USP (FUVEST)
+# Notas de Corte - Transferência Externa USP (FUVEST)
 
-Ferramenta para consultar **notas de corte**, **concorrencia**, **vagas**, **inscritos** e gerar graficos sobre o exame de **Transferencia Externa da USP**, organizado pela FUVEST.
+Ferramenta para consultar **notas de corte**, **concorrência**, **vagas**, **inscritos** e gerar gráficos sobre o exame de **Transferência Externa da USP**, organizado pela FUVEST.
 
-Dados disponiveis: **2019, 2020, 2024, 2025 e 2026**.
+Dados disponíveis: **2019, 2020, 2024, 2025 e 2026**.
 
 ---
 
 ## Como usar
 
-### Opcao 1: Rodar direto com Python
+### Opção 1: Rodar direto com Python
 
 ```bash
-# Instalar dependencias
+# Instalar dependências
 pip install -r requirements.txt
 
-# Extrair dados dos PDFs (ja incluso o dados.json no repo)
+# Extrair dados dos PDFs (já incluso o dados.json no repo)
 python extrair_dados.py
 
 # Abrir menu interativo
@@ -28,32 +28,32 @@ python notas_de_corte.py histograma 2026
 python notas_de_corte.py ranking 2026 15
 ```
 
-### Opcao 2: Baixar o executavel (.exe)
+### Opção 2: Baixar o executável (.exe)
 
-1. Va em [Releases](../../releases) e baixe `notas_de_corte.exe`
-2. Baixe tambem o arquivo `dados.json` e coloque na mesma pasta
+1. Vá em [Releases](../../releases) e baixe `notas_de_corte.exe`
+2. Baixe também o arquivo `dados.json` e coloque na mesma pasta
 3. Execute `notas_de_corte.exe`
 
-### Opcao 3: Gerar o .exe voce mesmo
+### Opção 3: Gerar o .exe você mesmo
 
 ```bash
 pip install pyinstaller
 pyinstaller --onefile --name notas_de_corte --add-data "dados.json;." notas_de_corte.py
 ```
 
-O executavel sera gerado em `dist/notas_de_corte.exe`.
+O executável será gerado em `dist/notas_de_corte.exe`.
 
 ---
 
 ## Funcionalidades
 
-| Funcionalidade | Descricao |
+| Funcionalidade | Descrição |
 |---|---|
-| **Busca por curso** | Busca flexivel por nome (ignora acentos) |
-| **Evolucao de notas** | Grafico com nota minima e maxima ao longo dos anos |
-| **Concorrencia** | Grafico de barras mostrando inscritos/vaga por ano |
-| **Histograma** | Distribuicao das notas de corte de todos os cursos em um ano |
-| **Vagas vs Inscritos** | Comparacao visual entre vagas ofertadas e inscritos |
+| **Busca por curso** | Busca flexível por nome (ignora acentos) |
+| **Evolução de notas** | Gráfico com nota mínima e máxima ao longo dos anos |
+| **Concorrência** | Gráfico de barras mostrando inscritos/vaga por ano |
+| **Histograma** | Distribuição das notas de corte de todos os cursos em um ano |
+| **Vagas vs Inscritos** | Comparação visual entre vagas ofertadas e inscritos |
 | **Ranking** | Top N cursos mais concorridos de um ano |
 
 ---
@@ -63,32 +63,32 @@ O executavel sera gerado em `dist/notas_de_corte.exe`.
 ```
 $ python notas_de_corte.py buscar "direito"
 
-  2026  60018  Direito - Ribeirao Preto (Bacharelado)
+  2026  60018  Direito - Ribeirão Preto (Bacharelado)
          Vagas: 8  |  Inscritos: 199  |  Ausentes: 41  |  Convocados: 25
-         Concorrencia: 3.13  |  Nota min: 69  |  Nota max: 77
+         Concorrência: 3.13  |  Nota mín: 69  |  Nota máx: 77
 ```
 
 ```
 $ python notas_de_corte.py ranking 2026 5
 
   Top 5 cursos mais concorridos - 2026
-   1. Relacoes Internacionais - Sao Paulo    Conc: 4.00  Vagas: 1  Min: 72
+   1. Relações Internacionais - São Paulo    Conc: 4.00  Vagas: 1  Min: 72
    2. Odontologia - Bauru                    Conc: 3.67  Vagas: 6  Min: 47
-   3. Engenharia Mecatronica - Sao Carlos    Conc: 3.67  Vagas: 3  Min: 49
-   4. Ciencias Biologicas - Sao Paulo        Conc: 3.50  Vagas: 6  Min: 49
-   5. Arquitetura e Urbanismo - Sao Carlos   Conc: 3.50  Vagas: 4  Min: 65
+   3. Engenharia Mecatrônica - São Carlos    Conc: 3.67  Vagas: 3  Min: 49
+   4. Ciências Biológicas - São Paulo        Conc: 3.50  Vagas: 6  Min: 49
+   5. Arquitetura e Urbanismo - São Carlos   Conc: 3.50  Vagas: 4  Min: 65
 ```
 
 ---
 
 ## Sobre
 
-Este projeto foi criado para **facilitar a vida de quem esta se preparando para a Transferencia Externa da USP** - seja de humanas, biologicas ou exatas.
+Este projeto foi criado para **facilitar a vida de quem está se preparando para a Transferência Externa da USP** — seja de humanas, biológicas ou exatas.
 
-### Links uteis
+### Links úteis
 
-- **YouTube** - Playlist com videos sobre Transferencia Externa (resolucoes de provas, dicas e mais): [Playlist Transferencia Externa](https://www.youtube.com/playlist?list=PLr9as5vz1dVykvwxlzq4M50GxrDallvMz)
-- **Hotmart** - Material de estudo para a 1a fase (Matematica): [Primeira Fase Matematica](https://hotmart.com/pt-br/marketplace/produtos/primeira-fase-matematica-transferencia-2023-2024/C87159216E)
+- **YouTube** — Playlist com vídeos sobre Transferência Externa (resoluções de provas, dicas e mais): [Playlist Transferência Externa](https://www.youtube.com/playlist?list=PLr9as5vz1dVykvwxlzq4M50GxrDallvMz)
+- **Hotmart** — Material de estudo para a 1ª fase (Matemática): [Primeira Fase Matemática](https://hotmart.com/pt-br/marketplace/produtos/primeira-fase-matematica-transferencia-2023-2024/C87159216E)
 
 ---
 
@@ -110,10 +110,10 @@ notas_de_corte/
 
 ---
 
-## Contribuicoes
+## Contribuições
 
 Encontrou algum erro nos dados? Quer adicionar o PDF de um ano que falta? Abra uma issue ou mande um PR!
 
-## Licenca
+## Licença
 
 MIT
