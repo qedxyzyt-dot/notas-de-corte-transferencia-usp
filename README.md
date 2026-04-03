@@ -1,8 +1,22 @@
-# Notas de Corte - Transferência Externa USP (FUVEST)
+# Notas de Corte — Transferência Externa USP (FUVEST)
 
-Ferramenta para consultar **notas de corte**, **concorrência**, **vagas**, **inscritos** e gerar gráficos sobre o exame de **Transferência Externa da USP**, organizado pela FUVEST.
+Ferramenta que gera **relatórios em PDF** (via LaTeX) com o histórico completo de **notas de corte**, **concorrência**, **vagas** e **inscritos** de qualquer curso da **Transferência Externa da USP**, organizada pela FUVEST.
 
 Dados disponíveis: **2019, 2020, 2021, 2023, 2024, 2025 e 2026**.
+
+---
+
+## Como funciona
+
+1. Você digita o nome do curso (ou parte dele)
+2. O programa gera automaticamente um **relatório PDF** contendo:
+   - **Tabela histórica** com vagas, inscritos, ausentes, concorrência, nota mínima e máxima
+   - **Gráfico de evolução das notas** de corte ao longo dos anos
+   - **Gráfico de concorrência** (candidatos por vaga) por ano
+   - **Gráfico de vagas vs inscritos** comparando a oferta e a demanda
+3. O PDF é salvo na mesma pasta com o nome `relatorio_<curso>.pdf`
+
+A busca é flexível: ignora acentos, maiúsculas e minúsculas. Você pode digitar `matematica`, `Matemática` ou `MATEMATICA` — o resultado é o mesmo.
 
 ---
 
@@ -14,19 +28,16 @@ Dados disponíveis: **2019, 2020, 2021, 2023, 2024, 2025 e 2026**.
 # Instalar dependências
 pip install -r requirements.txt
 
-# Extrair dados dos PDFs (já incluso o dados.json no repo)
-python extrair_dados.py
-
-# Abrir menu interativo
+# Modo interativo (digite cursos em sequência)
 python notas_de_corte.py
 
-# Ou usar comandos diretos:
-python notas_de_corte.py buscar "medicina"
-python notas_de_corte.py grafico "engenharia civil"
-python notas_de_corte.py concorrencia "direito"
-python notas_de_corte.py histograma 2026
-python notas_de_corte.py ranking 2026 15
+# Ou gerar relatório direto pela linha de comando
+python notas_de_corte.py "engenharia civil"
+python notas_de_corte.py "direito"
+python notas_de_corte.py "medicina veterinaria"
 ```
+
+> **Requisito:** é necessário ter uma distribuição LaTeX instalada (TeX Live, MiKTeX, etc.) para a compilação do PDF.
 
 ### Opção 2: Baixar o executável (.exe)
 
@@ -45,38 +56,40 @@ O executável será gerado em `dist/notas_de_corte.exe`.
 
 ---
 
-## Funcionalidades
+## O que está no relatório
 
-| Funcionalidade | Descrição |
+| Seção | Descrição |
 |---|---|
-| **Busca por curso** | Busca flexível por nome (ignora acentos) |
-| **Evolução de notas** | Gráfico com nota mínima e máxima ao longo dos anos |
-| **Concorrência** | Gráfico de barras mostrando inscritos/vaga por ano |
-| **Histograma** | Distribuição das notas de corte de todos os cursos em um ano |
-| **Vagas vs Inscritos** | Comparação visual entre vagas ofertadas e inscritos |
-| **Ranking** | Top N cursos mais concorridos de um ano |
+| **Tabela histórica** | Todos os anos disponíveis com vagas, inscritos, ausentes, concorrência, nota mínima e máxima |
+| **Evolução das notas** | Gráfico de linhas com a nota mínima e máxima dos convocados ao longo dos anos |
+| **Concorrência** | Gráfico de barras com candidatos por vaga, colorido por nível de dificuldade |
+| **Vagas vs Inscritos** | Gráfico de barras agrupadas comparando oferta e demanda |
 
 ---
 
-## Exemplos
+## Exemplo
 
 ```
-$ python notas_de_corte.py buscar "direito"
+$ python notas_de_corte.py "direito"
 
-  2026  60018  Direito - Ribeirão Preto (Bacharelado)
-         Vagas: 8  |  Inscritos: 199  |  Ausentes: 41  |  Convocados: 25
-         Concorrência: 3.13  |  Nota mín: 69  |  Nota máx: 77
-```
+  7 variações de nome encontradas:
 
-```
-$ python notas_de_corte.py ranking 2026 5
+    T. TODOS — consolidar num único relatório
+       Anos: 2019, 2020, 2021, 2023, 2024, 2025, 2026
 
-  Top 5 cursos mais concorridos - 2026
-   1. Relações Internacionais - São Paulo    Conc: 4.00  Vagas: 1  Min: 72
-   2. Odontologia - Bauru                    Conc: 3.67  Vagas: 6  Min: 47
-   3. Engenharia Mecatrônica - São Carlos    Conc: 3.67  Vagas: 3  Min: 49
-   4. Ciências Biológicas - São Paulo        Conc: 3.50  Vagas: 6  Min: 49
-   5. Arquitetura e Urbanismo - São Carlos   Conc: 3.50  Vagas: 4  Min: 65
+    1. Direito - Ribeirão Preto - 3º semestre
+    2. Direito − Integral (Ribeirão Preto) − 3º semestre
+    ...
+
+  Escolha (T para todos, número, ou 0): t
+
+  Gerando relatório para: Direito
+    ✓ Gráfico de evolução de notas
+    ✓ Gráfico de concorrência
+    ✓ Gráfico vagas vs inscritos
+    ✓ Código LaTeX gerado
+
+  ✓ Relatório gerado: relatorio_direito.pdf
 ```
 
 ---
@@ -96,18 +109,12 @@ Este projeto foi criado para **facilitar a vida de quem está se preparando para
 
 ```
 notas_de_corte/
-  transferencia_2019_nota_de_corte.pdf   # PDF original FUVEST
-  transferencia_2020_nota_de_corte.pdf
-  transferencia_2021_notas_de_corte.pdf
-  transferencia_2023_nota-corte.pdf
-  transferencia_2024_notas_de_corte.pdf
-  transferencia_2025_notas_de_corte.pdf
-  transferencia_2026_notas_de_corte.pdf
-  extrair_dados.py                        # Extrai dados dos PDFs
-  dados.json                              # Dados estruturados (gerado)
-  notas_de_corte.py                       # Ferramenta principal
+  transferencia_20XX_*.pdf    # PDFs originais da FUVEST (7 anos)
+  extrair_dados.py            # Extrai dados dos PDFs → dados.json
+  dados.json                  # Dados estruturados
+  notas_de_corte.py           # Ferramenta principal (gera relatórios PDF)
   requirements.txt
-  build.bat                               # Gerar .exe no Windows
+  build.bat                   # Gerar .exe no Windows
 ```
 
 ---

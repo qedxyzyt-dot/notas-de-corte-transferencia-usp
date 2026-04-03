@@ -2,29 +2,35 @@
 """
 Notas de Corte - Transferência Externa USP (FUVEST)
 
-Ferramenta para consultar notas de corte, concorrência, vagas e
-gerar gráficos sobre a transferência externa da USP.
+O usuário digita o nome do curso e o programa gera um relatório PDF
+completo (via LaTeX) com gráficos de evolução de notas, concorrência,
+vagas vs inscritos e tabela histórica.
 
 Uso:
-    python notas_de_corte.py                   # menu interativo
-    python notas_de_corte.py buscar "medicina"  # busca direta
-    python notas_de_corte.py grafico "direito"  # gráfico direto
+    python notas_de_corte.py                    # modo interativo
+    python notas_de_corte.py "engenharia civil" # direto
 """
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 import unicodedata
 
-# Forçar UTF-8 no stdout (Windows usa cp1252 por padrão)
+import matplotlib
+matplotlib.use("Agg")  # backend sem janela (só salva arquivos)
+import matplotlib.pyplot as plt
+
+# ---------------------------------------------------------------------------
+# Configuração
+# ---------------------------------------------------------------------------
 if sys.stdout.encoding != "utf-8":
     sys.stdout.reconfigure(encoding="utf-8")
 if sys.stdin.encoding != "utf-8":
     sys.stdin.reconfigure(encoding="utf-8")
 
-# ---------------------------------------------------------------------------
-# Detecção do diretório base (funciona tanto como .py quanto como .exe)
-# ---------------------------------------------------------------------------
 if getattr(sys, "frozen", False):
     BASE_DIR = os.path.dirname(sys.executable)
 else:
@@ -32,16 +38,13 @@ else:
 
 DADOS_PATH = os.path.join(BASE_DIR, "dados.json")
 
-# ---------------------------------------------------------------------------
-# Cores ANSI para terminal
-# ---------------------------------------------------------------------------
+# Cores ANSI
 RESET = "\033[0m"
 BOLD = "\033[1m"
 CYAN = "\033[96m"
 GREEN = "\033[92m"
 YELLOW = "\033[93m"
 RED = "\033[91m"
-MAGENTA = "\033[95m"
 DIM = "\033[2m"
 
 
@@ -53,10 +56,40 @@ def cor(texto, c):
 # Utilitários
 # ---------------------------------------------------------------------------
 def normalizar(texto: str) -> str:
-    """Remove acentos e converte para minúsculas para busca."""
+    """Remove acentos e converte para minúsculas."""
     nfkd = unicodedata.normalize("NFKD", texto)
     sem_acento = "".join(c for c in nfkd if not unicodedata.combining(c))
     return sem_acento.lower()
+
+
+def nome_arquivo_seguro(texto: str) -> str:
+    """Converte nome de curso para nome de arquivo sem acentos/especiais."""
+    s = normalizar(texto)
+    s = re.sub(r"[^a-z0-9]+", "_", s)
+    s = s.strip("_")
+    return s
+
+
+def escapar_latex(texto: str) -> str:
+    """Escapa caracteres especiais para LaTeX."""
+    mapa = {
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+    }
+    for char, esc in mapa.items():
+        texto = texto.replace(char, esc)
+    # Substituir traço unicode por traço normal
+    texto = texto.replace("\u2212", "--")
+    texto = texto.replace("\u2013", "--")
+    texto = texto.replace("\u2014", "---")
+    return texto
 
 
 def carregar_dados() -> dict:
@@ -79,427 +112,484 @@ def buscar_cursos(dados: dict, termo: str) -> list[tuple[str, dict]]:
     return resultados
 
 
-def limpar_tela():
-    os.system("cls" if os.name == "nt" else "clear")
-
-
-# ---------------------------------------------------------------------------
-# Exibição de resultados
-# ---------------------------------------------------------------------------
-def exibir_resultado_2019(ano: str, r: dict):
-    nota = r.get("nota_de_corte")
-    nota_str = str(nota) if nota is not None else "---"
-    print(f"  {cor(ano, CYAN)}  {cor(r['codigo'], DIM)}  {r['curso']}")
-    print(f"         Nota de corte: {cor(nota_str, YELLOW)}")
-
-
-def exibir_resultado_completo(ano: str, r: dict):
-    minimo = r.get("pontos_minimo")
-    maximo = r.get("pontos_maximo")
-    min_str = str(minimo) if minimo is not None else "---"
-    max_str = str(maximo) if maximo is not None else "---"
-    conc = r.get("concorrencia", 0)
-
-    if conc >= 3:
-        conc_cor = RED
-    elif conc >= 1:
-        conc_cor = YELLOW
-    else:
-        conc_cor = GREEN
-
-    print(f"  {cor(ano, CYAN)}  {cor(r['codigo'], DIM)}  {r['curso']}")
-    print(
-        f"         Vagas: {cor(r['vagas'], GREEN)}  |  "
-        f"Inscritos: {cor(r['inscritos'], YELLOW)}  |  "
-        f"Ausentes: {r['ausentes']}  |  "
-        f"Convocados: {r['convocados_2fase']}"
-    )
-    print(
-        f"         Concorrência: {cor(f'{conc:.2f}', conc_cor)}  |  "
-        f"Nota mín: {cor(min_str, MAGENTA)}  |  "
-        f"Nota máx: {cor(max_str, MAGENTA)}"
-    )
-
-
-def exibir_resultado(ano: str, r: dict):
-    if "vagas" in r:
-        exibir_resultado_completo(ano, r)
-    else:
-        exibir_resultado_2019(ano, r)
-    print()
-
-
-# ---------------------------------------------------------------------------
-# Gráficos com matplotlib
-# ---------------------------------------------------------------------------
-def tentar_importar_matplotlib():
-    try:
-        import matplotlib.pyplot as plt
-        import matplotlib
-        matplotlib.rcParams["figure.figsize"] = (12, 6)
-        matplotlib.rcParams["axes.titlesize"] = 14
-        matplotlib.rcParams["axes.labelsize"] = 12
-        return plt
-    except ImportError:
-        print(cor("matplotlib não está instalado.", RED))
-        print("Instale com: pip install matplotlib")
-        return None
-
-
-def grafico_notas(dados: dict, termo: str):
-    """Gráfico de evolução da nota mínima e máxima ao longo dos anos."""
-    plt = tentar_importar_matplotlib()
-    if not plt:
-        return
-
-    resultados = buscar_cursos(dados, termo)
-    if not resultados:
-        print(cor(f"Nenhum curso encontrado para '{termo}'.", RED))
-        return
-
-    # Agrupar por nome similar
-    cursos_agrupados = {}
+def agrupar_por_curso(resultados: list[tuple[str, dict]]) -> dict[str, list]:
+    """Agrupa resultados por nome de curso."""
+    grupos = {}
     for ano, r in resultados:
         nome = r["curso"]
-        if nome not in cursos_agrupados:
-            cursos_agrupados[nome] = []
+        if nome not in grupos:
+            grupos[nome] = []
+        grupos[nome].append((ano, r))
+    return grupos
+
+
+# ---------------------------------------------------------------------------
+# Geração de gráficos (salvos como imagem)
+# ---------------------------------------------------------------------------
+def gerar_grafico_notas(registros_por_ano: list[tuple[str, dict]], caminho: str):
+    """Gráfico de evolução da nota mínima e máxima."""
+    dados_plot = []
+    for ano, r in registros_por_ano:
         minimo = r.get("pontos_minimo") or r.get("nota_de_corte")
         maximo = r.get("pontos_maximo") or r.get("nota_de_corte")
-        cursos_agrupados[nome].append((int(ano), minimo, maximo))
+        dados_plot.append((int(ano), minimo, maximo))
+    dados_plot.sort()
 
-    fig, axes = plt.subplots(1, min(len(cursos_agrupados), 3), squeeze=False,
-                              figsize=(6 * min(len(cursos_agrupados), 3), 5))
-    axes = axes.flatten()
+    fig, ax = plt.subplots(figsize=(7, 3.5))
 
-    for idx, (nome, pontos) in enumerate(list(cursos_agrupados.items())[:3]):
-        ax = axes[idx]
-        pontos.sort()
-        anos = [p[0] for p in pontos]
-        mins = [p[1] for p in pontos]
-        maxs = [p[2] for p in pontos]
+    anos = [d[0] for d in dados_plot]
+    mins_v = [(d[0], d[1]) for d in dados_plot if d[1] is not None]
+    maxs_v = [(d[0], d[2]) for d in dados_plot if d[2] is not None]
 
-        mins_validos = [(a, v) for a, v in zip(anos, mins) if v is not None]
-        maxs_validos = [(a, v) for a, v in zip(anos, maxs) if v is not None]
+    if mins_v:
+        ax.plot([a for a, _ in mins_v], [v for _, v in mins_v],
+                "o-", color="#c0392b", label="Nota mínima (convocado)", linewidth=2, markersize=7)
+        for a, v in mins_v:
+            ax.annotate(str(v), (a, v), textcoords="offset points",
+                       xytext=(0, 10), ha="center", fontsize=9, fontweight="bold", color="#c0392b")
 
-        if mins_validos:
-            ax.plot([a for a, _ in mins_validos], [v for _, v in mins_validos],
-                    "o-", color="#e74c3c", label="Nota mínima", linewidth=2, markersize=8)
-            for a, v in mins_validos:
-                ax.annotate(str(v), (a, v), textcoords="offset points",
-                           xytext=(0, 10), ha="center", fontweight="bold")
+    if maxs_v:
+        ax.plot([a for a, _ in maxs_v], [v for _, v in maxs_v],
+                "s-", color="#27ae60", label="Nota máxima (convocado)", linewidth=2, markersize=7)
+        for a, v in maxs_v:
+            ax.annotate(str(v), (a, v), textcoords="offset points",
+                       xytext=(0, -14), ha="center", fontsize=9, fontweight="bold", color="#27ae60")
 
-        if maxs_validos:
-            ax.plot([a for a, _ in maxs_validos], [v for _, v in maxs_validos],
-                    "s-", color="#2ecc71", label="Nota máxima", linewidth=2, markersize=8)
-            for a, v in maxs_validos:
-                ax.annotate(str(v), (a, v), textcoords="offset points",
-                           xytext=(0, 10), ha="center", fontweight="bold")
-
-        ax.set_title(nome, fontsize=10, wrap=True)
-        ax.set_xlabel("Ano")
-        ax.set_ylabel("Pontos")
-        ax.legend()
-        ax.grid(True, alpha=0.3)
-        ax.set_xticks(anos)
-
-    plt.suptitle(f"Evolução das Notas - Transferência USP", fontsize=14, fontweight="bold")
-    plt.tight_layout()
-    plt.show()
-
-
-def grafico_concorrencia(dados: dict, termo: str):
-    """Gráfico de barras da concorrência ao longo dos anos."""
-    plt = tentar_importar_matplotlib()
-    if not plt:
-        return
-
-    resultados = buscar_cursos(dados, termo)
-    resultados = [(a, r) for a, r in resultados if "concorrencia" in r]
-    if not resultados:
-        print(cor(f"Nenhum dado de concorrência para '{termo}'.", RED))
-        return
-
-    cursos_agrupados = {}
-    for ano, r in resultados:
-        nome = r["curso"]
-        if nome not in cursos_agrupados:
-            cursos_agrupados[nome] = []
-        cursos_agrupados[nome].append((int(ano), r["concorrencia"], r["vagas"], r["inscritos"]))
-
-    fig, axes = plt.subplots(1, min(len(cursos_agrupados), 3), squeeze=False,
-                              figsize=(6 * min(len(cursos_agrupados), 3), 5))
-    axes = axes.flatten()
-
-    cores_barras = ["#3498db", "#e74c3c", "#2ecc71", "#f39c12", "#9b59b6"]
-
-    for idx, (nome, pontos) in enumerate(list(cursos_agrupados.items())[:3]):
-        ax = axes[idx]
-        pontos.sort()
-        anos = [str(p[0]) for p in pontos]
-        concs = [p[1] for p in pontos]
-        vagas = [p[2] for p in pontos]
-        inscritos = [p[3] for p in pontos]
-
-        bars = ax.bar(anos, concs, color=cores_barras[:len(anos)], alpha=0.8, edgecolor="white")
-        for bar, c, v, i in zip(bars, concs, vagas, inscritos):
-            ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.05,
-                    f"{c:.2f}\n({i}/{v}v)", ha="center", va="bottom", fontsize=9)
-
-        ax.set_title(nome, fontsize=10, wrap=True)
-        ax.set_xlabel("Ano")
-        ax.set_ylabel("Concorrência (inscritos/vaga)")
-        ax.grid(True, alpha=0.3, axis="y")
-
-    plt.suptitle(f"Concorrência - Transferência USP", fontsize=14, fontweight="bold")
-    plt.tight_layout()
-    plt.show()
-
-
-def grafico_histograma_notas(dados: dict, ano: str):
-    """Histograma de notas mínimas de todos os cursos em um ano."""
-    plt = tentar_importar_matplotlib()
-    if not plt:
-        return
-
-    if ano not in dados:
-        print(cor(f"Ano {ano} não disponível. Anos: {', '.join(sorted(dados.keys()))}", RED))
-        return
-
-    registros = dados[ano]
-    if "pontos_minimo" in registros[0]:
-        notas = [r["pontos_minimo"] for r in registros if r.get("pontos_minimo") is not None]
-        label = "Nota mínima (pontos)"
-    else:
-        notas = [r["nota_de_corte"] for r in registros if r.get("nota_de_corte") is not None]
-        label = "Nota de corte"
-
-    if not notas:
-        print(cor("Sem dados de notas para esse ano.", RED))
-        return
-
-    fig, ax = plt.subplots(figsize=(10, 5))
-    ax.hist(notas, bins=15, color="#3498db", edgecolor="white", alpha=0.8)
-    ax.set_xlabel(label)
-    ax.set_ylabel("Quantidade de cursos")
-    ax.set_title(f"Distribuição das Notas de Corte - Transferência {ano}")
-    ax.axvline(sum(notas) / len(notas), color="#e74c3c", linestyle="--",
-               label=f"Média: {sum(notas)/len(notas):.1f}")
-    ax.legend()
+    ax.set_xlabel("Ano da Transferência")
+    ax.set_ylabel("Pontos")
+    ax.set_title("Evolução das Notas de Corte")
+    ax.legend(fontsize=9)
     ax.grid(True, alpha=0.3)
+    ax.set_xticks(anos)
     plt.tight_layout()
-    plt.show()
+    fig.savefig(caminho, dpi=200, bbox_inches="tight")
+    plt.close(fig)
 
 
-def grafico_vagas_vs_inscritos(dados: dict, termo: str):
-    """Gráfico comparando vagas e inscritos ao longo dos anos."""
-    plt = tentar_importar_matplotlib()
-    if not plt:
-        return
+def gerar_grafico_concorrencia(registros_por_ano: list[tuple[str, dict]], caminho: str):
+    """Gráfico de barras da concorrência."""
+    dados_plot = []
+    for ano, r in registros_por_ano:
+        if "concorrencia" in r:
+            dados_plot.append((int(ano), r["concorrencia"], r["vagas"], r["inscritos"]))
+    dados_plot.sort()
 
-    resultados = buscar_cursos(dados, termo)
-    resultados = [(a, r) for a, r in resultados if "vagas" in r]
-    if not resultados:
-        print(cor(f"Nenhum dado de vagas/inscritos para '{termo}'.", RED))
-        return
+    if not dados_plot:
+        return False
 
-    cursos_agrupados = {}
-    for ano, r in resultados:
-        nome = r["curso"]
-        if nome not in cursos_agrupados:
-            cursos_agrupados[nome] = []
-        cursos_agrupados[nome].append((int(ano), r["vagas"], r["inscritos"]))
+    fig, ax = plt.subplots(figsize=(7, 3.5))
 
-    fig, axes = plt.subplots(1, min(len(cursos_agrupados), 3), squeeze=False,
-                              figsize=(6 * min(len(cursos_agrupados), 3), 5))
-    axes = axes.flatten()
+    anos = [str(d[0]) for d in dados_plot]
+    concs = [d[1] for d in dados_plot]
+    cores = ["#e74c3c" if c >= 3 else "#f39c12" if c >= 1 else "#27ae60" for c in concs]
 
-    for idx, (nome, pontos) in enumerate(list(cursos_agrupados.items())[:3]):
-        ax = axes[idx]
-        pontos.sort()
-        anos = [p[0] for p in pontos]
-        vg = [p[1] for p in pontos]
-        ins = [p[2] for p in pontos]
+    bars = ax.bar(anos, concs, color=cores, alpha=0.85, edgecolor="white", linewidth=1.5)
+    for bar, (_, c, v, i) in zip(bars, dados_plot):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.08,
+                f"{c:.2f}\n({i} insc / {v} vag)", ha="center", va="bottom", fontsize=8)
 
-        x = range(len(anos))
-        w = 0.35
-        ax.bar([i - w/2 for i in x], vg, w, label="Vagas", color="#2ecc71", alpha=0.8)
-        ax.bar([i + w/2 for i in x], ins, w, label="Inscritos", color="#e74c3c", alpha=0.8)
-        ax.set_xticks(list(x))
-        ax.set_xticklabels([str(a) for a in anos])
-        ax.set_title(nome, fontsize=10, wrap=True)
-        ax.set_xlabel("Ano")
-        ax.set_ylabel("Quantidade")
-        ax.legend()
-        ax.grid(True, alpha=0.3, axis="y")
-
-    plt.suptitle(f"Vagas vs Inscritos - Transferência USP", fontsize=14, fontweight="bold")
+    ax.set_xlabel("Ano da Transferência")
+    ax.set_ylabel("Candidatos por Vaga")
+    ax.set_title("Concorrência ao Longo dos Anos")
+    ax.grid(True, alpha=0.3, axis="y")
     plt.tight_layout()
-    plt.show()
+    fig.savefig(caminho, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    return True
+
+
+def gerar_grafico_vagas_inscritos(registros_por_ano: list[tuple[str, dict]], caminho: str):
+    """Gráfico de barras agrupadas: vagas vs inscritos."""
+    dados_plot = []
+    for ano, r in registros_por_ano:
+        if "vagas" in r:
+            dados_plot.append((int(ano), r["vagas"], r["inscritos"]))
+    dados_plot.sort()
+
+    if not dados_plot:
+        return False
+
+    fig, ax = plt.subplots(figsize=(7, 3.5))
+
+    anos = [d[0] for d in dados_plot]
+    vagas = [d[1] for d in dados_plot]
+    inscritos = [d[2] for d in dados_plot]
+
+    x = range(len(anos))
+    w = 0.35
+    b1 = ax.bar([i - w / 2 for i in x], vagas, w, label="Vagas", color="#27ae60", alpha=0.85)
+    b2 = ax.bar([i + w / 2 for i in x], inscritos, w, label="Inscritos", color="#e74c3c", alpha=0.85)
+
+    for bar, v in zip(b1, vagas):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
+                str(v), ha="center", va="bottom", fontsize=9, fontweight="bold")
+    for bar, v in zip(b2, inscritos):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.3,
+                str(v), ha="center", va="bottom", fontsize=9, fontweight="bold")
+
+    ax.set_xticks(list(x))
+    ax.set_xticklabels([str(a) for a in anos])
+    ax.set_xlabel("Ano da Transferência")
+    ax.set_ylabel("Quantidade")
+    ax.set_title("Vagas Ofertadas vs Inscritos")
+    ax.legend(fontsize=9)
+    ax.grid(True, alpha=0.3, axis="y")
+    plt.tight_layout()
+    fig.savefig(caminho, dpi=200, bbox_inches="tight")
+    plt.close(fig)
+    return True
 
 
 # ---------------------------------------------------------------------------
-# Ranking
+# Geração do relatório LaTeX → PDF
 # ---------------------------------------------------------------------------
-def ranking_concorrencia(dados: dict, ano: str, top_n: int = 15):
-    """Mostra os cursos mais concorridos de um ano."""
-    if ano not in dados:
-        print(cor(f"Ano {ano} não disponível.", RED))
-        return
+def gerar_tabela_latex(registros_por_ano: list[tuple[str, dict]]) -> str:
+    """Gera código LaTeX de uma tabela histórica."""
+    # Verificar se temos dados completos (2020+) ou simplificados (2019)
+    tem_completo = any("vagas" in r for _, r in registros_por_ano)
 
-    registros = [r for r in dados[ano] if r.get("concorrencia", 0) > 0]
-    registros.sort(key=lambda r: r["concorrencia"], reverse=True)
+    linhas = []
+    if tem_completo:
+        linhas.append(r"\begin{tabularx}{\textwidth}{c c c c c c c}")
+        linhas.append(r"\toprule")
+        linhas.append(r"\textbf{Ano} & \textbf{Vagas} & \textbf{Inscritos} & \textbf{Ausentes} & \textbf{Conc.} & \textbf{Nota Mín.} & \textbf{Nota Máx.} \\")
+        linhas.append(r"\midrule")
+        for ano, r in sorted(registros_por_ano, key=lambda x: x[0]):
+            if "vagas" in r:
+                minimo = r.get("pontos_minimo")
+                maximo = r.get("pontos_maximo")
+                min_str = str(minimo) if minimo is not None else "---"
+                max_str = str(maximo) if maximo is not None else "---"
+                conc = f"{r['concorrencia']:.2f}"
+                linhas.append(
+                    f"{ano} & {r['vagas']} & {r['inscritos']} & "
+                    f"{r['ausentes']} & {conc} & {min_str} & {max_str} \\\\"
+                )
+            else:
+                nota = r.get("nota_de_corte")
+                nota_str = str(nota) if nota is not None else "---"
+                linhas.append(
+                    f"{ano} & --- & --- & --- & --- & {nota_str} & {nota_str} \\\\"
+                )
+        linhas.append(r"\bottomrule")
+        linhas.append(r"\end{tabularx}")
+    else:
+        linhas.append(r"\begin{tabularx}{\textwidth}{c c}")
+        linhas.append(r"\toprule")
+        linhas.append(r"\textbf{Ano} & \textbf{Nota de Corte} \\")
+        linhas.append(r"\midrule")
+        for ano, r in sorted(registros_por_ano, key=lambda x: x[0]):
+            nota = r.get("nota_de_corte")
+            nota_str = str(nota) if nota is not None else "---"
+            linhas.append(f"{ano} & {nota_str} \\\\")
+        linhas.append(r"\bottomrule")
+        linhas.append(r"\end{tabularx}")
 
-    print(cor(f"\n  Top {top_n} cursos mais concorridos - {ano}", BOLD))
-    print(cor("  " + "=" * 80, DIM))
-    for i, r in enumerate(registros[:top_n], 1):
-        conc = r["concorrencia"]
-        if conc >= 3:
-            c = RED
-        elif conc >= 1:
-            c = YELLOW
-        else:
-            c = GREEN
-        print(
-            f"  {cor(f'{i:2d}.', BOLD)} {r['curso'][:55]:<55} "
-            f"Conc: {cor(f'{conc:.2f}', c)}  "
-            f"Vagas: {cor(r['vagas'], GREEN)}  "
-            f"Min: {cor(r.get('pontos_minimo', '---'), MAGENTA)}"
+    return "\n".join(linhas)
+
+
+def gerar_latex(nome_curso: str, registros_por_ano: list[tuple[str, dict]],
+                img_notas: str, img_conc: str | None, img_vagas: str | None) -> str:
+    """Gera o código-fonte .tex completo do relatório."""
+    nome_esc = escapar_latex(nome_curso)
+    tabela = gerar_tabela_latex(registros_por_ano)
+
+    anos_list = sorted(set(a for a, _ in registros_por_ano))
+    periodo = f"{anos_list[0]}--{anos_list[-1]}" if len(anos_list) > 1 else anos_list[0]
+
+    # Blocos dos gráficos de concorrência e vagas (se existirem)
+    bloco_conc = ""
+    if img_conc:
+        bloco_conc = (
+            r"\begin{figure}[H]" "\n"
+            r"\centering" "\n"
+            r"\includegraphics[width=0.85\textwidth]{" + img_conc + "}\n"
+            r"\caption{Concorrência (candidatos por vaga) ao longo dos anos.}" "\n"
+            r"\end{figure}" "\n"
         )
+
+    bloco_vagas = ""
+    if img_vagas:
+        bloco_vagas = (
+            r"\begin{figure}[H]" "\n"
+            r"\centering" "\n"
+            r"\includegraphics[width=0.85\textwidth]{" + img_vagas + "}\n"
+            r"\caption{Vagas ofertadas versus número de inscritos por ano.}" "\n"
+            r"\end{figure}" "\n"
+        )
+
+    tex = r"""
+\documentclass[11pt, a4paper]{article}
+
+%% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titling}
+
+\geometry{margin=2cm, top=2.5cm, bottom=2.5cm}
+
+%% Cores
+\definecolor{uspazul}{HTML}{004A8D}
+\definecolor{cinzaclaro}{HTML}{F5F5F5}
+
+%% Cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{uspazul}{Relatório de Transferência Externa USP}}
+\fancyhead[R]{\small\textcolor{uspazul}{FUVEST --- """ + periodo + r"""}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=uspazul,
+    urlcolor=uspazul,
+}
+
+\begin{document}
+
+%% -----------------------------------------------------------------------
+%% Título
+%% -----------------------------------------------------------------------
+\begin{center}
+    {\LARGE\bfseries\textcolor{uspazul}{Relatório --- Transferência Externa USP}}\\[6pt]
+    {\Large """ + nome_esc + r"""}\\[4pt]
+    {\small Dados disponíveis: """ + ", ".join(anos_list) + r"""}
+\end{center}
+
+\vspace{0.5cm}
+
+%% -----------------------------------------------------------------------
+%% Tabela histórica
+%% -----------------------------------------------------------------------
+\section*{Histórico Completo}
+
+\begin{center}
+""" + tabela + r"""
+\end{center}
+
+\vspace{0.3cm}
+
+%% -----------------------------------------------------------------------
+%% Gráfico de evolução de notas
+%% -----------------------------------------------------------------------
+\section*{Evolução das Notas de Corte}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{""" + img_notas + r"""}
+\caption{Nota mínima e máxima dos convocados ao longo dos anos.}
+\end{figure}
+
+%% -----------------------------------------------------------------------
+%% Gráfico de concorrência
+%% -----------------------------------------------------------------------
+""" + bloco_conc + r"""
+
+%% -----------------------------------------------------------------------
+%% Gráfico de vagas vs inscritos
+%% -----------------------------------------------------------------------
+""" + bloco_vagas + r"""
+
+%% -----------------------------------------------------------------------
+%% Rodapé informativo
+%% -----------------------------------------------------------------------
+\vfill
+\begin{center}
+\small\textcolor{gray}{Dados extraídos dos editais oficiais da FUVEST.}\\
+\small\textcolor{gray}{Gerado automaticamente --- \url{https://github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp}}
+\end{center}
+
+\end{document}
+"""
+    return tex
+
+
+def compilar_pdf(tex_source: str, nome_arquivo: str) -> str | None:
+    """Compila .tex → .pdf e retorna o caminho do PDF gerado."""
+    tmpdir = tempfile.mkdtemp(prefix="relatorio_transf_")
+
+    tex_path = os.path.join(tmpdir, "relatorio.tex")
+    with open(tex_path, "w", encoding="utf-8") as f:
+        f.write(tex_source)
+
+    # Compilar 2x para resolver referências
+    for _ in range(2):
+        result = subprocess.run(
+            ["pdflatex", "-interaction=nonstopmode", "-output-directory", tmpdir, tex_path],
+            capture_output=True, text=True, cwd=tmpdir, timeout=60
+        )
+
+    pdf_tmp = os.path.join(tmpdir, "relatorio.pdf")
+    if not os.path.exists(pdf_tmp):
+        print(cor("Erro ao compilar o LaTeX. Log:", RED))
+        log_path = os.path.join(tmpdir, "relatorio.log")
+        if os.path.exists(log_path):
+            with open(log_path, encoding="utf-8", errors="replace") as f:
+                linhas = f.readlines()
+            # Mostrar apenas linhas de erro
+            for linha in linhas:
+                if linha.startswith("!") or "Error" in linha:
+                    print(f"  {linha.rstrip()}")
+        print(f"\n  Diretório temporário: {tmpdir}")
+        return None
+
+    # Mover PDF para a pasta de trabalho
+    destino = os.path.join(BASE_DIR, f"{nome_arquivo}.pdf")
+    shutil.move(pdf_tmp, destino)
+
+    # Limpar temporários
+    shutil.rmtree(tmpdir, ignore_errors=True)
+
+    return destino
+
+
+# ---------------------------------------------------------------------------
+# Pipeline principal: curso → relatório PDF
+# ---------------------------------------------------------------------------
+def gerar_relatorio(dados: dict, nome_curso: str, registros_por_ano: list[tuple[str, dict]]):
+    """Gera o relatório PDF completo para um curso."""
+    print(cor(f"\n  Gerando relatório para: {nome_curso}", CYAN))
+
+    # Diretório temporário para imagens
+    tmpdir = tempfile.mkdtemp(prefix="graficos_transf_")
+
+    # 1. Gráfico de notas (sempre gerado)
+    img_notas = os.path.join(tmpdir, "notas.png")
+    gerar_grafico_notas(registros_por_ano, img_notas)
+    print(cor("    ✓ Gráfico de evolução de notas", GREEN))
+
+    # 2. Gráfico de concorrência (só se houver dados)
+    img_conc = os.path.join(tmpdir, "concorrencia.png")
+    tem_conc = gerar_grafico_concorrencia(registros_por_ano, img_conc)
+    if tem_conc:
+        print(cor("    ✓ Gráfico de concorrência", GREEN))
+    else:
+        img_conc = None
+
+    # 3. Gráfico vagas vs inscritos (só se houver dados)
+    img_vagas = os.path.join(tmpdir, "vagas.png")
+    tem_vagas = gerar_grafico_vagas_inscritos(registros_por_ano, img_vagas)
+    if tem_vagas:
+        print(cor("    ✓ Gráfico vagas vs inscritos", GREEN))
+    else:
+        img_vagas = None
+
+    # 4. Gerar LaTeX
+    tex = gerar_latex(nome_curso, registros_por_ano, img_notas, img_conc, img_vagas)
+    print(cor("    ✓ Código LaTeX gerado", GREEN))
+
+    # 5. Compilar PDF
+    nome_arquivo = "relatorio_" + nome_arquivo_seguro(nome_curso)
+    destino = compilar_pdf(tex, nome_arquivo)
+
+    # Limpar imagens temporárias
+    shutil.rmtree(tmpdir, ignore_errors=True)
+
+    if destino:
+        print(cor(f"\n  ✓ Relatório gerado: {destino}", GREEN + BOLD))
+    else:
+        print(cor("\n  ✗ Falha ao gerar o PDF.", RED))
+
+    return destino
+
+
+# ---------------------------------------------------------------------------
+# Interface no terminal
+# ---------------------------------------------------------------------------
+def selecionar_curso(dados: dict, termo: str) -> tuple[str, list] | None:
+    """Busca cursos e, se necessário, pede ao usuário para escolher."""
+    resultados = buscar_cursos(dados, termo)
+    if not resultados:
+        print(cor(f"\n  Nenhum curso encontrado para '{termo}'.", RED))
+        return None
+
+    grupos = agrupar_por_curso(resultados)
+
+    if len(grupos) == 1:
+        nome = list(grupos.keys())[0]
+        return nome, grupos[nome]
+
+    # Múltiplos cursos encontrados — consolidar tudo ou escolher
+    nomes = list(grupos.keys())
+    print(cor(f"\n  {len(nomes)} variações de nome encontradas:\n", BOLD))
+
+    # Opção T = TODOS (consolidar num único relatório)
+    total_anos = sorted(set(a for a, _ in resultados))
+    print(f"  {cor('  T.', YELLOW)} {cor('TODOS — consolidar num único relatório', BOLD)}")
+    anos_str = ", ".join(total_anos)
+    print(f"       {cor(f'Anos: {anos_str}', DIM)}")
     print()
 
+    for i, nome in enumerate(nomes, 1):
+        anos = ", ".join(a for a, _ in grupos[nome])
+        print(f"  {cor(f'{i:3d}.', CYAN)} {nome}")
+        print(f"       {cor(f'Anos: {anos}', DIM)}")
 
-# ---------------------------------------------------------------------------
-# Menu interativo
-# ---------------------------------------------------------------------------
-def menu_principal(dados: dict):
+    print(f"\n  {cor('  0.', DIM)} Cancelar")
+    print()
+
+    escolha = input(cor("  Escolha (T para todos, número, ou 0): ", GREEN)).strip().lower()
+
+    if escolha == "t" or escolha == "":
+        # Consolidar todos os resultados com um nome genérico baseado no termo
+        return termo.title(), resultados
+
+    if not escolha.isdigit() or int(escolha) < 1 or int(escolha) > len(nomes):
+        return None
+
+    nome = nomes[int(escolha) - 1]
+    return nome, grupos[nome]
+
+
+def modo_interativo(dados: dict):
+    """Loop interativo: usuário digita cursos, programa gera PDFs."""
     anos_disponiveis = sorted(dados.keys())
+    print(cor("\n  ╔══════════════════════════════════════════════════════════════╗", CYAN))
+    print(cor("  ║", CYAN) + cor("    Notas de Corte — Transferência Externa USP (FUVEST)    ", BOLD) + cor("║", CYAN))
+    print(cor("  ╚══════════════════════════════════════════════════════════════╝", CYAN))
+    print(cor(f"  Anos disponíveis: {', '.join(anos_disponiveis)}", DIM))
+    print()
+    print(f"  Digite o nome do curso para gerar um relatório PDF completo.")
+    print(f"  {cor('Digite 0 para sair.', DIM)}")
+
     while True:
-        print(cor("\n  ╔══════════════════════════════════════════════════════════╗", CYAN))
-        print(cor("  ║", CYAN) + cor("   Notas de Corte - Transferência Externa USP (FUVEST)  ", BOLD) + cor("║", CYAN))
-        print(cor("  ╠══════════════════════════════════════════════════════════╣", CYAN))
-        print(cor("  ║", CYAN) + "  1. Buscar curso por nome                              " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  2. Gráfico de evolução de notas                       " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  3. Gráfico de concorrência                            " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  4. Histograma de notas de um ano                      " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  5. Gráfico vagas vs inscritos                         " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  6. Ranking de concorrência de um ano                  " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  7. Listar todos os cursos de um ano                   " + cor("║", CYAN))
-        print(cor("  ║", CYAN) + "  0. Sair                                               " + cor("║", CYAN))
-        print(cor("  ╚══════════════════════════════════════════════════════════╝", CYAN))
-        print(cor(f"  Anos disponíveis: {', '.join(anos_disponiveis)}", DIM))
         print()
+        termo = input(cor("  Curso: ", GREEN)).strip()
 
-        opcao = input(cor("  Escolha uma opção: ", GREEN)).strip()
-
-        if opcao == "0":
-            print(cor("\n  Até mais! Boa sorte na transferência! 🎓\n", GREEN))
+        if not termo or termo == "0":
+            print(cor("\n  Até mais! Boa sorte na transferência!\n", GREEN))
             break
 
-        elif opcao == "1":
-            termo = input(cor("  Nome do curso (ou parte): ", GREEN)).strip()
-            if not termo:
-                continue
-            resultados = buscar_cursos(dados, termo)
-            if not resultados:
-                print(cor(f"\n  Nenhum curso encontrado para '{termo}'.", RED))
-            else:
-                print(cor(f"\n  {len(resultados)} resultado(s) encontrado(s):\n", BOLD))
-                for ano, r in resultados:
-                    exibir_resultado(ano, r)
+        resultado = selecionar_curso(dados, termo)
+        if resultado is None:
+            continue
 
-        elif opcao == "2":
-            termo = input(cor("  Nome do curso: ", GREEN)).strip()
-            if termo:
-                grafico_notas(dados, termo)
-
-        elif opcao == "3":
-            termo = input(cor("  Nome do curso: ", GREEN)).strip()
-            if termo:
-                grafico_concorrencia(dados, termo)
-
-        elif opcao == "4":
-            ano = input(cor(f"  Ano ({'/'.join(anos_disponiveis)}): ", GREEN)).strip()
-            grafico_histograma_notas(dados, ano)
-
-        elif opcao == "5":
-            termo = input(cor("  Nome do curso: ", GREEN)).strip()
-            if termo:
-                grafico_vagas_vs_inscritos(dados, termo)
-
-        elif opcao == "6":
-            ano = input(cor(f"  Ano ({'/'.join(anos_disponiveis)}): ", GREEN)).strip()
-            if ano in dados:
-                n = input(cor("  Quantos cursos no ranking? [15]: ", GREEN)).strip()
-                n = int(n) if n.isdigit() else 15
-                ranking_concorrencia(dados, ano, n)
-
-        elif opcao == "7":
-            ano = input(cor(f"  Ano ({'/'.join(anos_disponiveis)}): ", GREEN)).strip()
-            if ano in dados:
-                print(cor(f"\n  Cursos disponíveis em {ano}:\n", BOLD))
-                for r in dados[ano]:
-                    exibir_resultado(ano, r)
-
-        input(cor("\n  Pressione Enter para continuar...", DIM))
+        nome_curso, registros = resultado
+        gerar_relatorio(dados, nome_curso, registros)
 
 
-# ---------------------------------------------------------------------------
-# CLI direta
-# ---------------------------------------------------------------------------
-def cli():
+def main():
     dados = carregar_dados()
 
-    if len(sys.argv) < 2:
-        menu_principal(dados)
-        return
-
-    comando = sys.argv[1].lower()
-
-    if comando == "buscar" and len(sys.argv) >= 3:
-        termo = " ".join(sys.argv[2:])
-        resultados = buscar_cursos(dados, termo)
-        if not resultados:
-            print(cor(f"Nenhum curso encontrado para '{termo}'.", RED))
-        else:
-            print(cor(f"\n{len(resultados)} resultado(s):\n", BOLD))
-            for ano, r in resultados:
-                exibir_resultado(ano, r)
-
-    elif comando == "grafico" and len(sys.argv) >= 3:
-        termo = " ".join(sys.argv[2:])
-        grafico_notas(dados, termo)
-
-    elif comando == "concorrencia" and len(sys.argv) >= 3:
-        termo = " ".join(sys.argv[2:])
-        grafico_concorrencia(dados, termo)
-
-    elif comando == "histograma" and len(sys.argv) >= 3:
-        ano = sys.argv[2]
-        grafico_histograma_notas(dados, ano)
-
-    elif comando == "ranking" and len(sys.argv) >= 3:
-        ano = sys.argv[2]
-        n = int(sys.argv[3]) if len(sys.argv) > 3 else 15
-        ranking_concorrencia(dados, ano, n)
-
-    elif comando in ("ajuda", "help", "--help", "-h"):
-        print(cor("\n  Notas de Corte - Transferência Externa USP", BOLD))
-        print(cor("  " + "=" * 50, DIM))
-        print("""
-  Uso interativo:
-    python notas_de_corte.py
-
-  Comandos diretos:
-    buscar <termo>        Busca cursos por nome
-    grafico <termo>       Gráfico de evolução das notas
-    concorrencia <termo>  Gráfico de concorrência
-    histograma <ano>      Histograma de notas de um ano
-    ranking <ano> [n]     Top N cursos mais concorridos
-    ajuda                 Mostra esta ajuda
-        """)
+    if len(sys.argv) >= 2:
+        termo = " ".join(sys.argv[1:])
+        resultado = selecionar_curso(dados, termo)
+        if resultado:
+            nome_curso, registros = resultado
+            gerar_relatorio(dados, nome_curso, registros)
     else:
-        print(cor("Comando não reconhecido. Use 'ajuda' para ver os comandos.", RED))
+        modo_interativo(dados)
 
 
 if __name__ == "__main__":
-    cli()
+    main()

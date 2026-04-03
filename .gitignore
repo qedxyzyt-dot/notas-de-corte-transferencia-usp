@@ -6,3 +6,4 @@ build/
 *.egg-info/
 .venv/
 venv/
+relatorio_*.pdf
