@@ -435,7 +435,8 @@ const LOC_NORMALIZAR = {
     "São Paulo Butantã/ Quadrilátero": "São Paulo"
 };
 const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
-const SEP_RE = /\s*[-\u2212\u2013]\s*/;
+const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
+const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
 
 // ==========================================================================
 // Utilitários
@@ -452,12 +453,70 @@ function calcConc(r) {
     return ((r.inscritos || 0) - (r.ausentes || 0)) / v;
 }
 
+function segmentarNomeCurso(nome) {
+    return nome
+        .replace(/\(([^)]*)\)/g, " — $1 ")
+        .split(SEP_RE)
+        .map(parte => parte.replace(/\s+/g, " ").trim())
+        .filter(Boolean);
+}
+
+function normalizarSegmento(seg) {
+    return normalizar(seg).replace(/\.+$/g, "").trim();
+}
+
+function identificarLocSegmento(seg) {
+    const segNorm = normalizarSegmento(seg);
+    if (!segNorm) return null;
+    if (segNorm.includes("usp leste")) return "São Paulo Leste";
+    for (const loc of LOC_CONHECIDAS) {
+        const locNorm = normalizar(loc);
+        if (segNorm === locNorm || segNorm.startsWith(locNorm)) return loc;
+    }
+    for (const loc of LOC_CONHECIDAS) {
+        const locNorm = normalizar(loc);
+        if (segNorm.length >= 6 && locNorm.startsWith(segNorm)) return loc;
+    }
+    return null;
+}
+
+function ehPeriodoSegmento(seg) {
+    const segNorm = normalizarSegmento(seg);
+    return PERIODOS.some(p => {
+        const pNorm = normalizar(p);
+        return segNorm === pNorm || segNorm.startsWith(pNorm);
+    });
+}
+
+function ehSemestreSegmento(seg) {
+    return /^\d+[ºo°]\s*sem/i.test(normalizarSegmento(seg));
+}
+
+function ehGrauSegmento(seg) {
+    const segNorm = normalizarSegmento(seg);
+    return GRAUS.some(g => {
+        const gNorm = normalizar(g);
+        return segNorm === gNorm || segNorm.startsWith(gNorm);
+    });
+}
+
+function padronizarSegmento(seg) {
+    let s = seg.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
+    const segNorm = normalizar(s);
+    if (segNorm.startsWith("enfase:")) {
+        return "Ênfase em " + s.split(":").slice(1).join(":").trim();
+    }
+    if (segNorm.startsWith("enfase em ")) {
+        return "Ênfase em " + s.replace(/^Ênfase\s+em\s+/i, "").trim();
+    }
+    return s;
+}
+
 // ---------- Extração de atributos ----------
 function extrairLocRaw(nome) {
-    const n = normalizar(nome);
-    if (n.includes("usp leste")) return "São Paulo Leste";
-    for (const loc of LOC_CONHECIDAS) {
-        if (n.includes(normalizar(loc))) return loc;
+    for (const parte of segmentarNomeCurso(nome)) {
+        const loc = identificarLocSegmento(parte);
+        if (loc) return loc;
     }
     return null;
 }
@@ -467,30 +526,27 @@ function extrairLoc(nome) {
     return LOC_NORMALIZAR[raw] || raw;
 }
 function extrairPeriodo(nome) {
-    const n = normalizar(nome);
-    for (const p of PERIODOS) {
-        if (n.includes(normalizar(p))) return p;
+    for (const parte of segmentarNomeCurso(nome)) {
+        const parteNorm = normalizarSegmento(parte);
+        for (const p of PERIODOS) {
+            const pNorm = normalizar(p);
+            if (parteNorm === pNorm || parteNorm.startsWith(pNorm)) return p;
+        }
     }
     return null;
 }
 function extrairBase(nome) {
-    let s = nome.replace(/\([^)]*\)/g, "");
-    const partes = s.split(SEP_RE).map(p => p.trim()).filter(Boolean);
-    const ignorar = new Set([
-        ...LOC_CONHECIDAS.map(normalizar),
-        ...PERIODOS.map(normalizar),
-        "usp leste"
-    ]);
     const uteis = [];
-    for (const p of partes) {
-        const pn = normalizar(p);
-        if (/^\d+[ºo°]\s*s/i.test(pn)) continue;
-        if (ignorar.has(pn)) continue;
-        uteis.push(p);
+    for (const parte of segmentarNomeCurso(nome)) {
+        if (identificarLocSegmento(parte)) continue;
+        if (ehPeriodoSegmento(parte)) continue;
+        if (ehSemestreSegmento(parte)) continue;
+        if (ehGrauSegmento(parte)) continue;
+        uteis.push(padronizarSegmento(parte));
     }
     let res = uteis.length ? uteis.join(" — ") : nome;
     res = res.replace(/^(?:Bacharelado\s+e\s+Licenciatura\s+em\s+|Licenciatura\s+e\s+Bacharelado\s+em\s+|Bacharelado\s+em\s+|Curso\s+de\s+Graduação\s+em\s+)/i, "");
-    res = res.replace(/\s*[—\-\u2013\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
     res = res.replace(/\s*(?:Bacharelado|Licenciatura)\s*$/i, "");
     return res.trim();
 }
