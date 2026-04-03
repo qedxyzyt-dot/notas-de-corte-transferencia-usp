@@ -28,6 +28,9 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: var(--fonte-ui);
     background:
         radial-gradient(circle at top, rgba(0, 74, 141, 0.08), transparent 28rem),
@@ -92,7 +95,8 @@ header p {
     transform: rotate(45deg);
 }
 
-.container { max-width: 1180px; margin: 0 auto; padding: 1.5rem; }
+.page-main { flex: 1 0 auto; width: 100%; }
+.container { max-width: 1180px; width: 100%; margin: 0 auto; padding: 1.5rem; }
 
 /* Filtros */
 .filtros {
@@ -323,11 +327,12 @@ tbody tr:hover { background: var(--usp-azul-claro); }
 /* Footer */
 footer {
     text-align: center;
+    width: 100%;
     padding: 1.2rem;
     font-size: 0.9rem;
     color: var(--texto-sec);
     border-top: 1px solid rgba(0, 74, 141, 0.12);
-    margin-top: 2rem;
+    margin-top: auto;
 }
 footer a { color: var(--usp-azul); }
 
@@ -379,6 +384,7 @@ footer a { color: var(--usp-azul); }
     <a class="topbar-link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
 </header>
 
+<main class="page-main">
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
@@ -410,6 +416,7 @@ footer a { color: var(--usp-azul); }
         <p>Digite o nome de um curso acima para visualizar os dados.</p>
     </div>
 </div>
+</main>
 
 <footer>
     Dados extraídos dos editais oficiais da FUVEST — Gerado automaticamente<br>
@@ -703,27 +710,22 @@ function destruirCharts() {
     charts = {};
 }
 
+function mostrarEstadoDashboard(html) {
+    const container = document.getElementById("dashboard");
+    container.classList.add("vazio");
+    container.innerHTML = html;
+}
+
 function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
     destruirCharts();
     const container = document.getElementById("dashboard");
+    container.classList.remove("vazio");
 
     const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
     const temCompleto = Object.values(dados).some(r => "vagas" in r);
 
-    // KPIs
-    const ultimoAno = Math.max(...anos);
-    const ultimoR = dados[ultimoAno];
-    const concUltimo = calcConc(ultimoR);
-    const notaMinUltimo = ultimoR.pontos_minimo || ultimoR.nota_de_corte || "—";
-    const notaMaxUltimo = ultimoR.pontos_maximo || ultimoR.nota_de_corte || "—";
-    const vagasUltimo = ultimoR.vagas || "—";
 
-    let html = `<div class="cards">
-        <div class="card"><div class="valor">${vagasUltimo}</div><div class="rotulo">Vagas (${ultimoAno})</div></div>
-        <div class="card"><div class="valor">${fmtBr(concUltimo, 1)}</div><div class="rotulo">Concorrência (${ultimoAno})</div></div>
-        <div class="card"><div class="valor">${notaMinUltimo}</div><div class="rotulo">Nota Mínima (${ultimoAno})</div></div>
-        <div class="card"><div class="valor">${notaMaxUltimo}</div><div class="rotulo">Nota Máxima (${ultimoAno})</div></div>
-    </div>`;
+    let html = "";
 
     // Tabela
     html += `<div class="tabela-container"><table>
@@ -960,7 +962,7 @@ function atualizarFiltros() {
     const termo = document.getElementById("busca").value.trim();
     fecharMenuBase();
     if (termo.length < 2) {
-        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Digite o nome de um curso acima para visualizar os dados.</p></div>`;
+        mostrarEstadoDashboard(`<p>Digite o nome de um curso acima para visualizar os dados.</p>`);
         destruirCharts();
         preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
         preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
@@ -973,7 +975,7 @@ function atualizarFiltros() {
     ESTADO.resultados = buscarCursos(DADOS, termo);
     if (!ESTADO.resultados.length) {
         const termoSafe = termo.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Nenhum curso encontrado para "${termoSafe}".</p></div>`;
+        mostrarEstadoDashboard(`<p>Nenhum curso encontrado para "${termoSafe}".</p>`);
         destruirCharts();
         preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
         preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
@@ -1059,7 +1061,7 @@ function aplicarFiltrosEDashboard() {
     ESTADO.filtrados = filtrados;
 
     if (!filtrados.length) {
-        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Nenhum registro com os filtros selecionados.</p></div>`;
+        mostrarEstadoDashboard(`<p>Nenhum registro com os filtros selecionados.</p>`);
         destruirCharts();
         return;
     }
@@ -1171,7 +1173,7 @@ fetch("dados.json")
     })
     .catch(e => {
         const msg = String(e.message).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p style="color:#c0392b">Erro ao carregar dados.json: ${msg}</p></div>`;
+        mostrarEstadoDashboard(`<p style="color:#c0392b">Erro ao carregar dados.json: ${msg}</p>`);
     });
 </script>
 </body>
