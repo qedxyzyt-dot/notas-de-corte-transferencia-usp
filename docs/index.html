@@ -112,7 +112,6 @@ header p {
     box-shadow: var(--sombra-card);
 }
 .filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 180px; }
-.filtro-grupo:nth-child(2) { flex: 2; min-width: 280px; }
 .filtro-grupo label {
     font-family: var(--fonte-display);
     font-size: 0.78rem;
@@ -388,18 +387,10 @@ footer a { color: var(--usp-azul); }
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
-        <div class="filtro-grupo" style="flex: 3; min-width: 250px;">
+        <div class="filtro-grupo" style="flex: 4; min-width: 320px;">
             <label for="busca">Curso</label>
-            <input type="text" id="busca" placeholder="Digite o nome do curso..." autocomplete="off">
+            <input type="text" id="busca" placeholder="Digite o curso desejado..." autocomplete="off">
             <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
-        </div>
-        <div class="filtro-grupo" style="flex: 3; min-width: 320px;">
-            <label for="sel-base-trigger">Curso específico</label>
-            <div class="combo-select" id="combo-base">
-                <button type="button" class="combo-select__trigger" id="sel-base-trigger" disabled>— buscar primeiro —</button>
-                <div id="sel-base-menu" class="combo-select__menu" hidden></div>
-            </div>
-            <select id="sel-base" class="visually-hidden-control" tabindex="-1" aria-hidden="true"><option value="">— buscar primeiro —</option></select>
         </div>
         <div class="filtro-grupo">
             <label for="sel-loc">Localização</label>
@@ -413,7 +404,7 @@ footer a { color: var(--usp-azul); }
 
     <!-- Dashboard -->
     <div id="dashboard" class="vazio">
-        <p>Digite o nome de um curso acima para visualizar os dados.</p>
+        <p>Digite ao menos duas letras do curso desejado para visualizar os dados.</p>
     </div>
 </div>
 </main>
@@ -428,8 +419,8 @@ footer a { color: var(--usp-azul); }
 // Dados e estado global
 // ==========================================================================
 let DADOS = {};
-let ESTADO = { resultados: [], atribs: {}, filtrados: [], breakdowns: {} };
-let LISTA_BASES = [];
+let ESTADO = { cursoSelecionado: "", resultados: [], atribs: {}, filtrados: [], breakdowns: {} };
+let LISTA_CURSOS = [];
 
 const LOC_CONHECIDAS = [
     "São Paulo Quadrilátero", "São Paulo Leste",
@@ -444,6 +435,7 @@ const LOC_NORMALIZAR = {
 const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
 const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
 const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
+const STOPWORDS_BUSCA = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os"]);
 
 // ==========================================================================
 // Utilitários
@@ -451,13 +443,33 @@ const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
 function normalizar(t) {
     return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
+function tokenizarBusca(texto) {
+    return normalizar(texto)
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim()
+        .split(/\s+/)
+        .filter(tok => tok.length >= 2 && !STOPWORDS_BUSCA.has(tok));
+}
+function chaveBuscaTexto(texto) {
+    return tokenizarBusca(texto).join(" ");
+}
 function fmtBr(v, casas = 2) {
     return v.toFixed(casas).replace(".", ",");
+}
+function fmtBrFlex(v) {
+    const num = Number(v);
+    if (!Number.isFinite(num)) return String(v);
+    return Number.isInteger(num) ? String(num) : fmtBr(num);
 }
 function calcConc(r) {
     const v = r.vagas || 0;
     if (v <= 0) return 0;
     return ((r.inscritos || 0) - (r.ausentes || 0)) / v;
+}
+function formatarTooltipNumero(context) {
+    const label = context.dataset?.label ? `${context.dataset.label}: ` : "";
+    const valor = Number(context.raw ?? context.parsed?.y ?? context.parsed);
+    return label + fmtBr(valor);
 }
 
 function segmentarNomeCurso(nome) {
@@ -669,12 +681,12 @@ function inferirAtributos(resultados) {
 }
 
 // ---------- Busca e consolidação ----------
-function buscarCursos(dados, termo) {
-    const tn = normalizar(termo);
+function buscarCursosPorRotulo(dados, rotuloBusca) {
+    const tn = normalizar(rotuloBusca);
     const res = [];
     for (const ano of Object.keys(dados).sort()) {
         for (const r of dados[ano]) {
-            if (normalizar(r.curso).includes(tn)) res.push([ano, r]);
+            if (normalizar(extrairRotuloBusca(r.curso)) === tn) res.push([ano, r]);
         }
     }
     return res;
@@ -710,39 +722,71 @@ function fecharSugestoesBusca() {
     document.getElementById("busca-sugestoes").hidden = true;
 }
 
+function ordenarSugestoesBusca(sugestoes, termoNorm) {
+    return [...sugestoes].sort((a, b) => {
+        const tokens = tokenizarBusca(termoNorm);
+        const aNorm = normalizar(a);
+        const bNorm = normalizar(b);
+        const aKey = chaveBuscaTexto(a);
+        const bKey = chaveBuscaTexto(b);
+        const termoKey = chaveBuscaTexto(termoNorm);
+
+        const aExato = aKey === termoKey ? 0 : 1;
+        const bExato = bKey === termoKey ? 0 : 1;
+        if (aExato !== bExato) return aExato - bExato;
+
+        const aFrase = termoKey && aKey.includes(termoKey) ? 0 : 1;
+        const bFrase = termoKey && bKey.includes(termoKey) ? 0 : 1;
+        if (aFrase !== bFrase) return aFrase - bFrase;
+
+        const aInicio = tokens.length && aNorm.startsWith(tokens[0]) ? 0 : 1;
+        const bInicio = tokens.length && bNorm.startsWith(tokens[0]) ? 0 : 1;
+        if (aInicio !== bInicio) return aInicio - bInicio;
+
+        const aPos = tokens.reduce((acc, token) => acc + Math.max(aNorm.indexOf(token), 0), 0);
+        const bPos = tokens.reduce((acc, token) => acc + Math.max(bNorm.indexOf(token), 0), 0);
+        if (aPos !== bPos) return aPos - bPos;
+
+        if (a.length !== b.length) return a.length - b.length;
+        return a.localeCompare(b, "pt-BR", { sensitivity: "base" });
+    });
+}
+
+function obterSugestoesBusca(termo = "") {
+    const termoLimpo = termo.trim();
+    if (termoLimpo.length < 2) return [];
+    const tokens = tokenizarBusca(termoLimpo);
+    if (!tokens.length) return [];
+    const sugestoes = LISTA_CURSOS.filter(nome => {
+        const nomeNorm = normalizar(nome);
+        return tokens.every(token => nomeNorm.includes(token));
+    });
+    return ordenarSugestoesBusca(sugestoes, termoLimpo);
+}
+
+function resolverBuscaCurso(termo = "") {
+    const termoLimpo = termo.trim();
+    if (termoLimpo.length < 2) return { status: "vazio", sugestoes: [] };
+
+    const termoChave = chaveBuscaTexto(termoLimpo);
+    const cursoExato = LISTA_CURSOS.find(nome => chaveBuscaTexto(nome) === termoChave);
+    if (cursoExato) return { status: "ok", curso: cursoExato, sugestoes: [cursoExato] };
+
+    const sugestoes = obterSugestoesBusca(termoLimpo);
+    if (sugestoes.length === 1) return { status: "ok", curso: sugestoes[0], sugestoes };
+    if (!sugestoes.length) return { status: "nenhum", sugestoes: [] };
+    return { status: "refinar", sugestoes };
+}
+
 function renderizarSugestoesBusca(termo = "") {
     const painel = document.getElementById("busca-sugestoes");
     const input = document.getElementById("busca");
-    if (!LISTA_BASES.length) {
+    if (!LISTA_CURSOS.length) {
         painel.hidden = true;
         return;
     }
 
-    const termoLimpo = termo.trim();
-    let sugestoes = LISTA_BASES;
-    if (termoLimpo) {
-        const termoNorm = normalizar(termoLimpo);
-        sugestoes = LISTA_BASES
-            .filter(nome => normalizar(nome).includes(termoNorm))
-            .sort((a, b) => {
-                const aNorm = normalizar(a);
-                const bNorm = normalizar(b);
-                const aInicio = aNorm.startsWith(termoNorm) ? 0 : 1;
-                const bInicio = bNorm.startsWith(termoNorm) ? 0 : 1;
-                if (aInicio !== bInicio) return aInicio - bInicio;
-
-                const aPalavra = aNorm.includes(" " + termoNorm) ? 0 : 1;
-                const bPalavra = bNorm.includes(" " + termoNorm) ? 0 : 1;
-                if (aPalavra !== bPalavra) return aPalavra - bPalavra;
-
-                const aPos = aNorm.indexOf(termoNorm);
-                const bPos = bNorm.indexOf(termoNorm);
-                if (aPos !== bPos) return aPos - bPos;
-
-                if (a.length !== b.length) return a.length - b.length;
-                return a.localeCompare(b, "pt-BR", { sensitivity: "base" });
-            });
-    }
+    const sugestoes = obterSugestoesBusca(termo);
 
     if (!sugestoes.length) {
         painel.hidden = true;
@@ -766,40 +810,6 @@ function renderizarSugestoesBusca(termo = "") {
         painel.appendChild(btn);
     }
     painel.hidden = false;
-}
-
-function fecharMenuBase() {
-    document.getElementById("combo-base").classList.remove("is-open");
-    document.getElementById("sel-base-menu").hidden = true;
-}
-
-function sincronizarComboBase() {
-    const select = document.getElementById("sel-base");
-    const trigger = document.getElementById("sel-base-trigger");
-    const menu = document.getElementById("sel-base-menu");
-    const selecionada = select.options[select.selectedIndex] || select.options[0];
-    const travado = select.options.length === 1 && !select.options[0].value;
-
-    trigger.disabled = travado;
-    trigger.textContent = selecionada ? selecionada.textContent : "— buscar primeiro —";
-    trigger.title = selecionada ? selecionada.textContent : "";
-
-    menu.innerHTML = "";
-    for (const opt of [...select.options]) {
-        const item = document.createElement("button");
-        item.type = "button";
-        item.className = "combo-select__option";
-        if (opt.value === select.value) item.classList.add("is-active");
-        item.textContent = opt.textContent;
-        item.title = opt.textContent;
-        item.addEventListener("mousedown", e => e.preventDefault());
-        item.addEventListener("click", () => {
-            select.value = opt.value;
-            fecharMenuBase();
-            select.dispatchEvent(new Event("change"));
-        });
-        menu.appendChild(item);
-    }
 }
 
 // ==========================================================================
@@ -907,8 +917,17 @@ function buildChartConc(anos, dados) {
         data: { labels: anos, datasets: [{ label: "Cand./vaga", data: vals, backgroundColor: "rgba(230,126,34,0.7)", borderColor: "#e67e22", borderWidth: 1 }] },
         options: {
             responsive: true, maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
-            scales: { y: { beginAtZero: true, title: { display: true, text: "Cand./vaga" } } }
+            plugins: {
+                legend: { display: false },
+                tooltip: { callbacks: { label: formatarTooltipNumero } }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: "Cand./vaga" },
+                    ticks: { callback: value => fmtBrFlex(value) }
+                }
+            }
         }
     });
 }
@@ -1019,7 +1038,20 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
             charts[`${bdId}-conc`] = new Chart(ctxC, {
                 type: "bar",
                 data: { labels, datasets: [{ label: "Cand./vaga", data: vals, backgroundColor: labels.map((_,i) => cores[i % cores.length] + "99"), borderColor: labels.map((_,i) => cores[i % cores.length]), borderWidth: 1 }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: formatarTooltipNumero } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { callback: value => fmtBrFlex(value) }
+                        }
+                    }
+                }
             });
         }
         // Line chart notas
@@ -1059,61 +1091,61 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
 // ==========================================================================
 // Lógica de filtros e interação
 // ==========================================================================
+function resetFiltrosSecundarios() {
+    preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
+    preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todos" }], "__all__");
+    atualizarTituloSelect(document.getElementById("sel-loc"));
+    atualizarTituloSelect(document.getElementById("sel-per"));
+}
+
 function atualizarFiltros() {
     const termo = document.getElementById("busca").value.trim();
-    fecharMenuBase();
     if (termo.length < 2) {
-        mostrarEstadoDashboard(`<p>Digite o nome de um curso acima para visualizar os dados.</p>`);
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
+        mostrarEstadoDashboard(`<p>Digite ao menos duas letras do curso desejado para visualizar os dados.</p>`);
         destruirCharts();
-        preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
-        preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
-        preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todos" }], "__all__");
-        sincronizarComboBase();
-        atualizarTituloSelect(document.getElementById("sel-loc"));
-        atualizarTituloSelect(document.getElementById("sel-per"));
+        resetFiltrosSecundarios();
         return;
     }
-    ESTADO.resultados = buscarCursos(DADOS, termo);
-    if (!ESTADO.resultados.length) {
+
+    const resolucao = resolverBuscaCurso(termo);
+    if (resolucao.status === "nenhum") {
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
         const termoSafe = termo.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
         mostrarEstadoDashboard(`<p>Nenhum curso encontrado para "${termoSafe}".</p>`);
         destruirCharts();
-        preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
-        preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
-        preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todos" }], "__all__");
-        sincronizarComboBase();
-        atualizarTituloSelect(document.getElementById("sel-loc"));
-        atualizarTituloSelect(document.getElementById("sel-per"));
+        resetFiltrosSecundarios();
         return;
     }
-    ESTADO.atribs = inferirAtributos(ESTADO.resultados);
 
-    // Preencher base
-    const bases = {};
-    for (const [ano, r] of ESTADO.resultados) {
-        const b = extrairBase(r.curso);
-        (bases[b] ||= []).push([ano, r]);
+    if (resolucao.status === "refinar") {
+        ESTADO.cursoSelecionado = "";
+        ESTADO.resultados = [];
+        ESTADO.atribs = new Map();
+        ESTADO.filtrados = [];
+        mostrarEstadoDashboard(`<p>Refine a busca ou escolha uma sugestão da lista para selecionar um único curso.</p>`);
+        destruirCharts();
+        resetFiltrosSecundarios();
+        return;
     }
-    const selBase = document.getElementById("sel-base");
-    preencherSelect(selBase, [
-        { value: "__all__", label: `Todos (${Object.keys(bases).length})` },
-        ...Object.keys(bases).sort().map(b => ({ value: b, label: b }))
-    ], "__all__");
-    sincronizarComboBase();
 
+    ESTADO.cursoSelecionado = resolucao.curso;
+    ESTADO.resultados = buscarCursosPorRotulo(DADOS, resolucao.curso);
+    ESTADO.atribs = inferirAtributos(ESTADO.resultados);
     aplicarFiltrosEDashboard();
 }
 
 function aplicarFiltrosEDashboard() {
-    const baseSel = document.getElementById("sel-base").value;
     const locSel = document.getElementById("sel-loc").value;
     const perSel = document.getElementById("sel-per").value;
 
-    // Filtrar por base
     let filtrados = ESTADO.resultados;
-    if (baseSel !== "__all__") {
-        filtrados = filtrados.filter(([, r]) => extrairBase(r.curso) === baseSel);
-    }
 
     // Coletar localizações
     const locsSet = {};
@@ -1170,10 +1202,9 @@ function aplicarFiltrosEDashboard() {
     // Consolidar
     const dados = consolidar(filtrados);
 
-    // Nome do curso
-    const baseVal = baseSel !== "__all__" ? baseSel : (() => {
-        const bs = new Set(filtrados.map(([,r]) => extrairBase(r.curso)));
-        return bs.size <= 2 ? [...bs].join(" / ") : [...bs][0];
+    const nomeCurso = ESTADO.cursoSelecionado || (() => {
+        const nomes = new Set(filtrados.map(([, r]) => extrairRotuloBusca(r.curso)).filter(Boolean));
+        return nomes.size <= 2 ? [...nomes].join(" / ") : [...nomes][0];
     })();
 
     // Texto de filtros
@@ -1201,7 +1232,7 @@ function aplicarFiltrosEDashboard() {
         breakdowns["Período"] = bd;
     }
 
-    renderDashboard(baseVal, dados, filtroTexto, breakdowns);
+    renderDashboard(nomeCurso, dados, filtroTexto, breakdowns);
 }
 
 // ==========================================================================
@@ -1222,23 +1253,6 @@ document.getElementById("busca").addEventListener("blur", () => {
 document.getElementById("busca").addEventListener("keydown", e => {
     if (e.key === "Escape") fecharSugestoesBusca();
 });
-document.getElementById("sel-base-trigger").addEventListener("click", () => {
-    const trigger = document.getElementById("sel-base-trigger");
-    const combo = document.getElementById("combo-base");
-    const menu = document.getElementById("sel-base-menu");
-    if (trigger.disabled) return;
-    const abrir = menu.hidden;
-    fecharMenuBase();
-    menu.hidden = !abrir;
-    combo.classList.toggle("is-open", abrir);
-});
-document.getElementById("sel-base-trigger").addEventListener("keydown", e => {
-    if (e.key === "Escape") fecharMenuBase();
-});
-document.getElementById("sel-base").addEventListener("change", () => {
-    sincronizarComboBase();
-    aplicarFiltrosEDashboard();
-});
 document.getElementById("sel-loc").addEventListener("change", () => {
     atualizarTituloSelect(document.getElementById("sel-loc"));
     aplicarFiltrosEDashboard();
@@ -1248,7 +1262,6 @@ document.getElementById("sel-per").addEventListener("change", () => {
     aplicarFiltrosEDashboard();
 });
 document.addEventListener("click", e => {
-    if (!document.getElementById("combo-base").contains(e.target)) fecharMenuBase();
     if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
 });
 
@@ -1256,22 +1269,21 @@ fetch("dados.json")
     .then(r => r.json())
     .then(d => {
         DADOS = d;
-        // Preencher sugestões com nomes-base únicos
+        // Preencher sugestões com cursos únicos de busca
         const basesMap = new Map();
         for (const regs of Object.values(d)) {
             for (const r of regs) {
                 if (r.curso_truncado) continue;
                 const base = extrairRotuloBusca(r.curso);
                 if (!base || base.length < 3) continue;
-                const chave = normalizar(base);
+                const chave = chaveBuscaTexto(base) || normalizar(base);
                 const existente = basesMap.get(chave);
                 if (!existente || base.length < existente.length) {
                     basesMap.set(chave, base);
                 }
             }
         }
-        LISTA_BASES = ordenarBases([...basesMap.values()]);
-        sincronizarComboBase();
+        LISTA_CURSOS = ordenarBases([...basesMap.values()]);
         atualizarTituloSelect(document.getElementById("sel-loc"));
         atualizarTituloSelect(document.getElementById("sel-per"));
         // Check URL hash
