@@ -7,3 +7,5 @@ build/
 .venv/
 venv/
 relatorio_*.pdf
+_debug_tex.*
+out/

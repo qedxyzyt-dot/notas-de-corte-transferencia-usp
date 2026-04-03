@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notas de Corte — Transferência Externa USP (FUVEST)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root {
+    --usp-azul: #004A8D;
+    --usp-azul-profundo: #03305d;
+    --usp-azul-claro: #e8f0fa;
+    --bg: #f3f6fa;
+    --card: #ffffff;
+    --borda: #dde1e6;
+    --texto: #142033;
+    --texto-sec: #5d6878;
+    --vermelho: #c0392b;
+    --verde: #27ae60;
+    --laranja: #e67e22;
+    --sombra-card: 0 18px 38px rgba(13, 31, 55, 0.08);
+    --fonte-ui: "Source Sans 3", sans-serif;
+    --fonte-display: "Manrope", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: var(--fonte-ui);
+    background:
+        radial-gradient(circle at top, rgba(0, 74, 141, 0.08), transparent 28rem),
+        linear-gradient(180deg, #f5f8fc 0%, var(--bg) 100%);
+    color: var(--texto);
+    line-height: 1.5;
+}
+header {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), transparent 42%),
+        linear-gradient(135deg, var(--usp-azul-profundo), var(--usp-azul));
+    color: #fff;
+    padding: 1.6rem 2rem 1.7rem;
+    text-align: center;
+    box-shadow: 0 16px 32px rgba(3, 48, 93, 0.18);
+}
+header h1 {
+    font-family: var(--fonte-display);
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+header p {
+    font-size: 0.98rem;
+    opacity: 0.82;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+.topbar-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.95rem;
+    padding: 0.62rem 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fonte-display);
+    font-size: 0.92rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.topbar-link:hover,
+.topbar-link:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.34);
+    transform: translateY(-1px);
+    outline: none;
+}
+.topbar-link::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.container { max-width: 1180px; margin: 0 auto; padding: 1.5rem; }
+
+.contexto-oficial {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0 0 1.2rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid rgba(0, 74, 141, 0.14);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: var(--sombra-card);
+}
+.contexto-oficial__texto strong {
+    display: block;
+    font-family: var(--fonte-display);
+    font-size: 0.98rem;
+    color: var(--usp-azul-profundo);
+}
+.contexto-oficial__texto span {
+    display: block;
+    margin-top: 0.18rem;
+    color: var(--texto-sec);
+    font-size: 0.96rem;
+}
+.contexto-oficial__link {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.72rem 0.95rem;
+    border-radius: 999px;
+    background: var(--usp-azul);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.contexto-oficial__link:hover,
+.contexto-oficial__link:focus {
+    background: var(--usp-azul-profundo);
+    transform: translateY(-1px);
+    outline: none;
+}
+.contexto-oficial__link::after {
+    content: "";
+    width: 0.72rem;
+    height: 0.72rem;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+/* Filtros */
+.filtros {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: end;
+    box-shadow: var(--sombra-card);
+}
+.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 180px; }
+.filtro-grupo:nth-child(2) { flex: 2; min-width: 280px; }
+.filtro-grupo label {
+    font-family: var(--fonte-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--usp-azul);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.filtro-grupo input, .filtro-grupo select, .combo-select__trigger {
+    padding: 0.72rem 0.9rem;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: linear-gradient(180deg, #fff, #fbfcfe);
+    width: 100%;
+    overflow: visible;
+    color: var(--texto);
+    line-height: 1.4;
+}
+.filtro-grupo select option {
+    overflow: visible;
+    white-space: normal;
+}
+.combo-select { width: 100%; }
+.combo-select__trigger {
+    position: relative;
+    cursor: pointer;
+    text-align: left;
+    padding-right: 2.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.combo-select__trigger::after {
+    content: "";
+    position: absolute;
+    right: 0.8rem;
+    top: 50%;
+    transform: translateY(-30%);
+    width: 0;
+    height: 0;
+    border-left: 0.32rem solid transparent;
+    border-right: 0.32rem solid transparent;
+    border-top: 0.42rem solid var(--texto-sec);
+    pointer-events: none;
+}
+.combo-select.is-open .combo-select__trigger::after {
+    transform: translateY(-65%) rotate(180deg);
+}
+.combo-select__trigger:disabled {
+    background: #f4f6f8;
+    color: #7a7a7a;
+    cursor: not-allowed;
+}
+.filtro-grupo input:focus, .filtro-grupo select:focus, .combo-select__trigger:focus {
+    outline: none;
+    border-color: var(--usp-azul);
+    box-shadow: 0 0 0 4px rgba(0,74,141,0.12);
+}
+.lista-sugestoes, .combo-select__menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    z-index: 30;
+    width: min(44rem, calc(100vw - 3rem));
+    min-width: 100%;
+    max-height: 18rem;
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+}
+.lista-sugestoes[hidden], .combo-select__menu[hidden] { display: none; }
+.sugestao-btn, .combo-select__option {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 0.7rem 0.85rem;
+    text-align: left;
+    font-size: 0.88rem;
+    line-height: 1.35;
+    color: var(--texto);
+    cursor: pointer;
+    white-space: normal;
+}
+.sugestao-btn + .sugestao-btn, .combo-select__option + .combo-select__option {
+    border-top: 1px solid #eef1f4;
+}
+.sugestao-btn:hover, .sugestao-btn:focus,
+.combo-select__option:hover, .combo-select__option:focus,
+.combo-select__option.is-active {
+    background: var(--usp-azul-claro);
+    outline: none;
+}
+.visually-hidden-control {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+/* Cartões */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.card {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    box-shadow: var(--sombra-card);
+}
+.card .valor {
+    font-family: var(--fonte-display);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--usp-azul);
+    letter-spacing: -0.03em;
+}
+.card .rotulo {
+    font-family: var(--fonte-display);
+    font-size: 0.76rem;
+    color: var(--texto-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 0.2rem;
+}
+
+/* Tabela */
+.tabela-container {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+thead { background: var(--usp-azul); color: #fff; }
+th {
+    padding: 0.78rem 0.8rem;
+    text-align: center;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+}
+td { padding: 0.65rem 0.8rem; text-align: center; border-bottom: 1px solid #eee; }
+tbody tr:hover { background: var(--usp-azul-claro); }
+
+/* Gráficos */
+.graficos { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
+.grafico-card {
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1rem 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+.grafico-card h3 {
+    font-family: var(--fonte-display);
+    font-size: 0.96rem;
+    color: var(--usp-azul);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+.chart-wrapper { position: relative; width: 100%; max-height: 350px; }
+
+/* Insights */
+.insights {
+    background: var(--usp-azul-claro);
+    border-left: 4px solid var(--usp-azul);
+    border-radius: 0 18px 18px 0;
+    padding: 1.1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    box-shadow: var(--sombra-card);
+}
+.insights h3 {
+    font-family: var(--fonte-display);
+    font-size: 0.96rem;
+    color: var(--usp-azul);
+    margin-bottom: 0.5rem;
+}
+.insights ul {
+    margin: 0.2rem 0 0;
+    padding-left: 1.35rem;
+    font-size: 0.95rem;
+    list-style-position: outside;
+    text-align: left;
+}
+.insights li { margin-bottom: 0.35rem; padding-left: 0.15rem; text-align: left; }
+
+/* Breakdown */
+.breakdown { margin-bottom: 1.5rem; }
+.breakdown h3 {
+    font-family: var(--fonte-display);
+    font-size: 1rem;
+    color: var(--usp-azul);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--usp-azul);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--texto-sec);
+    border-top: 1px solid rgba(0, 74, 141, 0.12);
+    margin-top: 2rem;
+}
+footer a { color: var(--usp-azul); }
+
+/* Estado vazio */
+.vazio {
+    text-align: center;
+    padding: 3.4rem 2rem;
+    color: var(--texto-sec);
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px dashed rgba(0, 74, 141, 0.22);
+    border-radius: 18px;
+    box-shadow: var(--sombra-card);
+}
+.vazio::before {
+    content: "";
+    display: block;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0 auto 0.9rem;
+    border-radius: 999px;
+    background:
+        rgba(0, 74, 141, 0.08)
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23004A8D' stroke-linecap='round' stroke-linejoin='round' stroke-width='4'%3E%3Ccircle cx='28' cy='28' r='14'/%3E%3Cpath d='M38 38l12 12'/%3E%3C/g%3E%3C/svg%3E")
+        center/1.6rem 1.6rem no-repeat;
+}
+.vazio p {
+    max-width: 34rem;
+    margin: 0 auto;
+    font-size: 1.02rem;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+    .contexto-oficial {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contexto-oficial__link {
+        width: 100%;
+        justify-content: center;
+    }
+    .filtros { flex-direction: column; }
+    .cards { grid-template-columns: 1fr 1fr; }
+    .lista-sugestoes, .combo-select__menu {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Notas de Corte — Transferência Externa USP (FUVEST)</h1>
+    <p>Dashboard interativo com dados dos editais oficiais (2019–2026)</p>
+    <a class="topbar-link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
+</header>
+
+<div class="container">
+    <section class="contexto-oficial" aria-label="Referência oficial">
+        <div class="contexto-oficial__texto">
+            <strong>Referência oficial da seleção</strong>
+            <span>Consulte o edital, os comunicados e as orientações diretamente no portal da FUVEST.</span>
+        </div>
+        <a class="contexto-oficial__link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Abrir página da FUVEST</a>
+    </section>
+
+    <!-- Filtros -->
+    <div class="filtros">
+        <div class="filtro-grupo" style="flex: 3; min-width: 250px;">
+            <label for="busca">Curso</label>
+            <input type="text" id="busca" placeholder="Digite o nome do curso..." autocomplete="off">
+            <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
+        </div>
+        <div class="filtro-grupo" style="flex: 3; min-width: 320px;">
+            <label for="sel-base-trigger">Curso específico</label>
+            <div class="combo-select" id="combo-base">
+                <button type="button" class="combo-select__trigger" id="sel-base-trigger" disabled>— buscar primeiro —</button>
+                <div id="sel-base-menu" class="combo-select__menu" hidden></div>
+            </div>
+            <select id="sel-base" class="visually-hidden-control" tabindex="-1" aria-hidden="true"><option value="">— buscar primeiro —</option></select>
+        </div>
+        <div class="filtro-grupo">
+            <label for="sel-loc">Localização</label>
+            <select id="sel-loc"><option value="__all__">Todas</option></select>
+        </div>
+        <div class="filtro-grupo">
+            <label for="sel-per">Período</label>
+            <select id="sel-per"><option value="__all__">Todos</option></select>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="vazio">
+        <p>Digite o nome de um curso acima para visualizar os dados.</p>
+    </div>
+</div>
+
+<footer>
+    Dados extraídos dos editais oficiais da FUVEST — Gerado automaticamente<br>
+    <a href="https://github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp" target="_blank" rel="noopener">github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp</a>
+</footer>
+
+<script>
+// ==========================================================================
+// Dados e estado global
+// ==========================================================================
+let DADOS = {};
+let ESTADO = { resultados: [], atribs: {}, filtrados: [], breakdowns: {} };
+let LISTA_BASES = [];
+
+const LOC_CONHECIDAS = [
+    "São Paulo Quadrilátero", "São Paulo Leste",
+    "São Paulo Butantã/ Quadrilátero", "São Paulo Butantã",
+    "São Paulo", "São Carlos", "Ribeirão Preto",
+    "Piracicaba", "Pirassununga", "Lorena", "Bauru"
+];
+const LOC_NORMALIZAR = {
+    "São Paulo Butantã": "São Paulo",
+    "São Paulo Butantã/ Quadrilátero": "São Paulo"
+};
+const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
+const SEP_RE = /\s*[-\u2212\u2013]\s*/;
+
+// ==========================================================================
+// Utilitários
+// ==========================================================================
+function normalizar(t) {
+    return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+function fmtBr(v, casas = 2) {
+    return v.toFixed(casas).replace(".", ",");
+}
+function calcConc(r) {
+    const v = r.vagas || 0;
+    if (v <= 0) return 0;
+    return ((r.inscritos || 0) - (r.ausentes || 0)) / v;
+}
+
+// ---------- Extração de atributos ----------
+function extrairLocRaw(nome) {
+    const n = normalizar(nome);
+    if (n.includes("usp leste")) return "São Paulo Leste";
+    for (const loc of LOC_CONHECIDAS) {
+        if (n.includes(normalizar(loc))) return loc;
+    }
+    return null;
+}
+function extrairLoc(nome) {
+    const raw = extrairLocRaw(nome);
+    if (!raw) return null;
+    return LOC_NORMALIZAR[raw] || raw;
+}
+function extrairPeriodo(nome) {
+    const n = normalizar(nome);
+    for (const p of PERIODOS) {
+        if (n.includes(normalizar(p))) return p;
+    }
+    return null;
+}
+function extrairBase(nome) {
+    let s = nome.replace(/\([^)]*\)/g, "");
+    const partes = s.split(SEP_RE).map(p => p.trim()).filter(Boolean);
+    const ignorar = new Set([
+        ...LOC_CONHECIDAS.map(normalizar),
+        ...PERIODOS.map(normalizar),
+        "usp leste"
+    ]);
+    const uteis = [];
+    for (const p of partes) {
+        const pn = normalizar(p);
+        if (/^\d+[ºo°]\s*s/i.test(pn)) continue;
+        if (ignorar.has(pn)) continue;
+        uteis.push(p);
+    }
+    let res = uteis.length ? uteis.join(" — ") : nome;
+    res = res.replace(/^(?:Bacharelado\s+e\s+Licenciatura\s+em\s+|Licenciatura\s+e\s+Bacharelado\s+em\s+|Bacharelado\s+em\s+|Curso\s+de\s+Graduação\s+em\s+)/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
+    res = res.replace(/\s*(?:Bacharelado|Licenciatura)\s*$/i, "");
+    return res.trim();
+}
+
+// ---------- Inferência de atributos ----------
+function inferirAtributos(resultados) {
+    const porBase = {};
+    for (const [ano, r] of resultados) {
+        const base = extrairBase(r.curso);
+        (porBase[base] ||= []).push([ano, r]);
+    }
+    const atribs = new Map();
+    for (const [base, regs] of Object.entries(porBase)) {
+        const locsC = new Set(), persC = new Set();
+        for (const [, r] of regs) {
+            const l = extrairLoc(r.curso), p = extrairPeriodo(r.curso);
+            if (l) locsC.add(l);
+            if (p) persC.add(p);
+        }
+        const locPad = locsC.size === 1 ? [...locsC][0] : null;
+        const perPad = persC.size === 1 ? [...persC][0] : null;
+        for (const [, r] of regs) {
+            atribs.set(r, {
+                loc: extrairLoc(r.curso) || locPad,
+                per: extrairPeriodo(r.curso) || perPad
+            });
+        }
+    }
+    return atribs;
+}
+
+// ---------- Busca e consolidação ----------
+function buscarCursos(dados, termo) {
+    const tn = normalizar(termo);
+    const res = [];
+    for (const ano of Object.keys(dados).sort()) {
+        for (const r of dados[ano]) {
+            if (normalizar(r.curso).includes(tn)) res.push([ano, r]);
+        }
+    }
+    return res;
+}
+function consolidar(registros) {
+    const porAno = {};
+    for (const [ano, r] of registros) {
+        const a = parseInt(ano);
+        if (!porAno[a] || calcConc(r) > calcConc(porAno[a])) porAno[a] = r;
+    }
+    return Object.fromEntries(Object.entries(porAno).sort(([a],[b]) => a - b));
+}
+
+function preencherSelect(selectEl, opcoes, valorSelecionado = null) {
+    selectEl.innerHTML = "";
+    for (const { value, label } of opcoes) {
+        const opt = document.createElement("option");
+        opt.value = value;
+        opt.textContent = label;
+        selectEl.appendChild(opt);
+    }
+    if (valorSelecionado !== null && [...selectEl.options].some(opt => opt.value === valorSelecionado)) {
+        selectEl.value = valorSelecionado;
+    }
+}
+
+function atualizarTituloSelect(selectEl) {
+    const selecionada = selectEl.options[selectEl.selectedIndex];
+    selectEl.title = selecionada ? selecionada.textContent : "";
+}
+
+function fecharSugestoesBusca() {
+    document.getElementById("busca-sugestoes").hidden = true;
+}
+
+function renderizarSugestoesBusca(termo = "") {
+    const painel = document.getElementById("busca-sugestoes");
+    const input = document.getElementById("busca");
+    if (!LISTA_BASES.length) {
+        painel.hidden = true;
+        return;
+    }
+
+    const termoLimpo = termo.trim();
+    let sugestoes = LISTA_BASES;
+    if (termoLimpo) {
+        const termoNorm = normalizar(termoLimpo);
+        sugestoes = LISTA_BASES.filter(nome => normalizar(nome).includes(termoNorm));
+    }
+    sugestoes = sugestoes.slice(0, 12);
+
+    if (!sugestoes.length) {
+        painel.hidden = true;
+        return;
+    }
+
+    painel.innerHTML = "";
+    for (const nome of sugestoes) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "sugestao-btn";
+        btn.textContent = nome;
+        btn.title = nome;
+        btn.addEventListener("mousedown", e => e.preventDefault());
+        btn.addEventListener("click", () => {
+            input.value = nome;
+            fecharSugestoesBusca();
+            atualizarFiltros();
+            input.focus();
+        });
+        painel.appendChild(btn);
+    }
+    painel.hidden = false;
+}
+
+function fecharMenuBase() {
+    document.getElementById("combo-base").classList.remove("is-open");
+    document.getElementById("sel-base-menu").hidden = true;
+}
+
+function sincronizarComboBase() {
+    const select = document.getElementById("sel-base");
+    const trigger = document.getElementById("sel-base-trigger");
+    const menu = document.getElementById("sel-base-menu");
+    const selecionada = select.options[select.selectedIndex] || select.options[0];
+    const travado = select.options.length === 1 && !select.options[0].value;
+
+    trigger.disabled = travado;
+    trigger.textContent = selecionada ? selecionada.textContent : "— buscar primeiro —";
+    trigger.title = selecionada ? selecionada.textContent : "";
+
+    menu.innerHTML = "";
+    for (const opt of [...select.options]) {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = "combo-select__option";
+        if (opt.value === select.value) item.classList.add("is-active");
+        item.textContent = opt.textContent;
+        item.title = opt.textContent;
+        item.addEventListener("mousedown", e => e.preventDefault());
+        item.addEventListener("click", () => {
+            select.value = opt.value;
+            fecharMenuBase();
+            select.dispatchEvent(new Event("change"));
+        });
+        menu.appendChild(item);
+    }
+}
+
+// ==========================================================================
+// Renderização do dashboard
+// ==========================================================================
+let charts = {};
+function destruirCharts() {
+    Object.values(charts).forEach(c => c.destroy());
+    charts = {};
+}
+
+function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
+    destruirCharts();
+    const container = document.getElementById("dashboard");
+
+    const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
+    const temCompleto = Object.values(dados).some(r => "vagas" in r);
+
+    // KPIs
+    const ultimoAno = Math.max(...anos);
+    const ultimoR = dados[ultimoAno];
+    const concUltimo = calcConc(ultimoR);
+    const notaMinUltimo = ultimoR.pontos_minimo || ultimoR.nota_de_corte || "—";
+    const notaMaxUltimo = ultimoR.pontos_maximo || ultimoR.nota_de_corte || "—";
+    const vagasUltimo = ultimoR.vagas || "—";
+
+    let html = `<div class="cards">
+        <div class="card"><div class="valor">${vagasUltimo}</div><div class="rotulo">Vagas (${ultimoAno})</div></div>
+        <div class="card"><div class="valor">${fmtBr(concUltimo, 1)}</div><div class="rotulo">Concorrência (${ultimoAno})</div></div>
+        <div class="card"><div class="valor">${notaMinUltimo}</div><div class="rotulo">Nota Mínima (${ultimoAno})</div></div>
+        <div class="card"><div class="valor">${notaMaxUltimo}</div><div class="rotulo">Nota Máxima (${ultimoAno})</div></div>
+    </div>`;
+
+    // Tabela
+    html += `<div class="tabela-container"><table>
+        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Concorrência</th><th>Nota Mín.</th><th>Nota Máx.</th></tr></thead>
+        <tbody>`;
+    for (const [ano, r] of Object.entries(dados)) {
+        if ("vagas" in r) {
+            const mn = r.pontos_minimo ?? "—";
+            const mx = r.pontos_maximo ?? "—";
+            html += `<tr><td>${ano}</td><td>${r.vagas}</td><td>${r.inscritos}</td><td>${r.ausentes ?? "—"}</td><td>${fmtBr(calcConc(r))}</td><td>${mn}</td><td>${mx}</td></tr>`;
+        } else {
+            const n = r.nota_de_corte ?? "—";
+            html += `<tr><td>${ano}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>${n}</td><td>${n}</td></tr>`;
+        }
+    }
+    html += `</tbody></table></div>`;
+
+    // Gráficos
+    html += `<div class="graficos">
+        <div class="grafico-card"><h3>Evolução das Notas de Corte</h3><div class="chart-wrapper"><canvas id="chart-notas"></canvas></div></div>`;
+    if (temCompleto) {
+        html += `<div class="grafico-card"><h3>Concorrência (candidatos/vaga)</h3><div class="chart-wrapper"><canvas id="chart-conc"></canvas></div></div>`;
+        html += `<div class="grafico-card"><h3>Vagas ofertadas vs Inscritos</h3><div class="chart-wrapper"><canvas id="chart-vi"></canvas></div></div>`;
+    }
+    html += `</div>`;
+
+    // Insights
+    const insights = gerarInsights(nomeCurso, dados);
+    if (insights.length > 0) {
+        html += `<div class="insights"><h3>Análise dos dados</h3><ul>${insights.map(i => `<li>${i}</li>`).join("")}</ul></div>`;
+    }
+
+    // Breakdown
+    if (breakdowns && Object.keys(breakdowns).length > 0) {
+        for (const [cat, subcats] of Object.entries(breakdowns)) {
+            html += renderBreakdown(cat, nomeCurso, subcats);
+        }
+    }
+
+    container.innerHTML = html;
+
+    // Construir gráficos
+    buildChartNotas(anos, dados);
+    if (temCompleto) {
+        buildChartConc(anos, dados);
+        buildChartVI(anos, dados);
+    }
+}
+
+// ---------- Gráficos ----------
+function buildChartNotas(anos, dados) {
+    const ctx = document.getElementById("chart-notas");
+    if (!ctx) return;
+    const notasMin = anos.map(a => {
+        const r = dados[a]; return r.pontos_minimo ?? r.nota_de_corte ?? null;
+    });
+    const notasMax = anos.map(a => {
+        const r = dados[a]; return r.pontos_maximo ?? r.nota_de_corte ?? null;
+    });
+    charts.notas = new Chart(ctx, {
+        type: "line",
+        data: {
+            labels: anos,
+            datasets: [
+                { label: "Nota mínima (convocado)", data: notasMin, borderColor: "#c0392b", backgroundColor: "rgba(192,57,43,0.1)", pointRadius: 5, pointBackgroundColor: "#c0392b", tension: 0.2, fill: false },
+                { label: "Nota máxima (convocado)", data: notasMax, borderColor: "#27ae60", backgroundColor: "rgba(39,174,96,0.1)", pointRadius: 5, pointBackgroundColor: "#27ae60", pointStyle: "rectRot", tension: 0.2, fill: false }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: "top" } }, scales: { y: { title: { display: true, text: "Pontos" } } } }
+    });
+}
+function buildChartConc(anos, dados) {
+    const ctx = document.getElementById("chart-conc");
+    if (!ctx) return;
+    const vals = anos.map(a => calcConc(dados[a]));
+    charts.conc = new Chart(ctx, {
+        type: "bar",
+        data: { labels: anos, datasets: [{ label: "Cand./vaga", data: vals, backgroundColor: "rgba(230,126,34,0.7)", borderColor: "#e67e22", borderWidth: 1 }] },
+        options: {
+            responsive: true, maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, title: { display: true, text: "Cand./vaga" } } }
+        }
+    });
+}
+function buildChartVI(anos, dados) {
+    const ctx = document.getElementById("chart-vi");
+    if (!ctx) return;
+    const vagas = anos.map(a => dados[a].vagas ?? null);
+    const insc = anos.map(a => dados[a].inscritos ?? null);
+    charts.vi = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: anos,
+            datasets: [
+                { label: "Vagas", data: vagas, backgroundColor: "rgba(39,174,96,0.6)", borderColor: "#27ae60", borderWidth: 1 },
+                { label: "Inscritos", data: insc, backgroundColor: "rgba(192,57,43,0.6)", borderColor: "#c0392b", borderWidth: 1 }
+            ]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, title: { display: true, text: "Quantidade" } } } }
+    });
+}
+
+// ---------- Insights ----------
+function gerarInsights(nome, dados) {
+    const anos = Object.keys(dados).map(Number).sort((a,b) => a - b);
+    const ins = [];
+    const notasMin = {}, notasMax = {}, concs = {}, vagasD = {}, inscD = {};
+    for (const ano of anos) {
+        const r = dados[ano];
+        const mn = r.pontos_minimo ?? r.nota_de_corte ?? null;
+        const mx = r.pontos_maximo ?? r.nota_de_corte ?? null;
+        if (mn !== null) notasMin[ano] = mn;
+        if (mx !== null) notasMax[ano] = mx;
+        const c = calcConc(r);
+        if (c > 0) concs[ano] = c;
+        if ("vagas" in r) { vagasD[ano] = r.vagas; inscD[ano] = r.inscritos; }
+    }
+    // Tendência nota mínima
+    const mAnos = Object.keys(notasMin).map(Number).sort((a,b) => a - b);
+    if (mAnos.length >= 2) {
+        const p = notasMin[mAnos[0]], u = notasMin[mAnos.at(-1)], d = u - p;
+        if (d > 0) ins.push(`A nota mínima apresentou tendência de <b>alta</b>, de ${p} (${mAnos[0]}) para ${u} (${mAnos.at(-1)}) (+${d} pontos).`);
+        else if (d < 0) ins.push(`A nota mínima apresentou tendência de <b>queda</b>, de ${p} (${mAnos[0]}) para ${u} (${mAnos.at(-1)}) (${d} pontos).`);
+        else ins.push(`A nota mínima manteve-se <b>estável</b> em ${u} pontos entre ${mAnos[0]} e ${mAnos.at(-1)}.`);
+    }
+    // Concorrência
+    const cAnos = Object.keys(concs).map(Number);
+    if (cAnos.length) {
+        const maxA = cAnos.reduce((a,b) => concs[a] > concs[b] ? a : b);
+        const minA = cAnos.reduce((a,b) => concs[a] < concs[b] ? a : b);
+        const med = Object.values(concs).reduce((a,b) => a+b, 0) / cAnos.length;
+        ins.push(`Maior concorrência: <b>${fmtBr(concs[maxA])}</b> cand./vaga em ${maxA}. Menor: <b>${fmtBr(concs[minA])}</b> em ${minA}. Média: ${fmtBr(med)}.`);
+    }
+    // Vagas
+    const vAnos = Object.keys(vagasD).map(Number).sort((a,b) => a - b);
+    if (vAnos.length >= 2) {
+        const tv = Object.values(vagasD).reduce((a,b) => a+b, 0);
+        const ti = Object.values(inscD).reduce((a,b) => a+b, 0);
+        const ua = vAnos.at(-1);
+        ins.push(`Total histórico: <b>${tv}</b> vagas e <b>${ti}</b> inscrições. Em ${ua}: ${vagasD[ua]} vagas para ${inscD[ua]} inscritos.`);
+    }
+    // Nota máxima record
+    const xAnos = Object.keys(notasMax).map(Number);
+    if (xAnos.length) {
+        const ra = xAnos.reduce((a,b) => notasMax[a] > notasMax[b] ? a : b);
+        ins.push(`Maior nota registrada: <b>${notasMax[ra]}</b> pontos em ${ra}.`);
+    }
+    return ins;
+}
+
+// ---------- Breakdown ----------
+function renderBreakdown(categoria, nomeCurso, subcats) {
+    let html = `<div class="breakdown"><h3>Detalhamento por ${categoria} — ${nomeCurso}</h3>`;
+    // Tabela comparativa
+    html += `<div class="tabela-container"><table>
+        <thead><tr><th>${categoria}</th><th>Anos</th><th>Vagas</th><th>Inscritos</th><th>Conc. média</th><th>Nota mín.</th><th>Nota máx.</th></tr></thead>
+        <tbody>`;
+    const subDados = {};
+    for (const [subNome, regs] of Object.entries(subcats).sort(([a],[b]) => a.localeCompare(b))) {
+        const cons = consolidar(regs);
+        let tv = 0, ti = 0, cList = [], nmins = [], nmaxs = [];
+        for (const r of Object.values(cons)) {
+            if ("vagas" in r) { tv += r.vagas; ti += r.inscritos; const c = calcConc(r); if (c > 0) cList.push(c); }
+            const mn = r.pontos_minimo ?? r.nota_de_corte; const mx = r.pontos_maximo ?? r.nota_de_corte;
+            if (mn != null) nmins.push(mn); if (mx != null) nmaxs.push(mx);
+        }
+        const mc = cList.length ? cList.reduce((a,b)=>a+b,0)/cList.length : 0;
+        const nAnos = Object.keys(cons).length;
+        html += `<tr><td style="text-align:left;font-weight:600">${subNome}</td><td>${nAnos}</td><td>${tv}</td><td>${ti}</td><td>${fmtBr(mc)}</td><td>${nmins.length ? Math.min(...nmins) : "—"}</td><td>${nmaxs.length ? Math.max(...nmaxs) : "—"}</td></tr>`;
+        subDados[subNome] = { cons, mc, tv, ti };
+    }
+    html += `</tbody></table></div>`;
+
+    // Gráficos de breakdown
+    const bdId = "bd-" + normalizar(categoria).replace(/\s/g, "");
+    html += `<div style="display:flex;flex-wrap:wrap;gap:1rem;">`;
+    html += `<div class="grafico-card" style="flex:1;min-width:300px;"><h3>Concorrência média por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-conc"></canvas></div></div>`;
+    html += `<div class="grafico-card" style="flex:1;min-width:300px;"><h3>Evolução da nota mínima por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-notas"></canvas></div></div>`;
+    html += `</div></div>`;
+
+    // Schedule chart creation
+    requestAnimationFrame(() => {
+        const cores = ["#c0392b", "#2980b9", "#27ae60", "#e67e22", "#8e44ad", "#16a085"];
+        // Bar chart concorrencia
+        const ctxC = document.getElementById(`${bdId}-conc`);
+        if (ctxC) {
+            const labels = Object.keys(subDados).sort();
+            const vals = labels.map(k => subDados[k].mc);
+            charts[`${bdId}-conc`] = new Chart(ctxC, {
+                type: "bar",
+                data: { labels, datasets: [{ label: "Cand./vaga", data: vals, backgroundColor: labels.map((_,i) => cores[i % cores.length] + "99"), borderColor: labels.map((_,i) => cores[i % cores.length]), borderWidth: 1 }] },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+            });
+        }
+        // Line chart notas
+        const ctxN = document.getElementById(`${bdId}-notas`);
+        if (ctxN) {
+            const allAnos = new Set();
+            const series = {};
+            for (const [nome, info] of Object.entries(subDados).sort(([a],[b])=>a.localeCompare(b))) {
+                series[nome] = {};
+                for (const [ano, r] of Object.entries(info.cons)) {
+                    const mn = r.pontos_minimo ?? r.nota_de_corte ?? null;
+                    if (mn !== null) { series[nome][ano] = mn; allAnos.add(parseInt(ano)); }
+                }
+            }
+            const anos = [...allAnos].sort((a,b) => a - b);
+            const datasets = Object.entries(series).sort(([a],[b])=>a.localeCompare(b)).map(([nome, data], i) => ({
+                label: nome,
+                data: anos.map(a => data[a] ?? null),
+                borderColor: cores[i % cores.length],
+                pointBackgroundColor: cores[i % cores.length],
+                pointRadius: 4,
+                tension: 0.2,
+                spanGaps: true,
+                fill: false
+            }));
+            charts[`${bdId}-notas`] = new Chart(ctxN, {
+                type: "line",
+                data: { labels: anos, datasets },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { title: { display: true, text: "Pontos" } } } }
+            });
+        }
+    });
+
+    return html;
+}
+
+// ==========================================================================
+// Lógica de filtros e interação
+// ==========================================================================
+function atualizarFiltros() {
+    const termo = document.getElementById("busca").value.trim();
+    fecharMenuBase();
+    if (termo.length < 2) {
+        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Digite o nome de um curso acima para visualizar os dados.</p></div>`;
+        destruirCharts();
+        preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
+        preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
+        preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todos" }], "__all__");
+        sincronizarComboBase();
+        atualizarTituloSelect(document.getElementById("sel-loc"));
+        atualizarTituloSelect(document.getElementById("sel-per"));
+        return;
+    }
+    ESTADO.resultados = buscarCursos(DADOS, termo);
+    if (!ESTADO.resultados.length) {
+        const termoSafe = termo.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Nenhum curso encontrado para "${termoSafe}".</p></div>`;
+        destruirCharts();
+        preencherSelect(document.getElementById("sel-base"), [{ value: "", label: "— buscar primeiro —" }], "");
+        preencherSelect(document.getElementById("sel-loc"), [{ value: "__all__", label: "Todas" }], "__all__");
+        preencherSelect(document.getElementById("sel-per"), [{ value: "__all__", label: "Todos" }], "__all__");
+        sincronizarComboBase();
+        atualizarTituloSelect(document.getElementById("sel-loc"));
+        atualizarTituloSelect(document.getElementById("sel-per"));
+        return;
+    }
+    ESTADO.atribs = inferirAtributos(ESTADO.resultados);
+
+    // Preencher base
+    const bases = {};
+    for (const [ano, r] of ESTADO.resultados) {
+        const b = extrairBase(r.curso);
+        (bases[b] ||= []).push([ano, r]);
+    }
+    const selBase = document.getElementById("sel-base");
+    preencherSelect(selBase, [
+        { value: "__all__", label: `Todos (${Object.keys(bases).length})` },
+        ...Object.keys(bases).sort().map(b => ({ value: b, label: b }))
+    ], "__all__");
+    sincronizarComboBase();
+
+    aplicarFiltrosEDashboard();
+}
+
+function aplicarFiltrosEDashboard() {
+    const baseSel = document.getElementById("sel-base").value;
+    const locSel = document.getElementById("sel-loc").value;
+    const perSel = document.getElementById("sel-per").value;
+
+    // Filtrar por base
+    let filtrados = ESTADO.resultados;
+    if (baseSel !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => extrairBase(r.curso) === baseSel);
+    }
+
+    // Coletar localizações
+    const locsSet = {};
+    for (const [, r] of filtrados) {
+        const loc = ESTADO.atribs.get(r)?.loc;
+        if (loc) locsSet[normalizar(loc)] = loc;
+    }
+    const selLoc = document.getElementById("sel-loc");
+    const prevLoc = selLoc.value;
+    preencherSelect(selLoc, [
+        { value: "__all__", label: `Todas (${Object.keys(locsSet).length})` },
+        ...Object.values(locsSet).sort().map(l => ({ value: l, label: l }))
+    ], [...selLoc.options].some(o => o.value === prevLoc) ? prevLoc : "__all__");
+    atualizarTituloSelect(selLoc);
+
+    // Filtrar por localização
+    if (selLoc.value !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const loc = ESTADO.atribs.get(r)?.loc;
+            return loc === selLoc.value || !loc;
+        });
+    }
+
+    // Coletar períodos
+    const persSet = {};
+    for (const [, r] of filtrados) {
+        const per = ESTADO.atribs.get(r)?.per;
+        if (per) persSet[normalizar(per)] = per;
+    }
+    const selPer = document.getElementById("sel-per");
+    const prevPer = selPer.value;
+    preencherSelect(selPer, [
+        { value: "__all__", label: `Todos (${Object.keys(persSet).length})` },
+        ...Object.values(persSet).sort().map(p => ({ value: p, label: p }))
+    ], [...selPer.options].some(o => o.value === prevPer) ? prevPer : "__all__");
+    atualizarTituloSelect(selPer);
+
+    // Filtrar por período
+    if (selPer.value !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const per = ESTADO.atribs.get(r)?.per;
+            return per === selPer.value || !per;
+        });
+    }
+
+    ESTADO.filtrados = filtrados;
+
+    if (!filtrados.length) {
+        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p>Nenhum registro com os filtros selecionados.</p></div>`;
+        destruirCharts();
+        return;
+    }
+
+    // Consolidar
+    const dados = consolidar(filtrados);
+
+    // Nome do curso
+    const baseVal = baseSel !== "__all__" ? baseSel : (() => {
+        const bs = new Set(filtrados.map(([,r]) => extrairBase(r.curso)));
+        return bs.size <= 2 ? [...bs].join(" / ") : [...bs][0];
+    })();
+
+    // Texto de filtros
+    const partes = [];
+    if (selLoc.value !== "__all__") partes.push("Local: " + selLoc.value);
+    if (selPer.value !== "__all__") partes.push("Período: " + selPer.value);
+    const filtroTexto = partes.join(" | ");
+
+    // Breakdowns
+    const breakdowns = {};
+    if (selLoc.value === "__all__" && Object.keys(locsSet).length > 1) {
+        const bd = {};
+        for (const [ano, r] of filtrados) {
+            const loc = ESTADO.atribs.get(r)?.loc || "Outros";
+            (bd[loc] ||= []).push([ano, r]);
+        }
+        breakdowns["Localização"] = bd;
+    }
+    if (selPer.value === "__all__" && Object.keys(persSet).length > 1) {
+        const bd = {};
+        for (const [ano, r] of filtrados) {
+            const per = ESTADO.atribs.get(r)?.per || "Outros";
+            (bd[per] ||= []).push([ano, r]);
+        }
+        breakdowns["Período"] = bd;
+    }
+
+    renderDashboard(baseVal, dados, filtroTexto, breakdowns);
+}
+
+// ==========================================================================
+// Inicialização
+// ==========================================================================
+let debounceTimer;
+document.getElementById("busca").addEventListener("input", () => {
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(atualizarFiltros, 400);
+});
+document.getElementById("busca").addEventListener("focus", () => {
+    renderizarSugestoesBusca(document.getElementById("busca").value);
+});
+document.getElementById("busca").addEventListener("blur", () => {
+    setTimeout(fecharSugestoesBusca, 120);
+});
+document.getElementById("busca").addEventListener("keydown", e => {
+    if (e.key === "Escape") fecharSugestoesBusca();
+});
+document.getElementById("sel-base-trigger").addEventListener("click", () => {
+    const trigger = document.getElementById("sel-base-trigger");
+    const combo = document.getElementById("combo-base");
+    const menu = document.getElementById("sel-base-menu");
+    if (trigger.disabled) return;
+    const abrir = menu.hidden;
+    fecharMenuBase();
+    menu.hidden = !abrir;
+    combo.classList.toggle("is-open", abrir);
+});
+document.getElementById("sel-base-trigger").addEventListener("keydown", e => {
+    if (e.key === "Escape") fecharMenuBase();
+});
+document.getElementById("sel-base").addEventListener("change", () => {
+    sincronizarComboBase();
+    aplicarFiltrosEDashboard();
+});
+document.getElementById("sel-loc").addEventListener("change", () => {
+    atualizarTituloSelect(document.getElementById("sel-loc"));
+    aplicarFiltrosEDashboard();
+});
+document.getElementById("sel-per").addEventListener("change", () => {
+    atualizarTituloSelect(document.getElementById("sel-per"));
+    aplicarFiltrosEDashboard();
+});
+document.addEventListener("click", e => {
+    if (!document.getElementById("combo-base").contains(e.target)) fecharMenuBase();
+    if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
+});
+
+fetch("dados.json")
+    .then(r => r.json())
+    .then(d => {
+        DADOS = d;
+        // Preencher sugestões com nomes-base únicos
+        const basesSet = new Set();
+        for (const regs of Object.values(d)) {
+            for (const r of regs) basesSet.add(extrairBase(r.curso));
+        }
+        LISTA_BASES = [...basesSet].sort();
+        sincronizarComboBase();
+        atualizarTituloSelect(document.getElementById("sel-loc"));
+        atualizarTituloSelect(document.getElementById("sel-per"));
+        // Check URL hash
+        const hash = decodeURIComponent(location.hash.slice(1));
+        if (hash) {
+            document.getElementById("busca").value = hash;
+            atualizarFiltros();
+        }
+    })
+    .catch(e => {
+        const msg = String(e.message).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+        document.getElementById("dashboard").innerHTML = `<div class="vazio"><p style="color:#c0392b">Erro ao carregar dados.json: ${msg}</p></div>`;
+    });
+</script>
+</body>
+</html>
