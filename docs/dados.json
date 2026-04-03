@@ -543,14 +543,16 @@
     },
     {
       "codigo": "20005",
-      "curso": "Bacharelado e Licenciatura em Enfermagem − Noturno (Ribeirão Preto) − 3º s",
+      "curso": "Bacharelado e Licenciatura em Enfermagem − Noturno (Ribeirão Preto) − 3º semestre",
       "vagas": 3,
       "inscritos": 18,
       "ausentes": 1,
       "convocados_2fase": 9,
       "concorrencia": 3.0,
       "pontos_minimo": 31,
-      "pontos_maximo": 41
+      "pontos_maximo": 41,
+      "curso_pdf": "Bacharelado e Licenciatura em Enfermagem − Noturno (Ribeirão Preto) − 3º s...",
+      "curso_saneado": true
     },
     {
       "codigo": "20006",
@@ -642,25 +644,29 @@
     },
     {
       "codigo": "20014",
-      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 4º",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 4º semestre",
       "vagas": 2,
       "inscritos": 11,
       "ausentes": 1,
       "convocados_2fase": 6,
       "concorrencia": 3.0,
       "pontos_minimo": 37,
-      "pontos_maximo": 47
+      "pontos_maximo": 47,
+      "curso_pdf": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 4º...",
+      "curso_saneado": true
     },
     {
       "codigo": "20015",
-      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 8º",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 8º semestre",
       "vagas": 1,
       "inscritos": 0,
       "ausentes": 0,
       "convocados_2fase": 0,
       "concorrencia": 0.0,
       "pontos_minimo": null,
-      "pontos_maximo": null
+      "pontos_maximo": null,
+      "curso_pdf": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 8º...",
+      "curso_saneado": true
     },
     {
       "codigo": "20016",
@@ -917,14 +923,16 @@
     },
     {
       "codigo": "40009",
-      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral ",
+      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral",
       "vagas": 5,
       "inscritos": 43,
       "ausentes": 6,
       "convocados_2fase": 4,
       "concorrencia": 0.8,
       "pontos_minimo": 56,
-      "pontos_maximo": 65
+      "pontos_maximo": 65,
+      "curso_pdf": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral ...",
+      "curso_truncado": true
     },
     {
       "codigo": "40010",
@@ -968,7 +976,9 @@
       "convocados_2fase": 12,
       "concorrencia": 3.0,
       "pontos_minimo": 49,
-      "pontos_maximo": 65
+      "pontos_maximo": 65,
+      "curso_pdf": "Engenharia Elétrica (Ênfase em Energia e Automação Elétricas) − Integral (Sã...",
+      "curso_truncado": true
     },
     {
       "codigo": "40014",
@@ -1309,7 +1319,9 @@
       "convocados_2fase": 0,
       "concorrencia": 0.0,
       "pontos_minimo": null,
-      "pontos_maximo": null
+      "pontos_maximo": null,
+      "curso_pdf": "Música Bacharelado / Habilitação em Instrumento de Cordas − Ênfase em Violi...",
+      "curso_truncado": true
     },
     {
       "codigo": "60010",
@@ -1467,14 +1479,16 @@
     },
     {
       "codigo": "60024",
-      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão ",
+      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão Preto)",
       "vagas": 11,
       "inscritos": 3,
       "ausentes": 1,
       "convocados_2fase": 2,
       "concorrencia": 0.18,
       "pontos_minimo": 36,
-      "pontos_maximo": 43
+      "pontos_maximo": 43,
+      "curso_pdf": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão ...",
+      "curso_saneado": true
     },
     {
       "codigo": "60025",
@@ -1920,14 +1934,16 @@
     },
     {
       "codigo": "40009",
-      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral ",
+      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral",
       "vagas": 2,
       "inscritos": 12,
       "ausentes": 6,
       "convocados_2fase": 5,
       "concorrencia": 2.5,
       "pontos_minimo": 40,
-      "pontos_maximo": 67
+      "pontos_maximo": 67,
+      "curso_pdf": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral ...",
+      "curso_truncado": true
     },
     {
       "codigo": "40010",
@@ -2323,7 +2339,9 @@
       "convocados_2fase": 0,
       "concorrencia": 0.0,
       "pontos_minimo": null,
-      "pontos_maximo": null
+      "pontos_maximo": null,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento Percussão − Diurno (...",
+      "curso_truncado": true
     },
     {
       "codigo": "60006",
@@ -2334,7 +2352,9 @@
       "convocados_2fase": 2,
       "concorrencia": 0.67,
       "pontos_minimo": 53,
-      "pontos_maximo": 64
+      "pontos_maximo": 64,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento de Sopro (flauta, obo...",
+      "curso_truncado": true
     },
     {
       "codigo": "60007",
@@ -2345,7 +2365,9 @@
       "convocados_2fase": 3,
       "concorrencia": 1.5,
       "pontos_minimo": 40,
-      "pontos_maximo": 57
+      "pontos_maximo": 57,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento de Cordas (viola, viol...",
+      "curso_truncado": true
     },
     {
       "codigo": "60008",
@@ -2356,7 +2378,9 @@
       "convocados_2fase": 0,
       "concorrencia": 0.0,
       "pontos_minimo": null,
-      "pontos_maximo": null
+      "pontos_maximo": null,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento de Cordas Dedilhada...",
+      "curso_truncado": true
     },
     {
       "codigo": "60009",
@@ -2437,14 +2461,16 @@
     },
     {
       "codigo": "60016",
-      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão ",
+      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão Preto)",
       "vagas": 21,
       "inscritos": 4,
       "ausentes": 1,
       "convocados_2fase": 3,
       "concorrencia": 0.14,
       "pontos_minimo": 46,
-      "pontos_maximo": 55
+      "pontos_maximo": 55,
+      "curso_pdf": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão ...",
+      "curso_saneado": true
     },
     {
       "codigo": "60017",
@@ -2593,14 +2619,16 @@
     },
     {
       "codigo": "20011",
-      "curso": "Bacharelado e Licenciatura em Ciências Biológicas − Ribeirão Preto − 2º seme",
+      "curso": "Bacharelado e Licenciatura em Ciências Biológicas − Ribeirão Preto − 2º semestre",
       "vagas": 4,
       "inscritos": 18,
       "ausentes": 2,
       "convocados_2fase": 12,
       "concorrencia": 3.0,
       "pontos_minimo": 31,
-      "pontos_maximo": 51
+      "pontos_maximo": 51,
+      "curso_pdf": "Bacharelado e Licenciatura em Ciências Biológicas − Ribeirão Preto − 2º seme...",
+      "curso_saneado": true
     },
     {
       "codigo": "20012",
@@ -2824,14 +2852,16 @@
     },
     {
       "codigo": "40010",
-      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − São Car",
+      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − São Carlos",
       "vagas": 1,
       "inscritos": 5,
       "ausentes": 0,
       "convocados_2fase": 3,
       "concorrencia": 3.0,
       "pontos_minimo": 40,
-      "pontos_maximo": 45
+      "pontos_maximo": 45,
+      "curso_pdf": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − São Car...",
+      "curso_saneado": true
     },
     {
       "codigo": "40011",
@@ -2923,14 +2953,16 @@
     },
     {
       "codigo": "40019",
-      "curso": "Bacharelado em Matemática Aplicada a Negócios − Ribeirão Preto − 2º semes",
+      "curso": "Bacharelado em Matemática Aplicada a Negócios − Ribeirão Preto − 2º semestre",
       "vagas": 5,
       "inscritos": 4,
       "ausentes": 1,
       "convocados_2fase": 3,
       "concorrencia": 0.6,
       "pontos_minimo": 24,
-      "pontos_maximo": 30
+      "pontos_maximo": 30,
+      "curso_pdf": "Bacharelado em Matemática Aplicada a Negócios − Ribeirão Preto − 2º semes...",
+      "curso_saneado": true
     },
     {
       "codigo": "40020",
@@ -3187,14 +3219,16 @@
     },
     {
       "codigo": "40043",
-      "curso": "Bacharelado em Matemática Aplicada e Computacional − São Paulo − 1º seme",
+      "curso": "Bacharelado em Matemática Aplicada e Computacional − São Paulo − 1º semestre",
       "vagas": 3,
       "inscritos": 27,
       "ausentes": 9,
       "convocados_2fase": 10,
       "concorrencia": 3.33,
       "pontos_minimo": 43,
-      "pontos_maximo": 57
+      "pontos_maximo": 57,
+      "curso_pdf": "Bacharelado em Matemática Aplicada e Computacional − São Paulo − 1º seme...",
+      "curso_saneado": true
     },
     {
       "codigo": "40044",
@@ -3260,7 +3294,9 @@
       "convocados_2fase": 2,
       "concorrencia": 1.0,
       "pontos_minimo": 32,
-      "pontos_maximo": 37
+      "pontos_maximo": 37,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento de Cordas (Viola, Vio...",
+      "curso_truncado": true
     },
     {
       "codigo": "60002",
@@ -3271,7 +3307,9 @@
       "convocados_2fase": 3,
       "concorrencia": 0.75,
       "pontos_minimo": 20,
-      "pontos_maximo": 46
+      "pontos_maximo": 46,
+      "curso_pdf": "Bacharelado em Música com Habilitação em Instrumento de Sopro (Flauta, Ob...",
+      "curso_truncado": true
     },
     {
       "codigo": "60003",
@@ -3370,7 +3408,9 @@
       "convocados_2fase": 0,
       "concorrencia": 0.0,
       "pontos_minimo": null,
-      "pontos_maximo": null
+      "pontos_maximo": null,
+      "curso_pdf": "Bacharelado em Biblioteconomia e Ciência da Informação − Ribeirão Preto − 2...",
+      "curso_truncado": true
     },
     {
       "codigo": "60012",
@@ -3717,14 +3757,16 @@
     },
     {
       "codigo": "40004",
-      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car",
+      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Carlos",
       "vagas": 6,
       "inscritos": 10,
       "ausentes": 1,
       "convocados_2fase": 6,
       "concorrencia": 1.0,
       "pontos_minimo": 40,
-      "pontos_maximo": 59
+      "pontos_maximo": 59,
+      "curso_pdf": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car...",
+      "curso_saneado": true
     },
     {
       "codigo": "40005",
@@ -4903,29 +4945,35 @@
       "convocados_2fase": 28,
       "concorrencia": 3.11,
       "pontos_minimo": 44,
-      "pontos_maximo": 72
+      "pontos_maximo": 72,
+      "curso_pdf": "Engenharia Elétrica − Ênfase em Energia e Automação Elétricas − Integral − S...",
+      "curso_truncado": true
     },
     {
       "codigo": "40073",
-      "curso": "Engenharia Elétrica − Ênfase em sistemas de energia e automação − Integral ",
+      "curso": "Engenharia Elétrica − Ênfase em sistemas de energia e automação − Integral",
       "vagas": 5,
       "inscritos": 17,
       "ausentes": 3,
       "convocados_2fase": 10,
       "concorrencia": 2.0,
       "pontos_minimo": 40,
-      "pontos_maximo": 69
+      "pontos_maximo": 69,
+      "curso_pdf": "Engenharia Elétrica − Ênfase em sistemas de energia e automação − Integral ...",
+      "curso_truncado": true
     },
     {
       "codigo": "40074",
-      "curso": "Engenharia Elétrica − Ênfase em Telecomunicações − Integral − São Paulo Bu",
+      "curso": "Engenharia Elétrica − Ênfase em Telecomunicações − Integral − São Paulo Butantã",
       "vagas": 12,
       "inscritos": 27,
       "ausentes": 6,
       "convocados_2fase": 21,
       "concorrencia": 1.75,
       "pontos_minimo": 24,
-      "pontos_maximo": 69
+      "pontos_maximo": 69,
+      "curso_pdf": "Engenharia Elétrica − Ênfase em Telecomunicações − Integral − São Paulo Bu...",
+      "curso_saneado": true
     },
     {
       "codigo": "40075",
@@ -5171,25 +5219,29 @@
     },
     {
       "codigo": "40098",
-      "curso": "Matemática Aplicada e Computação Científica − Integral − São Carlos − 2º se",
+      "curso": "Matemática Aplicada e Computação Científica − Integral − São Carlos − 2º semestre",
       "vagas": 7,
       "inscritos": 18,
       "ausentes": 2,
       "convocados_2fase": 16,
       "concorrencia": 2.29,
       "pontos_minimo": 29,
-      "pontos_maximo": 71
+      "pontos_maximo": 71,
+      "curso_pdf": "Matemática Aplicada e Computação Científica − Integral − São Carlos − 2º se...",
+      "curso_saneado": true
     },
     {
       "codigo": "40099",
-      "curso": "Matemática Aplicada e Computacional − Noturno − São Paulo Butantã − 2º se",
+      "curso": "Matemática Aplicada e Computacional − Noturno − São Paulo Butantã − 2º semestre",
       "vagas": 4,
       "inscritos": 30,
       "ausentes": 7,
       "convocados_2fase": 13,
       "concorrencia": 3.25,
       "pontos_minimo": 39,
-      "pontos_maximo": 61
+      "pontos_maximo": 61,
+      "curso_pdf": "Matemática Aplicada e Computacional − Noturno − São Paulo Butantã − 2º se...",
+      "curso_saneado": true
     },
     {
       "codigo": "40100",
@@ -5347,14 +5399,16 @@
     },
     {
       "codigo": "60004",
-      "curso": "Biblioteconomia e Ciência da Informação − Noturno − Ribeirão Preto − 2º sem",
+      "curso": "Biblioteconomia e Ciência da Informação − Noturno − Ribeirão Preto − 2º semestre",
       "vagas": 29,
       "inscritos": 5,
       "ausentes": 0,
       "convocados_2fase": 5,
       "concorrencia": 0.17,
       "pontos_minimo": 24,
-      "pontos_maximo": 60
+      "pontos_maximo": 60,
+      "curso_pdf": "Biblioteconomia e Ciência da Informação − Noturno − Ribeirão Preto − 2º sem...",
+      "curso_saneado": true
     },
     {
       "codigo": "60005",
@@ -5943,14 +5997,16 @@
     },
     {
       "codigo": "40011",
-      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car",
+      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Carlos",
       "vagas": 10,
       "inscritos": 44,
       "ausentes": 6,
       "convocados_2fase": 31,
       "concorrencia": 3.1,
       "pontos_minimo": 41,
-      "pontos_maximo": 71
+      "pontos_maximo": 71,
+      "curso_pdf": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car...",
+      "curso_saneado": true
     },
     {
       "codigo": "40012",
@@ -6449,14 +6505,16 @@
     },
     {
       "codigo": "60009",
-      "curso": "Música − Habilitação em Instrumento de Cordas (Viola, Violino e Violoncelo) − ",
+      "curso": "Música − Habilitação em Instrumento de Cordas (Viola, Violino e Violoncelo) −",
       "vagas": 3,
       "inscritos": 2,
       "ausentes": 1,
       "convocados_2fase": 1,
       "concorrencia": 0.33,
       "pontos_minimo": 44,
-      "pontos_maximo": 44
+      "pontos_maximo": 44,
+      "curso_pdf": "Música − Habilitação em Instrumento de Cordas (Viola, Violino e Violoncelo) − ...",
+      "curso_truncado": true
     },
     {
       "codigo": "60010",
@@ -6467,7 +6525,9 @@
       "convocados_2fase": 1,
       "concorrencia": 0.5,
       "pontos_minimo": 39,
-      "pontos_maximo": 39
+      "pontos_maximo": 39,
+      "curso_pdf": "Música − Habilitação em Instrumento de Cordas Dedilhadas (Violão e Viola Br...",
+      "curso_truncado": true
     },
     {
       "codigo": "60013",
