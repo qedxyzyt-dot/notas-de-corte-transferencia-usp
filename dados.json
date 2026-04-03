@@ -1,0 +1,4753 @@
+{
+  "2019": [
+    {
+      "codigo": "20001",
+      "curso": "Bacharelado em Educação Física e Saúde",
+      "nota_de_corte": 23
+    },
+    {
+      "codigo": "20002",
+      "curso": "Curso de Graduação em Gerontologia",
+      "nota_de_corte": 17
+    },
+    {
+      "codigo": "20003",
+      "curso": "Educação Física e Esporte - 1º semestre",
+      "nota_de_corte": 17
+    },
+    {
+      "codigo": "20004",
+      "curso": "Educação Física e Esporte - Bacharelado - Ribeirão Preto",
+      "nota_de_corte": 16
+    },
+    {
+      "codigo": "20005",
+      "curso": "Bacharelado em Enfermagem - Ribeirão Preto - 3º semestre",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "20006",
+      "curso": "Bacharelado e Licenciatura em Enfermagem - Ribeirão Preto - 3º semestre",
+      "nota_de_corte": 19
+    },
+    {
+      "codigo": "20007",
+      "curso": "Engenharia Agronômica - Piracicaba - 4º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20008",
+      "curso": "Engenharia Agronômica - Piracicaba - 6º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20009",
+      "curso": "Engenharia Agronômica - Piracicaba - 8º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20010",
+      "curso": "Engenharia Florestal - Piracicaba - 4º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20011",
+      "curso": "Engenharia Florestal - Piracicaba - 6º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20012",
+      "curso": "Engenharia Florestal - Piracicaba - 8º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20013",
+      "curso": "Bacharelado em Ciências dos Alimentos - Piracicaba - 4º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20014",
+      "curso": "Bacharelado em Ciências dos Alimentos - Piracicaba - 6º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20015",
+      "curso": "Bacharelado em Ciências dos Alimentos - Piracicaba - 8º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20016",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas - Piracicaba - 8º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20017",
+      "curso": "Bacharelado e Licenciatura em Ciências Biológicas - Ribeirão Preto",
+      "nota_de_corte": 31
+    },
+    {
+      "codigo": "20018",
+      "curso": "Fisioterapia - São Paulo - 3º semestre",
+      "nota_de_corte": 40
+    },
+    {
+      "codigo": "20019",
+      "curso": "Fonoaudiologia - 3º semestre",
+      "nota_de_corte": 31
+    },
+    {
+      "codigo": "20020",
+      "curso": "Terapia Ocupacional - São Paulo - 3º semestre",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "20022",
+      "curso": "Nutrição e Metabolismo - Ribeirão Preto - 3º semestre",
+      "nota_de_corte": 37
+    },
+    {
+      "codigo": "20023",
+      "curso": "Odontologia - Integral",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "20024",
+      "curso": "Odontologia - Bauru - 2º semestre",
+      "nota_de_corte": 34
+    },
+    {
+      "codigo": "20025",
+      "curso": "Fonoaudiologia - Bauru - 3º semestre",
+      "nota_de_corte": 24
+    },
+    {
+      "codigo": "20026",
+      "curso": "Odontologia - Ribeirão Preto",
+      "nota_de_corte": 39
+    },
+    {
+      "codigo": "20027",
+      "curso": "Nutrição - Matutino",
+      "nota_de_corte": 35
+    },
+    {
+      "codigo": "20028",
+      "curso": "Nutrição - Noturno",
+      "nota_de_corte": 35
+    },
+    {
+      "codigo": "20029",
+      "curso": "Bacharelado em Saúde Pública*",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "20030",
+      "curso": "Bacharelado em Saúde Pública* - 1º semestre",
+      "nota_de_corte": 34
+    },
+    {
+      "codigo": "20031",
+      "curso": "Zootecnia - Pirassununga",
+      "nota_de_corte": 15
+    },
+    {
+      "codigo": "20032",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas - Noturno",
+      "nota_de_corte": 39
+    },
+    {
+      "codigo": "20033",
+      "curso": "Bacharelado em Ciências Biomédicas - 1º semestre",
+      "nota_de_corte": 44
+    },
+    {
+      "codigo": "40001",
+      "curso": "Licenciatura em Ciências da Natureza - Noturno",
+      "nota_de_corte": null
+    },
+    {
+      "codigo": "40002",
+      "curso": "Engenharia Química - Diurno - Lorena - 2º semestre",
+      "nota_de_corte": 39
+    },
+    {
+      "codigo": "40003",
+      "curso": "Engenharia Química - Noturno - Lorena - 2º semestre",
+      "nota_de_corte": 30
+    },
+    {
+      "codigo": "40004",
+      "curso": "Engenharia Bioquímica - Lorena - 2º semestre",
+      "nota_de_corte": 25
+    },
+    {
+      "codigo": "40005",
+      "curso": "Engenharia de Materiais - Lorena - 2º semestre",
+      "nota_de_corte": 20
+    },
+    {
+      "codigo": "40006",
+      "curso": "Engenharia Física - Lorena - 2º semestre",
+      "nota_de_corte": 34
+    },
+    {
+      "codigo": "40007",
+      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) - São Carlos",
+      "nota_de_corte": 49
+    },
+    {
+      "codigo": "40008",
+      "curso": "Engenharia Elétrica (Ênfase: Energia e Automação Elétricas)",
+      "nota_de_corte": 47
+    },
+    {
+      "codigo": "40009",
+      "curso": "Engenharia Metalúrgica",
+      "nota_de_corte": 24
+    },
+    {
+      "codigo": "40010",
+      "curso": "Engenharia Elétrica (Ênfase: Telecomunicações)",
+      "nota_de_corte": 41
+    },
+    {
+      "codigo": "40011",
+      "curso": "Engenharia Ambiental",
+      "nota_de_corte": 33
+    },
+    {
+      "codigo": "40012",
+      "curso": "Engenharia de Petróleo - Santos",
+      "nota_de_corte": 24
+    },
+    {
+      "codigo": "40013",
+      "curso": "Engenharia de Minas",
+      "nota_de_corte": 24
+    },
+    {
+      "codigo": "40014",
+      "curso": "Bacharelado em Química - Ribeirão Preto",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "40015",
+      "curso": "Física Médica - Bacharelado - Ribeirão Preto",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "40016",
+      "curso": "Licenciatura em Química - Ribeirão Preto",
+      "nota_de_corte": 20
+    },
+    {
+      "codigo": "40017",
+      "curso": "Engenharia de Alimentos - Diurno - Pirassununga",
+      "nota_de_corte": 27
+    },
+    {
+      "codigo": "40018",
+      "curso": "Engenharia de Alimentos - Noturno - Pirassununga",
+      "nota_de_corte": 20
+    },
+    {
+      "codigo": "40019",
+      "curso": "Engenharia de Biossistemas - Pirassununga",
+      "nota_de_corte": 27
+    },
+    {
+      "codigo": "40020",
+      "curso": "Bacharelado em Meteorologia",
+      "nota_de_corte": 28
+    },
+    {
+      "codigo": "40021",
+      "curso": "Bacharelado em Geofísica",
+      "nota_de_corte": null
+    },
+    {
+      "codigo": "40022",
+      "curso": "Matemática - Bacharelado e Licenciatura - São Carlos",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "40023",
+      "curso": "Bacharelado em Ciências de Computação - São Carlos",
+      "nota_de_corte": 51
+    },
+    {
+      "codigo": "40024",
+      "curso": "Matemática Aplicada e Computação Científica - São Carlos",
+      "nota_de_corte": 21
+    },
+    {
+      "codigo": "40025",
+      "curso": "Bacharelado em Estatística - São Carlos",
+      "nota_de_corte": 18
+    },
+    {
+      "codigo": "40026",
+      "curso": "Bacharelado em Física - Diurno - São Paulo",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "40027",
+      "curso": "Bacharelado em Física - Noturno - São Paulo",
+      "nota_de_corte": 27
+    },
+    {
+      "codigo": "40028",
+      "curso": "Física - Licenciatura - Diurno",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "40029",
+      "curso": "Física - Licenciatura - Noturno",
+      "nota_de_corte": 28
+    },
+    {
+      "codigo": "40030",
+      "curso": "Geologia",
+      "nota_de_corte": 37
+    },
+    {
+      "codigo": "40031",
+      "curso": "Licenciatura em Geociências e Educação Ambiental",
+      "nota_de_corte": 36
+    },
+    {
+      "codigo": "40032",
+      "curso": "Matemática - Licenciatura - Diurno",
+      "nota_de_corte": 29
+    },
+    {
+      "codigo": "40033",
+      "curso": "Matemática - Licenciatura - Noturno",
+      "nota_de_corte": 24
+    },
+    {
+      "codigo": "40034",
+      "curso": "Bacharelado em Estatística",
+      "nota_de_corte": 25
+    },
+    {
+      "codigo": "40035",
+      "curso": "Bacharelado em Oceanografia",
+      "nota_de_corte": 29
+    },
+    {
+      "codigo": "40036",
+      "curso": "Bacharelado e Licenciatura em Química - Integral",
+      "nota_de_corte": 37
+    },
+    {
+      "codigo": "40037",
+      "curso": "Bacharelado e Licenciatura em Química - Noturno",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "40038",
+      "curso": "Bacharelado em Química - São Carlos - 1º semestre",
+      "nota_de_corte": 16
+    },
+    {
+      "codigo": "40039",
+      "curso": "Bacharelado em Matemática Aplicada a Negócios - Ribeirão Preto",
+      "nota_de_corte": 31
+    },
+    {
+      "codigo": "60001",
+      "curso": "Bacharelado em Gestão Ambiental - Matutino",
+      "nota_de_corte": 35
+    },
+    {
+      "codigo": "60002",
+      "curso": "Bacharelado em Gestão Ambiental - Noturno",
+      "nota_de_corte": 34
+    },
+    {
+      "codigo": "60003",
+      "curso": "Bacharelado em Lazer e Turismo - Vespertino",
+      "nota_de_corte": 27
+    },
+    {
+      "codigo": "60004",
+      "curso": "Bacharelado em Lazer e Turismo - Noturno",
+      "nota_de_corte": 25
+    },
+    {
+      "codigo": "60005",
+      "curso": "Bacharelado em Têxtil e Moda",
+      "nota_de_corte": 21
+    },
+    {
+      "codigo": "60006",
+      "curso": "Gestão de Políticas Públicas - Matutino",
+      "nota_de_corte": 22
+    },
+    {
+      "codigo": "60007",
+      "curso": "Gestão de Políticas Públicas - Noturno",
+      "nota_de_corte": 26
+    },
+    {
+      "codigo": "60008",
+      "curso": "Biblioteconomia - Matutino",
+      "nota_de_corte": 38
+    },
+    {
+      "codigo": "60009",
+      "curso": "Biblioteconomia - Noturno",
+      "nota_de_corte": 35
+    },
+    {
+      "codigo": "60010",
+      "curso": "Licenciatura em Educomunicação",
+      "nota_de_corte": 36
+    },
+    {
+      "codigo": "60011",
+      "curso": "Bacharelado em Gestão Ambiental - Piracicaba - 4º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "60012",
+      "curso": "Bacharelado em Gestão Ambiental - Piracicaba - 6º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "60013",
+      "curso": "Bacharelado em Administração - Piracicaba - 4º semestre",
+      "nota_de_corte": 43
+    },
+    {
+      "codigo": "60014",
+      "curso": "Direito - Ribeirão Preto - 3º semestre",
+      "nota_de_corte": 63
+    },
+    {
+      "codigo": "60015",
+      "curso": "Pedagogia - Vespertino - 4º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "60016",
+      "curso": "Pedagogia - Noturno - 4º semestre",
+      "nota_de_corte": 44
+    },
+    {
+      "codigo": "60017",
+      "curso": "Administração - Diurno - 1º semestre",
+      "nota_de_corte": 45
+    },
+    {
+      "codigo": "60018",
+      "curso": "Administração - Noturno - 1º semestre",
+      "nota_de_corte": 54
+    },
+    {
+      "codigo": "60019",
+      "curso": "Ciências Contábeis - Diurno - 1º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "60020",
+      "curso": "Ciências Contábeis - Noturno - 1º semestre",
+      "nota_de_corte": 35
+    },
+    {
+      "codigo": "60021",
+      "curso": "Bacharelado em Ciências Atuariais - 1º semestre",
+      "nota_de_corte": 32
+    },
+    {
+      "codigo": "60022",
+      "curso": "Economia - Diurno - 1º semestre",
+      "nota_de_corte": 63
+    },
+    {
+      "codigo": "60023",
+      "curso": "Economia - Noturno - 1º semestre",
+      "nota_de_corte": 65
+    },
+    {
+      "codigo": "60024",
+      "curso": "Pedagogia - Ribeirão Preto",
+      "nota_de_corte": 28
+    },
+    {
+      "codigo": "60025",
+      "curso": "Bacharelado em Biblioteconomia e Ciências da Informação - Ribeirão Preto",
+      "nota_de_corte": 31
+    },
+    {
+      "codigo": "60026",
+      "curso": "Música - Bacharelado e Licenciatura - Ribeirão Preto",
+      "nota_de_corte": 21
+    },
+    {
+      "codigo": "60027",
+      "curso": "Geografia - Diurno",
+      "nota_de_corte": 23
+    },
+    {
+      "codigo": "60028",
+      "curso": "Geografia - Noturno",
+      "nota_de_corte": 28
+    }
+  ],
+  "2020": [
+    {
+      "codigo": "20001",
+      "curso": "Bacharelado em Biotecnologia − Diurno (USP Leste − São Paulo)",
+      "vagas": 3,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 35,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "20002",
+      "curso": "Bacharelado em Educação Física e Saúde − Diurno (USP Leste − São Paulo)",
+      "vagas": 13,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 0.69,
+      "pontos_minimo": 14,
+      "pontos_maximo": 36
+    },
+    {
+      "codigo": "20003",
+      "curso": "Curso de Graduação em Gerontologia − Vespertino (USP Leste − São Paulo)",
+      "vagas": 20,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.05,
+      "pontos_minimo": 30,
+      "pontos_maximo": 30
+    },
+    {
+      "codigo": "20004",
+      "curso": "Educação Física e Esporte − Integral (São Paulo) − 1º semestre",
+      "vagas": 14,
+      "inscritos": 38,
+      "ausentes": 6,
+      "convocados_2fase": 30,
+      "concorrencia": 2.14,
+      "pontos_minimo": 17,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "20005",
+      "curso": "Bacharelado e Licenciatura em Enfermagem − Noturno (Ribeirão Preto) − 3º s",
+      "vagas": 3,
+      "inscritos": 18,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 31,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "20006",
+      "curso": "Bacharelado em Enfermagem − Integral (Ribeirão Preto) − 3º semestre",
+      "vagas": 1,
+      "inscritos": 10,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "20007",
+      "curso": "Bacharelado em Ciências dos Alimentos − Noturno (Piracicaba) − 4º semestre",
+      "vagas": 5,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20008",
+      "curso": "Bacharelado em Ciências dos Alimentos − Noturno (Piracicaba) − 6º semestre",
+      "vagas": 8,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20009",
+      "curso": "Bacharelado em Ciências dos Alimentos − Noturno (Piracicaba) − 8º semestre",
+      "vagas": 2,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20010",
+      "curso": "Engenharia Agronômica − Integral (Piracicaba) − 6º semestre",
+      "vagas": 2,
+      "inscritos": 13,
+      "ausentes": 4,
+      "convocados_2fase": 4,
+      "concorrencia": 2.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "20011",
+      "curso": "Engenharia Agronômica − Integral (Piracicaba) − 8º semestre",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 37
+    },
+    {
+      "codigo": "20012",
+      "curso": "Engenharia Florestal − Integral (Piracicaba) − 4º semestre",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "20013",
+      "curso": "Engenharia Florestal − Integral (Piracicaba) − 8º semestre",
+      "vagas": 2,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20014",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 4º",
+      "vagas": 2,
+      "inscritos": 11,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 37,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "20015",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (Piracicaba) − 8º",
+      "vagas": 1,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20016",
+      "curso": "Farmácia−Bioquímica − Integral (Ribeirão Preto) − 4º semestre",
+      "vagas": 2,
+      "inscritos": 15,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 34,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "20017",
+      "curso": "Bacharelado e Licenciatura em Ciências Biológicas − Integral (Ribeirão Preto)",
+      "vagas": 3,
+      "inscritos": 20,
+      "ausentes": 2,
+      "convocados_2fase": 10,
+      "concorrencia": 3.33,
+      "pontos_minimo": 37,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "20018",
+      "curso": "Fonoaudiologia − Integral (São Paulo) − 3º semestre",
+      "vagas": 2,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 5,
+      "concorrencia": 2.5,
+      "pontos_minimo": 18,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "20019",
+      "curso": "Terapia Ocupacional − Integral (São Paulo) − 3º semestre",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 1.5,
+      "pontos_minimo": 20,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "20020",
+      "curso": "Nutrição e Metabolismo − Integral (Ribeirão Preto) − 3º semestre",
+      "vagas": 1,
+      "inscritos": 5,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 26,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "20021",
+      "curso": "Odontologia − Integral (São Paulo)",
+      "vagas": 2,
+      "inscritos": 48,
+      "ausentes": 3,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 44,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20022",
+      "curso": "Fonoaudiologia − Integral (Bauru) − 3º semestre",
+      "vagas": 4,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 1.0,
+      "pontos_minimo": 28,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "20023",
+      "curso": "Odontologia − Integral (Bauru) − 2º semestre",
+      "vagas": 2,
+      "inscritos": 28,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 3.5,
+      "pontos_minimo": 43,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20024",
+      "curso": "Odontologia − Integral (Ribeirão Preto)",
+      "vagas": 2,
+      "inscritos": 20,
+      "ausentes": 3,
+      "convocados_2fase": 7,
+      "concorrencia": 3.5,
+      "pontos_minimo": 37,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "20025",
+      "curso": "Bacharelado em Saúde Pública − Vespertino (São Paulo)",
+      "vagas": 8,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.25,
+      "pontos_minimo": 33,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "20026",
+      "curso": "Nutrição − Matutino (São Paulo)",
+      "vagas": 3,
+      "inscritos": 31,
+      "ausentes": 7,
+      "convocados_2fase": 10,
+      "concorrencia": 3.33,
+      "pontos_minimo": 43,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "20027",
+      "curso": "Nutrição − Noturno (São Paulo)",
+      "vagas": 4,
+      "inscritos": 26,
+      "ausentes": 3,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 36,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "20028",
+      "curso": "Zootecnia − Integral (Pirassununga)",
+      "vagas": 15,
+      "inscritos": 16,
+      "ausentes": 1,
+      "convocados_2fase": 15,
+      "concorrencia": 1.0,
+      "pontos_minimo": 24,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20029",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Integral (São Paulo)",
+      "vagas": 2,
+      "inscritos": 16,
+      "ausentes": 5,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 46,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "20030",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno (São Paulo)",
+      "vagas": 8,
+      "inscritos": 63,
+      "ausentes": 12,
+      "convocados_2fase": 24,
+      "concorrencia": 3.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "40001",
+      "curso": "Licenciatura em Ciências da Natureza − Noturno (USP Leste − São Paulo)",
+      "vagas": 24,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.13,
+      "pontos_minimo": 18,
+      "pontos_maximo": 35
+    },
+    {
+      "codigo": "40002",
+      "curso": "Engenharia Ambiental − Integral (Lorena)",
+      "vagas": 11,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40003",
+      "curso": "Engenharia Bioquímica − Integral (Lorena)",
+      "vagas": 5,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 40,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "40004",
+      "curso": "Engenharia de Materiais − Integral (Lorena)",
+      "vagas": 7,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.29,
+      "pontos_minimo": 40,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40005",
+      "curso": "Engenharia de Produção − Noturno (Lorena)",
+      "vagas": 2,
+      "inscritos": 11,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40006",
+      "curso": "Engenharia Física − Integral (Lorena)",
+      "vagas": 7,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.14,
+      "pontos_minimo": 40,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "40007",
+      "curso": "Engenharia Química − Diurno (Lorena)",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40008",
+      "curso": "Engenharia Química − Noturno (Lorena)",
+      "vagas": 1,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40009",
+      "curso": "Engenharia Elétrica (Ênfase em Sistemas de Energia e Automação) − Integral ",
+      "vagas": 5,
+      "inscritos": 43,
+      "ausentes": 6,
+      "convocados_2fase": 4,
+      "concorrencia": 0.8,
+      "pontos_minimo": 56,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "40010",
+      "curso": "Engenharia Ambiental − Integral (São Paulo)",
+      "vagas": 10,
+      "inscritos": 24,
+      "ausentes": 1,
+      "convocados_2fase": 22,
+      "concorrencia": 2.2,
+      "pontos_minimo": 24,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40011",
+      "curso": "Engenharia de Minas − Integral (São Paulo)",
+      "vagas": 24,
+      "inscritos": 36,
+      "ausentes": 2,
+      "convocados_2fase": 30,
+      "concorrencia": 1.25,
+      "pontos_minimo": 24,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40012",
+      "curso": "Engenharia de Petróleo − Integral (Santos)",
+      "vagas": 34,
+      "inscritos": 14,
+      "ausentes": 2,
+      "convocados_2fase": 11,
+      "concorrencia": 0.32,
+      "pontos_minimo": 24,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40013",
+      "curso": "Engenharia Elétrica (Ênfase em Energia e Automação Elétricas) − Integral (Sã",
+      "vagas": 4,
+      "inscritos": 35,
+      "ausentes": 5,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 49,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "40014",
+      "curso": "Engenharia Elétrica (Ênfase em Eletrônica e Sistemas) − Integral (São Paulo)",
+      "vagas": 3,
+      "inscritos": 22,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 48,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "40015",
+      "curso": "Engenharia Elétrica (Ênfase em Telecomunicações) − Integral (São Paulo)",
+      "vagas": 9,
+      "inscritos": 52,
+      "ausentes": 5,
+      "convocados_2fase": 28,
+      "concorrencia": 3.11,
+      "pontos_minimo": 41,
+      "pontos_maximo": 62
+    },
+    {
+      "codigo": "40016",
+      "curso": "Engenharia Metalúrgica − Integral (São Paulo)",
+      "vagas": 3,
+      "inscritos": 15,
+      "ausentes": 3,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 29,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "40017",
+      "curso": "Bacharelado em Matemática Aplicada a Negócios − Diurno (Ribeirão Preto)",
+      "vagas": 9,
+      "inscritos": 11,
+      "ausentes": 2,
+      "convocados_2fase": 9,
+      "concorrencia": 1.0,
+      "pontos_minimo": 26,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "40018",
+      "curso": "Bacharelado em Química − Integral (Ribeirão Preto)",
+      "vagas": 1,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 30,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "40019",
+      "curso": "Física Médica − Bacharelado − Noturno (Ribeirão Preto)",
+      "vagas": 9,
+      "inscritos": 11,
+      "ausentes": 1,
+      "convocados_2fase": 10,
+      "concorrencia": 1.11,
+      "pontos_minimo": 17,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "40020",
+      "curso": "Licenciatura em Química − Noturno (Ribeirão Preto)",
+      "vagas": 11,
+      "inscritos": 9,
+      "ausentes": 3,
+      "convocados_2fase": 5,
+      "concorrencia": 0.45,
+      "pontos_minimo": 20,
+      "pontos_maximo": 37
+    },
+    {
+      "codigo": "40021",
+      "curso": "Engenharia de Alimentos − Diurno (Pirassununga)",
+      "vagas": 4,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.75,
+      "pontos_minimo": 29,
+      "pontos_maximo": 33
+    },
+    {
+      "codigo": "40022",
+      "curso": "Engenharia de Alimentos − Noturno (Pirassununga)",
+      "vagas": 13,
+      "inscritos": 9,
+      "ausentes": 0,
+      "convocados_2fase": 9,
+      "concorrencia": 0.69,
+      "pontos_minimo": 23,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "40023",
+      "curso": "Engenharia de Biossistemas − Integral (Pirassununga)",
+      "vagas": 44,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 7,
+      "concorrencia": 0.16,
+      "pontos_minimo": 14,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "40024",
+      "curso": "Bacharelado em Geofísica − Diurno (São Paulo)",
+      "vagas": 10,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.2,
+      "pontos_minimo": 39,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "40025",
+      "curso": "Bachareladoem Meteorologia − Diurno (São Paulo)",
+      "vagas": 11,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.09,
+      "pontos_minimo": 40,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "40026",
+      "curso": "Bacharelado em Física − Noturno (São Paulo)",
+      "vagas": 32,
+      "inscritos": 44,
+      "ausentes": 6,
+      "convocados_2fase": 10,
+      "concorrencia": 0.31,
+      "pontos_minimo": 28,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40027",
+      "curso": "Física − Licenciatura − Diurno (São Paulo)",
+      "vagas": 11,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.27,
+      "pontos_minimo": 35,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40028",
+      "curso": "Física − Licenciatura − Noturno (São Paulo)",
+      "vagas": 25,
+      "inscritos": 6,
+      "ausentes": 2,
+      "convocados_2fase": 1,
+      "concorrencia": 0.04,
+      "pontos_minimo": 47,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40029",
+      "curso": "Licenciatura em Geociências e Educação Ambiental − Noturno (São Paulo)",
+      "vagas": 14,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40030",
+      "curso": "Bacharelado em Estatística − Diurno (São Paulo) − 2º semestre",
+      "vagas": 2,
+      "inscritos": 13,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 42,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "40031",
+      "curso": "Matemática − Licenciatura − Diurno (São Paulo) − 2º semestre",
+      "vagas": 5,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.6,
+      "pontos_minimo": 26,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40032",
+      "curso": "Matemática − Licenciatura − Noturno (São Paulo) − 2º semestre",
+      "vagas": 38,
+      "inscritos": 30,
+      "ausentes": 1,
+      "convocados_2fase": 22,
+      "concorrencia": 0.58,
+      "pontos_minimo": 22,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40033",
+      "curso": "Bacharelado em Oceanografia − Integral (São Paulo)",
+      "vagas": 6,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 7,
+      "concorrencia": 1.17,
+      "pontos_minimo": 30,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40034",
+      "curso": "Bacharelado e Licenciatura em Química − Noturno (São Paulo) − 1º semestre",
+      "vagas": 2,
+      "inscritos": 21,
+      "ausentes": 5,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 39,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40035",
+      "curso": "Bacharelado em Química − Integral (São Carlos) − 3º semestre",
+      "vagas": 2,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 1.0,
+      "pontos_minimo": 29,
+      "pontos_maximo": 30
+    },
+    {
+      "codigo": "60001",
+      "curso": "Bacharelado em Lazer e Turismo − Noturno (USP Leste − São Paulo)",
+      "vagas": 13,
+      "inscritos": 6,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 0.46,
+      "pontos_minimo": 20,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "60002",
+      "curso": "Bacharelado em Lazer e Turismo − Vespertino (USP Leste − São Paulo)",
+      "vagas": 9,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.22,
+      "pontos_minimo": 35,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "60003",
+      "curso": "Gestão de Políticas Públicas − Matutino (USP Leste − São Paulo)",
+      "vagas": 6,
+      "inscritos": 14,
+      "ausentes": 4,
+      "convocados_2fase": 10,
+      "concorrencia": 1.67,
+      "pontos_minimo": 27,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "60004",
+      "curso": "Gestão de Políticas Públicas − Noturno (USP Leste − São Paulo)",
+      "vagas": 6,
+      "inscritos": 15,
+      "ausentes": 4,
+      "convocados_2fase": 11,
+      "concorrencia": 1.83,
+      "pontos_minimo": 30,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "60005",
+      "curso": "Biblioteconomia − Matutino (São Paulo)",
+      "vagas": 3,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 1.33,
+      "pontos_minimo": 23,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "60006",
+      "curso": "Biblioteconomia − Noturno (São Paulo)",
+      "vagas": 4,
+      "inscritos": 3,
+      "ausentes": 2,
+      "convocados_2fase": 1,
+      "concorrencia": 0.25,
+      "pontos_minimo": 40,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "60007",
+      "curso": "Licenciatura em Educomunicação − Noturno (São Paulo)",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 2,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 56,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "60008",
+      "curso": "Licenciatura em Música − Diurno (São Paulo)",
+      "vagas": 3,
+      "inscritos": 6,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 1.0,
+      "pontos_minimo": 50,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60009",
+      "curso": "Música Bacharelado / Habilitação em Instrumento de Cordas − Ênfase em Violi",
+      "vagas": 1,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "60010",
+      "curso": "Turismo − Noturno (São Paulo)",
+      "vagas": 4,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.75,
+      "pontos_minimo": 42,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60011",
+      "curso": "Bacharelado em Administração − Diurno (Piracicaba) − 4º semestre",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "60012",
+      "curso": "Bacharelado em Administração − Diurno (Piracicaba) − 6º semestre",
+      "vagas": 4,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 1.25,
+      "pontos_minimo": 32,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "60013",
+      "curso": "Bacharelado em Gestão Ambiental − Noturno (Piracicaba) − 4º semestre",
+      "vagas": 2,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "60014",
+      "curso": "Bacharelado em Gestão Ambiental − Noturno (Piracicaba) − 6º semestre",
+      "vagas": 6,
+      "inscritos": 0,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "60015",
+      "curso": "Ciências Econômicas − Diurno (Piracicaba) − 4º semestre",
+      "vagas": 1,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 50,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "60016",
+      "curso": "Ciências Econômicas − Diurno (Piracicaba) − 6º semestre",
+      "vagas": 4,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 63
+    },
+    {
+      "codigo": "60017",
+      "curso": "Arquitetura e Urbanismo − Integral (São Paulo)",
+      "vagas": 2,
+      "inscritos": 112,
+      "ausentes": 14,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 67,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "60018",
+      "curso": "Direito − Integral (Ribeirão Preto) − 3º semestre",
+      "vagas": 6,
+      "inscritos": 186,
+      "ausentes": 33,
+      "convocados_2fase": 18,
+      "concorrencia": 3.0,
+      "pontos_minimo": 65,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "60019",
+      "curso": "Pedagogia − Noturno (São Paulo) − 2º semestre",
+      "vagas": 15,
+      "inscritos": 51,
+      "ausentes": 4,
+      "convocados_2fase": 45,
+      "concorrencia": 3.0,
+      "pontos_minimo": 24,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60020",
+      "curso": "Pedagogia − Vespertino (São Paulo) − 2º semestre",
+      "vagas": 7,
+      "inscritos": 20,
+      "ausentes": 1,
+      "convocados_2fase": 19,
+      "concorrencia": 2.71,
+      "pontos_minimo": 26,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "60021",
+      "curso": "Bacharelado em Ciências Atuariais − Noturno (São Paulo) − 1º semestre",
+      "vagas": 7,
+      "inscritos": 38,
+      "ausentes": 4,
+      "convocados_2fase": 21,
+      "concorrencia": 3.0,
+      "pontos_minimo": 48,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "60022",
+      "curso": "Ciências Contábeis − Diurno (São Paulo) − 1º semestre",
+      "vagas": 19,
+      "inscritos": 83,
+      "ausentes": 9,
+      "convocados_2fase": 59,
+      "concorrencia": 3.11,
+      "pontos_minimo": 41,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60023",
+      "curso": "Ciências Contábeis − Noturno (São Paulo) − 1º semestre",
+      "vagas": 13,
+      "inscritos": 86,
+      "ausentes": 16,
+      "convocados_2fase": 39,
+      "concorrencia": 3.0,
+      "pontos_minimo": 45,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60024",
+      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Noturno (Ribeirão ",
+      "vagas": 11,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.18,
+      "pontos_minimo": 36,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "60025",
+      "curso": "Pedagogia − Noturno (Ribeirão Preto)",
+      "vagas": 12,
+      "inscritos": 21,
+      "ausentes": 2,
+      "convocados_2fase": 19,
+      "concorrencia": 1.58,
+      "pontos_minimo": 22,
+      "pontos_maximo": 51
+    }
+  ],
+  "2024": [
+    {
+      "codigo": "20001",
+      "curso": "Bacharelado e Licenciatura em Enfermagem − Ribeirão Preto",
+      "vagas": 5,
+      "inscritos": 25,
+      "ausentes": 5,
+      "convocados_2fase": 16,
+      "concorrencia": 3.2,
+      "pontos_minimo": 29,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20002",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Piracicaba",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20003",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Piracicaba",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 2,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "20004",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Piracicaba",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 37
+    },
+    {
+      "codigo": "20006",
+      "curso": "Bacharelado em Ciências dos Alimentos − Piracicaba",
+      "vagas": 3,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20007",
+      "curso": "Engenharia Agronômica − Piracicaba",
+      "vagas": 3,
+      "inscritos": 23,
+      "ausentes": 2,
+      "convocados_2fase": 10,
+      "concorrencia": 3.33,
+      "pontos_minimo": 33,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20008",
+      "curso": "Engenharia Agronômica − Piracicaba",
+      "vagas": 2,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "20009",
+      "curso": "Engenharia Agronômica − Piracicaba",
+      "vagas": 5,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "20010",
+      "curso": "Engenharia Florestal − Piracicaba",
+      "vagas": 2,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 34
+    },
+    {
+      "codigo": "20011",
+      "curso": "Engenharia Florestal − Piracicaba",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "20012",
+      "curso": "Engenharia Florestal − Piracicaba",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "20013",
+      "curso": "Farmácia − Ribeirão Preto",
+      "vagas": 1,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 52,
+      "pontos_maximo": 62
+    },
+    {
+      "codigo": "20014",
+      "curso": "Farmácia − Ribeirão Preto",
+      "vagas": 3,
+      "inscritos": 7,
+      "ausentes": 2,
+      "convocados_2fase": 5,
+      "concorrencia": 1.67,
+      "pontos_minimo": 25,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "20015",
+      "curso": "Bacharelado e Licenciatura em Ciências Biológicas − Ribeirão Preto",
+      "vagas": 9,
+      "inscritos": 26,
+      "ausentes": 2,
+      "convocados_2fase": 24,
+      "concorrencia": 2.67,
+      "pontos_minimo": 28,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "20016",
+      "curso": "Fisioterapia − São Paulo",
+      "vagas": 3,
+      "inscritos": 23,
+      "ausentes": 2,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 38,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "20017",
+      "curso": "Fonoaudiologia",
+      "vagas": 4,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.75,
+      "pontos_minimo": 26,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "20018",
+      "curso": "Terapia Ocupacional − São Paulo",
+      "vagas": 3,
+      "inscritos": 10,
+      "ausentes": 0,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 20,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20019",
+      "curso": "Fonoaudiologia − Ribeirão Preto",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 1.5,
+      "pontos_minimo": 23,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "20020",
+      "curso": "Nutrição e Metabolismo − Ribeirão Preto",
+      "vagas": 2,
+      "inscritos": 9,
+      "ausentes": 4,
+      "convocados_2fase": 5,
+      "concorrencia": 2.5,
+      "pontos_minimo": 34,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20021",
+      "curso": "Fonoaudiologia − Bauru",
+      "vagas": 5,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.4,
+      "pontos_minimo": 38,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "20022",
+      "curso": "Medicina − Bauru",
+      "vagas": 7,
+      "inscritos": 838,
+      "ausentes": 174,
+      "convocados_2fase": 21,
+      "concorrencia": 3.0,
+      "pontos_minimo": 66,
+      "pontos_maximo": 73
+    },
+    {
+      "codigo": "20023",
+      "curso": "Odontologia − Bauru",
+      "vagas": 7,
+      "inscritos": 58,
+      "ausentes": 9,
+      "convocados_2fase": 21,
+      "concorrencia": 3.0,
+      "pontos_minimo": 42,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "20024",
+      "curso": "Nutrição",
+      "vagas": 4,
+      "inscritos": 35,
+      "ausentes": 9,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 73
+    },
+    {
+      "codigo": "20025",
+      "curso": "Zootecnia − Pirassununga",
+      "vagas": 17,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 0.53,
+      "pontos_minimo": 19,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "20026",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Integral",
+      "vagas": 4,
+      "inscritos": 21,
+      "ausentes": 3,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 36,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "20027",
+      "curso": "Licenciatura e Bacharelado em Ciências Biológicas − Noturno",
+      "vagas": 9,
+      "inscritos": 41,
+      "ausentes": 7,
+      "convocados_2fase": 28,
+      "concorrencia": 3.11,
+      "pontos_minimo": 35,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "20028",
+      "curso": "Bacharelado em Ciências Biomédicas",
+      "vagas": 10,
+      "inscritos": 73,
+      "ausentes": 6,
+      "convocados_2fase": 32,
+      "concorrencia": 3.2,
+      "pontos_minimo": 42,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "40001",
+      "curso": "Engenharia Ambiental − São Carlos",
+      "vagas": 2,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 1.5,
+      "pontos_minimo": 40,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40002",
+      "curso": "Engenharia de Materiais e Manufatura − São Carlos",
+      "vagas": 11,
+      "inscritos": 14,
+      "ausentes": 3,
+      "convocados_2fase": 8,
+      "concorrencia": 0.73,
+      "pontos_minimo": 40,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40003",
+      "curso": "Engenharia Elétrica − Ênfase em eletrônica − São Carlos",
+      "vagas": 6,
+      "inscritos": 11,
+      "ausentes": 1,
+      "convocados_2fase": 7,
+      "concorrencia": 1.17,
+      "pontos_minimo": 40,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "40004",
+      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car",
+      "vagas": 6,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 1.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40005",
+      "curso": "Engenharia Mecânica − São Carlos",
+      "vagas": 1,
+      "inscritos": 8,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 4.0,
+      "pontos_minimo": 49,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "40006",
+      "curso": "Engenharia Mecatrônica − São Carlos",
+      "vagas": 3,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 4,
+      "concorrencia": 1.33,
+      "pontos_minimo": 40,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "40007",
+      "curso": "Engenharia Ambiental − Lorena",
+      "vagas": 14,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40008",
+      "curso": "Engenharia Bioquímica − Lorena",
+      "vagas": 9,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.11,
+      "pontos_minimo": 40,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "40009",
+      "curso": "Engenharia de Materiais − Lorena",
+      "vagas": 22,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.05,
+      "pontos_minimo": 40,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "40010",
+      "curso": "Engenharia Física − Lorena",
+      "vagas": 11,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40011",
+      "curso": "Engenharia Química − Diurno − Lorena",
+      "vagas": 12,
+      "inscritos": 9,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.33,
+      "pontos_minimo": 40,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "40012",
+      "curso": "Engenharia Civil",
+      "vagas": 26,
+      "inscritos": 88,
+      "ausentes": 18,
+      "convocados_2fase": 65,
+      "concorrencia": 2.5,
+      "pontos_minimo": 24,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "40013",
+      "curso": "Engenharia de Minas",
+      "vagas": 22,
+      "inscritos": 23,
+      "ausentes": 2,
+      "convocados_2fase": 19,
+      "concorrencia": 0.86,
+      "pontos_minimo": 24,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "40014",
+      "curso": "Engenharia de Petróleo",
+      "vagas": 19,
+      "inscritos": 13,
+      "ausentes": 2,
+      "convocados_2fase": 11,
+      "concorrencia": 0.58,
+      "pontos_minimo": 24,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "40015",
+      "curso": "Engenharia Metalúrgica",
+      "vagas": 10,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.1,
+      "pontos_minimo": 24,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "40016",
+      "curso": "Engenharia Naval",
+      "vagas": 12,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 0.58,
+      "pontos_minimo": 24,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40017",
+      "curso": "Engenharia de Materiais",
+      "vagas": 8,
+      "inscritos": 16,
+      "ausentes": 2,
+      "convocados_2fase": 14,
+      "concorrencia": 1.75,
+      "pontos_minimo": 24,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40018",
+      "curso": "Engenharia Ambiental",
+      "vagas": 3,
+      "inscritos": 10,
+      "ausentes": 2,
+      "convocados_2fase": 8,
+      "concorrencia": 2.67,
+      "pontos_minimo": 24,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40019",
+      "curso": "Engenharia Elétrica − Ênfase em Telecomunicações",
+      "vagas": 23,
+      "inscritos": 37,
+      "ausentes": 6,
+      "convocados_2fase": 31,
+      "concorrencia": 1.35,
+      "pontos_minimo": 24,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "40020",
+      "curso": "Engenharia Elétrica − Ênfase em Energia e Automação Elétricas",
+      "vagas": 14,
+      "inscritos": 41,
+      "ausentes": 8,
+      "convocados_2fase": 32,
+      "concorrencia": 2.29,
+      "pontos_minimo": 24,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "40021",
+      "curso": "Bacharelado em Física Médica − Ribeirão Preto",
+      "vagas": 18,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.22,
+      "pontos_minimo": 17,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "40022",
+      "curso": "Bacharelado em Matemática Aplicada a Negócios − Ribeirão Preto",
+      "vagas": 15,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 5,
+      "concorrencia": 0.33,
+      "pontos_minimo": 29,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40023",
+      "curso": "Licenciatura e Bacharelado em Química − Ribeirão Preto",
+      "vagas": 6,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.33,
+      "pontos_minimo": 22,
+      "pontos_maximo": 23
+    },
+    {
+      "codigo": "40024",
+      "curso": "Química − Núcleo Geral − Ribeirão Preto",
+      "vagas": 15,
+      "inscritos": 10,
+      "ausentes": 0,
+      "convocados_2fase": 10,
+      "concorrencia": 0.67,
+      "pontos_minimo": 24,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40025",
+      "curso": "Engenharia de Alimentos − Diurno − Pirassununga",
+      "vagas": 11,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.09,
+      "pontos_minimo": 29,
+      "pontos_maximo": 29
+    },
+    {
+      "codigo": "40027",
+      "curso": "Engenharia de Biossistemas − Pirassununga",
+      "vagas": 26,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.04,
+      "pontos_minimo": 36,
+      "pontos_maximo": 36
+    },
+    {
+      "codigo": "40028",
+      "curso": "Bacharelado em Geofísica − São Paulo",
+      "vagas": 21,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.05,
+      "pontos_minimo": 30,
+      "pontos_maximo": 30
+    },
+    {
+      "codigo": "40029",
+      "curso": "Bacharelado em Meteorologia − São Paulo",
+      "vagas": 16,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.06,
+      "pontos_minimo": 34,
+      "pontos_maximo": 34
+    },
+    {
+      "codigo": "40030",
+      "curso": "Bacharelado em Ciência de Dados − São Carlos",
+      "vagas": 1,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40031",
+      "curso": "Bacharelado em Estatística e Ciência de Dados − São Carlos",
+      "vagas": 3,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 28,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "40032",
+      "curso": "Bacharelado em Matemática Aplicada e Computação Científica − São Carlos",
+      "vagas": 4,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 1.25,
+      "pontos_minimo": 34,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "40033",
+      "curso": "Bacharelado em Sistemas de Informação − São Carlos",
+      "vagas": 1,
+      "inscritos": 18,
+      "ausentes": 4,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 54,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40034",
+      "curso": "Bacharelado em Física − Noturno − São Paulo",
+      "vagas": 10,
+      "inscritos": 10,
+      "ausentes": 3,
+      "convocados_2fase": 2,
+      "concorrencia": 0.2,
+      "pontos_minimo": 35,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "40036",
+      "curso": "Bacharelado em Física − Noturno − São Paulo",
+      "vagas": 5,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40037",
+      "curso": "Física − Licenciatura − Diurno",
+      "vagas": 5,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40039",
+      "curso": "Geologia",
+      "vagas": 11,
+      "inscritos": 7,
+      "ausentes": 2,
+      "convocados_2fase": 5,
+      "concorrencia": 0.45,
+      "pontos_minimo": 28,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "40040",
+      "curso": "Licenciatura em Geociências e Educação Ambiental",
+      "vagas": 31,
+      "inscritos": 2,
+      "ausentes": 2,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40041",
+      "curso": "Estatística Bacharelado",
+      "vagas": 8,
+      "inscritos": 8,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 0.75,
+      "pontos_minimo": 24,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40042",
+      "curso": "Matemática Aplicada − Bacharelado",
+      "vagas": 5,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 35,
+      "pontos_maximo": 35
+    },
+    {
+      "codigo": "40043",
+      "curso": "Matemática Bacharelado",
+      "vagas": 8,
+      "inscritos": 8,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 0.75,
+      "pontos_minimo": 39,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40044",
+      "curso": "Matemática − Licenciatura − Diurno",
+      "vagas": 16,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.06,
+      "pontos_minimo": 49,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "40045",
+      "curso": "Matemática − Licenciatura − Noturno",
+      "vagas": 74,
+      "inscritos": 20,
+      "ausentes": 3,
+      "convocados_2fase": 10,
+      "concorrencia": 0.14,
+      "pontos_minimo": 19,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "40046",
+      "curso": "Bacharelado em Oceanografia",
+      "vagas": 12,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.33,
+      "pontos_minimo": 30,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "40047",
+      "curso": "Bacharelado e Licenciatura em Química − Integral",
+      "vagas": 6,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.67,
+      "pontos_minimo": 32,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "40048",
+      "curso": "Bacharelado e Licenciatura em Química − Noturno",
+      "vagas": 13,
+      "inscritos": 17,
+      "ausentes": 2,
+      "convocados_2fase": 12,
+      "concorrencia": 0.92,
+      "pontos_minimo": 32,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "40049",
+      "curso": "Química − Núcleo Geral − São Carlos",
+      "vagas": 14,
+      "inscritos": 9,
+      "ausentes": 1,
+      "convocados_2fase": 8,
+      "concorrencia": 0.57,
+      "pontos_minimo": 30,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "60001",
+      "curso": "Artes Cênicas − Bacharelado e Licenciatura",
+      "vagas": 2,
+      "inscritos": 29,
+      "ausentes": 6,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 59,
+      "pontos_maximo": 68
+    },
+    {
+      "codigo": "60002",
+      "curso": "Bacharelado em Relações Públicas",
+      "vagas": 1,
+      "inscritos": 25,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 60,
+      "pontos_maximo": 62
+    },
+    {
+      "codigo": "60003",
+      "curso": "Biblioteconomia − Matutino",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 40,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "60004",
+      "curso": "Biblioteconomia − Noturno",
+      "vagas": 7,
+      "inscritos": 7,
+      "ausentes": 0,
+      "convocados_2fase": 7,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "60005",
+      "curso": "Licenciatura em Educomunicação",
+      "vagas": 11,
+      "inscritos": 18,
+      "ausentes": 4,
+      "convocados_2fase": 14,
+      "concorrencia": 1.27,
+      "pontos_minimo": 30,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "60006",
+      "curso": "Música Bacharelado − Habilitação em Canto e Arte Lírica",
+      "vagas": 1,
+      "inscritos": 6,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 6.0,
+      "pontos_minimo": 30,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "60008",
+      "curso": "Turismo",
+      "vagas": 7,
+      "inscritos": 7,
+      "ausentes": 0,
+      "convocados_2fase": 7,
+      "concorrencia": 1.0,
+      "pontos_minimo": 20,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "60009",
+      "curso": "Bacharelado em Administração − Piracicaba",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "60010",
+      "curso": "Bacharelado em Administração − Piracicaba",
+      "vagas": 4,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "60011",
+      "curso": "Bacharelado em Gestão Ambiental − Piracicaba",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "60012",
+      "curso": "Bacharelado em Gestão Ambiental − Piracicaba",
+      "vagas": 5,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "60013",
+      "curso": "Arquitetura e Urbanismo",
+      "vagas": 12,
+      "inscritos": 144,
+      "ausentes": 11,
+      "convocados_2fase": 39,
+      "concorrencia": 3.25,
+      "pontos_minimo": 59,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "60014",
+      "curso": "Direito − Ribeirão Preto",
+      "vagas": 10,
+      "inscritos": 130,
+      "ausentes": 26,
+      "convocados_2fase": 34,
+      "concorrencia": 3.4,
+      "pontos_minimo": 61,
+      "pontos_maximo": 73
+    },
+    {
+      "codigo": "60015",
+      "curso": "Bacharelado em Biblioteconomia e Ciência da Informação − Ribeirão Preto",
+      "vagas": 18,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.22,
+      "pontos_minimo": 39,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "60017",
+      "curso": "Música − Ribeirão Preto",
+      "vagas": 14,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.07,
+      "pontos_minimo": 21,
+      "pontos_maximo": 21
+    },
+    {
+      "codigo": "60018",
+      "curso": "Pedagogia − Ribeirão Preto",
+      "vagas": 17,
+      "inscritos": 14,
+      "ausentes": 1,
+      "convocados_2fase": 13,
+      "concorrencia": 0.76,
+      "pontos_minimo": 27,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "60019",
+      "curso": "Arquitetura e Urbanismo − São Carlos",
+      "vagas": 5,
+      "inscritos": 22,
+      "ausentes": 2,
+      "convocados_2fase": 15,
+      "concorrencia": 3.0,
+      "pontos_minimo": 44,
+      "pontos_maximo": 67
+    }
+  ],
+  "2025": [
+    {
+      "codigo": "20023",
+      "curso": "Ciências Biológicas − Noturno − Piracicaba − 4º semestre",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 2.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "20024",
+      "curso": "Ciências Biológicas − Noturno − Piracicaba − 6º semestre",
+      "vagas": 2,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "20025",
+      "curso": "Ciências Biológicas − Noturno − Piracicaba − 8º semestre",
+      "vagas": 5,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "20026",
+      "curso": "Ciências Biológicas − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 8,
+      "inscritos": 24,
+      "ausentes": 1,
+      "convocados_2fase": 23,
+      "concorrencia": 2.88,
+      "pontos_minimo": 28,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "20027",
+      "curso": "Ciências Biológicas − Integral − São Paulo Butantã",
+      "vagas": 6,
+      "inscritos": 37,
+      "ausentes": 6,
+      "convocados_2fase": 18,
+      "concorrencia": 3.0,
+      "pontos_minimo": 44,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "20030",
+      "curso": "Educação Física − Integral − Ribeirão Preto",
+      "vagas": 1,
+      "inscritos": 18,
+      "ausentes": 6,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 46,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "20031",
+      "curso": "Enfermagem − Noturno − Ribeirão Preto − 3º semestre",
+      "vagas": 8,
+      "inscritos": 12,
+      "ausentes": 4,
+      "convocados_2fase": 8,
+      "concorrencia": 1.0,
+      "pontos_minimo": 21,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "20032",
+      "curso": "Enfermagem − Integral − Ribeirão Preto − 3º semestre",
+      "vagas": 3,
+      "inscritos": 8,
+      "ausentes": 3,
+      "convocados_2fase": 5,
+      "concorrencia": 1.67,
+      "pontos_minimo": 26,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "20033",
+      "curso": "Engenharia Agronômica − Integral − Piracicaba − 4º semestre",
+      "vagas": 3,
+      "inscritos": 17,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "20034",
+      "curso": "Engenharia Agronômica − Integral − Piracicaba − 6º semestre",
+      "vagas": 2,
+      "inscritos": 12,
+      "ausentes": 0,
+      "convocados_2fase": 7,
+      "concorrencia": 3.5,
+      "pontos_minimo": 40,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "20035",
+      "curso": "Engenharia Agronômica − Integral − Piracicaba − 8º semestre",
+      "vagas": 7,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.43,
+      "pontos_minimo": 32,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "20036",
+      "curso": "Engenharia Florestal − Integral − Piracicaba − 4º semestre",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 38
+    },
+    {
+      "codigo": "20037",
+      "curso": "Engenharia Florestal − Integral − Piracicaba − 6º semestre",
+      "vagas": 4,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.25,
+      "pontos_minimo": 32,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "20039",
+      "curso": "Farmácia − Integral − Ribeirão Preto − 4º semestre",
+      "vagas": 4,
+      "inscritos": 16,
+      "ausentes": 0,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 34,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "20040",
+      "curso": "Fisioterapia − Integral − São Paulo Quadrilátero − 3º semestre",
+      "vagas": 4,
+      "inscritos": 25,
+      "ausentes": 2,
+      "convocados_2fase": 13,
+      "concorrencia": 3.25,
+      "pontos_minimo": 35,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "20041",
+      "curso": "Fonoaudiologia − Integral − São Paulo Quadrilátero − 3º semestre",
+      "vagas": 4,
+      "inscritos": 9,
+      "ausentes": 1,
+      "convocados_2fase": 8,
+      "concorrencia": 2.0,
+      "pontos_minimo": 19,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20042",
+      "curso": "Fonoaudiologia − Integral − Bauru − 2º semestre",
+      "vagas": 8,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.5,
+      "pontos_minimo": 17,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "20043",
+      "curso": "Medicina − Integral − Ribeirão Preto − 3º semestre",
+      "vagas": 2,
+      "inscritos": 170,
+      "ausentes": 27,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 68,
+      "pontos_maximo": 74
+    },
+    {
+      "codigo": "20044",
+      "curso": "Medicina − Integral − Bauru − 3º semestre",
+      "vagas": 14,
+      "inscritos": 945,
+      "ausentes": 130,
+      "convocados_2fase": 51,
+      "concorrencia": 3.64,
+      "pontos_minimo": 65,
+      "pontos_maximo": 74
+    },
+    {
+      "codigo": "20045",
+      "curso": "Medicina Veterinária − Integral − São Paulo Butantã − 2º semestre",
+      "vagas": 1,
+      "inscritos": 62,
+      "ausentes": 10,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 61,
+      "pontos_maximo": 68
+    },
+    {
+      "codigo": "20046",
+      "curso": "Medicina Veterinária − Integral − Pirassununga",
+      "vagas": 1,
+      "inscritos": 14,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 51,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "20047",
+      "curso": "Nutrição − Matutino − São Paulo Quadrilátero",
+      "vagas": 1,
+      "inscritos": 18,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 50,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "20048",
+      "curso": "Nutrição − Noturno − São Paulo Quadrilátero",
+      "vagas": 1,
+      "inscritos": 15,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 50,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "20049",
+      "curso": "Odontologia − Integral − São Paulo Butantã − 3º semestre",
+      "vagas": 16,
+      "inscritos": 39,
+      "ausentes": 4,
+      "convocados_2fase": 35,
+      "concorrencia": 2.19,
+      "pontos_minimo": 17,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "20050",
+      "curso": "Odontologia − Integral − Bauru − 2º semestre",
+      "vagas": 9,
+      "inscritos": 19,
+      "ausentes": 0,
+      "convocados_2fase": 19,
+      "concorrencia": 2.11,
+      "pontos_minimo": 24,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "20051",
+      "curso": "Odontologia − Integral − Ribeirão Preto",
+      "vagas": 2,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 25,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "20052",
+      "curso": "Odontologia − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 8,
+      "inscritos": 22,
+      "ausentes": 2,
+      "convocados_2fase": 20,
+      "concorrencia": 2.5,
+      "pontos_minimo": 24,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "20053",
+      "curso": "Terapia Ocupacional − Integral − São Paulo Quadrilátero − 3º semestre",
+      "vagas": 6,
+      "inscritos": 13,
+      "ausentes": 2,
+      "convocados_2fase": 11,
+      "concorrencia": 1.83,
+      "pontos_minimo": 29,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "20054",
+      "curso": "Zootecnia − Integral − Pirassununga",
+      "vagas": 10,
+      "inscritos": 11,
+      "ausentes": 0,
+      "convocados_2fase": 11,
+      "concorrencia": 1.1,
+      "pontos_minimo": 20,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "20110",
+      "curso": "Ciências Biológicas − Noturno − São Paulo Butantã",
+      "vagas": 8,
+      "inscritos": 43,
+      "ausentes": 1,
+      "convocados_2fase": 28,
+      "concorrencia": 3.5,
+      "pontos_minimo": 43,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40055",
+      "curso": "Ciência de Dados − Integral − São Carlos − 2º semestre",
+      "vagas": 2,
+      "inscritos": 6,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 47,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "40056",
+      "curso": "Ciências de Computação − Integral − São Carlos − 2º semestre",
+      "vagas": 2,
+      "inscritos": 34,
+      "ausentes": 5,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 53,
+      "pontos_maximo": 62
+    },
+    {
+      "codigo": "40057",
+      "curso": "Engenharia Ambiental − Integral − Lorena − 2º semestre",
+      "vagas": 13,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40058",
+      "curso": "Engenharia Ambiental − Integral − São Carlos",
+      "vagas": 6,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.67,
+      "pontos_minimo": 40,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40059",
+      "curso": "Engenharia Ambiental − Integral − São Paulo Butantã",
+      "vagas": 8,
+      "inscritos": 25,
+      "ausentes": 5,
+      "convocados_2fase": 20,
+      "concorrencia": 2.5,
+      "pontos_minimo": 24,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40060",
+      "curso": "Engenharia Bioquímica − Integral − Lorena − 2º semestre",
+      "vagas": 8,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40061",
+      "curso": "Engenharia Civil − Integral − São Carlos",
+      "vagas": 5,
+      "inscritos": 15,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 1.8,
+      "pontos_minimo": 40,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40062",
+      "curso": "Engenharia Civil − Integral − São Paulo Butantã",
+      "vagas": 23,
+      "inscritos": 79,
+      "ausentes": 12,
+      "convocados_2fase": 66,
+      "concorrencia": 2.87,
+      "pontos_minimo": 24,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "40063",
+      "curso": "Engenharia de Alimentos − Integral − Pirassununga",
+      "vagas": 24,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.17,
+      "pontos_minimo": 29,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "40064",
+      "curso": "Engenharia de Alimentos − Noturno − Pirassununga",
+      "vagas": 38,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.11,
+      "pontos_minimo": 34,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40065",
+      "curso": "Engenharia de Biossistemas − Integral − Pirassununga",
+      "vagas": 53,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40066",
+      "curso": "Engenharia de Materiais − Integral − Lorena − 2º semestre",
+      "vagas": 33,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.03,
+      "pontos_minimo": 40,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "40067",
+      "curso": "Engenharia de Materiais − Integral − São Paulo Butantã",
+      "vagas": 6,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 6,
+      "concorrencia": 1.0,
+      "pontos_minimo": 24,
+      "pontos_maximo": 56
+    },
+    {
+      "codigo": "40068",
+      "curso": "Engenharia de Materiais e Manufatura − Integral − São Carlos",
+      "vagas": 7,
+      "inscritos": 11,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 1.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "40069",
+      "curso": "Engenharia de Minas − Integral − São Paulo Butantã",
+      "vagas": 9,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40070",
+      "curso": "Engenharia de Petróleo − Integral − São Paulo Butantã",
+      "vagas": 21,
+      "inscritos": 16,
+      "ausentes": 2,
+      "convocados_2fase": 13,
+      "concorrencia": 0.62,
+      "pontos_minimo": 24,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "40071",
+      "curso": "Engenharia Elétrica − Ênfase em eletrônica − Integral − São Carlos",
+      "vagas": 4,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 8,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "40072",
+      "curso": "Engenharia Elétrica − Ênfase em Energia e Automação Elétricas − Integral − S",
+      "vagas": 9,
+      "inscritos": 44,
+      "ausentes": 4,
+      "convocados_2fase": 28,
+      "concorrencia": 3.11,
+      "pontos_minimo": 44,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "40073",
+      "curso": "Engenharia Elétrica − Ênfase em sistemas de energia e automação − Integral ",
+      "vagas": 5,
+      "inscritos": 17,
+      "ausentes": 3,
+      "convocados_2fase": 10,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "40074",
+      "curso": "Engenharia Elétrica − Ênfase em Telecomunicações − Integral − São Paulo Bu",
+      "vagas": 12,
+      "inscritos": 27,
+      "ausentes": 6,
+      "convocados_2fase": 21,
+      "concorrencia": 1.75,
+      "pontos_minimo": 24,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "40075",
+      "curso": "Engenharia Física − Integral − Lorena − 2º semestre",
+      "vagas": 13,
+      "inscritos": 2,
+      "ausentes": 2,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40076",
+      "curso": "Engenharia Mecânica − Integral − São Carlos",
+      "vagas": 7,
+      "inscritos": 39,
+      "ausentes": 7,
+      "convocados_2fase": 21,
+      "concorrencia": 3.0,
+      "pontos_minimo": 45,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "40077",
+      "curso": "Engenharia Metalúrgica − Integral − São Paulo Butantã",
+      "vagas": 10,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 0.5,
+      "pontos_minimo": 24,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40078",
+      "curso": "Engenharia Naval − Integral − São Paulo Butantã",
+      "vagas": 17,
+      "inscritos": 20,
+      "ausentes": 1,
+      "convocados_2fase": 19,
+      "concorrencia": 1.12,
+      "pontos_minimo": 24,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "40079",
+      "curso": "Engenharia Química − Integral − Lorena − 2º semestre",
+      "vagas": 18,
+      "inscritos": 5,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 0.17,
+      "pontos_minimo": 40,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "40081",
+      "curso": "Engenharia Química − Integral − São Paulo Butantã",
+      "vagas": 5,
+      "inscritos": 24,
+      "ausentes": 5,
+      "convocados_2fase": 15,
+      "concorrencia": 3.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40082",
+      "curso": "Estatística − Integral − São Paulo Butantã − 2º semestre",
+      "vagas": 3,
+      "inscritos": 11,
+      "ausentes": 2,
+      "convocados_2fase": 6,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "40083",
+      "curso": "Estatística e Ciência de Dados − Noturno − São Carlos − 2º semestre",
+      "vagas": 4,
+      "inscritos": 17,
+      "ausentes": 3,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 35,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40084",
+      "curso": "Física − Integral − São Paulo Butantã",
+      "vagas": 2,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 2.0,
+      "pontos_minimo": 44,
+      "pontos_maximo": 74
+    },
+    {
+      "codigo": "40085",
+      "curso": "Física − Noturno − São Paulo Butantã",
+      "vagas": 18,
+      "inscritos": 15,
+      "ausentes": 1,
+      "convocados_2fase": 8,
+      "concorrencia": 0.44,
+      "pontos_minimo": 30,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40086",
+      "curso": "Física − Noturno − São Paulo Butantã",
+      "vagas": 32,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.06,
+      "pontos_minimo": 47,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40087",
+      "curso": "Física − Integral − São Paulo Butantã",
+      "vagas": 25,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.04,
+      "pontos_minimo": 43,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "40088",
+      "curso": "Física Médica − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 22,
+      "inscritos": 8,
+      "ausentes": 3,
+      "convocados_2fase": 5,
+      "concorrencia": 0.23,
+      "pontos_minimo": 36,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40089",
+      "curso": "Física Médica − Noturno − São Paulo Butantã/ Quadrilátero",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 1.5,
+      "pontos_minimo": 42,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40090",
+      "curso": "Geociências e Educação Ambiental − Noturno − São Paulo Butantã",
+      "vagas": 36,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.11,
+      "pontos_minimo": 11,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40091",
+      "curso": "Geofísica − Integral − São Paulo Butantã",
+      "vagas": 22,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.09,
+      "pontos_minimo": 34,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40092",
+      "curso": "Geologia − Integral − São Paulo Butantã",
+      "vagas": 10,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 4,
+      "concorrencia": 0.4,
+      "pontos_minimo": 31,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "40093",
+      "curso": "Matemática − Integral − São Paulo Butantã − 2º semestre",
+      "vagas": 5,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 1.4,
+      "pontos_minimo": 53,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "40094",
+      "curso": "Matemática − Matutino − São Paulo Butantã − 2º semestre",
+      "vagas": 13,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.31,
+      "pontos_minimo": 38,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40095",
+      "curso": "Matemática − Noturno − São Paulo Butantã − 2º semestre",
+      "vagas": 57,
+      "inscritos": 8,
+      "ausentes": 2,
+      "convocados_2fase": 2,
+      "concorrencia": 0.04,
+      "pontos_minimo": 20,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "40096",
+      "curso": "Matemática Aplicada − Integral − São Paulo Butantã − 2º semestre",
+      "vagas": 1,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 2.0,
+      "pontos_minimo": 38,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "40097",
+      "curso": "Matemática Aplicada a Negócios − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 28,
+      "inscritos": 7,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 0.21,
+      "pontos_minimo": 24,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "40098",
+      "curso": "Matemática Aplicada e Computação Científica − Integral − São Carlos − 2º se",
+      "vagas": 7,
+      "inscritos": 18,
+      "ausentes": 2,
+      "convocados_2fase": 16,
+      "concorrencia": 2.29,
+      "pontos_minimo": 29,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "40099",
+      "curso": "Matemática Aplicada e Computacional − Noturno − São Paulo Butantã − 2º se",
+      "vagas": 4,
+      "inscritos": 30,
+      "ausentes": 7,
+      "convocados_2fase": 13,
+      "concorrencia": 3.25,
+      "pontos_minimo": 39,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "40100",
+      "curso": "Meteorologia − Integral − São Paulo Butantã",
+      "vagas": 16,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.19,
+      "pontos_minimo": 38,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "40101",
+      "curso": "Oceanografia − Integral − São Paulo Butantã",
+      "vagas": 7,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.43,
+      "pontos_minimo": 30,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "40102",
+      "curso": "Química − Noturno − Ribeirão Preto − 2º semestre",
+      "vagas": 12,
+      "inscritos": 5,
+      "ausentes": 2,
+      "convocados_2fase": 2,
+      "concorrencia": 0.17,
+      "pontos_minimo": 23,
+      "pontos_maximo": 28
+    },
+    {
+      "codigo": "40103",
+      "curso": "Química − Integral − São Paulo Butantã − 3º semestre",
+      "vagas": 9,
+      "inscritos": 23,
+      "ausentes": 6,
+      "convocados_2fase": 16,
+      "concorrencia": 1.78,
+      "pontos_minimo": 32,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40104",
+      "curso": "Química − Noturno − São Paulo Butantã − 2º semestre",
+      "vagas": 6,
+      "inscritos": 14,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 1.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 49
+    },
+    {
+      "codigo": "40105",
+      "curso": "Química − Noturno − São Paulo Butantã − 3º semestre",
+      "vagas": 6,
+      "inscritos": 7,
+      "ausentes": 2,
+      "convocados_2fase": 4,
+      "concorrencia": 0.67,
+      "pontos_minimo": 32,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "40106",
+      "curso": "Química − Núcleo Geral − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 18,
+      "inscritos": 13,
+      "ausentes": 1,
+      "convocados_2fase": 12,
+      "concorrencia": 0.67,
+      "pontos_minimo": 22,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40107",
+      "curso": "Química − Núcleo Geral − Integral − São Carlos − 2º semestre",
+      "vagas": 12,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 0.42,
+      "pontos_minimo": 29,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "40108",
+      "curso": "Sistemas de Informação − Noturno − São Carlos − 2º semestre",
+      "vagas": 1,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 39,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "40109",
+      "curso": "Engenharia Mecatrônica − Integral − São Carlos",
+      "vagas": 3,
+      "inscritos": 8,
+      "ausentes": 0,
+      "convocados_2fase": 7,
+      "concorrencia": 2.33,
+      "pontos_minimo": 40,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "60000",
+      "curso": "Administração − Integral − Piracicaba − 6º semestre",
+      "vagas": 5,
+      "inscritos": 6,
+      "ausentes": 2,
+      "convocados_2fase": 4,
+      "concorrencia": 0.8,
+      "pontos_minimo": 32,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "60001",
+      "curso": "Arquitetura e Urbanismo − Integral − São Carlos",
+      "vagas": 2,
+      "inscritos": 51,
+      "ausentes": 5,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 67,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "60002",
+      "curso": "Biblioteconomia e Ciência da Informação − Matutino − São Paulo Butantã",
+      "vagas": 6,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.33,
+      "pontos_minimo": 45,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "60003",
+      "curso": "Biblioteconomia e Ciência da Informação − Noturno − São Paulo Butantã",
+      "vagas": 12,
+      "inscritos": 12,
+      "ausentes": 0,
+      "convocados_2fase": 12,
+      "concorrencia": 1.0,
+      "pontos_minimo": 34,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60004",
+      "curso": "Biblioteconomia e Ciência da Informação − Noturno − Ribeirão Preto − 2º sem",
+      "vagas": 29,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 0.17,
+      "pontos_minimo": 24,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "60005",
+      "curso": "Ciências Econômicas − Integral − Piracicaba − 4º semestre",
+      "vagas": 2,
+      "inscritos": 16,
+      "ausentes": 3,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 60,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "60007",
+      "curso": "Comunicação Social − Habilitação Editoração − Matutino − São Paulo Butantã",
+      "vagas": 1,
+      "inscritos": 14,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 67,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "60008",
+      "curso": "Direito − Integral − Ribeirão Preto − 3º semestre",
+      "vagas": 14,
+      "inscritos": 152,
+      "ausentes": 40,
+      "convocados_2fase": 42,
+      "concorrencia": 3.0,
+      "pontos_minimo": 64,
+      "pontos_maximo": 74
+    },
+    {
+      "codigo": "60009",
+      "curso": "Educomunicação − Noturno − São Paulo Butantã",
+      "vagas": 6,
+      "inscritos": 5,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 0.5,
+      "pontos_minimo": 60,
+      "pontos_maximo": 63
+    },
+    {
+      "codigo": "60010",
+      "curso": "Geografia − Noturno − São Paulo Butantã − 3º semestre",
+      "vagas": 10,
+      "inscritos": 17,
+      "ausentes": 0,
+      "convocados_2fase": 17,
+      "concorrencia": 1.7,
+      "pontos_minimo": 29,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60011",
+      "curso": "Geografia − Vespertino − São Paulo Butantã − 3º semestre",
+      "vagas": 8,
+      "inscritos": 6,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 0.75,
+      "pontos_minimo": 38,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60012",
+      "curso": "Gestão Ambiental − Noturno − Piracicaba − 4º semestre",
+      "vagas": 5,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "60014",
+      "curso": "Gestão de Políticas Públicas − Matutino − São Paulo Leste",
+      "vagas": 2,
+      "inscritos": 7,
+      "ausentes": 0,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 49,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60015",
+      "curso": "Gestão de Políticas Públicas − Noturno − São Paulo Leste",
+      "vagas": 2,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 3.5,
+      "pontos_minimo": 46,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "60017",
+      "curso": "Música − Núcleo Geral − Integral − Ribeirão Preto − 2º semestre",
+      "vagas": 7,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.43,
+      "pontos_minimo": 37,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "60018",
+      "curso": "Pedagogia − Vespertino − São Paulo Butantã − 4º semestre",
+      "vagas": 4,
+      "inscritos": 4,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 0.75,
+      "pontos_minimo": 35,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "60019",
+      "curso": "Pedagogia − Noturno − São Paulo Butantã − 4º semestre",
+      "vagas": 28,
+      "inscritos": 36,
+      "ausentes": 8,
+      "convocados_2fase": 28,
+      "concorrencia": 1.0,
+      "pontos_minimo": 28,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60020",
+      "curso": "Pedagogia − Noturno − Ribeirão Preto − 2º semestre",
+      "vagas": 13,
+      "inscritos": 22,
+      "ausentes": 1,
+      "convocados_2fase": 21,
+      "concorrencia": 1.62,
+      "pontos_minimo": 30,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "60021",
+      "curso": "Relações Internacionais − Noturno − São Paulo Butantã",
+      "vagas": 3,
+      "inscritos": 110,
+      "ausentes": 17,
+      "convocados_2fase": 11,
+      "concorrencia": 3.67,
+      "pontos_minimo": 71,
+      "pontos_maximo": 75
+    },
+    {
+      "codigo": "60022",
+      "curso": "Turismo − Noturno − São Paulo Butantã",
+      "vagas": 12,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 0.75,
+      "pontos_minimo": 24,
+      "pontos_maximo": 67
+    }
+  ],
+  "2026": [
+    {
+      "codigo": "20001",
+      "curso": "Educação Física − São Paulo (Licenciatura)",
+      "vagas": 16,
+      "inscritos": 7,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 0.38,
+      "pontos_minimo": 23,
+      "pontos_maximo": 40
+    },
+    {
+      "codigo": "20002",
+      "curso": "Educação Física − Ribeirão Preto (Bacharelado)",
+      "vagas": 11,
+      "inscritos": 20,
+      "ausentes": 5,
+      "convocados_2fase": 15,
+      "concorrencia": 1.36,
+      "pontos_minimo": 24,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "20003",
+      "curso": "Enfermagem − Ribeirão Preto (Bacharelado e Licenciatura)",
+      "vagas": 7,
+      "inscritos": 13,
+      "ausentes": 3,
+      "convocados_2fase": 10,
+      "concorrencia": 1.43,
+      "pontos_minimo": 21,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "20004",
+      "curso": "Enfermagem − Ribeirão Preto (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 10,
+      "concorrencia": 2.5,
+      "pontos_minimo": 27,
+      "pontos_maximo": 51
+    },
+    {
+      "codigo": "20005",
+      "curso": "Ciências Biológicas − Piracicaba (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 2.5,
+      "pontos_minimo": 32,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "20006",
+      "curso": "Ciências Biológicas − Piracicaba (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.33,
+      "pontos_minimo": 32,
+      "pontos_maximo": 41
+    },
+    {
+      "codigo": "20008",
+      "curso": "Ciências dos Alimentos − Piracicaba (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 36
+    },
+    {
+      "codigo": "20009",
+      "curso": "Engenharia Agronômica − Piracicaba (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 13,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 51,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "20010",
+      "curso": "Engenharia Agronômica − Piracicaba (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 5,
+      "concorrencia": 1.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "20011",
+      "curso": "Engenharia Agronômica − Piracicaba (Bacharelado)",
+      "vagas": 8,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.38,
+      "pontos_minimo": 32,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "20013",
+      "curso": "Engenharia Florestal − Piracicaba (Bacharelado)",
+      "vagas": 7,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.14,
+      "pontos_minimo": 32,
+      "pontos_maximo": 32
+    },
+    {
+      "codigo": "20015",
+      "curso": "Farmácia − São Paulo (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 51,
+      "ausentes": 7,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 56,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "20016",
+      "curso": "Ciências Biológicas − Ribeirão Preto (Bacharelado e Licenciatura)",
+      "vagas": 3,
+      "inscritos": 14,
+      "ausentes": 3,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "20017",
+      "curso": "Fisioterapia − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 21,
+      "ausentes": 2,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 38,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "20018",
+      "curso": "Fonoaudiologia − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 13,
+      "ausentes": 1,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 21,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20019",
+      "curso": "Terapia Ocupacional − São Paulo (Bacharelado)",
+      "vagas": 6,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 10,
+      "concorrencia": 1.67,
+      "pontos_minimo": 24,
+      "pontos_maximo": 53
+    },
+    {
+      "codigo": "20020",
+      "curso": "Fisioterapia − Ribeirão Preto (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 2.25,
+      "pontos_minimo": 28,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20021",
+      "curso": "Nutrição e Metabolismo − Ribeirão Preto (Bacharelado)",
+      "vagas": 7,
+      "inscritos": 18,
+      "ausentes": 2,
+      "convocados_2fase": 16,
+      "concorrencia": 2.29,
+      "pontos_minimo": 21,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "20022",
+      "curso": "Terapia Ocupacional − Ribeirão Preto (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 7,
+      "ausentes": 0,
+      "convocados_2fase": 7,
+      "concorrencia": 1.4,
+      "pontos_minimo": 29,
+      "pontos_maximo": 50
+    },
+    {
+      "codigo": "20023",
+      "curso": "Medicina Veterinária − São Paulo (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 91,
+      "ausentes": 11,
+      "convocados_2fase": 15,
+      "concorrencia": 3.0,
+      "pontos_minimo": 53,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "20024",
+      "curso": "Fonoaudiologia − Bauru (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 1.33,
+      "pontos_minimo": 29,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "20025",
+      "curso": "Odontologia − Bauru (Bacharelado)",
+      "vagas": 6,
+      "inscritos": 76,
+      "ausentes": 5,
+      "convocados_2fase": 22,
+      "concorrencia": 3.67,
+      "pontos_minimo": 47,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "20026",
+      "curso": "Nutrição − São Paulo (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 20,
+      "ausentes": 3,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 47,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "20027",
+      "curso": "Nutrição − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 18,
+      "ausentes": 3,
+      "convocados_2fase": 12,
+      "concorrencia": 3.0,
+      "pontos_minimo": 34,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "20028",
+      "curso": "Medicina Veterinária − Pirassununga (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 14,
+      "ausentes": 3,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 48,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "20029",
+      "curso": "Zootecnia − Pirassununga (Bacharelado)",
+      "vagas": 12,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 0.75,
+      "pontos_minimo": 24,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "20030",
+      "curso": "Ciências Biológicas − São Paulo (Bacharelado/Licenciatura)",
+      "vagas": 6,
+      "inscritos": 44,
+      "ausentes": 3,
+      "convocados_2fase": 21,
+      "concorrencia": 3.5,
+      "pontos_minimo": 49,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "20031",
+      "curso": "Ciências Biológicas − São Paulo (Bacharelado/Licenciatura)",
+      "vagas": 9,
+      "inscritos": 50,
+      "ausentes": 9,
+      "convocados_2fase": 27,
+      "concorrencia": 3.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "20032",
+      "curso": "Ciências Biomédicas − São Paulo (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 44,
+      "ausentes": 7,
+      "convocados_2fase": 9,
+      "concorrencia": 3.0,
+      "pontos_minimo": 53,
+      "pontos_maximo": 68
+    },
+    {
+      "codigo": "40002",
+      "curso": "Engenharia Bioquímica − Lorena (Bacharelado)",
+      "vagas": 9,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40003",
+      "curso": "Engenharia de Materiais − Lorena (Bacharelado)",
+      "vagas": 24,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.04,
+      "pontos_minimo": 40,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40004",
+      "curso": "Engenharia Física − Lorena (Bacharelado)",
+      "vagas": 33,
+      "inscritos": 3,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.03,
+      "pontos_minimo": 40,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40005",
+      "curso": "Engenharia Química − Lorena (Bacharelado)",
+      "vagas": 41,
+      "inscritos": 18,
+      "ausentes": 5,
+      "convocados_2fase": 7,
+      "concorrencia": 0.17,
+      "pontos_minimo": 40,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40006",
+      "curso": "Engenharia Química − Lorena (Bacharelado)",
+      "vagas": 22,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.05,
+      "pontos_minimo": 40,
+      "pontos_maximo": 42
+    },
+    {
+      "codigo": "40007",
+      "curso": "Engenharia Ambiental − São Carlos (Bacharelado)",
+      "vagas": 6,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.33,
+      "pontos_minimo": 40,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "40008",
+      "curso": "Engenharia Civil − São Carlos (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 8,
+      "concorrencia": 2.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 68
+    },
+    {
+      "codigo": "40009",
+      "curso": "Engenharia de Materiais e Manufatura − São Carlos (Bacharelado)",
+      "vagas": 16,
+      "inscritos": 22,
+      "ausentes": 2,
+      "convocados_2fase": 11,
+      "concorrencia": 0.69,
+      "pontos_minimo": 40,
+      "pontos_maximo": 61
+    },
+    {
+      "codigo": "40010",
+      "curso": "Engenharia Elétrica − Ênfase em Eletrônica − São Carlos (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 40,
+      "pontos_maximo": 47
+    },
+    {
+      "codigo": "40011",
+      "curso": "Engenharia Elétrica − Ênfase em Sistemas de Energia e Automação − São Car",
+      "vagas": 10,
+      "inscritos": 44,
+      "ausentes": 6,
+      "convocados_2fase": 31,
+      "concorrencia": 3.1,
+      "pontos_minimo": 41,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "40012",
+      "curso": "Engenharia Mecatrônica − São Carlos (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 21,
+      "ausentes": 1,
+      "convocados_2fase": 11,
+      "concorrencia": 3.67,
+      "pontos_minimo": 49,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40013",
+      "curso": "Engenharia Civil − São Paulo (Bacharelado)",
+      "vagas": 25,
+      "inscritos": 95,
+      "ausentes": 19,
+      "convocados_2fase": 21,
+      "concorrencia": 0.84,
+      "pontos_minimo": 40,
+      "pontos_maximo": 69
+    },
+    {
+      "codigo": "40014",
+      "curso": "Engenharia de Minas − São Paulo (Bacharelado)",
+      "vagas": 12,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40015",
+      "curso": "Engenharia de Petróleo − São Paulo (Bacharelado)",
+      "vagas": 14,
+      "inscritos": 16,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.07,
+      "pontos_minimo": 40,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "40016",
+      "curso": "Engenharia Metalúrgica − São Paulo (Bacharelado)",
+      "vagas": 8,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.25,
+      "pontos_minimo": 40,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40017",
+      "curso": "Engenharia Naval − São Paulo (Bacharelado)",
+      "vagas": 17,
+      "inscritos": 27,
+      "ausentes": 5,
+      "convocados_2fase": 1,
+      "concorrencia": 0.06,
+      "pontos_minimo": 40,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "40018",
+      "curso": "Engenharia de Materiais − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40019",
+      "curso": "Engenharia Ambiental − São Paulo (Bacharelado)",
+      "vagas": 13,
+      "inscritos": 20,
+      "ausentes": 3,
+      "convocados_2fase": 1,
+      "concorrencia": 0.08,
+      "pontos_minimo": 40,
+      "pontos_maximo": 62
+    },
+    {
+      "codigo": "40020",
+      "curso": "Engenharia Nuclear − São Paulo (Bacharelado)",
+      "vagas": 6,
+      "inscritos": 7,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.17,
+      "pontos_minimo": 40,
+      "pontos_maximo": 54
+    },
+    {
+      "codigo": "40021",
+      "curso": "Engenharia Elétrica − Ênfase em Telecomunicações − São Paulo (Bacharelado)",
+      "vagas": 9,
+      "inscritos": 55,
+      "ausentes": 12,
+      "convocados_2fase": 13,
+      "concorrencia": 1.44,
+      "pontos_minimo": 40,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "40022",
+      "curso": "Física Médica − Ribeirão Preto (Bacharelado)",
+      "vagas": 15,
+      "inscritos": 9,
+      "ausentes": 2,
+      "convocados_2fase": 7,
+      "concorrencia": 0.47,
+      "pontos_minimo": 30,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40023",
+      "curso": "Matemática Aplicada a Negócios − Ribeirão Preto (Bacharelado)",
+      "vagas": 21,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.14,
+      "pontos_minimo": 25,
+      "pontos_maximo": 31
+    },
+    {
+      "codigo": "40024",
+      "curso": "Química − Ribeirão Preto (Licenciatura e Bacharelado)",
+      "vagas": 14,
+      "inscritos": 8,
+      "ausentes": 0,
+      "convocados_2fase": 8,
+      "concorrencia": 0.57,
+      "pontos_minimo": 27,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "40025",
+      "curso": "Química − Núcleo Geral − Ribeirão Preto (Bacharelado)",
+      "vagas": 20,
+      "inscritos": 11,
+      "ausentes": 3,
+      "convocados_2fase": 8,
+      "concorrencia": 0.4,
+      "pontos_minimo": 24,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "40026",
+      "curso": "Engenharia de Alimentos − Pirassununga (Bacharelado)",
+      "vagas": 24,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.17,
+      "pontos_minimo": 26,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "40027",
+      "curso": "Engenharia de Alimentos − Pirassununga (Bacharelado)",
+      "vagas": 24,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.04,
+      "pontos_minimo": 33,
+      "pontos_maximo": 33
+    },
+    {
+      "codigo": "40029",
+      "curso": "Astronomia − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 8,
+      "ausentes": 3,
+      "convocados_2fase": 2,
+      "concorrencia": 0.5,
+      "pontos_minimo": 58,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40030",
+      "curso": "Geofísica − São Paulo (Bacharelado)",
+      "vagas": 20,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.05,
+      "pontos_minimo": 57,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40032",
+      "curso": "Ciência de Dados − São Carlos (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 14,
+      "ausentes": 2,
+      "convocados_2fase": 10,
+      "concorrencia": 3.33,
+      "pontos_minimo": 42,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "40033",
+      "curso": "Estatística e Ciência de Dados − São Carlos (Bacharelado)",
+      "vagas": 12,
+      "inscritos": 34,
+      "ausentes": 6,
+      "convocados_2fase": 28,
+      "concorrencia": 2.33,
+      "pontos_minimo": 31,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "40034",
+      "curso": "Matemática Aplicada e Computação Científica − São Carlos (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 45,
+      "pontos_maximo": 45
+    },
+    {
+      "codigo": "40035",
+      "curso": "Sistemas de Informação − São Carlos (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 44,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40036",
+      "curso": "Matemática − São Carlos (Licenciatura)",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 55,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40037",
+      "curso": "Física − São Paulo (Licenciatura)",
+      "vagas": 7,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40038",
+      "curso": "Física − São Paulo (Licenciatura)",
+      "vagas": 10,
+      "inscritos": 8,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.2,
+      "pontos_minimo": 36,
+      "pontos_maximo": 48
+    },
+    {
+      "codigo": "40039",
+      "curso": "Física − São Paulo (Licenciatura)",
+      "vagas": 10,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.2,
+      "pontos_minimo": 41,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40040",
+      "curso": "Física − São Paulo (Licenciatura)",
+      "vagas": 10,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40041",
+      "curso": "Física − São Paulo (Licenciatura)",
+      "vagas": 10,
+      "inscritos": 5,
+      "ausentes": 2,
+      "convocados_2fase": 1,
+      "concorrencia": 0.1,
+      "pontos_minimo": 60,
+      "pontos_maximo": 60
+    },
+    {
+      "codigo": "40043",
+      "curso": "Geociências e Educação Ambiental − São Paulo (Licenciatura)",
+      "vagas": 31,
+      "inscritos": 1,
+      "ausentes": 1,
+      "convocados_2fase": 0,
+      "concorrencia": 0.0,
+      "pontos_minimo": null,
+      "pontos_maximo": null
+    },
+    {
+      "codigo": "40044",
+      "curso": "Estatística − São Paulo (Bacharelado)",
+      "vagas": 7,
+      "inscritos": 21,
+      "ausentes": 3,
+      "convocados_2fase": 15,
+      "concorrencia": 2.14,
+      "pontos_minimo": 25,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "40045",
+      "curso": "Matemática − São Paulo (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 10,
+      "ausentes": 1,
+      "convocados_2fase": 9,
+      "concorrencia": 1.8,
+      "pontos_minimo": 39,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "40046",
+      "curso": "Matemática − São Paulo (Licenciatura)",
+      "vagas": 18,
+      "inscritos": 5,
+      "ausentes": 1,
+      "convocados_2fase": 2,
+      "concorrencia": 0.11,
+      "pontos_minimo": 54,
+      "pontos_maximo": 55
+    },
+    {
+      "codigo": "40047",
+      "curso": "Matemática − São Paulo (Licenciatura)",
+      "vagas": 48,
+      "inscritos": 18,
+      "ausentes": 6,
+      "convocados_2fase": 8,
+      "concorrencia": 0.17,
+      "pontos_minimo": 18,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40048",
+      "curso": "Matemática Aplicada − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 9,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 1.5,
+      "pontos_minimo": 39,
+      "pontos_maximo": 57
+    },
+    {
+      "codigo": "40049",
+      "curso": "Oceanografia − São Paulo (Bacharelado)",
+      "vagas": 17,
+      "inscritos": 6,
+      "ausentes": 1,
+      "convocados_2fase": 5,
+      "concorrencia": 0.29,
+      "pontos_minimo": 37,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "40050",
+      "curso": "Química − São Carlos (Bacharelado)",
+      "vagas": 20,
+      "inscritos": 4,
+      "ausentes": 0,
+      "convocados_2fase": 4,
+      "concorrencia": 0.2,
+      "pontos_minimo": 32,
+      "pontos_maximo": 46
+    },
+    {
+      "codigo": "50008",
+      "curso": "Ciências de Computação − São Carlos (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 1.0,
+      "pontos_minimo": 22,
+      "pontos_maximo": 22
+    },
+    {
+      "codigo": "60001",
+      "curso": "Gestão Ambiental − São Paulo (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.33,
+      "pontos_minimo": 59,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "60002",
+      "curso": "Comunicação Social − Habilitação em Editoração − São Paulo (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 19,
+      "ausentes": 3,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 58,
+      "pontos_maximo": 68
+    },
+    {
+      "codigo": "60003",
+      "curso": "Relações Públicas − São Paulo (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 23,
+      "ausentes": 6,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 62,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "60004",
+      "curso": "Biblioteconomia e Ciência da Informação − São Paulo (Bacharelado)",
+      "vagas": 5,
+      "inscritos": 7,
+      "ausentes": 1,
+      "convocados_2fase": 6,
+      "concorrencia": 1.2,
+      "pontos_minimo": 51,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "60005",
+      "curso": "Biblioteconomia e Ciência da Informação − São Paulo (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 0.75,
+      "pontos_minimo": 42,
+      "pontos_maximo": 58
+    },
+    {
+      "codigo": "60006",
+      "curso": "Educomunicação − São Paulo (Licenciatura)",
+      "vagas": 17,
+      "inscritos": 14,
+      "ausentes": 0,
+      "convocados_2fase": 14,
+      "concorrencia": 0.82,
+      "pontos_minimo": 37,
+      "pontos_maximo": 66
+    },
+    {
+      "codigo": "60007",
+      "curso": "Música − Habilitação em Canto e Arte Lírica − São Paulo (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 43,
+      "pontos_maximo": 43
+    },
+    {
+      "codigo": "60008",
+      "curso": "Música − Ciclo Básico em Composição e Regência − São Paulo (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 3,
+      "ausentes": 0,
+      "convocados_2fase": 3,
+      "concorrencia": 1.5,
+      "pontos_minimo": 48,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "60009",
+      "curso": "Música − Habilitação em Instrumento de Cordas (Viola, Violino e Violoncelo) − ",
+      "vagas": 3,
+      "inscritos": 2,
+      "ausentes": 1,
+      "convocados_2fase": 1,
+      "concorrencia": 0.33,
+      "pontos_minimo": 44,
+      "pontos_maximo": 44
+    },
+    {
+      "codigo": "60010",
+      "curso": "Música − Habilitação em Instrumento de Cordas Dedilhadas (Violão e Viola Br",
+      "vagas": 2,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.5,
+      "pontos_minimo": 39,
+      "pontos_maximo": 39
+    },
+    {
+      "codigo": "60013",
+      "curso": "Turismo − São Paulo (Bacharelado)",
+      "vagas": 11,
+      "inscritos": 13,
+      "ausentes": 0,
+      "convocados_2fase": 13,
+      "concorrencia": 1.18,
+      "pontos_minimo": 22,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "60014",
+      "curso": "Administração − Piracicaba (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 2.0,
+      "pontos_minimo": 32,
+      "pontos_maximo": 63
+    },
+    {
+      "codigo": "60015",
+      "curso": "Ciências Econômicas − Piracicaba (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 12,
+      "ausentes": 2,
+      "convocados_2fase": 3,
+      "concorrencia": 3.0,
+      "pontos_minimo": 62,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "60016",
+      "curso": "Gestão Ambiental − Piracicaba (Bacharelado)",
+      "vagas": 3,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.33,
+      "pontos_minimo": 32,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60018",
+      "curso": "Direito − Ribeirão Preto (Bacharelado)",
+      "vagas": 8,
+      "inscritos": 199,
+      "ausentes": 41,
+      "convocados_2fase": 25,
+      "concorrencia": 3.13,
+      "pontos_minimo": 69,
+      "pontos_maximo": 77
+    },
+    {
+      "codigo": "60019",
+      "curso": "Pedagogia − São Paulo (Licenciatura)",
+      "vagas": 16,
+      "inscritos": 49,
+      "ausentes": 13,
+      "convocados_2fase": 36,
+      "concorrencia": 2.25,
+      "pontos_minimo": 24,
+      "pontos_maximo": 64
+    },
+    {
+      "codigo": "60020",
+      "curso": "Pedagogia − São Paulo (Licenciatura)",
+      "vagas": 7,
+      "inscritos": 13,
+      "ausentes": 6,
+      "convocados_2fase": 7,
+      "concorrencia": 1.0,
+      "pontos_minimo": 24,
+      "pontos_maximo": 67
+    },
+    {
+      "codigo": "60021",
+      "curso": "Ciências Contábeis − Ribeirão Preto (Bacharelado)",
+      "vagas": 2,
+      "inscritos": 18,
+      "ausentes": 3,
+      "convocados_2fase": 6,
+      "concorrencia": 3.0,
+      "pontos_minimo": 59,
+      "pontos_maximo": 71
+    },
+    {
+      "codigo": "60022",
+      "curso": "Biblioteconomia e Ciência da Informação − Ribeirão Preto (Bacharelado)",
+      "vagas": 23,
+      "inscritos": 5,
+      "ausentes": 0,
+      "convocados_2fase": 5,
+      "concorrencia": 0.22,
+      "pontos_minimo": 15,
+      "pontos_maximo": 59
+    },
+    {
+      "codigo": "60023",
+      "curso": "Educação Artística − Habilitação em Música − Ribeirão Preto (Licenciatura)",
+      "vagas": 3,
+      "inscritos": 1,
+      "ausentes": 0,
+      "convocados_2fase": 1,
+      "concorrencia": 0.33,
+      "pontos_minimo": 52,
+      "pontos_maximo": 52
+    },
+    {
+      "codigo": "60024",
+      "curso": "Música − Ribeirão Preto (Bacharelado)",
+      "vagas": 12,
+      "inscritos": 2,
+      "ausentes": 0,
+      "convocados_2fase": 2,
+      "concorrencia": 0.17,
+      "pontos_minimo": 40,
+      "pontos_maximo": 63
+    },
+    {
+      "codigo": "60025",
+      "curso": "Pedagogia − Ribeirão Preto (Licenciatura)",
+      "vagas": 15,
+      "inscritos": 20,
+      "ausentes": 3,
+      "convocados_2fase": 17,
+      "concorrencia": 1.13,
+      "pontos_minimo": 36,
+      "pontos_maximo": 70
+    },
+    {
+      "codigo": "60026",
+      "curso": "Geografia − São Paulo (Bacharelado)",
+      "vagas": 8,
+      "inscritos": 11,
+      "ausentes": 2,
+      "convocados_2fase": 9,
+      "concorrencia": 1.13,
+      "pontos_minimo": 43,
+      "pontos_maximo": 65
+    },
+    {
+      "codigo": "60027",
+      "curso": "Geografia − São Paulo (Bacharelado)",
+      "vagas": 10,
+      "inscritos": 15,
+      "ausentes": 5,
+      "convocados_2fase": 10,
+      "concorrencia": 1.0,
+      "pontos_minimo": 41,
+      "pontos_maximo": 63
+    },
+    {
+      "codigo": "60028",
+      "curso": "Arquitetura e Urbanismo − São Carlos (Bacharelado)",
+      "vagas": 4,
+      "inscritos": 60,
+      "ausentes": 6,
+      "convocados_2fase": 14,
+      "concorrencia": 3.5,
+      "pontos_minimo": 65,
+      "pontos_maximo": 72
+    },
+    {
+      "codigo": "60029",
+      "curso": "Relações Internacionais − São Paulo (Bacharelado)",
+      "vagas": 1,
+      "inscritos": 63,
+      "ausentes": 15,
+      "convocados_2fase": 4,
+      "concorrencia": 4.0,
+      "pontos_minimo": 72,
+      "pontos_maximo": 73
+    }
+  ]
+}
