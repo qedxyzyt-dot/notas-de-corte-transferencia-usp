@@ -80,6 +80,8 @@ def main():
     arquivos = {
         2019: f"{PASTA}/transferencia_2019_nota_de_corte.pdf",
         2020: f"{PASTA}/transferencia_2020_nota_de_corte.pdf",
+        2021: f"{PASTA}/transferencia_2021_notas_de_corte.pdf",
+        2023: f"{PASTA}/transferencia_2023_nota-corte.pdf",
         2024: f"{PASTA}/transferencia_2024_notas_de_corte.pdf",
         2025: f"{PASTA}/transferencia_2025_notas_de_corte.pdf",
         2026: f"{PASTA}/transferencia_2026_notas_de_corte.pdf",

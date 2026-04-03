@@ -2,7 +2,7 @@
 
 Ferramenta para consultar **notas de corte**, **concorrência**, **vagas**, **inscritos** e gerar gráficos sobre o exame de **Transferência Externa da USP**, organizado pela FUVEST.
 
-Dados disponíveis: **2019, 2020, 2024, 2025 e 2026**.
+Dados disponíveis: **2019, 2020, 2021, 2023, 2024, 2025 e 2026**.
 
 ---
 
@@ -98,6 +98,8 @@ Este projeto foi criado para **facilitar a vida de quem está se preparando para
 notas_de_corte/
   transferencia_2019_nota_de_corte.pdf   # PDF original FUVEST
   transferencia_2020_nota_de_corte.pdf
+  transferencia_2021_notas_de_corte.pdf
+  transferencia_2023_nota-corte.pdf
   transferencia_2024_notas_de_corte.pdf
   transferencia_2025_notas_de_corte.pdf
   transferencia_2026_notas_de_corte.pdf
