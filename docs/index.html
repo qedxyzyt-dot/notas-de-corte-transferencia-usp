@@ -61,90 +61,38 @@ header p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.45rem;
-    margin-top: 0.95rem;
-    padding: 0.62rem 0.95rem;
-    border: 1px solid rgba(255, 255, 255, 0.22);
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
     color: #fff;
     text-decoration: none;
     font-family: var(--fonte-display);
-    font-size: 0.92rem;
-    font-weight: 700;
-    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.88rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(6px);
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 .topbar-link:hover,
 .topbar-link:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.34);
-    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.24);
+    opacity: 1;
     outline: none;
 }
 .topbar-link::before {
     content: "";
-    width: 0.8rem;
-    height: 0.8rem;
-    border-top: 2px solid currentColor;
-    border-right: 2px solid currentColor;
+    width: 0.62rem;
+    height: 0.62rem;
+    margin-top: -0.02rem;
+    border-top: 1.8px solid currentColor;
+    border-right: 1.8px solid currentColor;
     transform: rotate(45deg);
 }
 
 .container { max-width: 1180px; margin: 0 auto; padding: 1.5rem; }
-
-.contexto-oficial {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin: 0 0 1.2rem;
-    padding: 1rem 1.15rem;
-    border: 1px solid rgba(0, 74, 141, 0.14);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.84);
-    box-shadow: var(--sombra-card);
-}
-.contexto-oficial__texto strong {
-    display: block;
-    font-family: var(--fonte-display);
-    font-size: 0.98rem;
-    color: var(--usp-azul-profundo);
-}
-.contexto-oficial__texto span {
-    display: block;
-    margin-top: 0.18rem;
-    color: var(--texto-sec);
-    font-size: 0.96rem;
-}
-.contexto-oficial__link {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.72rem 0.95rem;
-    border-radius: 999px;
-    background: var(--usp-azul);
-    color: #fff;
-    text-decoration: none;
-    font-family: var(--fonte-display);
-    font-weight: 700;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-.contexto-oficial__link:hover,
-.contexto-oficial__link:focus {
-    background: var(--usp-azul-profundo);
-    transform: translateY(-1px);
-    outline: none;
-}
-.contexto-oficial__link::after {
-    content: "";
-    width: 0.72rem;
-    height: 0.72rem;
-    border-top: 2px solid currentColor;
-    border-right: 2px solid currentColor;
-    transform: rotate(45deg);
-}
 
 /* Filtros */
 .filtros {
@@ -414,14 +362,6 @@ footer a { color: var(--usp-azul); }
 
 /* Responsivo */
 @media (max-width: 700px) {
-    .contexto-oficial {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .contexto-oficial__link {
-        width: 100%;
-        justify-content: center;
-    }
     .filtros { flex-direction: column; }
     .cards { grid-template-columns: 1fr 1fr; }
     .lista-sugestoes, .combo-select__menu {
@@ -440,14 +380,6 @@ footer a { color: var(--usp-azul); }
 </header>
 
 <div class="container">
-    <section class="contexto-oficial" aria-label="Referência oficial">
-        <div class="contexto-oficial__texto">
-            <strong>Referência oficial da seleção</strong>
-            <span>Consulte o edital, os comunicados e as orientações diretamente no portal da FUVEST.</span>
-        </div>
-        <a class="contexto-oficial__link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Abrir página da FUVEST</a>
-    </section>
-
     <!-- Filtros -->
     <div class="filtros">
         <div class="filtro-grupo" style="flex: 3; min-width: 250px;">
