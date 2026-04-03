@@ -500,10 +500,10 @@ function ehSemestreSegmento(seg) {
 }
 
 function ehGrauSegmento(seg) {
-    const segNorm = normalizarSegmento(seg);
+    const segNorm = normalizarSegmento(seg).replace(/[\/\s]+$/g, "");
     return GRAUS.some(g => {
         const gNorm = normalizar(g);
-        return segNorm === gNorm || segNorm.startsWith(gNorm);
+        return segNorm === gNorm;
     });
 }
 
@@ -517,6 +517,73 @@ function padronizarSegmento(seg) {
         return "Ênfase em " + s.replace(/^Ênfase\s+em\s+/i, "").trim();
     }
     return s;
+}
+
+function limparParentesesAuxiliares(seg) {
+    return seg
+        .replace(/\(([^)]*)\)/g, (_, conteudo) => {
+            const valor = padronizarSegmento(conteudo);
+            if (!valor) return "";
+            if (identificarLocSegmento(valor)) return "";
+            if (ehPeriodoSegmento(valor)) return "";
+            if (ehSemestreSegmento(valor)) return "";
+            if (ehGrauSegmento(valor)) return "";
+            return `(${valor})`;
+        })
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function ehFragmentoInvalidoBase(seg) {
+    const segNorm = normalizarSegmento(seg);
+    if (!segNorm) return true;
+    if (/^\d+[ºo°]?(?:\s*sem(?:estre)?)?$/.test(segNorm)) return true;
+    return false;
+}
+
+function limparRotuloBase(rotulo) {
+    let res = rotulo.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
+    res = res.replace(/^(?:Bacharelado\s*e\s*Licenciatura\s*em\s*|Licenciatura\s*e\s*Bacharelado\s*em\s*|Bacharelado\s*em\s*|Licenciatura\s*em\s*|Curso\s+de\s+Graduação\s+em\s*)/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
+    res = res.replace(/\s*(?:\/\s*)?(?:Bacharelado|Licenciatura)\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Integral|Diurno|Noturno|Matutino|Vespertino)\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*\d+[ºo°]?(?:\s*sem(?:estre)?)?\s*$/i, "");
+    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*$/g, "");
+    return res.trim().replace(/[\/\s]+$/g, "").trim();
+}
+
+function ehQualificadorBusca(seg) {
+    const segNorm = normalizarSegmento(seg);
+    return segNorm.startsWith("enfase em") || segNorm.startsWith("habilitacao em") || segNorm.startsWith("habilitacao:");
+}
+
+function extrairRotuloBusca(nome) {
+    const uteis = [];
+    for (const parteOriginal of segmentarNomeCurso(nome)) {
+        const parte = limparRotuloBase(limparParentesesAuxiliares(padronizarSegmento(parteOriginal)));
+        if (!parte) continue;
+        if (identificarLocSegmento(parte)) continue;
+        if (ehPeriodoSegmento(parte)) continue;
+        if (ehSemestreSegmento(parte)) continue;
+        if (ehGrauSegmento(parte)) continue;
+        if (ehFragmentoInvalidoBase(parte)) continue;
+        uteis.push(parte);
+    }
+    if (!uteis.length) return "";
+
+    const [titulo, ...extras] = uteis;
+    const rotulo = [
+        limparRotuloBase(titulo),
+        ...extras.filter(ehQualificadorBusca).map(limparRotuloBase)
+    ]
+        .filter(Boolean)
+        .join(" — ");
+
+    return limparRotuloBase(rotulo);
+}
+
+function ordenarBases(nomes) {
+    return nomes.sort((a, b) => a.localeCompare(b, "pt-BR", { sensitivity: "base" }));
 }
 
 // ---------- Extração de atributos ----------
@@ -544,18 +611,34 @@ function extrairPeriodo(nome) {
 }
 function extrairBase(nome) {
     const uteis = [];
-    for (const parte of segmentarNomeCurso(nome)) {
+    for (const parteOriginal of segmentarNomeCurso(nome)) {
+        const parte = limparParentesesAuxiliares(padronizarSegmento(parteOriginal));
+        if (!parte) continue;
         if (identificarLocSegmento(parte)) continue;
         if (ehPeriodoSegmento(parte)) continue;
         if (ehSemestreSegmento(parte)) continue;
         if (ehGrauSegmento(parte)) continue;
-        uteis.push(padronizarSegmento(parte));
+        if (ehFragmentoInvalidoBase(parte)) continue;
+        uteis.push(parte);
     }
-    let res = uteis.length ? uteis.join(" — ") : nome;
-    res = res.replace(/^(?:Bacharelado\s+e\s+Licenciatura\s+em\s+|Licenciatura\s+e\s+Bacharelado\s+em\s+|Bacharelado\s+em\s+|Curso\s+de\s+Graduação\s+em\s+)/i, "");
-    res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
-    res = res.replace(/\s*(?:Bacharelado|Licenciatura)\s*$/i, "");
-    return res.trim();
+
+    if (!uteis.length) {
+        const fallback = limparRotuloBase(nome);
+        return ehFragmentoInvalidoBase(fallback) ? "" : fallback;
+    }
+
+    const [titulo, ...extras] = uteis;
+    const base = [
+        limparRotuloBase(titulo),
+        ...extras
+            .map(limparRotuloBase)
+            .filter(extra => extra && !ehFragmentoInvalidoBase(extra))
+    ]
+        .filter(Boolean)
+        .join(" — ");
+
+    const limpa = limparRotuloBase(base);
+    return ehFragmentoInvalidoBase(limpa) ? "" : limpa;
 }
 
 // ---------- Inferência de atributos ----------
@@ -639,9 +722,27 @@ function renderizarSugestoesBusca(termo = "") {
     let sugestoes = LISTA_BASES;
     if (termoLimpo) {
         const termoNorm = normalizar(termoLimpo);
-        sugestoes = LISTA_BASES.filter(nome => normalizar(nome).includes(termoNorm));
+        sugestoes = LISTA_BASES
+            .filter(nome => normalizar(nome).includes(termoNorm))
+            .sort((a, b) => {
+                const aNorm = normalizar(a);
+                const bNorm = normalizar(b);
+                const aInicio = aNorm.startsWith(termoNorm) ? 0 : 1;
+                const bInicio = bNorm.startsWith(termoNorm) ? 0 : 1;
+                if (aInicio !== bInicio) return aInicio - bInicio;
+
+                const aPalavra = aNorm.includes(" " + termoNorm) ? 0 : 1;
+                const bPalavra = bNorm.includes(" " + termoNorm) ? 0 : 1;
+                if (aPalavra !== bPalavra) return aPalavra - bPalavra;
+
+                const aPos = aNorm.indexOf(termoNorm);
+                const bPos = bNorm.indexOf(termoNorm);
+                if (aPos !== bPos) return aPos - bPos;
+
+                if (a.length !== b.length) return a.length - b.length;
+                return a.localeCompare(b, "pt-BR", { sensitivity: "base" });
+            });
     }
-    sugestoes = sugestoes.slice(0, 12);
 
     if (!sugestoes.length) {
         painel.hidden = true;
@@ -1156,11 +1257,20 @@ fetch("dados.json")
     .then(d => {
         DADOS = d;
         // Preencher sugestões com nomes-base únicos
-        const basesSet = new Set();
+        const basesMap = new Map();
         for (const regs of Object.values(d)) {
-            for (const r of regs) basesSet.add(extrairBase(r.curso));
+            for (const r of regs) {
+                if (r.curso_truncado) continue;
+                const base = extrairRotuloBusca(r.curso);
+                if (!base || base.length < 3) continue;
+                const chave = normalizar(base);
+                const existente = basesMap.get(chave);
+                if (!existente || base.length < existente.length) {
+                    basesMap.set(chave, base);
+                }
+            }
         }
-        LISTA_BASES = [...basesSet].sort();
+        LISTA_BASES = ordenarBases([...basesMap.values()]);
         sincronizarComboBase();
         atualizarTituloSelect(document.getElementById("sel-loc"));
         atualizarTituloSelect(document.getElementById("sel-per"));
