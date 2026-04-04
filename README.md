@@ -40,14 +40,18 @@ notas_de_corte/
     vestibular.html          # Redirecionamento para o site standalone
     dados_vestibular.json
     .nojekyll
+  site_src/                  # Fontes do site standalone do vestibular
+    vestibular/
+      index.html
   scripts/                   # Scripts de manutenção do projeto
     extrair_dados.py
     extrair_dados_vestibular.py
+    exportar_site_vestibular.py
     legacy/
       notas_de_corte.py
-  data/
-    raw/                     # PDFs originais da FUVEST usados para extração
   fuvest_vestibular/         # PDFs do vestibular tradicional
+  build/
+    vestibular_pages/        # Export pronto para o GitHub Pages separado do vestibular
   README.md
   requirements.txt
   .gitignore
@@ -56,10 +60,12 @@ notas_de_corte/
 ## O que o usuário encontra nos dashboards
 
 - Busca por curso ou carreira com sugestões.
-- Filtros por campus, modalidade ou período, conforme o relatório.
+- Filtro de período antes da busca para evitar contaminação histórica.
+- Filtros por campus e modalidade, conforme o relatório.
 - Tabela histórica por ano.
 - Link direto para a listagem oficial em PDF de cada ano.
 - Gráficos de evolução das notas, da demanda e dos indicadores oficiais.
+- Blocos com nomenclaturas oficiais do período e mudanças históricas relacionadas.
 - Análise automática com destaques dos dados.
 - Link direto para a página oficial da FUVEST.
 - Suporte a tema claro e escuro.
