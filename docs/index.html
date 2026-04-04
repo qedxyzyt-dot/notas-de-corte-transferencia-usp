@@ -270,6 +270,37 @@ th {
 }
 td { padding: 0.65rem 0.8rem; text-align: center; border-bottom: 1px solid #eee; }
 tbody tr:hover { background: var(--usp-azul-claro); }
+.col-edital { width: 1%; white-space: nowrap; }
+.pdf-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.34rem;
+    padding: 0.34rem 0.62rem;
+    border: 1px solid rgba(0, 74, 141, 0.18);
+    border-radius: 999px;
+    background: linear-gradient(180deg, #f8fbff, #edf5ff);
+    color: var(--usp-azul);
+    text-decoration: none;
+    font-family: var(--fonte-display);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.pdf-link:hover,
+.pdf-link:focus {
+    background: #e7f1fd;
+    border-color: rgba(0, 74, 141, 0.28);
+    box-shadow: 0 8px 18px rgba(0, 74, 141, 0.12);
+    transform: translateY(-1px);
+    outline: none;
+}
+.pdf-link__icon {
+    width: 0.82rem;
+    height: 0.82rem;
+    flex: 0 0 auto;
+}
 
 /* Gráficos */
 .graficos { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
@@ -440,6 +471,15 @@ const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
 const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
 const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
 const STOPWORDS_BUSCA = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os"]);
+const PDFS_OFICIAIS = {
+    "2019": "assets/pdfs/transferencia_2019_nota_de_corte.pdf",
+    "2020": "assets/pdfs/transferencia_2020_nota_de_corte.pdf",
+    "2021": "assets/pdfs/transferencia_2021_notas_de_corte.pdf",
+    "2023": "assets/pdfs/transferencia_2023_nota-corte.pdf",
+    "2024": "assets/pdfs/transferencia_2024_notas_de_corte.pdf",
+    "2025": "assets/pdfs/transferencia_2025_notas_de_corte.pdf",
+    "2026": "assets/pdfs/transferencia_2026_notas_de_corte.pdf"
+};
 
 // ==========================================================================
 // Utilitários
@@ -474,6 +514,17 @@ function formatarTooltipNumero(context) {
     const label = context.dataset?.label ? `${context.dataset.label}: ` : "";
     const valor = Number(context.raw ?? context.parsed?.y ?? context.parsed);
     return label + fmtBr(valor);
+}
+function renderLinkPdfAno(ano) {
+    const href = PDFS_OFICIAIS[String(ano)];
+    if (!href) return "â€”";
+    const titulo = `Abrir PDF oficial da FUVEST de ${ano}`;
+    return `<a class="pdf-link" href="${href}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
+        <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M10 3.25v7m0 0 2.75-2.75M10 10.25 7.25 7.5M4.25 13v1.5c0 .69.56 1.25 1.25 1.25h9c.69 0 1.25-.56 1.25-1.25V13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>PDF</span>
+    </a>`;
 }
 
 function segmentarNomeCurso(nome) {
@@ -880,16 +931,17 @@ function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
 
     // Tabela
     html += `<div class="tabela-container"><table>
-        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Concorrência</th><th>Nota Mín.</th><th>Nota Máx.</th></tr></thead>
+        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Concorrência</th><th>Nota Mín.</th><th>Nota Máx.</th><th class="col-edital">Edital</th></tr></thead>
         <tbody>`;
     for (const [ano, r] of Object.entries(dados)) {
+        const linkPdf = renderLinkPdfAno(ano);
         if ("vagas" in r) {
             const mn = r.pontos_minimo ?? "—";
             const mx = r.pontos_maximo ?? "—";
-            html += `<tr><td>${ano}</td><td>${r.vagas}</td><td>${r.inscritos}</td><td>${r.ausentes ?? "—"}</td><td>${fmtBr(calcConc(r))}</td><td>${mn}</td><td>${mx}</td></tr>`;
+            html += `<tr><td>${ano}</td><td>${r.vagas}</td><td>${r.inscritos}</td><td>${r.ausentes ?? "—"}</td><td>${fmtBr(calcConc(r))}</td><td>${mn}</td><td>${mx}</td><td class="col-edital">${linkPdf}</td></tr>`;
         } else {
             const n = r.nota_de_corte ?? "—";
-            html += `<tr><td>${ano}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>${n}</td><td>${n}</td></tr>`;
+            html += `<tr><td>${ano}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>${n}</td><td>${n}</td><td class="col-edital">${linkPdf}</td></tr>`;
         }
     }
     html += `</tbody></table></div>`;
