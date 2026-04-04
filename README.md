@@ -4,6 +4,8 @@ Dashboard web com histórico de notas de corte, concorrência, vagas e inscritos
 
 Hoje o foco do projeto é o uso direto no navegador, via GitHub Pages. O repositório foi reorganizado para refletir isso: o site publicado fica separado dos scripts de manutenção e dos PDFs-fonte.
 
+Projeto independente criado e mantido por QED.
+
 ## Acesse o dashboard
 
 Quando o GitHub Pages estiver habilitado, o site poderá ser acessado em:
@@ -38,12 +40,13 @@ notas_de_corte/
 ## O que o usuário encontra no site
 
 - Busca por curso com sugestões.
-- Filtros por curso específico, localização e período.
-- Cards-resumo com os principais indicadores.
+- Filtros por localização e período.
 - Tabela histórica por ano.
+- Link direto para a listagem oficial em PDF de cada ano.
 - Gráficos de evolução das notas, concorrência e demanda.
 - Análise automática com destaques dos dados.
 - Link direto para a página oficial da FUVEST.
+- Suporte a tema claro e escuro.
 
 ## Publicação no GitHub Pages
 

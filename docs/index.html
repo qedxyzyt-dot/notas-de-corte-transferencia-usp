@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="QED">
 <title>Notas de Corte — Transferência Externa USP (FUVEST)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -412,6 +413,19 @@ footer {
     border-top: 1px solid var(--footer-border);
     margin-top: auto;
 }
+footer strong {
+    color: var(--texto);
+    font-family: var(--fonte-display);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+footer .footer-autor {
+    margin-bottom: 0.18rem;
+    font-size: 0.98rem;
+}
+footer .footer-nota {
+    margin-bottom: 0.28rem;
+}
 footer a { color: var(--usp-azul); }
 
 /* Estado vazio */
@@ -652,6 +666,9 @@ footer a { color: var(--usp-azul); }
         padding: 1rem 0.9rem 1.2rem;
         font-size: 0.84rem;
     }
+    footer .footer-autor {
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 420px) {
@@ -713,7 +730,8 @@ footer a { color: var(--usp-azul); }
 </main>
 
 <footer>
-    Dados extraídos dos editais oficiais da FUVEST — Gerado automaticamente<br>
+    <div class="footer-autor">Projeto independente criado e mantido por <strong>QED</strong></div>
+    <div class="footer-nota">Dados extraídos dos editais oficiais da FUVEST — Gerado automaticamente</div>
     <a href="https://github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp" target="_blank" rel="noopener">github.com/qedxyzyt-dot/notas-de-corte-transferencia-usp</a>
 </footer>
 
