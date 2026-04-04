@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/sitemap.xml

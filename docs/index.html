@@ -4,12 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="QED">
+<meta name="description" content="Dashboard com notas de corte, concorrência, vagas e inscritos da Transferência Externa USP (FUVEST), com base nas listagens oficiais de 2019 a 2026.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Notas de Corte — Transferência Externa USP (FUVEST)">
+<meta property="og:title" content="Notas de Corte — Transferência Externa USP (FUVEST)">
+<meta property="og:description" content="Consulte notas de corte, concorrência, vagas e inscritos da Transferência Externa USP com base nas listagens oficiais da FUVEST.">
+<meta property="og:url" content="https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/">
+<meta property="og:image" content="https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/assets/favicon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Notas de Corte — Transferência Externa USP (FUVEST)">
+<meta name="twitter:description" content="Dashboard com notas de corte, concorrência, vagas e inscritos da Transferência Externa USP a partir dos PDFs oficiais da FUVEST.">
 <title>Notas de Corte — Transferência Externa USP (FUVEST)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Notas de Corte — Transferência Externa USP (FUVEST)",
+  "url": "https://qedxyzyt-dot.github.io/notas-de-corte-transferencia-usp/",
+  "description": "Dashboard com notas de corte, concorrência, vagas e inscritos da Transferência Externa USP com base nas listagens oficiais da FUVEST.",
+  "author": {
+    "@type": "Person",
+    "name": "QED"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "QED"
+  },
+  "inLanguage": "pt-BR"
+}
+</script>
 <style>
 :root {
     color-scheme: light;
@@ -20,8 +51,8 @@
     --bg: #f3f6fa;
     --bg-aurora: rgba(0, 74, 141, 0.08);
     --card: #ffffff;
-    --surface-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 254, 0.96));
-    --surface-emphasis: linear-gradient(180deg, rgba(232, 240, 250, 0.96), rgba(223, 235, 248, 0.94));
+    --surface-panel: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 251, 255, 0.97) 48%, rgba(237, 244, 252, 0.94) 100%);
+    --surface-emphasis: linear-gradient(180deg, rgba(239, 246, 255, 0.98) 0%, rgba(229, 239, 251, 0.96) 58%, rgba(220, 233, 247, 0.93) 100%);
     --borda: #dde1e6;
     --borda-suave: #eef1f4;
     --texto: #142033;
@@ -41,8 +72,8 @@
     --topbar-bg-hover: rgba(255, 255, 255, 0.14);
     --topbar-shadow: 0 10px 22px rgba(3, 48, 93, 0.14);
     --input-bg: #ffffff;
-    --input-bg-2: #fbfcfe;
-    --menu-bg: linear-gradient(180deg, #ffffff, #f8fbff);
+    --input-bg-2: #eef4fb;
+    --menu-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 248, 255, 0.97));
     --hover: #e8f0fa;
     --table-head-bg: var(--usp-azul);
     --table-border: #eef1f4;
@@ -133,6 +164,7 @@ header p {
 
 .page-main { flex: 1 0 auto; width: 100%; }
 .container { max-width: 1180px; width: 100%; margin: 0 auto; padding: 1.5rem; }
+#dashboard { position: relative; z-index: 1; }
 
 /* Filtros */
 .filtros {
@@ -146,8 +178,12 @@ header p {
     gap: 1rem;
     align-items: end;
     box-shadow: var(--sombra-card);
+    position: relative;
+    z-index: 20;
+    overflow: visible;
 }
-.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; z-index: 1; }
+.filtro-grupo:focus-within { z-index: 35; }
 .filtro-grupo--curso { min-width: 20rem; }
 .filtro-grupo label {
     font-family: var(--fonte-display);
@@ -213,7 +249,7 @@ header p {
     position: absolute;
     top: calc(100% + 0.35rem);
     left: 0;
-    z-index: 30;
+    z-index: 80;
     width: 100%;
     min-width: 100%;
     max-height: 18rem;
