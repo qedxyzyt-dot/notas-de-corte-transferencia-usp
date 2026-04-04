@@ -341,7 +341,8 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
         top_min: float,
         top_max: float,
         pattern: re.Pattern[str],
-    ) -> str | None:
+        max_top_delta: float | None = None,
+    ) -> dict | None:
         candidatos = [
             word
             for word in words
@@ -351,11 +352,18 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
         ]
         if not candidatos:
             return None
+        if max_top_delta is not None:
+            candidatos = [
+                word for word in candidatos
+                if abs(word["top"] - top_referencia) <= max_top_delta
+            ]
+        if not candidatos:
+            return None
         melhor = min(
             candidatos,
             key=lambda item: (abs(item["top"] - top_referencia), item["x0"]),
         )
-        return melhor["text"]
+        return melhor
 
     with pdfplumber.open(caminho) as pdf:
         for page in pdf.pages:
@@ -428,15 +436,29 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
                 faixa_top_min = top - 7.5
                 faixa_top_max = proximo_top
 
-                vagas = pegar_token_coluna(words, 300, 325, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
-                inscritos = pegar_token_coluna(words, 340, 365, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
-                ausentes = pegar_token_coluna(words, 388, 407, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
-                convocados = pegar_token_coluna(words, 425, 452, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
-                proporcao = pegar_token_coluna(words, 468, 492, top, faixa_top_min, faixa_top_max, LINE_RE_DECIMAL)
-                pontos_minimo = pegar_token_coluna(words, 515, 540, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
-                pontos_maximo = pegar_token_coluna(words, 560, 580, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                vagas = pegar_token_coluna(
+                    words, 300, 325, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.4
+                )
+                inscritos = pegar_token_coluna(
+                    words, 338, 366, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.4
+                )
+                ausentes = pegar_token_coluna(
+                    words, 386, 408, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.4
+                )
+                convocados = pegar_token_coluna(
+                    words, 425, 452, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.8
+                )
+                proporcao = pegar_token_coluna(
+                    words, 468, 492, top, faixa_top_min, faixa_top_max, LINE_RE_DECIMAL, max_top_delta=4.8
+                )
+                pontos_minimo = pegar_token_coluna(
+                    words, 515, 540, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=6.2
+                )
+                pontos_maximo = pegar_token_coluna(
+                    words, 560, 580, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.8
+                )
 
-                if not all([vagas, inscritos, ausentes, convocados, proporcao, pontos_maximo]):
+                if not all([vagas, inscritos, ausentes, convocados]):
                     continue
 
                 registros.append(
@@ -444,13 +466,15 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
                         "codigo": carreira_atual[0],
                         "curso": carreira_atual[1],
                         "modalidade": rotulo,
-                        "vagas": int(vagas),
-                        "inscritos": int(inscritos),
-                        "ausentes": int(ausentes),
-                        "convocados_2fase": int(convocados),
-                        "convocados_por_vaga": float(proporcao.replace(",", ".")),
-                        "pontos_maximo": int(pontos_maximo),
-                        "pontos_minimo": int(pontos_minimo) if pontos_minimo and pontos_minimo.isdigit() else None,
+                        "vagas": int(vagas["text"]),
+                        "inscritos": int(inscritos["text"]),
+                        "ausentes": int(ausentes["text"]),
+                        "convocados_2fase": int(convocados["text"]),
+                        "convocados_por_vaga": (
+                            float(proporcao["text"].replace(",", ".")) if proporcao else None
+                        ),
+                        "pontos_maximo": int(pontos_maximo["text"]) if pontos_maximo else None,
+                        "pontos_minimo": int(pontos_minimo["text"]) if pontos_minimo else None,
                     }
                 )
 
@@ -461,6 +485,29 @@ def copiar_pdfs(arquivos: dict[int, Path]) -> None:
     PDF_OUT_DIR.mkdir(parents=True, exist_ok=True)
     for caminho in arquivos.values():
         shutil.copy2(caminho, PDF_OUT_DIR / caminho.name)
+
+
+def resumir_auditoria_modalidades(dados: dict[str, list[dict]]) -> dict[str, dict[str, int]]:
+    resumo: dict[str, dict[str, int]] = {}
+    for ano, registros in dados.items():
+        linhas_modalidade = [registro for registro in registros if registro.get("modalidade")]
+        linhas_sem_proporcao = sum(1 for registro in linhas_modalidade if registro.get("convocados_por_vaga") is None)
+        linhas_sem_minimo = sum(1 for registro in linhas_modalidade if registro.get("pontos_minimo") is None)
+        linhas_sem_maximo = sum(1 for registro in linhas_modalidade if registro.get("pontos_maximo") is None)
+        linhas_inconsistentes = sum(
+            1
+            for registro in linhas_modalidade
+            if registro.get("pontos_minimo") is not None
+            and registro.get("pontos_maximo") is not None
+            and registro["pontos_minimo"] > registro["pontos_maximo"]
+        )
+        resumo[ano] = {
+            "sem_proporcao": linhas_sem_proporcao,
+            "sem_minimo": linhas_sem_minimo,
+            "sem_maximo": linhas_sem_maximo,
+            "minimo_maior_que_maximo": linhas_inconsistentes,
+        }
+    return resumo
 
 
 def main() -> None:
@@ -518,6 +565,7 @@ def main() -> None:
     repeticoes = encontrar_repeticoes_por_codigo(dados)
     validar_cobertura_desambiguacoes(repeticoes, desambiguacoes)
     resumo_desambiguacoes = aplicar_desambiguacoes_oficiais(dados, desambiguacoes)
+    resumo_auditoria = resumir_auditoria_modalidades(dados)
     remover_flags_vazias(dados)
     copiar_pdfs(arquivos)
 
@@ -528,12 +576,17 @@ def main() -> None:
     for ano, registros in dados.items():
         info = resumo[ano]
         info_desambiguacao = resumo_desambiguacoes[ano]
+        info_auditoria = resumo_auditoria[ano]
         print(
             f"{ano}: {len(registros)} registros | "
             f"{info['canonizados']} nomes ajustados | "
             f"{len(repeticoes[ano])} grupos repetidos auditados | "
             f"{info_desambiguacao['desambiguados']} desambiguados por codigo | "
-            f"{info['truncados_restantes']} truncados"
+            f"{info['truncados_restantes']} truncados | "
+            f"{info_auditoria['sem_proporcao']} sem proporcao | "
+            f"{info_auditoria['sem_minimo']} sem minimo | "
+            f"{info_auditoria['sem_maximo']} sem maximo | "
+            f"{info_auditoria['minimo_maior_que_maximo']} min>max"
         )
 
     print(f"\nArquivo gerado com sucesso em: {OUT_PATH}")

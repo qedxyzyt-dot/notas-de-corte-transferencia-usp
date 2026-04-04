@@ -46,6 +46,7 @@ notas_de_corte/
   scripts/                   # Scripts de manutenção do projeto
     extrair_dados.py
     extrair_dados_vestibular.py
+    auditar_dados_vestibular.py
     exportar_site_vestibular.py
     vestibular_codigos_oficiais.json
     legacy/
@@ -75,6 +76,8 @@ notas_de_corte/
 ## Repetições por código no vestibular
 
 Quando a FUVEST publica o mesmo nome-base de carreira em mais de um código, o projeto usa o arquivo `scripts/vestibular_codigos_oficiais.json` para registrar a diferenciação oficial por campus ou escopo de oferta. O extrator valida automaticamente essa cobertura antes de gerar o JSON, para que uma repetição nova não passe despercebida.
+
+Para uma checagem rápida da robustez da extração das modalidades e dos campos que podem vir em branco no PDF, rode `python scripts/auditar_dados_vestibular.py`.
 
 ## Publicação no GitHub Pages
 
