@@ -105,13 +105,14 @@ header p {
     border-radius: 18px;
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1.75fr) minmax(12.5rem, 0.9fr) minmax(12.5rem, 0.9fr);
     gap: 1rem;
     align-items: end;
     box-shadow: var(--sombra-card);
 }
-.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 180px; }
+.filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+.filtro-grupo--curso { min-width: 20rem; }
 .filtro-grupo label {
     font-family: var(--fonte-display);
     font-size: 0.78rem;
@@ -366,7 +367,7 @@ footer a { color: var(--usp-azul); }
 
 /* Responsivo */
 @media (max-width: 700px) {
-    .filtros { flex-direction: column; }
+    .filtros { grid-template-columns: 1fr; }
     .cards { grid-template-columns: 1fr 1fr; }
     .lista-sugestoes, .combo-select__menu {
         width: 100%;
@@ -387,7 +388,7 @@ footer a { color: var(--usp-azul); }
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
-        <div class="filtro-grupo" style="flex: 4; min-width: 320px;">
+        <div class="filtro-grupo filtro-grupo--curso">
             <label for="busca">Curso</label>
             <input type="text" id="busca" placeholder="Digite o curso desejado..." autocomplete="off">
             <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
@@ -419,7 +420,7 @@ footer a { color: var(--usp-azul); }
 // Dados e estado global
 // ==========================================================================
 let DADOS = {};
-let ESTADO = { cursoSelecionado: "", resultados: [], atribs: {}, filtrados: [], breakdowns: {} };
+let ESTADO = { cursoSelecionado: "", resultados: [], atribs: new Map(), filtrados: [], breakdowns: {} };
 let LISTA_CURSOS = [];
 
 const LOC_CONHECIDAS = [
@@ -555,6 +556,8 @@ function ehFragmentoInvalidoBase(seg) {
 
 function limparRotuloBase(rotulo) {
     let res = rotulo.replace(/\s+/g, " ").trim().replace(/\.+$/g, "");
+    res = res.replace(/\*/g, "").trim();
+    res = res.replace(/\bÊnfase:\s*/i, "Ênfase em ");
     res = res.replace(/^(?:Bacharelado\s*e\s*Licenciatura\s*em\s*|Licenciatura\s*e\s*Bacharelado\s*em\s*|Bacharelado\s*em\s*|Licenciatura\s*em\s*|Curso\s+de\s+Graduação\s+em\s*)/i, "");
     res = res.replace(/\s*[—\-\u2013\u2014\u2212]\s*(?:Bacharelado|Licenciatura|Bacharelado\s+e\s+Licenciatura|Licenciatura\s+e\s+Bacharelado)\s*$/i, "");
     res = res.replace(/\s*(?:\/\s*)?(?:Bacharelado|Licenciatura)\s*$/i, "");
@@ -691,13 +694,47 @@ function buscarCursosPorRotulo(dados, rotuloBusca) {
     }
     return res;
 }
+function agregarRegistrosAno(registrosAno) {
+    const dadosAno = registrosAno.map(([, r]) => r);
+    if (!dadosAno.length) return null;
+
+    const completos = dadosAno.filter(r => "vagas" in r);
+    if (!completos.length) {
+        const notas = dadosAno.map(r => r.nota_de_corte).filter(v => v !== null && v !== undefined);
+        return {
+            ...dadosAno[0],
+            nota_de_corte: notas.length ? Math.max(...notas) : null,
+            registros_agregados: dadosAno.length
+        };
+    }
+
+    const pontosMin = completos.map(r => r.pontos_minimo).filter(v => v !== null && v !== undefined);
+    const pontosMax = completos.map(r => r.pontos_maximo).filter(v => v !== null && v !== undefined);
+
+    return {
+        ...completos[0],
+        vagas: completos.reduce((acc, r) => acc + (r.vagas || 0), 0),
+        inscritos: completos.reduce((acc, r) => acc + (r.inscritos || 0), 0),
+        ausentes: completos.reduce((acc, r) => acc + (r.ausentes || 0), 0),
+        convocados_2fase: completos.reduce((acc, r) => acc + (r.convocados_2fase || 0), 0),
+        pontos_minimo: pontosMin.length ? Math.min(...pontosMin) : null,
+        pontos_maximo: pontosMax.length ? Math.max(...pontosMax) : null,
+        registros_agregados: dadosAno.length
+    };
+}
+
 function consolidar(registros) {
     const porAno = {};
     for (const [ano, r] of registros) {
         const a = parseInt(ano);
-        if (!porAno[a] || calcConc(r) > calcConc(porAno[a])) porAno[a] = r;
+        (porAno[a] ||= []).push([ano, r]);
     }
-    return Object.fromEntries(Object.entries(porAno).sort(([a],[b]) => a - b));
+
+    return Object.fromEntries(
+        Object.entries(porAno)
+            .map(([ano, regs]) => [ano, agregarRegistrosAno(regs)])
+            .sort(([a],[b]) => a - b)
+    );
 }
 
 function preencherSelect(selectEl, opcoes, valorSelecionado = null) {
