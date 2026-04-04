@@ -1,0 +1,71 @@
+{
+  "2024": {
+    "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+    "fonte_rotulo": "Guia do Vestibular 2024: Carreiras e Cursos",
+    "codigos": {
+      "760": [
+        {
+          "curso": "Engenharia Civil (São Paulo Butantã)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "São Paulo Butantã",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia do Vestibular 2024: Carreiras e Cursos",
+          "metricas": {
+            "Ampla Concorrência": { "vagas": 59 },
+            "Candidatos de Escola Pública": { "vagas": 25 },
+            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15 }
+          }
+        }
+      ]
+    }
+  },
+  "2025": {
+    "fonte_url": "https://www.fuvest.br/wp-content/uploads/FUVEST_2025_inscritos_por_opcao_de_curso.pdf",
+    "fonte_rotulo": "FUVEST 2025 - Inscritos por Opção de Curso",
+    "codigos": {
+      "311": [
+        {
+          "curso": "Engenharia Civil (São Paulo Butantã)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "São Paulo Butantã",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/FUVEST_2025_inscritos_por_opcao_de_curso.pdf",
+          "fonte_rotulo": "FUVEST 2025 - Inscritos por Opção de Curso",
+          "metricas": {
+            "Ampla Concorrência": { "vagas": 59, "inscritos": 1587 },
+            "Candidatos de Escola Pública": { "vagas": 25, "inscritos": 300 },
+            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15, "inscritos": 123 }
+          }
+        }
+      ]
+    }
+  },
+  "2026": {
+    "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+    "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+    "codigos": {
+      "311": [
+        {
+          "curso": "Engenharia Civil (São Paulo Butantã)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "São Paulo Butantã",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": { "vagas": 59 },
+            "Candidatos de Escola Pública": { "vagas": 25 },
+            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15 }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -24,6 +24,7 @@
       "486": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
       "495": { "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)", "campus": "São Paulo Butantã/Quadrilátero" },
       "496": { "curso": "Terapia Ocupacional (Ribeirão Preto)", "campus": "Ribeirão Preto" },
+      "735": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
       "800": { "curso": "Química (São Paulo Butantã e Ribeirão Preto)", "campus": "São Paulo Butantã e Ribeirão Preto" },
       "801": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" }
     }
@@ -34,6 +35,7 @@
     "codigos": {
       "116": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
       "117": { "curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
+      "306": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
       "320": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" },
       "321": { "curso": "Química (São Paulo Butantã e São Carlos)", "campus": "São Paulo Butantã e São Carlos" },
       "504": { "curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã" },
@@ -52,6 +54,7 @@
     "codigos": {
       "116": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
       "117": { "curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
+      "306": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
       "320": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" },
       "321": { "curso": "Química (São Paulo Butantã e São Carlos)", "campus": "São Paulo Butantã e São Carlos" },
       "504": { "curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã" },

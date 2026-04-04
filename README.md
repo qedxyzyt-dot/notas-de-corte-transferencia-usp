@@ -49,6 +49,7 @@ notas_de_corte/
     auditar_dados_vestibular.py
     exportar_site_vestibular.py
     vestibular_codigos_oficiais.json
+    vestibular_opcoes_oficiais.json
     legacy/
       notas_de_corte.py
   fuvest_vestibular/         # PDFs do vestibular tradicional
@@ -65,6 +66,9 @@ notas_de_corte/
 - Filtro de período antes da busca para evitar contaminação histórica.
 - Filtros por campus e modalidade, conforme o relatório.
 - Desambiguação de carreiras repetidas por código com apoio dos guias oficiais da FUVEST.
+- Agrupamento por nome-base do curso quando a FUVEST distingue o mesmo curso por campus.
+- Comparação por campus em cursos com oferta localizada, como Medicina, Psicologia, Arquitetura e Engenharia Civil.
+- Sinalização explícita quando parte dos indicadores continua no escopo da carreira ampla oficial da FUVEST.
 - Tabela histórica por ano.
 - Link direto para a listagem oficial em PDF de cada ano.
 - Gráficos de evolução das notas, da demanda e dos indicadores oficiais.
@@ -75,7 +79,9 @@ notas_de_corte/
 
 ## Repetições por código no vestibular
 
-Quando a FUVEST publica o mesmo nome-base de carreira em mais de um código, o projeto usa o arquivo `scripts/vestibular_codigos_oficiais.json` para registrar a diferenciação oficial por campus ou escopo de oferta. O extrator valida automaticamente essa cobertura antes de gerar o JSON, para que uma repetição nova não passe despercebida.
+Quando a FUVEST publica o mesmo nome-base de carreira em mais de um código, o projeto usa o arquivo `scripts/vestibular_codigos_oficiais.json` para registrar a diferenciação oficial por campus ou escopo de oferta. Já os casos em que um curso aparece como opção localizada dentro de uma carreira mais ampla ficam registrados em `scripts/vestibular_opcoes_oficiais.json`.
+
+O extrator valida automaticamente essa cobertura antes de gerar o JSON, para que uma repetição nova não passe despercebida. Na interface, o sistema procura reunir esses registros pelo nome-base do curso, mantendo a separação por campus e deixando explícito quando a nota de corte continua sendo publicada pela FUVEST no escopo da carreira ampla.
 
 Para uma checagem rápida da robustez da extração das modalidades e dos campos que podem vir em branco no PDF, rode `python scripts/auditar_dados_vestibular.py`.
 

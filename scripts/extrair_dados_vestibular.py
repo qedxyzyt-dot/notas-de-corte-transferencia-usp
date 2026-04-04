@@ -21,6 +21,7 @@ RAW_DIR = ROOT_DIR / "fuvest_vestibular"
 OUT_PATH = ROOT_DIR / "docs" / "dados_vestibular.json"
 PDF_OUT_DIR = ROOT_DIR / "docs" / "assets" / "pdfs" / "vestibular"
 CODIGOS_PATH = SCRIPT_DIR / "vestibular_codigos_oficiais.json"
+OPCOES_PATH = SCRIPT_DIR / "vestibular_opcoes_oficiais.json"
 
 MINUS = "\u2212"
 MINUS_CHARS = f"-{MINUS}\u2013\u2014"
@@ -60,6 +61,16 @@ def carregar_desambiguacoes_oficiais() -> dict[int, dict[str, dict[str, str]]]:
     }
 
 
+def carregar_opcoes_oficiais() -> dict[int, dict[str, list[dict[str, object]]]]:
+    if not OPCOES_PATH.exists():
+        return {}
+    bruto = json.loads(OPCOES_PATH.read_text(encoding="utf-8"))
+    return {
+        int(ano): info.get("codigos", {})
+        for ano, info in bruto.items()
+    }
+
+
 def limpar_texto(texto: str) -> str:
     texto = texto.replace("\u00a0", " ")
     texto = texto.replace("\u2011", "-")
@@ -72,6 +83,11 @@ def normalizar(texto: str) -> str:
     decomposed = unicodedata.normalize("NFD", texto)
     sem_acentos = "".join(ch for ch in decomposed if unicodedata.category(ch) != "Mn")
     return re.sub(r"\s+", " ", sem_acentos).strip().lower()
+
+
+def inferir_rotulo_busca_oficial(texto: str) -> str:
+    base = re.sub(r"\s*\([^()]+\)\s*$", "", texto).strip()
+    return base or texto.strip()
 
 
 def nome_parece_truncado(nome: str) -> bool:
@@ -248,9 +264,57 @@ def aplicar_desambiguacoes_oficiais(
                 registro["curso_desambiguado"] = True
                 info["desambiguados"] += 1
 
-            registro["curso_busca"] = curso_final
+            registro["curso_busca"] = spec.get("curso_busca") or inferir_rotulo_busca_oficial(curso_final)
             registro["campus"] = spec["campus"]
 
+        resumo[ano] = info
+
+    return resumo
+
+
+def expandir_opcoes_oficiais(
+    dados: dict[str, list[dict]],
+    opcoes_oficiais: dict[int, dict[str, list[dict[str, object]]]],
+) -> dict[str, dict[str, int]]:
+    resumo: dict[str, dict[str, int]] = {}
+
+    for ano, registros in dados.items():
+        mapa_ano = opcoes_oficiais.get(int(ano), {})
+        sinteticos: list[dict] = []
+        info = {"sinteticos": 0}
+
+        for registro in registros:
+            opcoes = mapa_ano.get(registro["codigo"], [])
+            if not opcoes:
+                continue
+
+            for opcao in opcoes:
+                metricas = opcao.get("metricas", {})
+                metrica_modalidade = metricas.get(registro.get("modalidade")) or {}
+                sintetico = dict(registro)
+                sintetico["curso"] = str(opcao["curso"])
+                sintetico["curso_busca"] = str(opcao.get("curso_busca") or inferir_rotulo_busca_oficial(str(opcao["curso"])))
+                sintetico["campus"] = str(opcao["campus"])
+                sintetico["registro_sintetico"] = True
+                sintetico["carreira_oficial"] = registro["curso"]
+                sintetico["escopo_nota"] = str(opcao.get("escopo_nota") or "carreira")
+                sintetico["escopo_vagas"] = str(opcao.get("escopo_vagas") or "curso")
+                sintetico["escopo_inscritos"] = str(opcao.get("escopo_inscritos") or ("curso" if "inscritos" in metrica_modalidade else "indisponivel"))
+                sintetico["fonte_localizacao_rotulo"] = opcao.get("fonte_rotulo")
+                sintetico["fonte_localizacao_url"] = opcao.get("fonte_url")
+
+                if "vagas" in metrica_modalidade:
+                    sintetico["vagas"] = int(metrica_modalidade["vagas"])
+                if "inscritos" in metrica_modalidade:
+                    sintetico["inscritos"] = int(metrica_modalidade["inscritos"])
+                else:
+                    sintetico["inscritos"] = None
+                sintetico["ausentes"] = None
+                sinteticos.append(sintetico)
+                info["sinteticos"] += 1
+
+        if sinteticos:
+            registros.extend(sinteticos)
         resumo[ano] = info
 
     return resumo
@@ -265,10 +329,28 @@ def remover_flags_vazias(dados: dict[str, list[dict]]) -> None:
                 registro.pop("curso_desambiguado", None)
             if not registro.get("curso_truncado"):
                 registro.pop("curso_truncado", None)
+            if not registro.get("registro_sintetico"):
+                registro.pop("registro_sintetico", None)
             if not registro.get("modalidade"):
                 registro.pop("modalidade", None)
             if not registro.get("pontos_possiveis_2fase"):
                 registro.pop("pontos_possiveis_2fase", None)
+            if not registro.get("curso_busca"):
+                registro.pop("curso_busca", None)
+            if not registro.get("campus"):
+                registro.pop("campus", None)
+            if not registro.get("carreira_oficial"):
+                registro.pop("carreira_oficial", None)
+            if not registro.get("escopo_nota"):
+                registro.pop("escopo_nota", None)
+            if not registro.get("escopo_vagas"):
+                registro.pop("escopo_vagas", None)
+            if not registro.get("escopo_inscritos"):
+                registro.pop("escopo_inscritos", None)
+            if not registro.get("fonte_localizacao_rotulo"):
+                registro.pop("fonte_localizacao_rotulo", None)
+            if not registro.get("fonte_localizacao_url"):
+                registro.pop("fonte_localizacao_url", None)
 
 
 def ler_linhas_pdf(caminho: Path) -> list[str]:
@@ -544,6 +626,7 @@ def main() -> None:
     anos_reduzidos = set(range(2003, 2012))
     anos_modalidades = set(range(2019, 2027))
     desambiguacoes = carregar_desambiguacoes_oficiais()
+    opcoes_oficiais = carregar_opcoes_oficiais()
 
     dados: dict[str, list[dict]] = {}
     for ano, caminho in arquivos.items():
@@ -565,6 +648,7 @@ def main() -> None:
     repeticoes = encontrar_repeticoes_por_codigo(dados)
     validar_cobertura_desambiguacoes(repeticoes, desambiguacoes)
     resumo_desambiguacoes = aplicar_desambiguacoes_oficiais(dados, desambiguacoes)
+    resumo_opcoes = expandir_opcoes_oficiais(dados, opcoes_oficiais)
     resumo_auditoria = resumir_auditoria_modalidades(dados)
     remover_flags_vazias(dados)
     copiar_pdfs(arquivos)
@@ -576,12 +660,14 @@ def main() -> None:
     for ano, registros in dados.items():
         info = resumo[ano]
         info_desambiguacao = resumo_desambiguacoes[ano]
+        info_opcoes = resumo_opcoes[ano]
         info_auditoria = resumo_auditoria[ano]
         print(
             f"{ano}: {len(registros)} registros | "
             f"{info['canonizados']} nomes ajustados | "
             f"{len(repeticoes[ano])} grupos repetidos auditados | "
             f"{info_desambiguacao['desambiguados']} desambiguados por codigo | "
+            f"{info_opcoes['sinteticos']} sinteticos por opcao | "
             f"{info['truncados_restantes']} truncados | "
             f"{info_auditoria['sem_proporcao']} sem proporcao | "
             f"{info_auditoria['sem_minimo']} sem minimo | "
