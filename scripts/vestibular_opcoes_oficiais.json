@@ -1,45 +1,2759 @@
 {
   "2024": {
     "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
-    "fonte_rotulo": "Guia do Vestibular 2024: Carreiras e Cursos",
+    "fonte_rotulo": "Guia de Carreiras 2024",
     "codigos": {
-      "760": [
+      "100": [
         {
-          "curso": "Engenharia Civil (São Paulo Butantã)",
-          "curso_busca": "Engenharia Civil",
-          "campus": "São Paulo Butantã",
+          "curso": "Administra??o (Ribeir?o Preto)",
+          "curso_busca": "Administra??o",
+          "campus": "Ribeir?o Preto",
           "escopo_nota": "carreira",
           "escopo_vagas": "curso",
-          "escopo_inscritos": "indisponivel",
+          "escopo_inscritos": "curso",
           "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
-          "fonte_rotulo": "Guia do Vestibular 2024: Carreiras e Cursos",
+          "fonte_rotulo": "Guia de Carreiras 2024",
           "metricas": {
-            "Ampla Concorrência": { "vagas": 59 },
-            "Candidatos de Escola Pública": { "vagas": 25 },
-            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15 }
+            "Ampla Concorrência": {
+              "vagas": 46,
+              "inscritos": 666
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 19,
+              "inscritos": 169
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 62
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 20,
+              "inscritos": 57
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 57
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5,
+              "inscritos": 24
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 468
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 96
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 28
+            }
+          }
+        }
+      ],
+      "140": [
+        {
+          "curso": "Direito (Ribeir?o Preto)",
+          "curso_busca": "Direito",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44,
+              "inscritos": 899
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18,
+              "inscritos": 164
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11,
+              "inscritos": 58
+            }
+          }
+        },
+        {
+          "curso": "Direito (S?o Paulo Quadril?tero)",
+          "curso_busca": "Direito",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 202,
+              "inscritos": 4978
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 84,
+              "inscritos": 1406
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 49,
+              "inscritos": 673
+            }
+          }
+        }
+      ],
+      "145": [
+        {
+          "curso": "Administra??o (S?o Paulo Butant?)",
+          "curso_busca": "Administra??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 93,
+              "inscritos": 942
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 37,
+              "inscritos": 218
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 23,
+              "inscritos": 113
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66,
+              "inscritos": 159
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 27,
+              "inscritos": 135
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16,
+              "inscritos": 73
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 78,
+              "inscritos": 1777
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 32,
+              "inscritos": 407
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 20,
+              "inscritos": 189
+            }
+          }
+        }
+      ],
+      "165": [
+        {
+          "curso": "Gest?o Ambiental (Piracicaba)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 43
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 27
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 6
+            }
+          }
+        },
+        {
+          "curso": "Gest?o Ambiental (S?o Paulo Leste)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 108
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 28
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 25
+            }
+          }
+        }
+      ],
+      "405": [
+        {
+          "curso": "Ci?ncias Biol?gicas (Piracicaba)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 100
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 67
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 22
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 173
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 52
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 16
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 878
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 386
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14,
+              "inscritos": 152
+            }
+          }
+        }
+      ],
+      "410": [
+        {
+          "curso": "Ci?ncias Biom?dicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 209
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 60
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 24
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biom?dicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 720
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 278
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 99
+            }
+          }
+        }
+      ],
+      "420": [
+        {
+          "curso": "Educa??o F?sica (Ribeir?o Preto)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 166
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 62
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 25
+            }
+          }
+        },
+        {
+          "curso": "Educa??o F?sica (S?o Paulo Butant?)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44,
+              "inscritos": 477
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18,
+              "inscritos": 162
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11,
+              "inscritos": 104
+            }
+          }
+        }
+      ],
+      "425": [
+        {
+          "curso": "Enfermagem (Ribeir?o Preto)",
+          "curso_busca": "Enfermagem",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 57,
+              "inscritos": 241
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24,
+              "inscritos": 95
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15,
+              "inscritos": 54
+            }
+          }
+        },
+        {
+          "curso": "Enfermagem (S?o Paulo Quadril?tero)",
+          "curso_busca": "Enfermagem",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 391
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15,
+              "inscritos": 200
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 86
+            }
+          }
+        }
+      ],
+      "440": [
+        {
+          "curso": "Farm?cia (Ribeir?o Preto)",
+          "curso_busca": "Farm?cia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 323
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14,
+              "inscritos": 92
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 30
+            }
+          }
+        },
+        {
+          "curso": "Farm?cia (S?o Paulo Butant?)",
+          "curso_busca": "Farm?cia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66,
+              "inscritos": 707
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 26,
+              "inscritos": 267
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16,
+              "inscritos": 97
+            }
+          }
+        }
+      ],
+      "451": [
+        {
+          "curso": "Fonoaudiologia (Bauru)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 137
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 38
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 6
+            }
+          }
+        },
+        {
+          "curso": "Fonoaudiologia (Ribeir?o Preto)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 207
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 6,
+              "inscritos": 22
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 5
+            }
+          }
+        }
+      ],
+      "480": [
+        {
+          "curso": "Odontologia (Bauru)",
+          "curso_busca": "Odontologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 197
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 87
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5,
+              "inscritos": 21
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (Ribeir?o Preto)",
+          "curso_busca": "Odontologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 356
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15,
+              "inscritos": 86
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 26
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (S?o Paulo Butant?)",
+          "curso_busca": "Odontologia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 58,
+              "inscritos": 702
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24,
+              "inscritos": 263
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14,
+              "inscritos": 98
+            }
+          }
+        }
+      ],
+      "715": [
+        {
+          "curso": "Ci?ncia da Computa??o (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 9,
+              "inscritos": 150
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 4,
+              "inscritos": 55
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 2,
+              "inscritos": 17
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncia da Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 1291
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 508
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 233
+            }
+          }
+        },
+        {
+          "curso": "Sistemas de Informa??o (S?o Paulo Leste)",
+          "curso_busca": "Sistemas de Informa??o",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 79,
+              "inscritos": 545
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 33,
+              "inscritos": 386
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 19,
+              "inscritos": 166
+            }
+          }
+        }
+      ],
+      "750": [
+        {
+          "curso": "Engenharia de Computa??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 760
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 176
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 56
+            }
+          }
+        }
+      ],
+      "755": [
+        {
+          "curso": "Engenharia Mec?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 433
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 95
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 20
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 264
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 78
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 26
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 338
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 38
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 16
+            }
+          }
+        }
+      ],
+      "760": [
+        {
+          "curso": "Engenharia Ambiental (Lorena)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17,
+              "inscritos": 23
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 8
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 2
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Ambiental (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 78
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 25
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 16
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Civil (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 59,
+              "inscritos": 276
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 25,
+              "inscritos": 109
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15,
+              "inscritos": 52
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mec?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 31,
+              "inscritos": 473
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13,
+              "inscritos": 97
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 24
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 303
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 99
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 27
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Qu?mica (Lorena)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 70,
+              "inscritos": 268
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 30,
+              "inscritos": 78
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 18,
+              "inscritos": 23
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 516
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 115
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 28
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 32,
+              "inscritos": 1084
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13,
+              "inscritos": 269
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 77
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (Lorena)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17,
+              "inscritos": 87
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 31
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 5
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 33,
+              "inscritos": 604
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14,
+              "inscritos": 76
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 27
+            }
+          }
+        }
+      ],
+      "765": [
+        {
+          "curso": "F?sica (S?o Carlos)",
+          "curso_busca": "F?sica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 80
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 36
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 4
+            }
+          }
+        },
+        {
+          "curso": "F?sica (S?o Paulo Butant?)",
+          "curso_busca": "F?sica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 59,
+              "inscritos": 396
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 25,
+              "inscritos": 176
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14,
+              "inscritos": 39
+            }
+          }
+        },
+        {
+          "curso": "Matem?tica (S?o Carlos)",
+          "curso_busca": "Matem?tica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 31
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 15
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 1
+            }
+          }
+        },
+        {
+          "curso": "Matem?tica (S?o Paulo Butant?)",
+          "curso_busca": "Matem?tica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 87
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 31
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 9
+            }
+          }
+        }
+      ],
+      "770": [
+        {
+          "curso": "F?sica M?dica (Ribeir?o Preto)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 77
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 17
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 5
+            }
+          }
+        },
+        {
+          "curso": "F?sica M?dica (S?o Paulo Butant?/Quadril?tero)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "S?o Paulo Butant?/Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 60
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 24
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 9
+            }
+          }
+        }
+      ],
+      "800": [
+        {
+          "curso": "Qu?mica (S?o Carlos)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 83
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 29
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 4
+            }
+          }
+        },
+        {
+          "curso": "Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2024",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 376
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 188
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 64
+            }
           }
         }
       ]
     }
   },
   "2025": {
-    "fonte_url": "https://www.fuvest.br/wp-content/uploads/FUVEST_2025_inscritos_por_opcao_de_curso.pdf",
-    "fonte_rotulo": "FUVEST 2025 - Inscritos por Opção de Curso",
+    "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+    "fonte_rotulo": "Guia de Carreiras 2025",
     "codigos": {
-      "311": [
+      "102": [
         {
-          "curso": "Engenharia Civil (São Paulo Butantã)",
-          "curso_busca": "Engenharia Civil",
-          "campus": "São Paulo Butantã",
+          "curso": "Ci?ncias Biol?gicas (Piracicaba)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Piracicaba",
           "escopo_nota": "carreira",
           "escopo_vagas": "curso",
           "escopo_inscritos": "curso",
-          "fonte_url": "https://www.fuvest.br/wp-content/uploads/FUVEST_2025_inscritos_por_opcao_de_curso.pdf",
-          "fonte_rotulo": "FUVEST 2025 - Inscritos por Opção de Curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
           "metricas": {
-            "Ampla Concorrência": { "vagas": 59, "inscritos": 1587 },
-            "Candidatos de Escola Pública": { "vagas": 25, "inscritos": 300 },
-            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15, "inscritos": 123 }
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 79
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 58
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 13
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 223
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 84
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 19
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 757
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 328
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14,
+              "inscritos": 118
+            }
+          }
+        }
+      ],
+      "103": [
+        {
+          "curso": "Ci?ncias Biom?dicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 247
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 80
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 20
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biom?dicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 645
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 192
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 80
+            }
+          }
+        }
+      ],
+      "105": [
+        {
+          "curso": "Educa??o F?sica (Ribeir?o Preto)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 195
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 48
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 38
+            }
+          }
+        },
+        {
+          "curso": "Educa??o F?sica (S?o Paulo Butant?)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44,
+              "inscritos": 363
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18,
+              "inscritos": 147
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11,
+              "inscritos": 74
+            }
+          }
+        }
+      ],
+      "106": [
+        {
+          "curso": "Enfermagem (Ribeir?o Preto)",
+          "curso_busca": "Enfermagem",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 57,
+              "inscritos": 294
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24,
+              "inscritos": 110
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15,
+              "inscritos": 46
+            }
+          }
+        },
+        {
+          "curso": "Enfermagem (S?o Paulo Quadril?tero)",
+          "curso_busca": "Enfermagem",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 285
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15,
+              "inscritos": 142
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 76
+            }
+          }
+        }
+      ],
+      "107": [
+        {
+          "curso": "Farm?cia (Ribeir?o Preto)",
+          "curso_busca": "Farm?cia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 362
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14,
+              "inscritos": 110
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 24
+            }
+          }
+        },
+        {
+          "curso": "Farm?cia (S?o Paulo Butant?)",
+          "curso_busca": "Farm?cia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66,
+              "inscritos": 700
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 26,
+              "inscritos": 267
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16,
+              "inscritos": 96
+            }
+          }
+        }
+      ],
+      "108": [
+        {
+          "curso": "Fisioterapia (Ribeir?o Preto)",
+          "curso_busca": "Fisioterapia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 394
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 84
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 38
+            }
+          }
+        },
+        {
+          "curso": "Fisioterapia (S?o Paulo Quadril?tero)",
+          "curso_busca": "Fisioterapia",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 303
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 110
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 46
+            }
+          }
+        }
+      ],
+      "109": [
+        {
+          "curso": "Fonoaudiologia (Bauru)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 16,
+              "inscritos": 153
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 55
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 18
+            }
+          }
+        },
+        {
+          "curso": "Fonoaudiologia (Ribeir?o Preto)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 113
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 6,
+              "inscritos": 40
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 13
+            }
+          }
+        },
+        {
+          "curso": "Fonoaudiologia (S?o Paulo Quadril?tero)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13,
+              "inscritos": 108
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 55
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 25
+            }
+          }
+        }
+      ],
+      "111": [
+        {
+          "curso": "Medicina (Bauru)",
+          "curso_busca": "Medicina",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 1979
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 594
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 193
+            }
+          }
+        },
+        {
+          "curso": "Medicina (Ribeir?o Preto)",
+          "curso_busca": "Medicina",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44,
+              "inscritos": 4382
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18,
+              "inscritos": 1107
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11,
+              "inscritos": 371
+            }
+          }
+        },
+        {
+          "curso": "Medicina (S?o Paulo Quadril?tero)",
+          "curso_busca": "Medicina",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 77,
+              "inscritos": 10342
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 32,
+              "inscritos": 3211
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 19,
+              "inscritos": 1378
+            }
+          }
+        }
+      ],
+      "112": [
+        {
+          "curso": "Medicina Veterin?ria (Pirassununga)",
+          "curso_busca": "Medicina Veterin?ria",
+          "campus": "Pirassununga",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 424
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 139
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 35
+            }
+          }
+        },
+        {
+          "curso": "Medicina Veterin?ria (S?o Paulo Butant?)",
+          "curso_busca": "Medicina Veterin?ria",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 954
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15,
+              "inscritos": 389
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 153
+            }
+          }
+        }
+      ],
+      "115": [
+        {
+          "curso": "Odontologia (Bauru)",
+          "curso_busca": "Odontologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 215
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 81
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5,
+              "inscritos": 24
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (Ribeir?o Preto)",
+          "curso_busca": "Odontologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35,
+              "inscritos": 394
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15,
+              "inscritos": 92
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9,
+              "inscritos": 31
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (S?o Paulo Butant?)",
+          "curso_busca": "Odontologia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 58,
+              "inscritos": 653
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24,
+              "inscritos": 219
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14,
+              "inscritos": 82
+            }
+          }
+        }
+      ],
+      "119": [
+        {
+          "curso": "Terapia Ocupacional (Ribeir?o Preto)",
+          "curso_busca": "Terapia Ocupacional",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 9,
+              "inscritos": 85
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 4,
+              "inscritos": 43
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 2,
+              "inscritos": 14
+            }
+          }
+        },
+        {
+          "curso": "Terapia Ocupacional (S?o Paulo Quadril?tero)",
+          "curso_busca": "Terapia Ocupacional",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 116
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 52
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 27
+            }
+          }
+        }
+      ],
+      "303": [
+        {
+          "curso": "Ci?ncia da Computa??o (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 9,
+              "inscritos": 308
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 4,
+              "inscritos": 97
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 2,
+              "inscritos": 28
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncia da Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 1359
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 531
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 211
+            }
+          }
+        },
+        {
+          "curso": "Sistemas de Informa??o (S?o Paulo Leste)",
+          "curso_busca": "Sistemas de Informa??o",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 79,
+              "inscritos": 412
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 33,
+              "inscritos": 276
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 19,
+              "inscritos": 156
+            }
+          }
+        }
+      ],
+      "305": [
+        {
+          "curso": "Engenharia Ambiental (Lorena)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17,
+              "inscritos": 35
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 3
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Ambiental (S?o Carlos)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 71
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 17
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 7
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Ambiental (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 121
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 30
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 12
+            }
+          }
+        }
+      ],
+      "308": [
+        {
+          "curso": "Engenharia de Computa??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 771
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 163
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 51
+            }
+          }
+        }
+      ],
+      "309": [
+        {
+          "curso": "Engenharia Qu?mica (Lorena)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 70,
+              "inscritos": 355
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 30,
+              "inscritos": 86
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 18,
+              "inscritos": 15
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (Lorena)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17,
+              "inscritos": 132
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 31
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 11
+            }
+          }
+        }
+      ],
+      "310": [
+        {
+          "curso": "Engenharia Mec?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 580
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 98
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 35
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 279
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 72
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 29
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22,
+              "inscritos": 320
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9,
+              "inscritos": 43
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 19
+            }
+          }
+        }
+      ],
+      "311": [
+        {
+          "curso": "Engenharia Civil (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 59,
+              "inscritos": 356
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 25,
+              "inscritos": 102
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15,
+              "inscritos": 53
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mec?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 31,
+              "inscritos": 538
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13,
+              "inscritos": 107
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 29
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 273
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 77
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 28
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 465
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 79
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 20
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 32,
+              "inscritos": 1066
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13,
+              "inscritos": 220
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 86
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 33,
+              "inscritos": 722
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14,
+              "inscritos": 86
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8,
+              "inscritos": 27
+            }
+          }
+        }
+      ],
+      "313": [
+        {
+          "curso": "F?sica M?dica (Ribeir?o Preto)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 113
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 22
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 6
+            }
+          }
+        },
+        {
+          "curso": "F?sica M?dica (S?o Paulo Butant?/Quadril?tero)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "S?o Paulo Butant?/Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11,
+              "inscritos": 76
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5,
+              "inscritos": 26
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3,
+              "inscritos": 13
+            }
+          }
+        }
+      ],
+      "321": [
+        {
+          "curso": "Qu?mica (S?o Carlos)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 48
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 23
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6,
+              "inscritos": 15
+            }
+          }
+        },
+        {
+          "curso": "Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 383
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 166
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 66
+            }
+          }
+        }
+      ],
+      "501": [
+        {
+          "curso": "Administra??o (Ribeir?o Preto)",
+          "curso_busca": "Administra??o",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 46,
+              "inscritos": 552
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 19,
+              "inscritos": 111
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 50
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 20,
+              "inscritos": 57
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8,
+              "inscritos": 39
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5,
+              "inscritos": 26
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26,
+              "inscritos": 497
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11,
+              "inscritos": 78
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7,
+              "inscritos": 27
+            }
+          }
+        }
+      ],
+      "502": [
+        {
+          "curso": "Administra??o (S?o Paulo Butant?)",
+          "curso_busca": "Administra??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 93,
+              "inscritos": 1318
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 37,
+              "inscritos": 293
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 23,
+              "inscritos": 182
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66,
+              "inscritos": 171
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 27,
+              "inscritos": 159
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16,
+              "inscritos": 83
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 78,
+              "inscritos": 1904
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 32,
+              "inscritos": 418
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 20,
+              "inscritos": 183
+            }
+          }
+        }
+      ],
+      "503": [
+        {
+          "curso": "Administra??o (Piracicaba)",
+          "curso_busca": "Administra??o",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 136
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 26
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 9
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (Piracicaba)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 207
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 57
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 14
+            }
+          }
+        }
+      ],
+      "513": [
+        {
+          "curso": "Direito (Ribeir?o Preto)",
+          "curso_busca": "Direito",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44,
+              "inscritos": 923
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18,
+              "inscritos": 201
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11,
+              "inscritos": 76
+            }
+          }
+        },
+        {
+          "curso": "Direito (S?o Paulo Quadril?tero)",
+          "curso_busca": "Direito",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 202,
+              "inscritos": 5086
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 84,
+              "inscritos": 1369
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 49,
+              "inscritos": 727
+            }
+          }
+        }
+      ],
+      "518": [
+        {
+          "curso": "Gest?o Ambiental (Piracicaba)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18,
+              "inscritos": 41
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7,
+              "inscritos": 19
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4,
+              "inscritos": 10
+            }
+          }
+        },
+        {
+          "curso": "Gest?o Ambiental (S?o Paulo Leste)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "curso",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
+          "fonte_rotulo": "Guia de Carreiras 2025",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52,
+              "inscritos": 164
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22,
+              "inscritos": 32
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12,
+              "inscritos": 20
+            }
           }
         }
       ]
@@ -49,20 +2763,1311 @@
     "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
     "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
     "codigos": {
-      "311": [
+      "102": [
         {
-          "curso": "Engenharia Civil (São Paulo Butantã)",
-          "curso_busca": "Engenharia Civil",
-          "campus": "São Paulo Butantã",
+          "curso": "Ci?ncias Biol?gicas (Piracicaba)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Piracicaba",
           "escopo_nota": "carreira",
           "escopo_vagas": "curso",
           "escopo_inscritos": "indisponivel",
           "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
           "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
           "metricas": {
-            "Ampla Concorrência": { "vagas": 59 },
-            "Candidatos de Escola Pública": { "vagas": 25 },
-            "Candidatos de Escola Pública − Grupo PPI": { "vagas": 15 }
+            "Ampla Concorrência": {
+              "vagas": 13
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biol?gicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biol?gicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14
+            }
+          }
+        }
+      ],
+      "103": [
+        {
+          "curso": "Ci?ncias Biom?dicas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Biom?dicas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Biom?dicas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        }
+      ],
+      "105": [
+        {
+          "curso": "Educa??o F?sica (Ribeir?o Preto)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Educa??o F?sica (S?o Paulo Butant?)",
+          "curso_busca": "Educa??o F?sica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11
+            }
+          }
+        }
+      ],
+      "106": [
+        {
+          "curso": "Enfermagem (Ribeir?o Preto)",
+          "curso_busca": "Enfermagem",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 57
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15
+            }
+          }
+        },
+        {
+          "curso": "Enfermagem (S?o Paulo Quadril?tero)",
+          "curso_busca": "Enfermagem",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9
+            }
+          }
+        }
+      ],
+      "107": [
+        {
+          "curso": "Farm?cia (Ribeir?o Preto)",
+          "curso_busca": "Farm?cia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9
+            }
+          }
+        },
+        {
+          "curso": "Farm?cia (S?o Paulo Butant?)",
+          "curso_busca": "Farm?cia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16
+            }
+          }
+        }
+      ],
+      "108": [
+        {
+          "curso": "Fisioterapia (Ribeir?o Preto)",
+          "curso_busca": "Fisioterapia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Fisioterapia (S?o Paulo Quadril?tero)",
+          "curso_busca": "Fisioterapia",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        }
+      ],
+      "109": [
+        {
+          "curso": "Fonoaudiologia (Bauru)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 16
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Fonoaudiologia (Ribeir?o Preto)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 6
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        },
+        {
+          "curso": "Fonoaudiologia (S?o Paulo Quadril?tero)",
+          "curso_busca": "Fonoaudiologia",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 13
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        }
+      ],
+      "111": [
+        {
+          "curso": "Medicina (Bauru)",
+          "curso_busca": "Medicina",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Medicina (Ribeir?o Preto)",
+          "curso_busca": "Medicina",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11
+            }
+          }
+        },
+        {
+          "curso": "Medicina (S?o Paulo Quadril?tero)",
+          "curso_busca": "Medicina",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 77
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 32
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 19
+            }
+          }
+        }
+      ],
+      "112": [
+        {
+          "curso": "Medicina Veterin?ria (Pirassununga)",
+          "curso_busca": "Medicina Veterin?ria",
+          "campus": "Pirassununga",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Medicina Veterin?ria (S?o Paulo Butant?)",
+          "curso_busca": "Medicina Veterin?ria",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9
+            }
+          }
+        }
+      ],
+      "115": [
+        {
+          "curso": "Odontologia (Bauru)",
+          "curso_busca": "Odontologia",
+          "campus": "Bauru",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (Ribeir?o Preto)",
+          "curso_busca": "Odontologia",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 35
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 15
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 9
+            }
+          }
+        },
+        {
+          "curso": "Odontologia (S?o Paulo Butant?)",
+          "curso_busca": "Odontologia",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 58
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 24
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 14
+            }
+          }
+        }
+      ],
+      "119": [
+        {
+          "curso": "Terapia Ocupacional (Ribeir?o Preto)",
+          "curso_busca": "Terapia Ocupacional",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 4
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 2
+            }
+          }
+        },
+        {
+          "curso": "Terapia Ocupacional (S?o Paulo Quadril?tero)",
+          "curso_busca": "Terapia Ocupacional",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        }
+      ],
+      "303": [
+        {
+          "curso": "Ci?ncia da Computa??o (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 4
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 2
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncia da Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncia da Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Sistemas de Informa??o (S?o Paulo Leste)",
+          "curso_busca": "Sistemas de Informa??o",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 79
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 33
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 19
+            }
+          }
+        }
+      ],
+      "305": [
+        {
+          "curso": "Engenharia Ambiental (Lorena)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Ambiental (S?o Carlos)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Ambiental (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Ambiental",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        }
+      ],
+      "308": [
+        {
+          "curso": "Engenharia de Computa??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        }
+      ],
+      "309": [
+        {
+          "curso": "Engenharia Qu?mica (Lorena)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 70
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 30
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 18
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (Lorena)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "Lorena",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 17
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        }
+      ],
+      "310": [
+        {
+          "curso": "Engenharia Mec?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Carlos)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Carlos)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 9
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        }
+      ],
+      "311": [
+        {
+          "curso": "Engenharia Civil (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Civil",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 59
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 25
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 15
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mec?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mec?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 31
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Mecatr?nica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Mecatr?nica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7
+            }
+          }
+        },
+        {
+          "curso": "Engenharia Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Computa??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Computa??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 32
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 13
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8
+            }
+          }
+        },
+        {
+          "curso": "Engenharia de Produ??o (S?o Paulo Butant?)",
+          "curso_busca": "Engenharia de Produ??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 33
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 14
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 8
+            }
+          }
+        }
+      ],
+      "314": [
+        {
+          "curso": "F?sica M?dica (Ribeir?o Preto)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "F?sica M?dica (S?o Paulo Butant?/Quadril?tero)",
+          "curso_busca": "F?sica M?dica",
+          "campus": "S?o Paulo Butant?/Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 5
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 3
+            }
+          }
+        }
+      ],
+      "321": [
+        {
+          "curso": "Qu?mica (S?o Carlos)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Carlos",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 6
+            }
+          }
+        },
+        {
+          "curso": "Qu?mica (S?o Paulo Butant?)",
+          "curso_busca": "Qu?mica",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12
+            }
+          }
+        }
+      ],
+      "501": [
+        {
+          "curso": "Administra??o (Ribeir?o Preto)",
+          "curso_busca": "Administra??o",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 46
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 19
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 20
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 8
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 5
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (Ribeir?o Preto)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 26
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 11
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 7
+            }
+          }
+        }
+      ],
+      "502": [
+        {
+          "curso": "Administra??o (S?o Paulo Butant?)",
+          "curso_busca": "Administra??o",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 93
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 37
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 23
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Cont?beis (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Cont?beis",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 66
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 27
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 16
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (S?o Paulo Butant?)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "S?o Paulo Butant?",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 78
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 32
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 20
+            }
+          }
+        }
+      ],
+      "503": [
+        {
+          "curso": "Administra??o (Piracicaba)",
+          "curso_busca": "Administra??o",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Ci?ncias Econ?micas (Piracicaba)",
+          "curso_busca": "Ci?ncias Econ?micas",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        }
+      ],
+      "512": [
+        {
+          "curso": "Direito (Ribeir?o Preto)",
+          "curso_busca": "Direito",
+          "campus": "Ribeir?o Preto",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 44
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 11
+            }
+          }
+        },
+        {
+          "curso": "Direito (S?o Paulo Quadril?tero)",
+          "curso_busca": "Direito",
+          "campus": "S?o Paulo Quadril?tero",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 202
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 84
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 49
+            }
+          }
+        }
+      ],
+      "517": [
+        {
+          "curso": "Gest?o Ambiental (Piracicaba)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "Piracicaba",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 18
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 7
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 4
+            }
+          }
+        },
+        {
+          "curso": "Gest?o Ambiental (S?o Paulo Leste)",
+          "curso_busca": "Gest?o Ambiental",
+          "campus": "S?o Paulo Leste",
+          "escopo_nota": "carreira",
+          "escopo_vagas": "curso",
+          "escopo_inscritos": "indisponivel",
+          "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026_guia-carreiras.pdf",
+          "fonte_rotulo": "FUVEST - Guia de Carreiras 2026",
+          "metricas": {
+            "Ampla Concorrência": {
+              "vagas": 52
+            },
+            "Candidatos de Escola Pública": {
+              "vagas": 22
+            },
+            "Candidatos de Escola Pública − Grupo PPI": {
+              "vagas": 12
+            }
           }
         }
       ]

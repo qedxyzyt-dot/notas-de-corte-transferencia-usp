@@ -256,7 +256,7 @@ def aplicar_desambiguacoes_oficiais(
                 continue
 
             curso_original = registro["curso"]
-            curso_final = spec["curso"]
+            curso_final = str(spec.get("curso") or curso_original)
             if curso_final != curso_original:
                 if "curso_pdf" not in registro:
                     registro["curso_pdf"] = curso_original
@@ -264,8 +264,17 @@ def aplicar_desambiguacoes_oficiais(
                 registro["curso_desambiguado"] = True
                 info["desambiguados"] += 1
 
-            registro["curso_busca"] = spec.get("curso_busca") or inferir_rotulo_busca_oficial(curso_final)
-            registro["campus"] = spec["campus"]
+            curso_busca = spec.get("curso_busca")
+            if curso_busca:
+                registro["curso_busca"] = str(curso_busca)
+            elif spec.get("curso"):
+                registro["curso_busca"] = inferir_rotulo_busca_oficial(curso_final)
+
+            campus = spec.get("campus")
+            if campus:
+                registro["campus"] = str(campus)
+            if spec.get("ocultar_busca"):
+                registro["ocultar_busca"] = True
 
         resumo[ano] = info
 
@@ -331,6 +340,8 @@ def remover_flags_vazias(dados: dict[str, list[dict]]) -> None:
                 registro.pop("curso_truncado", None)
             if not registro.get("registro_sintetico"):
                 registro.pop("registro_sintetico", None)
+            if not registro.get("ocultar_busca"):
+                registro.pop("ocultar_busca", None)
             if not registro.get("modalidade"):
                 registro.pop("modalidade", None)
             if not registro.get("pontos_possiveis_2fase"):

@@ -3,66 +3,361 @@
     "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2024_guia_carreiras.pdf",
     "fonte_rotulo": "Guia de Carreiras 2024",
     "codigos": {
-      "105": { "curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "106": { "curso": "Arquitetura (São Carlos)", "campus": "São Carlos" },
-      "120": { "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "121": { "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "205": { "curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "206": { "curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "210": { "curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "211": { "curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "445": { "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)", "campus": "São Paulo Butantã/Quadrilátero" },
-      "446": { "curso": "Fisioterapia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "450": { "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)", "campus": "São Paulo Butantã/Quadrilátero" },
-      "451": { "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)", "campus": "Bauru e Ribeirão Preto" },
-      "460": { "curso": "Medicina (São Paulo Quadrilátero)", "campus": "São Paulo Quadrilátero" },
-      "461": { "curso": "Medicina (Bauru)", "campus": "Bauru" },
-      "462": { "curso": "Medicina (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "465": { "curso": "Medicina Veterinária (Pirassununga)", "campus": "Pirassununga" },
-      "466": { "curso": "Medicina Veterinária (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "485": { "curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "486": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "495": { "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)", "campus": "São Paulo Butantã/Quadrilátero" },
-      "496": { "curso": "Terapia Ocupacional (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "735": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
-      "800": { "curso": "Química (São Paulo Butantã e Ribeirão Preto)", "campus": "São Paulo Butantã e Ribeirão Preto" },
-      "801": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" }
+      "101": {
+        "curso": "Administra??o (Piracicaba)",
+        "campus": "Piracicaba",
+        "curso_busca": "Administra??o"
+      },
+      "105": {
+        "curso": "Arquitetura (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "106": {
+        "curso": "Arquitetura (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "120": {
+        "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "121": {
+        "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "140": {
+        "ocultar_busca": true
+      },
+      "146": {
+        "curso": "Ci?ncias Econ?micas (Piracicaba)",
+        "campus": "Piracicaba",
+        "curso_busca": "Ci?ncias Econ?micas"
+      },
+      "165": {
+        "ocultar_busca": true
+      },
+      "205": {
+        "curso": "Música (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "206": {
+        "curso": "Música (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "210": {
+        "curso": "Pedagogia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "211": {
+        "curso": "Pedagogia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "405": {
+        "ocultar_busca": true
+      },
+      "410": {
+        "ocultar_busca": true
+      },
+      "420": {
+        "ocultar_busca": true
+      },
+      "425": {
+        "ocultar_busca": true
+      },
+      "440": {
+        "ocultar_busca": true
+      },
+      "445": {
+        "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
+        "campus": "São Paulo Butantã/Quadrilátero"
+      },
+      "446": {
+        "curso": "Fisioterapia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "450": {
+        "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
+        "campus": "São Paulo Butantã/Quadrilátero"
+      },
+      "451": {
+        "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
+        "campus": "Bauru e Ribeirão Preto",
+        "ocultar_busca": true
+      },
+      "460": {
+        "curso": "Medicina (São Paulo Quadrilátero)",
+        "campus": "São Paulo Quadrilátero"
+      },
+      "461": {
+        "curso": "Medicina (Bauru)",
+        "campus": "Bauru"
+      },
+      "462": {
+        "curso": "Medicina (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "465": {
+        "curso": "Medicina Veterinária (Pirassununga)",
+        "campus": "Pirassununga"
+      },
+      "466": {
+        "curso": "Medicina Veterinária (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "480": {
+        "ocultar_busca": true
+      },
+      "485": {
+        "curso": "Psicologia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "486": {
+        "curso": "Psicologia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "495": {
+        "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
+        "campus": "São Paulo Butantã/Quadrilátero"
+      },
+      "496": {
+        "curso": "Terapia Ocupacional (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "716": {
+        "curso": "Sistemas de Informa??o (S?o Carlos)",
+        "campus": "S?o Carlos",
+        "curso_busca": "Sistemas de Informa??o"
+      },
+      "730": {
+        "curso": "Engenharia Ambiental (S?o Carlos)",
+        "campus": "S?o Carlos",
+        "curso_busca": "Engenharia Ambiental"
+      },
+      "735": {
+        "curso": "Engenharia Civil (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "770": {
+        "ocultar_busca": true
+      },
+      "800": {
+        "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
+        "campus": "São Paulo Butantã e Ribeirão Preto",
+        "ocultar_busca": true
+      },
+      "801": {
+        "curso": "Química (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      }
     }
   },
   "2025": {
     "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2025_guia-carreiras.pdf",
     "fonte_rotulo": "Guia de Carreiras 2025",
     "codigos": {
-      "116": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "117": { "curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "306": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
-      "320": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "321": { "curso": "Química (São Paulo Butantã e São Carlos)", "campus": "São Paulo Butantã e São Carlos" },
-      "504": { "curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "505": { "curso": "Arquitetura (São Carlos)", "campus": "São Carlos" },
-      "509": { "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "510": { "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "524": { "curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "525": { "curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "526": { "curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "527": { "curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto" }
+      "102": {
+        "ocultar_busca": true
+      },
+      "103": {
+        "ocultar_busca": true
+      },
+      "105": {
+        "ocultar_busca": true
+      },
+      "106": {
+        "ocultar_busca": true
+      },
+      "107": {
+        "ocultar_busca": true
+      },
+      "108": {
+        "ocultar_busca": true
+      },
+      "109": {
+        "ocultar_busca": true
+      },
+      "111": {
+        "ocultar_busca": true
+      },
+      "112": {
+        "ocultar_busca": true
+      },
+      "115": {
+        "ocultar_busca": true
+      },
+      "116": {
+        "curso": "Psicologia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "117": {
+        "curso": "Psicologia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "119": {
+        "ocultar_busca": true
+      },
+      "305": {
+        "ocultar_busca": true
+      },
+      "306": {
+        "curso": "Engenharia Civil (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "313": {
+        "ocultar_busca": true
+      },
+      "320": {
+        "curso": "Química (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "321": {
+        "curso": "Química (São Paulo Butantã e São Carlos)",
+        "campus": "São Paulo Butantã e São Carlos",
+        "ocultar_busca": true
+      },
+      "322": {
+        "curso": "Sistemas de Informa??o (S?o Carlos)",
+        "campus": "S?o Carlos",
+        "curso_busca": "Sistemas de Informa??o"
+      },
+      "504": {
+        "curso": "Arquitetura (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "505": {
+        "curso": "Arquitetura (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "509": {
+        "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "510": {
+        "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "513": {
+        "ocultar_busca": true
+      },
+      "518": {
+        "ocultar_busca": true
+      },
+      "524": {
+        "curso": "Música (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "525": {
+        "curso": "Música (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "526": {
+        "curso": "Pedagogia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "527": {
+        "curso": "Pedagogia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      }
     }
   },
   "2026": {
     "fonte_url": "https://www.fuvest.br/wp-content/uploads/fuvest2026-chamada-1-notas-minimas.pdf",
     "fonte_rotulo": "Pontos finais e classificações mínimas da 1ª chamada FUVEST 2026",
     "codigos": {
-      "116": { "curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "117": { "curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "306": { "curso": "Engenharia Civil (São Carlos)", "campus": "São Carlos" },
-      "320": { "curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "321": { "curso": "Química (São Paulo Butantã e São Carlos)", "campus": "São Paulo Butantã e São Carlos" },
-      "504": { "curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "505": { "curso": "Arquitetura (São Carlos)", "campus": "São Carlos" },
-      "523": { "curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "524": { "curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto" },
-      "525": { "curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã" },
-      "526": { "curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto" }
+      "102": {
+        "ocultar_busca": true
+      },
+      "103": {
+        "ocultar_busca": true
+      },
+      "105": {
+        "ocultar_busca": true
+      },
+      "106": {
+        "ocultar_busca": true
+      },
+      "107": {
+        "ocultar_busca": true
+      },
+      "108": {
+        "ocultar_busca": true
+      },
+      "109": {
+        "ocultar_busca": true
+      },
+      "111": {
+        "ocultar_busca": true
+      },
+      "112": {
+        "ocultar_busca": true
+      },
+      "115": {
+        "ocultar_busca": true
+      },
+      "116": {
+        "curso": "Psicologia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "117": {
+        "curso": "Psicologia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "119": {
+        "ocultar_busca": true
+      },
+      "305": {
+        "ocultar_busca": true
+      },
+      "306": {
+        "curso": "Engenharia Civil (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "314": {
+        "ocultar_busca": true
+      },
+      "320": {
+        "curso": "Química (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "321": {
+        "curso": "Química (São Paulo Butantã e São Carlos)",
+        "campus": "São Paulo Butantã e São Carlos",
+        "ocultar_busca": true
+      },
+      "322": {
+        "curso": "Sistemas de Informa??o (S?o Carlos)",
+        "campus": "S?o Carlos",
+        "curso_busca": "Sistemas de Informa??o"
+      },
+      "504": {
+        "curso": "Arquitetura (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "505": {
+        "curso": "Arquitetura (São Carlos)",
+        "campus": "São Carlos"
+      },
+      "512": {
+        "ocultar_busca": true
+      },
+      "517": {
+        "ocultar_busca": true
+      },
+      "523": {
+        "curso": "Música (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "524": {
+        "curso": "Música (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      },
+      "525": {
+        "curso": "Pedagogia (São Paulo Butantã)",
+        "campus": "São Paulo Butantã"
+      },
+      "526": {
+        "curso": "Pedagogia (Ribeirão Preto)",
+        "campus": "Ribeirão Preto"
+      }
     }
   }
 }
