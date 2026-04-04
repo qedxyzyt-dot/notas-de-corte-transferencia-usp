@@ -255,10 +255,11 @@ header p {
     border: 1px solid var(--borda);
     border-radius: 18px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 1.5rem;
     box-shadow: var(--sombra-card);
 }
-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+table { width: 100%; min-width: 44rem; border-collapse: collapse; font-size: 0.88rem; }
 thead { background: var(--usp-azul); color: #fff; }
 th {
     padding: 0.78rem 0.8rem;
@@ -357,6 +358,8 @@ tbody tr:hover { background: var(--usp-azul-claro); }
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--usp-azul);
 }
+.breakdown-graficos { display: flex; flex-wrap: wrap; gap: 1rem; }
+.breakdown-grafico { flex: 1; min-width: 300px; }
 
 /* Footer */
 footer {
@@ -400,12 +403,147 @@ footer a { color: var(--usp-azul); }
 }
 
 /* Responsivo */
+@media (max-width: 960px) {
+    header {
+        padding: 1.35rem 1.35rem 1.5rem;
+    }
+    header h1 {
+        font-size: 1.48rem;
+    }
+    header p {
+        font-size: 0.94rem;
+    }
+    .container {
+        padding: 1.2rem;
+    }
+    .filtros {
+        grid-template-columns: minmax(0, 1.3fr) repeat(2, minmax(0, 1fr));
+        padding: 1.05rem 1.1rem;
+    }
+    .filtro-grupo--curso {
+        min-width: 0;
+    }
+    .combo-select__menu {
+        width: 100%;
+        min-width: 100%;
+    }
+    .grafico-card {
+        padding: 1rem 1.1rem;
+    }
+    .breakdown-grafico {
+        min-width: 0;
+    }
+}
+
 @media (max-width: 700px) {
-    .filtros { grid-template-columns: 1fr; }
+    header {
+        padding: 1.2rem 1rem 1.3rem;
+    }
+    header h1 {
+        font-size: 1.22rem;
+        line-height: 1.15;
+    }
+    header p {
+        font-size: 0.88rem;
+        margin-top: 0.45rem;
+    }
+    .topbar-link {
+        width: 100%;
+        max-width: 18rem;
+        padding: 0.52rem 0.8rem;
+        font-size: 0.84rem;
+    }
+    .container {
+        padding: 1rem 0.9rem 1.15rem;
+    }
+    .filtros {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        padding: 1rem;
+    }
     .cards { grid-template-columns: 1fr 1fr; }
+    .filtro-grupo label {
+        font-size: 0.74rem;
+    }
+    .filtro-grupo input, .filtro-grupo select, .combo-select__trigger {
+        font-size: 0.98rem;
+        padding: 0.76rem 0.82rem;
+    }
     .lista-sugestoes, .combo-select__menu {
         width: 100%;
         min-width: 100%;
+        max-height: 14rem;
+        border-radius: 14px;
+    }
+    table {
+        min-width: 39rem;
+        font-size: 0.82rem;
+    }
+    th, td {
+        padding: 0.62rem 0.58rem;
+    }
+    .pdf-link {
+        padding: 0.32rem 0.52rem;
+        font-size: 0.68rem;
+    }
+    .grafico-card {
+        padding: 0.95rem 0.85rem;
+        border-radius: 16px;
+    }
+    .grafico-card h3 {
+        font-size: 0.9rem;
+        line-height: 1.25;
+    }
+    .chart-wrapper {
+        max-height: 16rem;
+    }
+    .insights {
+        padding: 1rem 1rem 1rem 1.1rem;
+        border-radius: 0 16px 16px 0;
+    }
+    .insights ul {
+        padding-left: 1.1rem;
+        font-size: 0.92rem;
+    }
+    .breakdown h3 {
+        font-size: 0.92rem;
+        margin-bottom: 0.8rem;
+    }
+    .breakdown-graficos {
+        flex-direction: column;
+    }
+    .vazio {
+        padding: 2.35rem 1rem;
+    }
+    .vazio p {
+        font-size: 0.95rem;
+    }
+    footer {
+        padding: 1rem 0.9rem 1.2rem;
+        font-size: 0.84rem;
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 1.08rem;
+    }
+    header p {
+        font-size: 0.84rem;
+    }
+    .topbar-link {
+        font-size: 0.79rem;
+    }
+    table {
+        min-width: 36rem;
+        font-size: 0.78rem;
+    }
+    th, td {
+        padding: 0.56rem 0.5rem;
+    }
+    .pdf-link {
+        padding: 0.28rem 0.46rem;
+        font-size: 0.64rem;
     }
 }
 </style>
@@ -518,7 +656,7 @@ function formatarTooltipNumero(context) {
 function renderLinkPdfAno(ano) {
     const href = PDFS_OFICIAIS[String(ano)];
     if (!href) return "â€”";
-    const titulo = `Abrir PDF oficial da FUVEST de ${ano}`;
+    const titulo = `Abrir listagem oficial da FUVEST de ${ano}`;
     return `<a class="pdf-link" href="${href}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
         <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
             <path d="M10 3.25v7m0 0 2.75-2.75M10 10.25 7.25 7.5M4.25 13v1.5c0 .69.56 1.25 1.25 1.25h9c.69 0 1.25-.56 1.25-1.25V13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -931,7 +1069,7 @@ function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
 
     // Tabela
     html += `<div class="tabela-container"><table>
-        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Concorrência</th><th>Nota Mín.</th><th>Nota Máx.</th><th class="col-edital">Edital</th></tr></thead>
+        <thead><tr><th>Ano</th><th>Vagas</th><th>Inscritos</th><th>Ausentes</th><th>Concorrência</th><th>Nota Mín.</th><th>Nota Máx.</th><th class="col-edital">Listagem oficial</th></tr></thead>
         <tbody>`;
     for (const [ano, r] of Object.entries(dados)) {
         const linkPdf = renderLinkPdfAno(ano);
@@ -1114,9 +1252,9 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
 
     // Gráficos de breakdown
     const bdId = "bd-" + normalizar(categoria).replace(/\s/g, "");
-    html += `<div style="display:flex;flex-wrap:wrap;gap:1rem;">`;
-    html += `<div class="grafico-card" style="flex:1;min-width:300px;"><h3>Concorrência média por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-conc"></canvas></div></div>`;
-    html += `<div class="grafico-card" style="flex:1;min-width:300px;"><h3>Evolução da nota mínima por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-notas"></canvas></div></div>`;
+    html += `<div class="breakdown-graficos">`;
+    html += `<div class="grafico-card breakdown-grafico"><h3>Concorrência média por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-conc"></canvas></div></div>`;
+    html += `<div class="grafico-card breakdown-grafico"><h3>Evolução da nota mínima por ${categoria}</h3><div class="chart-wrapper"><canvas id="${bdId}-notas"></canvas></div></div>`;
     html += `</div></div>`;
 
     // Schedule chart creation
