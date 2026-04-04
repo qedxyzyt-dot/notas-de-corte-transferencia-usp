@@ -85,6 +85,27 @@ O extrator valida automaticamente essa cobertura antes de gerar o JSON, para que
 
 Para uma checagem rápida da robustez da extração das modalidades e dos campos que podem vir em branco no PDF, rode `python scripts/auditar_dados_vestibular.py`.
 
+## Auditoria de cobertura do vestibular
+
+Como a meta do projeto é refletir o máximo possível das listas oficiais, a auditoria do vestibular foi estruturada em duas faixas:
+
+- `2020–2026`: faixa prioritária, com verificação reforçada de modalidades, OCR, desambiguações por campus e entradas sintéticas localizadas.
+- `2000–2019`: série histórica completa, auditada respeitando o formato mais resumido dos PDFs antigos.
+
+O script `scripts/auditar_dados_vestibular.py` gera dois relatórios versionáveis:
+
+- `reports/vestibular_auditoria.json`
+- `reports/vestibular_auditoria.md`
+
+Esses relatórios resumem, por ano:
+
+- total de registros extraídos
+- pendências de campos esperados
+- inconsistências oficiais preservadas do próprio PDF
+- entradas sintéticas por campus
+- registros com localização explícita
+- distribuição dos grupos por modalidade
+
 ## Publicação no GitHub Pages
 
 Este repositório está estruturado para publicar o site a partir da pasta `docs/`.
@@ -108,6 +129,7 @@ Para atualizar os dados do site localmente:
 pip install -r requirements.txt
 python scripts/extrair_dados.py
 python scripts/extrair_dados_vestibular.py
+python scripts/auditar_dados_vestibular.py
 python scripts/exportar_site_vestibular.py --site-url https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/
 ```
 
@@ -115,6 +137,7 @@ Esses processos:
 
 - leem os PDFs oficiais do respectivo conjunto
 - extraem os registros relevantes
+- auditam a cobertura da série histórica e da faixa prioritária 2020–2026
 - atualizam os JSONs consumidos pelos dashboards publicados
 - geram um export standalone em `build/vestibular_pages/` para um GitHub Pages separado do vestibular
 

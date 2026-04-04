@@ -1,0 +1,1467 @@
+{
+  "gerado_em_utc": "2026-04-04T21:39:26.054162+00:00",
+  "fonte_json": "C:\\Users\\augus\\OneDrive\\Documentos\\transf\\notas_de_corte\\docs\\dados_vestibular.json",
+  "faixa_prioritaria": [
+    2020,
+    2026
+  ],
+  "resumo_global": {
+    "anos": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "total_registros": 4795,
+    "total_registros_modalidade": 2886,
+    "total_registros_sinteticos": 513,
+    "total_registros_desambiguados": 186,
+    "total_registros_truncados": 102,
+    "total_registros_localizados": 675,
+    "total_cursos_multi_campus": 100,
+    "total_ocultos_busca": 423,
+    "total_pendencias": 44,
+    "total_inconsistencias_oficiais": 1,
+    "faltas_por_campo": {
+      "convocados_por_vaga": 44,
+      "pontos_maximo": 43,
+      "pontos_minimo": 43
+    },
+    "distribuicao_tamanho_modalidades": {
+      "3": 962
+    }
+  },
+  "resumo_2020_2026": {
+    "anos": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "total_registros": 2559,
+    "total_registros_modalidade": 2559,
+    "total_registros_sinteticos": 513,
+    "total_registros_desambiguados": 186,
+    "total_registros_truncados": 90,
+    "total_registros_localizados": 675,
+    "total_cursos_multi_campus": 100,
+    "total_ocultos_busca": 423,
+    "total_pendencias": 29,
+    "total_inconsistencias_oficiais": 1,
+    "faltas_por_campo": {
+      "convocados_por_vaga": 29,
+      "pontos_maximo": 28,
+      "pontos_minimo": 28
+    },
+    "distribuicao_tamanho_modalidades": {
+      "3": 853
+    }
+  },
+  "resumo_2000_2019": {
+    "anos": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019
+    ],
+    "total_registros": 2236,
+    "total_registros_modalidade": 327,
+    "total_registros_sinteticos": 0,
+    "total_registros_desambiguados": 0,
+    "total_registros_truncados": 12,
+    "total_registros_localizados": 0,
+    "total_cursos_multi_campus": 0,
+    "total_ocultos_busca": 0,
+    "total_pendencias": 15,
+    "total_inconsistencias_oficiais": 0,
+    "faltas_por_campo": {
+      "convocados_por_vaga": 15,
+      "pontos_maximo": 15,
+      "pontos_minimo": 15
+    },
+    "distribuicao_tamanho_modalidades": {
+      "3": 109
+    }
+  },
+  "anos": {
+    "2000": {
+      "ano": 2000,
+      "perfil": "serie_base_completa",
+      "descricao_perfil": "PDFs com vagas, inscritos, ausentes, convocados e notas finais.",
+      "prioridade_alta": false,
+      "total_registros": 70,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2001": {
+      "ano": 2001,
+      "perfil": "serie_base_completa",
+      "descricao_perfil": "PDFs com vagas, inscritos, ausentes, convocados e notas finais.",
+      "prioridade_alta": false,
+      "total_registros": 73,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2002": {
+      "ano": 2002,
+      "perfil": "serie_base_completa",
+      "descricao_perfil": "PDFs com vagas, inscritos, ausentes, convocados e notas finais.",
+      "prioridade_alta": false,
+      "total_registros": 78,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2003": {
+      "ano": 2003,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 85,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2004": {
+      "ano": 2004,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 88,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2005": {
+      "ano": 2005,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 100,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2006": {
+      "ano": 2006,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 103,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2007": {
+      "ano": 2007,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 106,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2008": {
+      "ano": 2008,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 108,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2009": {
+      "ano": 2009,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 108,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2010": {
+      "ano": 2010,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 107,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2011": {
+      "ano": 2011,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 109,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2012": {
+      "ano": 2012,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 112,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2013": {
+      "ano": 2013,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 113,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2014": {
+      "ano": 2014,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 111,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2015": {
+      "ano": 2015,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 111,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2016": {
+      "ano": 2016,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 111,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2017": {
+      "ano": 2017,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 107,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 1,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2018": {
+      "ano": 2018,
+      "perfil": "serie_base_resumida",
+      "descricao_perfil": "PDFs resumidos, sem vagas, inscritos e ausentes por linha.",
+      "prioridade_alta": false,
+      "total_registros": 109,
+      "total_registros_modalidade": 0,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 2,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 0,
+      "distribuicao_tamanho_modalidades": {},
+      "grupos_modalidade_incomuns": []
+    },
+    "2019": {
+      "ano": 2019,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": false,
+      "total_registros": 327,
+      "total_registros_modalidade": 327,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 9,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {
+        "convocados_por_vaga": 15,
+        "pontos_maximo": 15,
+        "pontos_minimo": 15
+      },
+      "total_pendencias": 15,
+      "pendencias_exemplo": [
+        {
+          "codigo": "140",
+          "curso": "Ciências da Informação e da Documentação − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "145",
+          "curso": "Ciências Sociais",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "150",
+          "curso": "Curso Superior do Audiovisual",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "160",
+          "curso": "Direito",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "190",
+          "curso": "Filosofia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "195",
+          "curso": "Geografia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "215",
+          "curso": "História",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "255",
+          "curso": "Pedagogia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "400",
+          "curso": "Bacharelado em Biotecnologia − USP Leste, SP",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "415",
+          "curso": "Ciências Biomédicas",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "470",
+          "curso": "Fisioterapia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "705",
+          "curso": "Ciências da Natureza − USP Leste, SP",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        }
+      ],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 109,
+      "distribuicao_tamanho_modalidades": {
+        "3": 109
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2020": {
+      "ano": 2020,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 327,
+      "total_registros_modalidade": 327,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 9,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {
+        "convocados_por_vaga": 8,
+        "pontos_maximo": 8,
+        "pontos_minimo": 8
+      },
+      "total_pendencias": 8,
+      "pendencias_exemplo": [
+        {
+          "codigo": "150",
+          "curso": "Curso Superior do Audiovisual",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "195",
+          "curso": "Geografia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "400",
+          "curso": "Bacharelado em Biotecnologia − USP Leste, SP",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "410",
+          "curso": "Ciências Biológicas − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "555",
+          "curso": "Psicologia − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "705",
+          "curso": "Ciências da Natureza − USP Leste, SP",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "800",
+          "curso": "Geologia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "820",
+          "curso": "Licenciatura em Geociências e Educação Ambiental",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        }
+      ],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 109,
+      "distribuicao_tamanho_modalidades": {
+        "3": 109
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2021": {
+      "ano": 2021,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 330,
+      "total_registros_modalidade": 330,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 12,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {
+        "convocados_por_vaga": 6,
+        "pontos_maximo": 6,
+        "pontos_minimo": 6
+      },
+      "total_pendencias": 6,
+      "pendencias_exemplo": [
+        {
+          "codigo": "410",
+          "curso": "Ciências Biológicas − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "415",
+          "curso": "Ciências Biomédicas",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "555",
+          "curso": "Psicologia − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "570",
+          "curso": "Terapia Ocupacional − Ribeirão Preto",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "800",
+          "curso": "Geologia",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "820",
+          "curso": "Licenciatura em Geociências e Educação Ambiental",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        }
+      ],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 110,
+      "distribuicao_tamanho_modalidades": {
+        "3": 110
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2022": {
+      "ano": 2022,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 330,
+      "total_registros_modalidade": 330,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 12,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {
+        "convocados_por_vaga": 8,
+        "pontos_maximo": 8,
+        "pontos_minimo": 8
+      },
+      "total_pendencias": 8,
+      "pendencias_exemplo": [
+        {
+          "codigo": "185",
+          "curso": "Editoração (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "220",
+          "curso": "Jornalismo (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "410",
+          "curso": "Ciências Biológicas (Ribeirão Preto)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "530",
+          "curso": "Obstetrícia − USP Leste (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "555",
+          "curso": "Psicologia (Ribeirão Preto)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "745",
+          "curso": "Engenharia de Biossistemas (Pirassununga)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "800",
+          "curso": "Geologia (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "820",
+          "curso": "Licenciatura em Geociências e Educação Ambiental (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        }
+      ],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 110,
+      "distribuicao_tamanho_modalidades": {
+        "3": 110
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2023": {
+      "ano": 2023,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 330,
+      "total_registros_modalidade": 330,
+      "total_registros_sinteticos": 0,
+      "total_registros_desambiguados": 0,
+      "total_registros_truncados": 12,
+      "total_ocultos_busca": 0,
+      "total_registros_localizados": 0,
+      "total_cursos_multi_campus": 0,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {
+        "convocados_por_vaga": 7,
+        "pontos_maximo": 6,
+        "pontos_minimo": 6
+      },
+      "total_pendencias": 7,
+      "pendencias_exemplo": [
+        {
+          "codigo": "185",
+          "curso": "Editoração (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "220",
+          "curso": "Jornalismo (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "400",
+          "curso": "Bacharelado em Biotecnologia − USP Leste (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "410",
+          "curso": "Ciências Biológicas (Ribeirão Preto)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "555",
+          "curso": "Psicologia (Ribeirão Preto)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "800",
+          "curso": "Geologia (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        },
+        {
+          "codigo": "820",
+          "curso": "Licenciatura em Geociências e Educação Ambiental (São Paulo)",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "faltando": [
+            "convocados_por_vaga",
+            "pontos_minimo",
+            "pontos_maximo"
+          ],
+          "registro_sintetico": false
+        }
+      ],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 110,
+      "distribuicao_tamanho_modalidades": {
+        "3": 110
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2024": {
+      "ano": 2024,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 417,
+      "total_registros_modalidade": 417,
+      "total_registros_sinteticos": 153,
+      "total_registros_desambiguados": 96,
+      "total_registros_truncados": 0,
+      "total_ocultos_busca": 105,
+      "total_registros_localizados": 237,
+      "total_cursos_multi_campus": 35,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 1,
+      "inconsistencias_exemplo": [
+        {
+          "codigo": "710",
+          "curso": "Ciências Exatas",
+          "campus": null,
+          "modalidade": "Candidatos de Escola Pública − Grupo PPI",
+          "pontos_minimo": 27,
+          "pontos_maximo": 22
+        }
+      ],
+      "grupos_modalidade": 139,
+      "distribuicao_tamanho_modalidades": {
+        "3": 139
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2025": {
+      "ano": 2025,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 414,
+      "total_registros_modalidade": 414,
+      "total_registros_sinteticos": 180,
+      "total_registros_desambiguados": 48,
+      "total_registros_truncados": 18,
+      "total_ocultos_busca": 159,
+      "total_registros_localizados": 222,
+      "total_cursos_multi_campus": 33,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 138,
+      "distribuicao_tamanho_modalidades": {
+        "3": 138
+      },
+      "grupos_modalidade_incomuns": []
+    },
+    "2026": {
+      "ano": 2026,
+      "perfil": "serie_modalidades",
+      "descricao_perfil": "PDFs com modalidades e recortes mais detalhados.",
+      "prioridade_alta": true,
+      "total_registros": 411,
+      "total_registros_modalidade": 411,
+      "total_registros_sinteticos": 180,
+      "total_registros_desambiguados": 42,
+      "total_registros_truncados": 27,
+      "total_ocultos_busca": 159,
+      "total_registros_localizados": 216,
+      "total_cursos_multi_campus": 32,
+      "campos_esperados": [
+        "modalidade",
+        "vagas",
+        "inscritos",
+        "ausentes",
+        "convocados_2fase",
+        "convocados_por_vaga",
+        "pontos_minimo",
+        "pontos_maximo"
+      ],
+      "faltas_por_campo": {},
+      "total_pendencias": 0,
+      "pendencias_exemplo": [],
+      "total_inconsistencias_oficiais": 0,
+      "inconsistencias_exemplo": [],
+      "grupos_modalidade": 137,
+      "distribuicao_tamanho_modalidades": {
+        "3": 137
+      },
+      "grupos_modalidade_incomuns": []
+    }
+  }
+}
