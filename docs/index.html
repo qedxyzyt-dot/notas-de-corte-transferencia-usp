@@ -794,7 +794,7 @@ const PERIODOS = ["Integral", "Diurno", "Noturno", "Matutino", "Vespertino"];
 const GRAUS = ["Bacharelado", "Licenciatura", "Bacharelado e Licenciatura", "Licenciatura e Bacharelado"];
 const SEP_RE = /\s*[-\u2212\u2013\u2014]\s*/;
 const STOPWORDS_BUSCA = new Set(["a", "as", "da", "das", "de", "do", "dos", "e", "em", "na", "nas", "no", "nos", "o", "os"]);
-const ROTULO_LOC_NAO_INFORMADA = "Localização não informada no edital";
+const LOC_PADRAO_IMPLICITA = "São Paulo";
 const ROTULO_PER_NAO_INFORMADO = "Período não informado no edital";
 const PDFS_OFICIAIS = {
     "2019": "assets/pdfs/transferencia_2019_nota_de_corte.pdf",
@@ -1058,7 +1058,7 @@ function extrairLocRaw(nome) {
 }
 function extrairLoc(nome) {
     const raw = extrairLocRaw(nome);
-    if (!raw) return null;
+    if (!raw) return LOC_PADRAO_IMPLICITA;
     return LOC_NORMALIZAR[raw] || raw;
 }
 function extrairPeriodo(nome) {
@@ -1688,7 +1688,7 @@ function aplicarFiltrosEDashboard() {
     if (selLoc.value === "__all__" && Object.keys(locsSet).length > 1) {
         const bd = {};
         for (const [ano, r] of filtrados) {
-            const loc = ESTADO.atribs.get(r)?.loc || ROTULO_LOC_NAO_INFORMADA;
+            const loc = ESTADO.atribs.get(r)?.loc || LOC_PADRAO_IMPLICITA;
             (bd[loc] ||= []).push([ano, r]);
         }
         breakdowns["Localização"] = bd;
