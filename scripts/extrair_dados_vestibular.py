@@ -301,6 +301,7 @@ def expandir_opcoes_oficiais(
                 metricas = opcao.get("metricas", {})
                 metrica_modalidade = metricas.get(registro.get("modalidade")) or {}
                 sintetico = dict(registro)
+                sintetico.pop("ocultar_busca", None)
                 sintetico["curso"] = str(opcao["curso"])
                 sintetico["curso_busca"] = str(opcao.get("curso_busca") or inferir_rotulo_busca_oficial(str(opcao["curso"])))
                 sintetico["campus"] = str(opcao["campus"])
