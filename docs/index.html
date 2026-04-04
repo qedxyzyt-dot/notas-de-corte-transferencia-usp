@@ -177,7 +177,7 @@ header p {
     top: calc(100% + 0.35rem);
     left: 0;
     z-index: 30;
-    width: min(44rem, calc(100vw - 3rem));
+    width: 100%;
     min-width: 100%;
     max-height: 18rem;
     overflow-y: auto;
@@ -185,6 +185,9 @@ header p {
     border: 1px solid var(--borda);
     border-radius: 16px;
     box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+}
+.combo-select__menu {
+    width: min(44rem, calc(100vw - 3rem));
 }
 .lista-sugestoes[hidden], .combo-select__menu[hidden] { display: none; }
 .sugestao-btn, .combo-select__option {
