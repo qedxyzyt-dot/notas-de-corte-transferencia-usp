@@ -46,6 +46,7 @@ LINE_RE_MODALIDADE_MAX = re.compile(
     r"(\d+[.,]\d+)\s+(\d+)$"
 )
 LINE_RE_NUMERO = re.compile(r"^\d+$")
+LINE_RE_DECIMAL = re.compile(r"^\d+[.,]\d+$")
 NUMERIC_TAIL_RE = re.compile(
     r"\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+[.,]\d+\s+\d+$"
 )
@@ -233,11 +234,29 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
     registros: list[dict] = []
     carreira_atual: tuple[str, str] | None = None
 
-    def pegar_token(words: list[dict], x_min: float, x_max: float) -> str | None:
-        candidatos = [word for word in words if x_min <= word["x0"] < x_max]
+    def pegar_token_coluna(
+        words: list[dict],
+        x_min: float,
+        x_max: float,
+        top_referencia: float,
+        top_min: float,
+        top_max: float,
+        pattern: re.Pattern[str],
+    ) -> str | None:
+        candidatos = [
+            word
+            for word in words
+            if top_min <= word["top"] < top_max
+            and x_min <= word["x0"] < x_max
+            and pattern.fullmatch(word["text"])
+        ]
         if not candidatos:
             return None
-        return sorted(candidatos, key=lambda item: item["x0"])[0]["text"]
+        melhor = min(
+            candidatos,
+            key=lambda item: (abs(item["top"] - top_referencia), item["x0"]),
+        )
+        return melhor["text"]
 
     with pdfplumber.open(caminho) as pdf:
         for page in pdf.pages:
@@ -307,40 +326,19 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
                 if not rotulo:
                     continue
 
-                linha_numerica = [
-                    word
-                    for word in words
-                    if abs(word["top"] - top) <= 1.8 and word["x0"] >= 300
-                ]
-                linha_numerica.sort(key=lambda item: item["x0"])
+                faixa_top_min = top - 7.5
+                faixa_top_max = proximo_top
 
-                vagas = pegar_token(linha_numerica, 300, 325)
-                inscritos = pegar_token(linha_numerica, 340, 365)
-                ausentes = pegar_token(linha_numerica, 388, 407)
-                convocados = pegar_token(linha_numerica, 430, 452)
-                proporcao = pegar_token(linha_numerica, 468, 492)
-                pontos_maximo = pegar_token(linha_numerica, 560, 580)
+                vagas = pegar_token_coluna(words, 300, 325, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                inscritos = pegar_token_coluna(words, 340, 365, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                ausentes = pegar_token_coluna(words, 388, 407, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                convocados = pegar_token_coluna(words, 425, 452, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                proporcao = pegar_token_coluna(words, 468, 492, top, faixa_top_min, faixa_top_max, LINE_RE_DECIMAL)
+                pontos_minimo = pegar_token_coluna(words, 515, 540, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
+                pontos_maximo = pegar_token_coluna(words, 560, 580, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO)
 
                 if not all([vagas, inscritos, ausentes, convocados, proporcao, pontos_maximo]):
                     continue
-                if not re.fullmatch(r"\d+[.,]\d+", proporcao):
-                    continue
-
-                if caminho.name in {"fuvest_2019_notas_de_corte.pdf", "fuvest_2020_nota_de_corte.pdf"}:
-                    candidatos_min = [
-                        word
-                        for word in linha_numerica
-                        if 515 <= word["x0"] < 540
-                    ]
-                else:
-                    candidatos_min = [
-                        word
-                        for word in words
-                        if 515 <= word["x0"] < 540 and top < word["top"] < proximo_top
-                    ]
-
-                candidatos_min.sort(key=lambda item: (item["top"], item["x0"]))
-                pontos_minimo = candidatos_min[0]["text"] if candidatos_min else None
 
                 registros.append(
                     {
