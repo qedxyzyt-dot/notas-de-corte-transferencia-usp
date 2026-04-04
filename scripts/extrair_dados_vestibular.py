@@ -20,6 +20,7 @@ ROOT_DIR = SCRIPT_DIR.parent
 RAW_DIR = ROOT_DIR / "fuvest_vestibular"
 OUT_PATH = ROOT_DIR / "docs" / "dados_vestibular.json"
 PDF_OUT_DIR = ROOT_DIR / "docs" / "assets" / "pdfs" / "vestibular"
+CODIGOS_PATH = SCRIPT_DIR / "vestibular_codigos_oficiais.json"
 
 MINUS = "\u2212"
 MINUS_CHARS = f"-{MINUS}\u2013\u2014"
@@ -51,94 +52,12 @@ NUMERIC_TAIL_RE = re.compile(
     r"\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+[.,]\d+\s+\d+$"
 )
 
-# Diferenciações oficiais consultadas nos guias e listagens da própria FUVEST
-# para carreiras com o mesmo nome-base e códigos distintos.
-DESAMBIGUACOES_CODIGO: dict[int, dict[str, dict[str, str]]] = {
-    2024: {
-        "105": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "106": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
-        "120": {
-            "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
-            "campus": "São Paulo Butantã",
-        },
-        "121": {
-            "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
-            "campus": "Ribeirão Preto",
-        },
-        "205": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "206": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "210": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "211": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "445": {
-            "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
-            "campus": "São Paulo Butantã/Quadrilátero",
-        },
-        "446": {"curso": "Fisioterapia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "450": {
-            "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
-            "campus": "São Paulo Butantã/Quadrilátero",
-        },
-        "451": {
-            "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
-            "campus": "Bauru e Ribeirão Preto",
-        },
-        "460": {"curso": "Medicina (São Paulo Quadrilátero)", "campus": "São Paulo Quadrilátero"},
-        "461": {"curso": "Medicina (Bauru)", "campus": "Bauru"},
-        "462": {"curso": "Medicina (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "465": {"curso": "Medicina Veterinária (Pirassununga)", "campus": "Pirassununga"},
-        "466": {"curso": "Medicina Veterinária (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "485": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "486": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "495": {
-            "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
-            "campus": "São Paulo Butantã/Quadrilátero",
-        },
-        "496": {"curso": "Terapia Ocupacional (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "800": {
-            "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
-            "campus": "São Paulo Butantã e Ribeirão Preto",
-        },
-        "801": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-    },
-    2025: {
-        "116": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "117": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "320": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "321": {
-            "curso": "Química (São Paulo Butantã e São Carlos)",
-            "campus": "São Paulo Butantã e São Carlos",
-        },
-        "504": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "505": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
-        "509": {
-            "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
-            "campus": "São Paulo Butantã",
-        },
-        "510": {
-            "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
-            "campus": "Ribeirão Preto",
-        },
-        "524": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "525": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "526": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "527": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-    },
-    2026: {
-        "116": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "117": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "320": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "321": {
-            "curso": "Química (São Paulo Butantã e São Carlos)",
-            "campus": "São Paulo Butantã e São Carlos",
-        },
-        "504": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "505": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
-        "523": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "524": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-        "525": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
-        "526": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
-    },
-}
+def carregar_desambiguacoes_oficiais() -> dict[int, dict[str, dict[str, str]]]:
+    bruto = json.loads(CODIGOS_PATH.read_text(encoding="utf-8"))
+    return {
+        int(ano): info.get("codigos", {})
+        for ano, info in bruto.items()
+    }
 
 
 def limpar_texto(texto: str) -> str:
@@ -248,11 +167,71 @@ def canonizar_nomes(dados: dict[str, list[dict]]) -> dict[str, dict[str, int]]:
     return resumo
 
 
-def aplicar_desambiguacoes_oficiais(dados: dict[str, list[dict]]) -> dict[str, dict[str, int]]:
+def encontrar_repeticoes_por_codigo(dados: dict[str, list[dict]]) -> dict[str, list[dict[str, object]]]:
+    repeticoes: dict[str, list[dict[str, object]]] = {}
+
+    for ano, registros in dados.items():
+        grupos: dict[str, dict[str, object]] = {}
+        for registro in registros:
+            curso = registro["curso"]
+            grupo = grupos.setdefault(
+                curso,
+                {"curso": curso, "codigos": set(), "quantidade": 0},
+            )
+            grupo["codigos"].add(registro["codigo"])
+            grupo["quantidade"] += 1
+
+        repeticoes_ano = []
+        for grupo in grupos.values():
+            codigos = sorted(grupo["codigos"])
+            if len(codigos) <= 1:
+                continue
+            repeticoes_ano.append(
+                {
+                    "curso": grupo["curso"],
+                    "codigos": codigos,
+                    "quantidade_registros": grupo["quantidade"],
+                }
+            )
+
+        repeticoes[ano] = sorted(repeticoes_ano, key=lambda item: str(item["curso"]))
+
+    return repeticoes
+
+
+def validar_cobertura_desambiguacoes(
+    repeticoes: dict[str, list[dict[str, object]]],
+    desambiguacoes: dict[int, dict[str, dict[str, str]]],
+) -> None:
+    faltantes: list[str] = []
+
+    for ano, grupos in repeticoes.items():
+        mapa_ano = desambiguacoes.get(int(ano), {})
+        for grupo in grupos:
+            codigos = grupo["codigos"]
+            faltando = [codigo for codigo in codigos if codigo not in mapa_ano]
+            if not faltando:
+                continue
+            faltantes.append(
+                f"{ano} | {grupo['curso']} | faltando: {', '.join(faltando)} | presentes: {', '.join(codigos)}"
+            )
+
+    if faltantes:
+        detalhe = "\n".join(f"- {linha}" for linha in faltantes)
+        raise RuntimeError(
+            "Ha carreiras repetidas por codigo sem desambiguacao oficial cadastrada:\n"
+            f"{detalhe}\nAtualize {CODIGOS_PATH.name} antes de gerar o JSON."
+        )
+
+
+def aplicar_desambiguacoes_oficiais(
+    dados: dict[str, list[dict]],
+    desambiguacoes: dict[int, dict[str, dict[str, str]]],
+) -> dict[str, dict[str, int]]:
     resumo: dict[str, dict[str, int]] = {}
 
     for ano, registros in dados.items():
-        mapa_ano = DESAMBIGUACOES_CODIGO.get(int(ano), {})
+        mapa_ano = desambiguacoes.get(int(ano), {})
         info = {"desambiguados": 0}
 
         for registro in registros:
@@ -517,6 +496,7 @@ def main() -> None:
 
     anos_reduzidos = set(range(2003, 2012))
     anos_modalidades = set(range(2019, 2027))
+    desambiguacoes = carregar_desambiguacoes_oficiais()
 
     dados: dict[str, list[dict]] = {}
     for ano, caminho in arquivos.items():
@@ -535,7 +515,9 @@ def main() -> None:
         dados[str(ano)] = registros
 
     resumo = canonizar_nomes(dados)
-    resumo_desambiguacoes = aplicar_desambiguacoes_oficiais(dados)
+    repeticoes = encontrar_repeticoes_por_codigo(dados)
+    validar_cobertura_desambiguacoes(repeticoes, desambiguacoes)
+    resumo_desambiguacoes = aplicar_desambiguacoes_oficiais(dados, desambiguacoes)
     remover_flags_vazias(dados)
     copiar_pdfs(arquivos)
 
@@ -549,6 +531,7 @@ def main() -> None:
         print(
             f"{ano}: {len(registros)} registros | "
             f"{info['canonizados']} nomes ajustados | "
+            f"{len(repeticoes[ano])} grupos repetidos auditados | "
             f"{info_desambiguacao['desambiguados']} desambiguados por codigo | "
             f"{info['truncados_restantes']} truncados"
         )
