@@ -62,6 +62,7 @@ notas_de_corte/
 - Busca por curso ou carreira com sugestões.
 - Filtro de período antes da busca para evitar contaminação histórica.
 - Filtros por campus e modalidade, conforme o relatório.
+- Desambiguação de carreiras repetidas por código com apoio dos guias oficiais da FUVEST.
 - Tabela histórica por ano.
 - Link direto para a listagem oficial em PDF de cada ano.
 - Gráficos de evolução das notas, da demanda e dos indicadores oficiais.

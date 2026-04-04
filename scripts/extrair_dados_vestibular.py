@@ -51,6 +51,95 @@ NUMERIC_TAIL_RE = re.compile(
     r"\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+[.,]\d+\s+\d+$"
 )
 
+# Diferenciações oficiais consultadas nos guias e listagens da própria FUVEST
+# para carreiras com o mesmo nome-base e códigos distintos.
+DESAMBIGUACOES_CODIGO: dict[int, dict[str, dict[str, str]]] = {
+    2024: {
+        "105": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "106": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
+        "120": {
+            "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+            "campus": "São Paulo Butantã",
+        },
+        "121": {
+            "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+            "campus": "Ribeirão Preto",
+        },
+        "205": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "206": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "210": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "211": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "445": {
+            "curso": "Fisioterapia (São Paulo Butantã/Quadrilátero)",
+            "campus": "São Paulo Butantã/Quadrilátero",
+        },
+        "446": {"curso": "Fisioterapia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "450": {
+            "curso": "Fonoaudiologia (São Paulo Butantã/Quadrilátero)",
+            "campus": "São Paulo Butantã/Quadrilátero",
+        },
+        "451": {
+            "curso": "Fonoaudiologia (Bauru e Ribeirão Preto)",
+            "campus": "Bauru e Ribeirão Preto",
+        },
+        "460": {"curso": "Medicina (São Paulo Quadrilátero)", "campus": "São Paulo Quadrilátero"},
+        "461": {"curso": "Medicina (Bauru)", "campus": "Bauru"},
+        "462": {"curso": "Medicina (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "465": {"curso": "Medicina Veterinária (Pirassununga)", "campus": "Pirassununga"},
+        "466": {"curso": "Medicina Veterinária (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "485": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "486": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "495": {
+            "curso": "Terapia Ocupacional (São Paulo Butantã/Quadrilátero)",
+            "campus": "São Paulo Butantã/Quadrilátero",
+        },
+        "496": {"curso": "Terapia Ocupacional (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "800": {
+            "curso": "Química (São Paulo Butantã e Ribeirão Preto)",
+            "campus": "São Paulo Butantã e Ribeirão Preto",
+        },
+        "801": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+    },
+    2025: {
+        "116": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "117": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "320": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "321": {
+            "curso": "Química (São Paulo Butantã e São Carlos)",
+            "campus": "São Paulo Butantã e São Carlos",
+        },
+        "504": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "505": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
+        "509": {
+            "curso": "Biblioteconomia e Ciência da Informação (São Paulo Butantã)",
+            "campus": "São Paulo Butantã",
+        },
+        "510": {
+            "curso": "Biblioteconomia e Ciência da Informação (Ribeirão Preto)",
+            "campus": "Ribeirão Preto",
+        },
+        "524": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "525": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "526": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "527": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+    },
+    2026: {
+        "116": {"curso": "Psicologia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "117": {"curso": "Psicologia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "320": {"curso": "Química (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "321": {
+            "curso": "Química (São Paulo Butantã e São Carlos)",
+            "campus": "São Paulo Butantã e São Carlos",
+        },
+        "504": {"curso": "Arquitetura (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "505": {"curso": "Arquitetura (São Carlos)", "campus": "São Carlos"},
+        "523": {"curso": "Música (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "524": {"curso": "Música (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+        "525": {"curso": "Pedagogia (São Paulo Butantã)", "campus": "São Paulo Butantã"},
+        "526": {"curso": "Pedagogia (Ribeirão Preto)", "campus": "Ribeirão Preto"},
+    },
+}
+
 
 def limpar_texto(texto: str) -> str:
     texto = texto.replace("\u00a0", " ")
@@ -159,11 +248,42 @@ def canonizar_nomes(dados: dict[str, list[dict]]) -> dict[str, dict[str, int]]:
     return resumo
 
 
+def aplicar_desambiguacoes_oficiais(dados: dict[str, list[dict]]) -> dict[str, dict[str, int]]:
+    resumo: dict[str, dict[str, int]] = {}
+
+    for ano, registros in dados.items():
+        mapa_ano = DESAMBIGUACOES_CODIGO.get(int(ano), {})
+        info = {"desambiguados": 0}
+
+        for registro in registros:
+            spec = mapa_ano.get(registro["codigo"])
+            if not spec:
+                continue
+
+            curso_original = registro["curso"]
+            curso_final = spec["curso"]
+            if curso_final != curso_original:
+                if "curso_pdf" not in registro:
+                    registro["curso_pdf"] = curso_original
+                registro["curso"] = curso_final
+                registro["curso_desambiguado"] = True
+                info["desambiguados"] += 1
+
+            registro["curso_busca"] = curso_final
+            registro["campus"] = spec["campus"]
+
+        resumo[ano] = info
+
+    return resumo
+
+
 def remover_flags_vazias(dados: dict[str, list[dict]]) -> None:
     for registros in dados.values():
         for registro in registros:
             if not registro.get("curso_canonizado"):
                 registro.pop("curso_canonizado", None)
+            if not registro.get("curso_desambiguado"):
+                registro.pop("curso_desambiguado", None)
             if not registro.get("curso_truncado"):
                 registro.pop("curso_truncado", None)
             if not registro.get("modalidade"):
@@ -415,6 +535,7 @@ def main() -> None:
         dados[str(ano)] = registros
 
     resumo = canonizar_nomes(dados)
+    resumo_desambiguacoes = aplicar_desambiguacoes_oficiais(dados)
     remover_flags_vazias(dados)
     copiar_pdfs(arquivos)
 
@@ -424,9 +545,11 @@ def main() -> None:
 
     for ano, registros in dados.items():
         info = resumo[ano]
+        info_desambiguacao = resumo_desambiguacoes[ano]
         print(
             f"{ano}: {len(registros)} registros | "
             f"{info['canonizados']} nomes ajustados | "
+            f"{info_desambiguacao['desambiguados']} desambiguados por codigo | "
             f"{info['truncados_restantes']} truncados"
         )
 
