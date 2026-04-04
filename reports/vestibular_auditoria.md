@@ -1,6 +1,6 @@
 # Auditoria do Vestibular FUVEST
 
-Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
+Gerado em UTC: `2026-04-04T22:30:54.396314+00:00`
 
 ## Visão geral
 
@@ -10,7 +10,8 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 - Entradas sintéticas por campus/localidade: `513`
 - Registros com localização explícita: `675`
 - Cursos multi-campus detectados: `100`
-- Pendências totais de campos esperados: `44`
+- Linhas com métricas finais oficialmente em branco no PDF: `43`
+- Pendências totais de campos esperados: `0`
 - Inconsistências oficiais preservadas do PDF: `1`
 
 ## Faixa prioritária 2020–2026
@@ -18,14 +19,15 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 - Registros auditados: `2.559`
 - Sintéticos por campus: `513`
 - Localizações explícitas: `675`
-- Pendências remanescentes: `29`
+- Linhas oficialmente em branco: `28`
+- Pendências remanescentes: `0`
 
 | Ano | Registros | Sintéticos | Localizados | Pendências | Inconsistências | Faltas principais |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
-| 2020 | 327 | 0 | 0 | 8 | 0 | prop 8 / min 8 / max 8 |
-| 2021 | 330 | 0 | 0 | 6 | 0 | prop 6 / min 6 / max 6 |
-| 2022 | 330 | 0 | 0 | 8 | 0 | prop 8 / min 8 / max 8 |
-| 2023 | 330 | 0 | 0 | 7 | 0 | prop 7 / min 6 / max 6 |
+| 2020 | 327 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
+| 2021 | 330 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
+| 2022 | 330 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
+| 2023 | 330 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
 | 2024 | 417 | 153 | 237 | 0 | 1 | prop 0 / min 0 / max 0 |
 | 2025 | 414 | 180 | 222 | 0 | 0 | prop 0 / min 0 / max 0 |
 | 2026 | 411 | 180 | 216 | 0 | 0 | prop 0 / min 0 / max 0 |
@@ -33,7 +35,8 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 ## Série histórica 2000–2019
 
 - Registros auditados: `2.236`
-- Pendências remanescentes: `15`
+- Linhas oficialmente em branco: `15`
+- Pendências remanescentes: `0`
 
 | Ano | Registros | Sintéticos | Localizados | Pendências | Inconsistências | Faltas principais |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
@@ -56,7 +59,7 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 | 2016 | 111 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
 | 2017 | 107 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
 | 2018 | 109 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
-| 2019 | 327 | 0 | 0 | 15 | 0 | prop 15 / min 15 / max 15 |
+| 2019 | 327 | 0 | 0 | 0 | 0 | prop 0 / min 0 / max 0 |
 
 ## Pendências prioritárias por ano
 
@@ -64,54 +67,43 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
-- Pendências: `8`
+- Métricas finais oficialmente em branco: `8`
+- Pendências: `0`
 - Inconsistências oficiais: `0`
-- `150` | Curso Superior do Audiovisual | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `195` | Geografia | Candidatos de Escola Pública | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `400` | Bacharelado em Biotecnologia − USP Leste, SP | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `410` | Ciências Biológicas − Ribeirão Preto | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `555` | Psicologia − Ribeirão Preto | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
+- Sem pendências de campos esperados.
 
 ### 2021
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
-- Pendências: `6`
+- Métricas finais oficialmente em branco: `6`
+- Pendências: `0`
 - Inconsistências oficiais: `0`
-- `410` | Ciências Biológicas − Ribeirão Preto | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `415` | Ciências Biomédicas | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `555` | Psicologia − Ribeirão Preto | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `570` | Terapia Ocupacional − Ribeirão Preto | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `800` | Geologia | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
+- Sem pendências de campos esperados.
 
 ### 2022
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
-- Pendências: `8`
+- Métricas finais oficialmente em branco: `8`
+- Pendências: `0`
 - Inconsistências oficiais: `0`
-- `185` | Editoração (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `220` | Jornalismo (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `410` | Ciências Biológicas (Ribeirão Preto) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `530` | Obstetrícia − USP Leste (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `555` | Psicologia (Ribeirão Preto) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
+- Sem pendências de campos esperados.
 
 ### 2023
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
-- Pendências: `7`
+- Métricas finais oficialmente em branco: `6`
+- Pendências: `0`
 - Inconsistências oficiais: `0`
-- `185` | Editoração (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `220` | Jornalismo (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `400` | Bacharelado em Biotecnologia − USP Leste (São Paulo) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga
-- `410` | Ciências Biológicas (Ribeirão Preto) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
-- `555` | Psicologia (Ribeirão Preto) | Candidatos de Escola Pública − Grupo PPI | faltando: convocados_por_vaga, pontos_minimo, pontos_maximo
+- Sem pendências de campos esperados.
 
 ### 2024
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
+- Métricas finais oficialmente em branco: `0`
 - Pendências: `0`
 - Inconsistências oficiais: `1`
 - Sem pendências de campos esperados.
@@ -121,6 +113,7 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
+- Métricas finais oficialmente em branco: `0`
 - Pendências: `0`
 - Inconsistências oficiais: `0`
 - Sem pendências de campos esperados.
@@ -129,6 +122,7 @@ Gerado em UTC: `2026-04-04T21:39:26.054162+00:00`
 
 - Perfil: `serie_modalidades`
 - Descrição: PDFs com modalidades e recortes mais detalhados.
+- Métricas finais oficialmente em branco: `0`
 - Pendências: `0`
 - Inconsistências oficiais: `0`
 - Sem pendências de campos esperados.

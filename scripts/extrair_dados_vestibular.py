@@ -342,6 +342,8 @@ def remover_flags_vazias(dados: dict[str, list[dict]]) -> None:
                 registro.pop("registro_sintetico", None)
             if not registro.get("ocultar_busca"):
                 registro.pop("ocultar_busca", None)
+            if not registro.get("metricas_finais_em_branco_oficialmente"):
+                registro.pop("metricas_finais_em_branco_oficialmente", None)
             if not registro.get("modalidade"):
                 registro.pop("modalidade", None)
             if not registro.get("pontos_possiveis_2fase"):
@@ -542,7 +544,7 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
                     words, 425, 452, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=4.8
                 )
                 proporcao = pegar_token_coluna(
-                    words, 468, 492, top, faixa_top_min, faixa_top_max, LINE_RE_DECIMAL, max_top_delta=4.8
+                    words, 464, 492, top, faixa_top_min, faixa_top_max, LINE_RE_DECIMAL, max_top_delta=4.8
                 )
                 pontos_minimo = pegar_token_coluna(
                     words, 515, 540, top, faixa_top_min, faixa_top_max, LINE_RE_NUMERO, max_top_delta=6.2
@@ -553,6 +555,13 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
 
                 if not all([vagas, inscritos, ausentes, convocados]):
                     continue
+
+                metricas_finais_em_branco_oficialmente = (
+                    convocados["text"] == "0"
+                    and proporcao is None
+                    and pontos_minimo is None
+                    and pontos_maximo is None
+                )
 
                 registros.append(
                     {
@@ -568,6 +577,7 @@ def extrair_modalidades(caminho: Path) -> list[dict]:
                         ),
                         "pontos_maximo": int(pontos_maximo["text"]) if pontos_maximo else None,
                         "pontos_minimo": int(pontos_minimo["text"]) if pontos_minimo else None,
+                        "metricas_finais_em_branco_oficialmente": metricas_finais_em_branco_oficialmente,
                     }
                 )
 
@@ -584,9 +594,27 @@ def resumir_auditoria_modalidades(dados: dict[str, list[dict]]) -> dict[str, dic
     resumo: dict[str, dict[str, int]] = {}
     for ano, registros in dados.items():
         linhas_modalidade = [registro for registro in registros if registro.get("modalidade")]
-        linhas_sem_proporcao = sum(1 for registro in linhas_modalidade if registro.get("convocados_por_vaga") is None)
-        linhas_sem_minimo = sum(1 for registro in linhas_modalidade if registro.get("pontos_minimo") is None)
-        linhas_sem_maximo = sum(1 for registro in linhas_modalidade if registro.get("pontos_maximo") is None)
+        linhas_em_branco_oficialmente = sum(
+            1 for registro in linhas_modalidade if registro.get("metricas_finais_em_branco_oficialmente")
+        )
+        linhas_sem_proporcao = sum(
+            1
+            for registro in linhas_modalidade
+            if registro.get("convocados_por_vaga") is None
+            and not registro.get("metricas_finais_em_branco_oficialmente")
+        )
+        linhas_sem_minimo = sum(
+            1
+            for registro in linhas_modalidade
+            if registro.get("pontos_minimo") is None
+            and not registro.get("metricas_finais_em_branco_oficialmente")
+        )
+        linhas_sem_maximo = sum(
+            1
+            for registro in linhas_modalidade
+            if registro.get("pontos_maximo") is None
+            and not registro.get("metricas_finais_em_branco_oficialmente")
+        )
         linhas_inconsistentes = sum(
             1
             for registro in linhas_modalidade
@@ -598,6 +626,7 @@ def resumir_auditoria_modalidades(dados: dict[str, list[dict]]) -> dict[str, dic
             "sem_proporcao": linhas_sem_proporcao,
             "sem_minimo": linhas_sem_minimo,
             "sem_maximo": linhas_sem_maximo,
+            "em_branco_oficialmente": linhas_em_branco_oficialmente,
             "minimo_maior_que_maximo": linhas_inconsistentes,
         }
     return resumo

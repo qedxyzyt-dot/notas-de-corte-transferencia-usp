@@ -94,6 +94,13 @@ def campos_esperados_registro(ano: int, registro: dict, perfil: dict[str, object
     if not perfil["usa_modalidade"]:
         return esperados
 
+    if registro.get("metricas_finais_em_branco_oficialmente"):
+        esperados = [
+            campo
+            for campo in esperados
+            if campo not in {"convocados_por_vaga", "pontos_minimo", "pontos_maximo"}
+        ]
+
     if registro.get("registro_sintetico"):
         esperados = [campo for campo in esperados if campo != "ausentes"]
         if registro.get("escopo_inscritos") != "curso":
@@ -185,6 +192,9 @@ def resumir_ano(ano: int, registros: list[dict]) -> dict[str, object]:
         "total_registros_sinteticos": sum(1 for registro in registros if registro.get("registro_sintetico")),
         "total_registros_desambiguados": sum(1 for registro in registros if registro.get("curso_desambiguado")),
         "total_registros_truncados": sum(1 for registro in registros if registro.get("curso_truncado")),
+        "total_metricas_em_branco_oficialmente": sum(
+            1 for registro in registros if registro.get("metricas_finais_em_branco_oficialmente")
+        ),
         "total_ocultos_busca": sum(1 for registro in registros if registro.get("ocultar_busca")),
         "total_registros_localizados": sum(1 for registro in registros if registro.get("campus")),
         "total_cursos_multi_campus": sum(1 for campi in cursos_multi_campus.values() if len(campi) > 1),
@@ -226,6 +236,9 @@ def agregar_faixa(relatorios: list[dict]) -> dict[str, object]:
         "total_registros_sinteticos": sum(relatorio["total_registros_sinteticos"] for relatorio in relatorios),
         "total_registros_desambiguados": sum(relatorio["total_registros_desambiguados"] for relatorio in relatorios),
         "total_registros_truncados": sum(relatorio["total_registros_truncados"] for relatorio in relatorios),
+        "total_metricas_em_branco_oficialmente": sum(
+            relatorio["total_metricas_em_branco_oficialmente"] for relatorio in relatorios
+        ),
         "total_registros_localizados": sum(relatorio["total_registros_localizados"] for relatorio in relatorios),
         "total_cursos_multi_campus": sum(relatorio["total_cursos_multi_campus"] for relatorio in relatorios),
         "total_ocultos_busca": sum(relatorio["total_ocultos_busca"] for relatorio in relatorios),
@@ -295,6 +308,7 @@ def renderizar_markdown(relatorio: dict[str, object]) -> str:
         f"- Entradas sintéticas por campus/localidade: `{formatar_numero(resumo_global['total_registros_sinteticos'])}`",
         f"- Registros com localização explícita: `{formatar_numero(resumo_global['total_registros_localizados'])}`",
         f"- Cursos multi-campus detectados: `{formatar_numero(resumo_global['total_cursos_multi_campus'])}`",
+        f"- Linhas com métricas finais oficialmente em branco no PDF: `{formatar_numero(resumo_global['total_metricas_em_branco_oficialmente'])}`",
         f"- Pendências totais de campos esperados: `{formatar_numero(resumo_global['total_pendencias'])}`",
         f"- Inconsistências oficiais preservadas do PDF: `{formatar_numero(resumo_global['total_inconsistencias_oficiais'])}`",
         "",
@@ -303,6 +317,7 @@ def renderizar_markdown(relatorio: dict[str, object]) -> str:
         f"- Registros auditados: `{formatar_numero(resumo_prioridade['total_registros'])}`",
         f"- Sintéticos por campus: `{formatar_numero(resumo_prioridade['total_registros_sinteticos'])}`",
         f"- Localizações explícitas: `{formatar_numero(resumo_prioridade['total_registros_localizados'])}`",
+        f"- Linhas oficialmente em branco: `{formatar_numero(resumo_prioridade['total_metricas_em_branco_oficialmente'])}`",
         f"- Pendências remanescentes: `{formatar_numero(resumo_prioridade['total_pendencias'])}`",
         "",
         "| Ano | Registros | Sintéticos | Localizados | Pendências | Inconsistências | Faltas principais |",
@@ -317,8 +332,9 @@ def renderizar_markdown(relatorio: dict[str, object]) -> str:
             "",
             "## Série histórica 2000–2019",
             "",
-            f"- Registros auditados: `{formatar_numero(resumo_historico['total_registros'])}`",
-            f"- Pendências remanescentes: `{formatar_numero(resumo_historico['total_pendencias'])}`",
+        f"- Registros auditados: `{formatar_numero(resumo_historico['total_registros'])}`",
+        f"- Linhas oficialmente em branco: `{formatar_numero(resumo_historico['total_metricas_em_branco_oficialmente'])}`",
+        f"- Pendências remanescentes: `{formatar_numero(resumo_historico['total_pendencias'])}`",
             "",
             "| Ano | Registros | Sintéticos | Localizados | Pendências | Inconsistências | Faltas principais |",
             "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
@@ -342,6 +358,9 @@ def renderizar_markdown(relatorio: dict[str, object]) -> str:
         linhas.append("")
         linhas.append(f"- Perfil: `{relatorio_ano['perfil']}`")
         linhas.append(f"- Descrição: {relatorio_ano['descricao_perfil']}")
+        linhas.append(
+            f"- Métricas finais oficialmente em branco: `{formatar_numero(relatorio_ano['total_metricas_em_branco_oficialmente'])}`"
+        )
         linhas.append(f"- Pendências: `{formatar_numero(relatorio_ano['total_pendencias'])}`")
         linhas.append(f"- Inconsistências oficiais: `{formatar_numero(relatorio_ano['total_inconsistencias_oficiais'])}`")
         if relatorio_ano["pendencias_exemplo"]:
@@ -390,12 +409,14 @@ def imprimir_resumo(relatorio: dict[str, object]) -> None:
         f"{resumo_prioridade['total_registros']} registros | "
         f"{resumo_prioridade['total_registros_sinteticos']} sinteticos | "
         f"{resumo_prioridade['total_registros_localizados']} localizados | "
+        f"{resumo_prioridade['total_metricas_em_branco_oficialmente']} em branco oficiais | "
         f"{resumo_prioridade['total_pendencias']} pendencias | "
         f"{resumo_prioridade['total_inconsistencias_oficiais']} inconsistencias oficiais"
     )
     print(
         "Faixa 2000-2019:",
         f"{resumo_historico['total_registros']} registros | "
+        f"{resumo_historico['total_metricas_em_branco_oficialmente']} em branco oficiais | "
         f"{resumo_historico['total_pendencias']} pendencias | "
         f"{resumo_historico['total_inconsistencias_oficiais']} inconsistencias oficiais"
     )
@@ -406,6 +427,7 @@ def imprimir_resumo(relatorio: dict[str, object]) -> None:
             f"{ano}: {relatorio_ano['total_registros']} registros | "
             f"{relatorio_ano['total_registros_sinteticos']} sinteticos | "
             f"{relatorio_ano['total_registros_localizados']} localizados | "
+            f"{relatorio_ano['total_metricas_em_branco_oficialmente']} em branco oficiais | "
             f"{relatorio_ano['total_pendencias']} pendencias | "
             f"{relatorio_ano['total_inconsistencias_oficiais']} inconsistencias"
         )

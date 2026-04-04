@@ -20275,7 +20275,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "145",
@@ -20311,7 +20312,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "150",
@@ -20347,7 +20349,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "155",
@@ -20419,7 +20422,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "165",
@@ -20563,7 +20567,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "195",
@@ -20587,7 +20592,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "195",
@@ -20743,7 +20749,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "220",
@@ -21031,7 +21038,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "260",
@@ -21319,7 +21327,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "401",
@@ -21463,7 +21472,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "416",
@@ -21901,7 +21911,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "475",
@@ -22801,7 +22812,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "710",
@@ -23089,7 +23101,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "750",
@@ -23491,7 +23504,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "805",
@@ -23599,7 +23613,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "825",
@@ -24294,7 +24309,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "155",
@@ -24534,7 +24550,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "195",
@@ -25266,7 +25283,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "401",
@@ -25374,7 +25392,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "415",
@@ -26496,7 +26515,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "560",
@@ -26748,7 +26768,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "710",
@@ -27438,7 +27459,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "805",
@@ -27546,7 +27568,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "825",
@@ -29321,7 +29344,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "415",
@@ -29357,7 +29381,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "416",
@@ -30443,7 +30468,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "560",
@@ -30551,7 +30577,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "575",
@@ -31424,7 +31451,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "805",
@@ -31532,7 +31560,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "825",
@@ -32407,7 +32436,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "190",
@@ -32659,7 +32689,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "225",
@@ -33307,7 +33338,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "415",
@@ -34243,7 +34275,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "535",
@@ -34423,7 +34456,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "560",
@@ -34963,7 +34997,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "750",
@@ -35404,7 +35439,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "805",
@@ -35512,7 +35548,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "825",
@@ -36387,7 +36424,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "190",
@@ -36639,7 +36677,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "225",
@@ -37177,7 +37216,7 @@
       "inscritos": 22,
       "ausentes": 5,
       "convocados_2fase": 12,
-      "convocados_por_vaga": null,
+      "convocados_por_vaga": 12.0,
       "pontos_maximo": 54,
       "pontos_minimo": 37
     },
@@ -37287,7 +37326,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "415",
@@ -38403,7 +38443,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "560",
@@ -39384,7 +39425,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "805",
@@ -39492,7 +39534,8 @@
       "convocados_2fase": 0,
       "convocados_por_vaga": null,
       "pontos_maximo": null,
-      "pontos_minimo": null
+      "pontos_minimo": null,
+      "metricas_finais_em_branco_oficialmente": true
     },
     {
       "codigo": "825",
