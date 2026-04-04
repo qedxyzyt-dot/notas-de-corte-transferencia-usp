@@ -1,6 +1,6 @@
 # Auditoria do Vestibular FUVEST
 
-Gerado em UTC: `2026-04-04T22:30:54.396314+00:00`
+Gerado em UTC: `2026-04-04T22:56:19.441595+00:00`
 
 ## Visão geral
 
@@ -9,7 +9,7 @@ Gerado em UTC: `2026-04-04T22:30:54.396314+00:00`
 - Registros na série histórica `2000–2019`: `2.236`
 - Entradas sintéticas por campus/localidade: `513`
 - Registros com localização explícita: `675`
-- Cursos multi-campus detectados: `100`
+- Cursos multi-campus detectados: `97`
 - Linhas com métricas finais oficialmente em branco no PDF: `43`
 - Pendências totais de campos esperados: `0`
 - Inconsistências oficiais preservadas do PDF: `1`

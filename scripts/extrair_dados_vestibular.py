@@ -53,8 +53,52 @@ NUMERIC_TAIL_RE = re.compile(
     r"\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+[.,]\d+\s+\d+$"
 )
 
+REPAROS_TEXTO_OFICIAL = [
+    ("Administra??o", "Administração"),
+    ("Biol?gicas", "Biológicas"),
+    ("Biom?dicas", "Biomédicas"),
+    ("Butant?", "Butantã"),
+    ("Ci?ncia", "Ciência"),
+    ("Ci?ncias", "Ciências"),
+    ("Computa??o", "Computação"),
+    ("Cont?beis", "Contábeis"),
+    ("Econ?micas", "Econômicas"),
+    ("Educa??o", "Educação"),
+    ("Farm?cia", "Farmácia"),
+    ("F?sica", "Física"),
+    ("Gest?o", "Gestão"),
+    ("Informa??o", "Informação"),
+    ("Matem?tica", "Matemática"),
+    ("Mec?nica", "Mecânica"),
+    ("Mecatr?nica", "Mecatrônica"),
+    ("M?dica", "Médica"),
+    ("Produ??o", "Produção"),
+    ("Quadril?tero", "Quadrilátero"),
+    ("Qu?mica", "Química"),
+    ("Ribeir?o", "Ribeirão"),
+    ("S?o", "São"),
+    ("Veterin?ria", "Veterinária"),
+]
+
+
+def reparar_texto_oficial(valor: object) -> object:
+    if isinstance(valor, str):
+        texto = valor
+        for origem, destino in REPAROS_TEXTO_OFICIAL:
+            texto = texto.replace(origem, destino)
+        return texto
+    if isinstance(valor, list):
+        return [reparar_texto_oficial(item) for item in valor]
+    if isinstance(valor, dict):
+        return {
+            reparar_texto_oficial(chave) if isinstance(chave, str) else chave:
+            reparar_texto_oficial(item)
+            for chave, item in valor.items()
+        }
+    return valor
+
 def carregar_desambiguacoes_oficiais() -> dict[int, dict[str, dict[str, str]]]:
-    bruto = json.loads(CODIGOS_PATH.read_text(encoding="utf-8"))
+    bruto = reparar_texto_oficial(json.loads(CODIGOS_PATH.read_text(encoding="utf-8")))
     return {
         int(ano): info.get("codigos", {})
         for ano, info in bruto.items()
@@ -64,7 +108,7 @@ def carregar_desambiguacoes_oficiais() -> dict[int, dict[str, dict[str, str]]]:
 def carregar_opcoes_oficiais() -> dict[int, dict[str, list[dict[str, object]]]]:
     if not OPCOES_PATH.exists():
         return {}
-    bruto = json.loads(OPCOES_PATH.read_text(encoding="utf-8"))
+    bruto = reparar_texto_oficial(json.loads(OPCOES_PATH.read_text(encoding="utf-8")))
     return {
         int(ano): info.get("codigos", {})
         for ano, info in bruto.items()
