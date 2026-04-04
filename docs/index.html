@@ -130,7 +130,6 @@ header p {
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    margin-top: 0.85rem;
     padding: 0.45rem 0.8rem;
     border: 1px solid var(--topbar-border);
     border-radius: 999px;
@@ -143,6 +142,13 @@ header p {
     backdrop-filter: blur(6px);
     box-shadow: var(--topbar-shadow);
     transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.topbar-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.85rem;
 }
 .topbar-link:hover,
 .topbar-link:focus {
@@ -737,7 +743,10 @@ footer a { color: var(--usp-azul); }
 <header>
     <h1>Notas de Corte — Transferência Externa USP (FUVEST)</h1>
     <p>Dashboard interativo com dados dos editais oficiais (2019–2026)</p>
-    <a class="topbar-link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
+    <div class="topbar-actions">
+        <a class="topbar-link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
+        <a class="topbar-link" href="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/" target="_blank" rel="noopener">Ver vestibular tradicional</a>
+    </div>
 </header>
 
 <main class="page-main">
