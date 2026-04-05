@@ -145,10 +145,14 @@ header p {
     font-family: var(--fonte-display);
     font-size: 0.88rem;
     font-weight: 600;
-    background: var(--topbar-bg);
-    backdrop-filter: blur(6px);
-    box-shadow: var(--topbar-shadow);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    isolation: isolate;
+    overflow: hidden;
     transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    --glass-highlight-opacity: 0.46;
+    --glass-edge-width: 1.1px;
 }
 .topbar-actions {
     display: flex;
@@ -159,12 +163,13 @@ header p {
 }
 .topbar-link:hover,
 .topbar-link:focus {
-    background: var(--topbar-bg-hover);
-    border-color: var(--topbar-border);
+    background: transparent;
+    border-color: transparent;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
     transform: translateY(-1px);
     opacity: 1;
     outline: none;
+    --glass-highlight-opacity: 0.8;
 }
 .topbar-link::before {
     content: "";
@@ -182,8 +187,8 @@ header p {
 
 /* Filtros */
 .filtros {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
-    border: 1px solid var(--glass-panel-border-strong);
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
     border-radius: 18px;
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
@@ -191,10 +196,13 @@ header p {
     grid-template-columns: minmax(0, 1.75fr) minmax(12.5rem, 0.9fr) minmax(12.5rem, 0.9fr);
     gap: 1rem;
     align-items: end;
-    box-shadow: var(--glass-panel-shadow);
+    box-shadow: var(--sombra-card);
     position: relative;
     z-index: 20;
     overflow: visible;
+}
+.liquid-glass {
+    position: relative;
     isolation: isolate;
     --glass-pointer-x: 50%;
     --glass-pointer-y: 32%;
@@ -203,20 +211,20 @@ header p {
     --glass-tilt-y: 0px;
     --glass-edge-width: 1.2px;
 }
-.filtros > :not(.liquid-glass-panel__backdrop):not(.liquid-glass-panel__glow):not(.liquid-glass-panel__specular) {
+.liquid-glass > :not(.liquid-glass__backdrop):not(.liquid-glass__glow):not(.liquid-glass__specular) {
     position: relative;
     z-index: 3;
 }
-.liquid-glass-panel__backdrop,
-.liquid-glass-panel__glow,
-.liquid-glass-panel__specular {
+.liquid-glass__backdrop,
+.liquid-glass__glow,
+.liquid-glass__specular {
     position: absolute;
     inset: 0;
     border-radius: inherit;
     pointer-events: none;
     contain: paint;
 }
-.liquid-glass-panel__backdrop {
+.liquid-glass__backdrop {
     z-index: 0;
     background:
         radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.72), transparent 34%),
@@ -232,10 +240,10 @@ header p {
     transform: translate3d(var(--glass-tilt-x), var(--glass-tilt-y), 0);
     will-change: transform;
 }
-.liquid-glass-panel__glow {
+.liquid-glass__glow {
     z-index: 1;
     inset: 1px;
-    border-radius: calc(18px - 1px);
+    border-radius: inherit;
     background:
         radial-gradient(circle at var(--glass-pointer-x) var(--glass-pointer-y), rgba(255, 255, 255, calc(0.26 * var(--glass-highlight-opacity))) 0%, rgba(255, 255, 255, calc(0.18 * var(--glass-highlight-opacity))) 15%, transparent 36%),
         radial-gradient(circle at calc(var(--glass-pointer-x) * 0.82) calc(var(--glass-pointer-y) * 1.08), rgba(124, 180, 248, calc(0.18 * var(--glass-highlight-opacity))) 0%, transparent 52%),
@@ -245,7 +253,7 @@ header p {
     transform: translate3d(calc(var(--glass-tilt-x) * -0.34), calc(var(--glass-tilt-y) * -0.34), 0);
     will-change: transform, opacity;
 }
-.liquid-glass-panel__specular {
+.liquid-glass__specular {
     z-index: 2;
     inset: -1px;
     padding: var(--glass-edge-width);
@@ -295,7 +303,10 @@ header p {
     overflow: visible;
     white-space: normal;
 }
-.combo-select { width: 100%; }
+.combo-select {
+    position: relative;
+    width: 100%;
+}
 .combo-select__trigger {
     position: relative;
     cursor: pointer;
@@ -370,6 +381,22 @@ header p {
 .combo-select__option.is-active {
     background: var(--usp-azul-claro);
     outline: none;
+}
+.lista-sugestoes.liquid-glass,
+.combo-select__menu.liquid-glass {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: var(--sombra-flutuante);
+    overflow: hidden;
+    --glass-highlight-opacity: 0.64;
+    --glass-edge-width: 1.1px;
+}
+.combo-select__menu {
+    padding: 0.3rem 0;
+}
+.combo-select__value {
+    display: block;
+    padding-right: 1rem;
 }
 .visually-hidden-control {
     position: absolute;
@@ -545,6 +572,13 @@ tbody tr:hover { background: var(--hover); }
 }
 .edital-oficial-item .pdf-link {
     flex: 0 0 auto;
+}
+.edital-oficial-item__acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 /* Gráficos */
@@ -727,7 +761,7 @@ footer a { color: var(--usp-azul); }
         box-shadow: var(--sombra-card);
         backdrop-filter: blur(22px);
     }
-    .liquid-glass-panel__backdrop {
+    .liquid-glass__backdrop {
         background:
             radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.22), transparent 32%),
             linear-gradient(160deg, rgba(18, 35, 57, 0.5), rgba(8, 14, 24, 0.34) 38%, rgba(28, 62, 104, 0.24) 100%);
@@ -770,9 +804,9 @@ footer a { color: var(--usp-azul); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .liquid-glass-panel__backdrop,
-    .liquid-glass-panel__glow,
-    .liquid-glass-panel__specular {
+    .liquid-glass__backdrop,
+    .liquid-glass__glow,
+    .liquid-glass__specular {
         transition: none;
         transform: none;
     }
@@ -870,7 +904,10 @@ footer a { color: var(--usp-azul); }
         flex-direction: column;
         align-items: flex-start;
     }
-    .edital-oficial-item .pdf-link {
+    .edital-oficial-item__acoes {
+        width: 100%;
+    }
+    .edital-oficial-item__acoes .pdf-link {
         width: 100%;
         justify-content: center;
     }
@@ -955,8 +992,8 @@ footer a { color: var(--usp-azul); }
     <h1>Notas de Corte — Transferência Externa USP (FUVEST)</h1>
     <p>Dashboard interativo com dados dos editais oficiais (2019–2026)</p>
     <div class="topbar-actions">
-        <a class="topbar-link" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
-        <a class="topbar-link" href="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/" target="_blank" rel="noopener">Ver vestibular tradicional</a>
+        <a class="topbar-link liquid-glass" href="https://www.fuvest.br/transferencia/" target="_blank" rel="noopener">Página oficial da FUVEST</a>
+        <a class="topbar-link liquid-glass" href="https://qedxyzyt-dot.github.io/notas-de-corte-fuvest-vestibular/" target="_blank" rel="noopener">Ver vestibular tradicional</a>
     </div>
 </header>
 
@@ -964,21 +1001,30 @@ footer a { color: var(--usp-azul); }
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
-        <div class="liquid-glass-panel__backdrop" aria-hidden="true"></div>
-        <div class="liquid-glass-panel__glow" aria-hidden="true"></div>
-        <div class="liquid-glass-panel__specular" aria-hidden="true"></div>
         <div class="filtro-grupo filtro-grupo--curso">
             <label for="busca">Curso</label>
             <input type="text" id="busca" placeholder="Digite o curso desejado..." autocomplete="off">
-            <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
+            <div id="busca-sugestoes" class="lista-sugestoes liquid-glass" hidden></div>
         </div>
         <div class="filtro-grupo">
             <label for="sel-loc">Localização</label>
-            <select id="sel-loc"><option value="__all__">Todas</option></select>
+            <div class="combo-select" data-select-id="sel-loc">
+                <select id="sel-loc" class="visually-hidden-control"><option value="__all__">Todas</option></select>
+                <button type="button" class="combo-select__trigger" id="sel-loc-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="sel-loc-menu">
+                    <span class="combo-select__value">Todas</span>
+                </button>
+                <div id="sel-loc-menu" class="combo-select__menu liquid-glass" role="listbox" aria-labelledby="sel-loc-trigger" hidden></div>
+            </div>
         </div>
         <div class="filtro-grupo">
             <label for="sel-per">Período</label>
-            <select id="sel-per"><option value="__all__">Todos</option></select>
+            <div class="combo-select" data-select-id="sel-per">
+                <select id="sel-per" class="visually-hidden-control"><option value="__all__">Todos</option></select>
+                <button type="button" class="combo-select__trigger" id="sel-per-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="sel-per-menu">
+                    <span class="combo-select__value">Todos</span>
+                </button>
+                <div id="sel-per-menu" class="combo-select__menu liquid-glass" role="listbox" aria-labelledby="sel-per-trigger" hidden></div>
+            </div>
         </div>
     </div>
 
@@ -1151,50 +1197,57 @@ function gerarMapaDeslocamentoSnell({ width, height, radius, edgeWidth, ior }) {
 }
 
 const LIQUID_GLASS_STATE = {
-    panel: null,
     mapImage: null,
     displacement: null,
     reducedMotionMedia: window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null,
     reducedMotion: false,
-    currentX: 0.5,
-    currentY: 0.32,
-    targetX: 0.5,
-    targetY: 0.32,
-    currentEnergy: 0.35,
-    targetEnergy: 0.35,
-    baseScale: 24,
-    animationFrame: 0,
-    resizeFrame: 0,
-    resizeObserver: null,
-    lastMapKey: ""
+    items: [],
+    animationFrame: 0
 };
 
-function aplicarVarsLiquidGlass() {
-    const state = LIQUID_GLASS_STATE;
-    if (!state.panel) return;
-    const px = `${(state.currentX * 100).toFixed(2)}%`;
-    const py = `${(state.currentY * 100).toFixed(2)}%`;
-    state.panel.style.setProperty("--glass-pointer-x", px);
-    state.panel.style.setProperty("--glass-pointer-y", py);
-    state.panel.style.setProperty("--glass-highlight-opacity", state.currentEnergy.toFixed(3));
-    state.panel.style.setProperty("--glass-tilt-x", `${((state.currentX - 0.5) * 9).toFixed(2)}px`);
-    state.panel.style.setProperty("--glass-tilt-y", `${((state.currentY - 0.5) * 7).toFixed(2)}px`);
+function prepararCamadasLiquidGlass(elemento) {
+    const classes = ["liquid-glass__backdrop", "liquid-glass__glow", "liquid-glass__specular"];
+    for (const classe of classes) {
+        if (elemento.querySelector(`:scope > .${classe}`)) continue;
+        const camada = document.createElement("span");
+        camada.className = classe;
+        camada.setAttribute("aria-hidden", "true");
+        elemento.insertBefore(camada, elemento.firstChild);
+    }
+}
+function aplicarVarsLiquidGlass(item) {
+    const px = `${(item.currentX * 100).toFixed(2)}%`;
+    const py = `${(item.currentY * 100).toFixed(2)}%`;
+    item.element.style.setProperty("--glass-pointer-x", px);
+    item.element.style.setProperty("--glass-pointer-y", py);
+    item.element.style.setProperty("--glass-highlight-opacity", item.currentEnergy.toFixed(3));
+    item.element.style.setProperty("--glass-tilt-x", `${((item.currentX - 0.5) * item.tiltX).toFixed(2)}px`);
+    item.element.style.setProperty("--glass-tilt-y", `${((item.currentY - 0.5) * item.tiltY).toFixed(2)}px`);
+}
+function obterItemLiquidGlass(elemento) {
+    return LIQUID_GLASS_STATE.items.find(item => item.element === elemento) || null;
 }
 function animarLiquidGlass() {
-    const state = LIQUID_GLASS_STATE;
-    state.animationFrame = 0;
-    state.currentX = lerp(state.currentX, state.targetX, state.reducedMotion ? 0.2 : 0.18);
-    state.currentY = lerp(state.currentY, state.targetY, state.reducedMotion ? 0.2 : 0.18);
-    state.currentEnergy = lerp(state.currentEnergy, state.targetEnergy, state.reducedMotion ? 0.18 : 0.14);
-    aplicarVarsLiquidGlass();
+    LIQUID_GLASS_STATE.animationFrame = 0;
+    let aindaAnimando = false;
 
-    const aindaAnimando =
-        Math.abs(state.currentX - state.targetX) > 0.001 ||
-        Math.abs(state.currentY - state.targetY) > 0.001 ||
-        Math.abs(state.currentEnergy - state.targetEnergy) > 0.0015;
+    for (const item of LIQUID_GLASS_STATE.items) {
+        item.currentX = lerp(item.currentX, item.targetX, LIQUID_GLASS_STATE.reducedMotion ? 0.2 : 0.18);
+        item.currentY = lerp(item.currentY, item.targetY, LIQUID_GLASS_STATE.reducedMotion ? 0.2 : 0.18);
+        item.currentEnergy = lerp(item.currentEnergy, item.targetEnergy, LIQUID_GLASS_STATE.reducedMotion ? 0.2 : 0.14);
+        aplicarVarsLiquidGlass(item);
+
+        if (
+            Math.abs(item.currentX - item.targetX) > 0.001 ||
+            Math.abs(item.currentY - item.targetY) > 0.001 ||
+            Math.abs(item.currentEnergy - item.targetEnergy) > 0.0015
+        ) {
+            aindaAnimando = true;
+        }
+    }
 
     if (aindaAnimando) {
-        state.animationFrame = requestAnimationFrame(animarLiquidGlass);
+        LIQUID_GLASS_STATE.animationFrame = requestAnimationFrame(animarLiquidGlass);
     }
 }
 function solicitarFrameLiquidGlass() {
@@ -1202,100 +1255,90 @@ function solicitarFrameLiquidGlass() {
         LIQUID_GLASS_STATE.animationFrame = requestAnimationFrame(animarLiquidGlass);
     }
 }
-function atualizarTargetLiquidGlass(evento) {
-    const state = LIQUID_GLASS_STATE;
-    if (!state.panel || state.reducedMotion) return;
-    const rect = state.panel.getBoundingClientRect();
+function atualizarTargetLiquidGlass(elemento, evento) {
+    const item = obterItemLiquidGlass(elemento);
+    if (!item || LIQUID_GLASS_STATE.reducedMotion) return;
+    const rect = elemento.getBoundingClientRect();
     if (!rect.width || !rect.height) return;
 
-    state.targetX = clamp((evento.clientX - rect.left) / rect.width, 0, 1);
-    state.targetY = clamp((evento.clientY - rect.top) / rect.height, 0, 1);
-    const dx = state.targetX - 0.5;
-    const dy = state.targetY - 0.5;
+    item.targetX = clamp((evento.clientX - rect.left) / rect.width, 0, 1);
+    item.targetY = clamp((evento.clientY - rect.top) / rect.height, 0, 1);
+    const dx = item.targetX - 0.5;
+    const dy = item.targetY - 0.5;
     const proximidadeCentro = 1 - clamp(Math.hypot(dx, dy) / 0.72, 0, 1);
-    state.targetEnergy = 0.54 + proximidadeCentro * 0.28;
+    item.targetEnergy = item.baseEnergy + proximidadeCentro * item.hoverBoost;
     solicitarFrameLiquidGlass();
 }
-function agendarAtualizacaoMapaLiquidGlass() {
-    const state = LIQUID_GLASS_STATE;
-    if (state.resizeFrame) return;
-    state.resizeFrame = requestAnimationFrame(() => {
-        state.resizeFrame = 0;
-        atualizarMapaLiquidGlass();
-    });
-}
-function atualizarMapaLiquidGlass() {
-    const state = LIQUID_GLASS_STATE;
-    if (!state.panel || !state.mapImage || !state.displacement) return;
-    const rect = state.panel.getBoundingClientRect();
-    if (!rect.width || !rect.height) return;
+function registrarLiquidGlass(elemento, opcoes = {}) {
+    if (!elemento || obterItemLiquidGlass(elemento)) return;
+    prepararCamadasLiquidGlass(elemento);
 
-    const larguraMapa = Math.round(clamp(rect.width * 0.72, 140, 360));
-    const alturaMapa = Math.round(clamp(rect.height * 1.2, 110, 240));
-    const radiusCss = parseFloat(getComputedStyle(state.panel).borderTopLeftRadius) || 18;
-    const raioMapa = clamp(radiusCss * (larguraMapa / rect.width), 12, larguraMapa * 0.22);
-    const edgeWidth = clamp(Math.min(larguraMapa, alturaMapa) * 0.14, 12, 28);
-    const mapKey = [larguraMapa, alturaMapa, raioMapa.toFixed(1), edgeWidth.toFixed(1)].join("|");
-    if (mapKey === state.lastMapKey) return;
+    const item = {
+        element: elemento,
+        currentX: 0.5,
+        currentY: 0.32,
+        targetX: 0.5,
+        targetY: 0.32,
+        currentEnergy: opcoes.baseEnergy ?? 0.42,
+        targetEnergy: opcoes.baseEnergy ?? 0.42,
+        baseEnergy: opcoes.baseEnergy ?? 0.42,
+        hoverBoost: opcoes.hoverBoost ?? 0.28,
+        tiltX: opcoes.tiltX ?? 8,
+        tiltY: opcoes.tiltY ?? 6,
+        restY: opcoes.restY ?? 0.28
+    };
+    LIQUID_GLASS_STATE.items.push(item);
+    aplicarVarsLiquidGlass(item);
 
-    const dataUrl = gerarMapaDeslocamentoSnell({
-        width: larguraMapa,
-        height: alturaMapa,
-        radius: raioMapa,
-        edgeWidth,
-        ior: 1.18
-    });
-    state.mapImage.setAttribute("href", dataUrl);
-    state.baseScale = clamp(Math.min(rect.width, rect.height) * 0.11, 18, 34);
-    state.displacement.setAttribute("scale", state.baseScale.toFixed(2));
-    state.lastMapKey = mapKey;
-}
-function definirMotionLiquidGlass() {
-    const state = LIQUID_GLASS_STATE;
-    state.reducedMotion = Boolean(state.reducedMotionMedia?.matches);
-    if (state.reducedMotion) {
-        state.targetX = 0.5;
-        state.targetY = 0.28;
-        state.targetEnergy = 0.4;
-        solicitarFrameLiquidGlass();
-    }
-}
-function inicializarLiquidGlass() {
-    const panel = document.querySelector(".filtros");
-    const mapImage = document.getElementById("liquid-glass-map-image");
-    const displacement = document.getElementById("liquid-glass-displacement");
-    if (!panel || !mapImage || !displacement) return;
-
-    LIQUID_GLASS_STATE.panel = panel;
-    LIQUID_GLASS_STATE.mapImage = mapImage;
-    LIQUID_GLASS_STATE.displacement = displacement;
-    definirMotionLiquidGlass();
-    aplicarVarsLiquidGlass();
-    atualizarMapaLiquidGlass();
-    solicitarFrameLiquidGlass();
-
-    panel.addEventListener("pointerenter", atualizarTargetLiquidGlass, { passive: true });
-    panel.addEventListener("pointermove", atualizarTargetLiquidGlass, { passive: true });
-    panel.addEventListener("pointerleave", () => {
+    elemento.addEventListener("pointerenter", evento => atualizarTargetLiquidGlass(elemento, evento), { passive: true });
+    elemento.addEventListener("pointermove", evento => atualizarTargetLiquidGlass(elemento, evento), { passive: true });
+    elemento.addEventListener("pointerleave", () => {
         if (LIQUID_GLASS_STATE.reducedMotion) return;
-        LIQUID_GLASS_STATE.targetX = 0.5;
-        LIQUID_GLASS_STATE.targetY = 0.28;
-        LIQUID_GLASS_STATE.targetEnergy = 0.38;
+        item.targetX = 0.5;
+        item.targetY = item.restY;
+        item.targetEnergy = item.baseEnergy;
         solicitarFrameLiquidGlass();
     }, { passive: true });
-
-    if (typeof ResizeObserver !== "undefined") {
-        LIQUID_GLASS_STATE.resizeObserver = new ResizeObserver(() => {
-            LIQUID_GLASS_STATE.lastMapKey = "";
-            agendarAtualizacaoMapaLiquidGlass();
-        });
-        LIQUID_GLASS_STATE.resizeObserver.observe(panel);
-    } else {
-        window.addEventListener("resize", () => {
-            LIQUID_GLASS_STATE.lastMapKey = "";
-            agendarAtualizacaoMapaLiquidGlass();
-        }, { passive: true });
+}
+function definirMotionLiquidGlass() {
+    LIQUID_GLASS_STATE.reducedMotion = Boolean(LIQUID_GLASS_STATE.reducedMotionMedia?.matches);
+    for (const item of LIQUID_GLASS_STATE.items) {
+        item.targetX = 0.5;
+        item.targetY = item.restY;
+        item.targetEnergy = item.baseEnergy;
+        if (LIQUID_GLASS_STATE.reducedMotion) {
+            item.currentX = item.targetX;
+            item.currentY = item.targetY;
+            item.currentEnergy = item.targetEnergy;
+            aplicarVarsLiquidGlass(item);
+        }
     }
+    solicitarFrameLiquidGlass();
+}
+function inicializarLiquidGlass() {
+    const mapImage = document.getElementById("liquid-glass-map-image");
+    const displacement = document.getElementById("liquid-glass-displacement");
+    if (!mapImage || !displacement) return;
+
+    LIQUID_GLASS_STATE.mapImage = mapImage;
+    LIQUID_GLASS_STATE.displacement = displacement;
+    const dataUrl = gerarMapaDeslocamentoSnell({
+        width: 240,
+        height: 160,
+        radius: 28,
+        edgeWidth: 18,
+        ior: 1.18
+    });
+    mapImage.setAttribute("href", dataUrl);
+    displacement.setAttribute("scale", "24");
+
+    registrarLiquidGlass(document.getElementById("busca-sugestoes"), { baseEnergy: 0.62, hoverBoost: 0.18, tiltX: 5, tiltY: 4, restY: 0.24 });
+    registrarLiquidGlass(document.getElementById("sel-loc-menu"), { baseEnergy: 0.62, hoverBoost: 0.18, tiltX: 5, tiltY: 4, restY: 0.24 });
+    registrarLiquidGlass(document.getElementById("sel-per-menu"), { baseEnergy: 0.62, hoverBoost: 0.18, tiltX: 5, tiltY: 4, restY: 0.24 });
+    document.querySelectorAll(".topbar-link.liquid-glass").forEach(link => {
+        registrarLiquidGlass(link, { baseEnergy: 0.46, hoverBoost: 0.34, tiltX: 9, tiltY: 6, restY: 0.32 });
+    });
+    definirMotionLiquidGlass();
 
     if (LIQUID_GLASS_STATE.reducedMotionMedia) {
         const handler = () => definirMotionLiquidGlass();
@@ -1426,6 +1469,31 @@ function renderLinkRecursoOficial(recurso) {
     </a>`;
 }
 
+function renderLinkRecursoOficialFlex(recurso) {
+    if (!recurso?.url) return "";
+    const tituloPadrao = recurso.kind === "pdf" ? "Abrir PDF oficial" : "Abrir página oficial";
+    const titulo = recurso.link_title || (recurso.title ? `Abrir: ${recurso.title}` : tituloPadrao);
+    const rotulo = recurso.link_label || (recurso.kind === "pdf" ? "PDF oficial" : "Página oficial");
+    return `<a class="pdf-link" href="${escaparHtml(recurso.url)}" target="_blank" rel="noopener" title="${escaparHtml(titulo)}" aria-label="${escaparHtml(titulo)}">
+        <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M10 3.25v7m0 0 2.75-2.75M10 10.25 7.25 7.5M4.25 13v1.5c0 .69.56 1.25 1.25 1.25h9c.69 0 1.25-.56 1.25-1.25V13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>${escaparHtml(rotulo)}</span>
+    </a>`;
+}
+
+function listarRecursosOficiais(entry) {
+    const candidatos = Array.isArray(entry?.resources) && entry.resources.length
+        ? entry.resources
+        : [entry?.resource];
+    const vistos = new Set();
+    return candidatos.filter(recurso => {
+        if (!recurso?.url || vistos.has(recurso.url)) return false;
+        vistos.add(recurso.url);
+        return true;
+    });
+}
+
 function resolverEditaisOficiais(registros, atribs) {
     const entries = Array.isArray(EDITAIS_TRANSFERENCIA?.entries) ? EDITAIS_TRANSFERENCIA.entries : [];
     if (!entries.length || !registros?.length) return [];
@@ -1468,7 +1536,8 @@ function renderBlocoEditaisOficiais(nomeCurso, editais) {
         <div class="editais-oficiais__grade">`;
 
     for (const entry of editais) {
-        const recurso = entry.resource || {};
+        const recursos = listarRecursosOficiais(entry);
+        const recurso = recursos[0] || entry.resource || {};
         const tags = [];
         if (Array.isArray(entry.locations)) {
             tags.push(...entry.locations);
@@ -1480,10 +1549,10 @@ function renderBlocoEditaisOficiais(nomeCurso, editais) {
         html += `<article class="edital-oficial-item">
             <div class="edital-oficial-item__info">
                 <h4>${escaparHtml(entry.institution || "Unidade USP")}</h4>
-                <p class="edital-oficial-item__descricao">${escaparHtml(recurso.title || "Recurso oficial da unidade")}</p>
+                <p class="edital-oficial-item__descricao">${escaparHtml(entry.description || recurso.title || "Recurso oficial da unidade")}</p>
                 ${tags.length ? `<div class="edital-oficial-item__tags">${tags.map(tag => `<span class="edital-oficial-item__tag">${escaparHtml(tag)}</span>`).join("")}</div>` : ""}
             </div>
-            ${renderLinkRecursoOficial(recurso)}
+            <div class="edital-oficial-item__acoes">${recursos.map(renderLinkRecursoOficialFlex).join("")}</div>
         </article>`;
     }
 
@@ -1766,15 +1835,126 @@ function preencherSelect(selectEl, opcoes, valorSelecionado = null) {
     if (valorSelecionado !== null && [...selectEl.options].some(opt => opt.value === valorSelecionado)) {
         selectEl.value = valorSelecionado;
     }
+    sincronizarComboSelect(selectEl);
 }
 
 function atualizarTituloSelect(selectEl) {
     const selecionada = selectEl.options[selectEl.selectedIndex];
     selectEl.title = selecionada ? selecionada.textContent : "";
+    const refs = obterRefsComboSelect(selectEl);
+    if (!refs) return;
+    refs.valor.textContent = selecionada ? selecionada.textContent : "";
+    refs.trigger.setAttribute("aria-label", selecionada ? selecionada.textContent : "");
 }
 
 function fecharSugestoesBusca() {
     document.getElementById("busca-sugestoes").hidden = true;
+}
+function obterRefsComboSelect(selectEl) {
+    const combo = selectEl?.closest(".combo-select");
+    if (!combo) return null;
+    return {
+        combo,
+        trigger: combo.querySelector(".combo-select__trigger"),
+        valor: combo.querySelector(".combo-select__value"),
+        menu: combo.querySelector(".combo-select__menu")
+    };
+}
+function fecharTodosCombos() {
+    document.querySelectorAll(".combo-select.is-open").forEach(combo => {
+        combo.classList.remove("is-open");
+        const trigger = combo.querySelector(".combo-select__trigger");
+        const menu = combo.querySelector(".combo-select__menu");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+        if (menu) menu.hidden = true;
+    });
+}
+function alternarComboSelect(selectEl, deveAbrir = null) {
+    const refs = obterRefsComboSelect(selectEl);
+    if (!refs) return;
+    const abrir = deveAbrir ?? !refs.combo.classList.contains("is-open");
+    fecharTodosCombos();
+    if (!abrir) return;
+    refs.combo.classList.add("is-open");
+    refs.trigger.setAttribute("aria-expanded", "true");
+    refs.menu.hidden = false;
+}
+function sincronizarComboSelect(selectEl) {
+    const refs = obterRefsComboSelect(selectEl);
+    if (!refs) return;
+    refs.menu.innerHTML = "";
+    prepararCamadasLiquidGlass(refs.menu);
+    for (const option of [...selectEl.options]) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "combo-select__option";
+        btn.textContent = option.textContent;
+        btn.dataset.value = option.value;
+        btn.setAttribute("role", "option");
+        btn.setAttribute("aria-selected", option.selected ? "true" : "false");
+        if (option.selected) {
+            btn.classList.add("is-active");
+        }
+        btn.addEventListener("mousedown", e => e.preventDefault());
+        btn.addEventListener("click", () => {
+            if (selectEl.value !== option.value) {
+                selectEl.value = option.value;
+                atualizarTituloSelect(selectEl);
+                sincronizarComboSelect(selectEl);
+                selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+            fecharTodosCombos();
+            refs.trigger.focus();
+        });
+        refs.menu.appendChild(btn);
+    }
+    atualizarTituloSelect(selectEl);
+}
+function inicializarComboSelect(selectEl) {
+    const refs = obterRefsComboSelect(selectEl);
+    if (!refs || refs.combo.dataset.comboInit === "1") return;
+    refs.combo.dataset.comboInit = "1";
+    sincronizarComboSelect(selectEl);
+
+    refs.trigger.addEventListener("click", () => {
+        alternarComboSelect(selectEl);
+    });
+    refs.trigger.addEventListener("keydown", e => {
+        if (e.key === "Escape") {
+            fecharTodosCombos();
+            return;
+        }
+        if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            alternarComboSelect(selectEl, true);
+            const ativo = refs.menu.querySelector(".combo-select__option.is-active") || refs.menu.querySelector(".combo-select__option");
+            ativo?.focus();
+        }
+    });
+    refs.menu.addEventListener("keydown", e => {
+        const opcoes = [...refs.menu.querySelectorAll(".combo-select__option")];
+        const atual = document.activeElement;
+        const indice = opcoes.indexOf(atual);
+        if (e.key === "Escape") {
+            e.preventDefault();
+            fecharTodosCombos();
+            refs.trigger.focus();
+            return;
+        }
+        if (e.key === "ArrowDown") {
+            e.preventDefault();
+            opcoes[Math.min(indice + 1, opcoes.length - 1)]?.focus();
+        } else if (e.key === "ArrowUp") {
+            e.preventDefault();
+            opcoes[Math.max(indice - 1, 0)]?.focus();
+        } else if (e.key === "Home") {
+            e.preventDefault();
+            opcoes[0]?.focus();
+        } else if (e.key === "End") {
+            e.preventDefault();
+            opcoes[opcoes.length - 1]?.focus();
+        }
+    });
 }
 
 function ordenarSugestoesBusca(sugestoes, termoNorm) {
@@ -1849,6 +2029,7 @@ function renderizarSugestoesBusca(termo = "") {
     }
 
     painel.innerHTML = "";
+    prepararCamadasLiquidGlass(painel);
     for (const nome of sugestoes) {
         const btn = document.createElement("button");
         btn.type = "button";
@@ -2282,6 +2463,8 @@ function aplicarFiltrosEDashboard() {
 // Inicialização
 // ==========================================================================
 let debounceTimer;
+inicializarComboSelect(document.getElementById("sel-loc"));
+inicializarComboSelect(document.getElementById("sel-per"));
 document.getElementById("busca").addEventListener("input", () => {
     renderizarSugestoesBusca(document.getElementById("busca").value);
     clearTimeout(debounceTimer);
@@ -2306,6 +2489,10 @@ document.getElementById("sel-per").addEventListener("change", () => {
 });
 document.addEventListener("click", e => {
     if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
+    if (!e.target.closest(".combo-select")) fecharTodosCombos();
+});
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") fecharTodosCombos();
 });
 
 const MEDIA_DARK_MODE = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
