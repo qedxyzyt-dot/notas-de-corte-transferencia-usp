@@ -76,6 +76,11 @@
     --input-bg-2: #eef4fb;
     --menu-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(242, 248, 255, 0.97));
     --hover: #e8f0fa;
+    --edital-surface: var(--surface-panel);
+    --edital-item-bg: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,247,254,0.95));
+    --edital-item-border: var(--borda-suave);
+    --edital-tag-bg: rgba(0, 74, 141, 0.08);
+    --edital-tag-text: var(--usp-azul);
     --table-head-bg: var(--usp-azul);
     --table-border: #eef1f4;
     --footer-border: rgba(0, 74, 141, 0.12);
@@ -359,7 +364,7 @@ tbody tr:hover { background: var(--hover); }
 }
 
 .editais-oficiais {
-    background: var(--surface-panel);
+    background: var(--edital-surface);
     border: 1px solid var(--borda);
     border-radius: 18px;
     padding: 1.2rem 1.35rem;
@@ -404,9 +409,9 @@ tbody tr:hover { background: var(--hover); }
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.05rem;
-    border: 1px solid var(--borda-suave);
+    border: 1px solid var(--edital-item-border);
     border-radius: 16px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,247,254,0.95));
+    background: var(--edital-item-bg);
 }
 .edital-oficial-item__info {
     min-width: 0;
@@ -432,8 +437,8 @@ tbody tr:hover { background: var(--hover); }
     align-items: center;
     padding: 0.18rem 0.52rem;
     border-radius: 999px;
-    background: rgba(0, 74, 141, 0.08);
-    color: var(--usp-azul);
+    background: var(--edital-tag-bg);
+    color: var(--edital-tag-text);
     font-family: var(--fonte-display);
     font-size: 0.72rem;
     font-weight: 700;
@@ -605,6 +610,11 @@ footer a { color: var(--usp-azul); }
         --subtle-button-bg-hover: linear-gradient(180deg, rgba(146, 203, 255, 0.26), rgba(85, 143, 221, 0.18));
         --subtle-button-border: rgba(170, 209, 255, 0.26);
         --subtle-button-border-hover: rgba(170, 209, 255, 0.44);
+        --edital-surface: linear-gradient(180deg, rgba(17, 27, 41, 0.92), rgba(11, 18, 29, 0.9));
+        --edital-item-bg: linear-gradient(180deg, rgba(22, 34, 51, 0.94), rgba(16, 25, 38, 0.92));
+        --edital-item-border: rgba(147, 176, 212, 0.16);
+        --edital-tag-bg: rgba(123, 188, 255, 0.18);
+        --edital-tag-text: #d8ebff;
         --chart-text: #b8c8dc;
         --chart-grid: rgba(184, 200, 220, 0.14);
         --chart-tooltip-bg: rgba(7, 12, 20, 0.94);
@@ -645,18 +655,18 @@ footer a { color: var(--usp-azul); }
     }
     .editais-oficiais {
         border-color: rgba(147, 176, 212, 0.14);
-        background: linear-gradient(180deg, rgba(17, 27, 41, 0.92), rgba(11, 18, 29, 0.9));
+        background: var(--edital-surface);
     }
-    .edital-oficial-item {
-        border-color: rgba(147, 176, 212, 0.16);
-        background: linear-gradient(180deg, rgba(22, 34, 51, 0.94), rgba(16, 25, 38, 0.92));
+    .editais-oficiais .edital-oficial-item {
+        border-color: var(--edital-item-border) !important;
+        background: var(--edital-item-bg) !important;
         box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.04),
             0 12px 28px rgba(0, 0, 0, 0.22);
     }
-    .edital-oficial-item__tag {
-        background: rgba(123, 188, 255, 0.18);
-        color: #d8ebff;
+    .editais-oficiais .edital-oficial-item__tag {
+        background: var(--edital-tag-bg) !important;
+        color: var(--edital-tag-text) !important;
     }
     .pdf-link {
         color: #d9ebff;
@@ -1114,7 +1124,7 @@ function renderBlocoEditaisOficiais(nomeCurso, editais) {
             </div>
             ${processoAtual ? renderLinkRecursoOficial(processoAtual) : ""}
         </div>
-        <p class="editais-oficiais__intro">Universo restrito às ofertas do Anexo II da Transferência Externa USP 2026/2027. Quando a unidade ainda não publicou a edição nova, mantemos o recurso oficial específico mais recente encontrado.</p>
+        <p class="editais-oficiais__intro">Priorizamos as ofertas vigentes do Anexo II da Transferência Externa USP 2026/2027. Quando a unidade ainda não publicou a edição nova, mantemos o recurso oficial específico mais recente encontrado; em cursos fora da edição vigente, exibimos páginas institucionais relevantes da unidade quando houver histórico ou referência oficial útil.</p>
         <div class="editais-oficiais__grade">`;
 
     for (const entry of editais) {

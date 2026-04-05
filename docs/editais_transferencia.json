@@ -1,7 +1,7 @@
 {
   "last_reviewed_at": "2026-04-05",
   "scope": "anexo_ii_transferencia_externa_usp_2026_2027",
-  "selection_policy": "Sempre priorizar a página oficial mais atual da PRG USP (2026/2027). Quando a unidade ainda não publicou a edição nova, manter o edital ou página específica oficial mais recente encontrada, em geral 2025/2026.",
+  "selection_policy": "Sempre priorizar a página oficial mais atual da PRG USP (2026/2027). Quando a unidade ainda não publicou a edição nova, manter o edital ou página específica oficial mais recente encontrada, em geral 2025/2026. Para cursos fora da edição vigente, aceitar páginas institucionais úteis da unidade quando elas ajudarem o usuário a acompanhar futuras publicações oficiais.",
   "current_process": {
     "title": "Página central da Pró-Reitoria de Graduação da USP",
     "url": "https://prg.usp.br/transferencia-externa-usp/",
@@ -117,6 +117,50 @@
         "url": "https://www4.fe.usp.br/wp-content/uploads/feusp-edital-transf-externa-2025-corrigido-05.04.2025.pdf",
         "kind": "pdf",
         "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fd-direito-sao-paulo",
+      "institution": "Faculdade de Direito (FDUSP)",
+      "locations": ["São Paulo"],
+      "patterns": ["direito"],
+      "description": "Curso sem oferta identificada no Anexo II vigente; mostramos a página institucional do Serviço de Graduação da FDUSP e a página central da PRG para acompanhamento de futuras publicações sobre transferência externa.",
+      "resource": {
+        "title": "Serviço de Graduação - Seção de Alunos da FDUSP",
+        "url": "https://direito.usp.br/area-do-aluno/32603eb10a1b-servico-de-graduacao-secao-de-alunos-",
+        "kind": "page",
+        "edition": "institucional",
+        "link_label": "Serviço de Graduação"
+      },
+      "resources": [
+        {
+          "title": "Serviço de Graduação - Seção de Alunos da FDUSP",
+          "url": "https://direito.usp.br/area-do-aluno/32603eb10a1b-servico-de-graduacao-secao-de-alunos-",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Serviço de Graduação"
+        },
+        {
+          "title": "Página central da PRG para Transferência Externa USP",
+          "url": "https://prg.usp.br/transferencia-externa-usp/",
+          "kind": "page",
+          "edition": "2026/2027",
+          "link_label": "Página PRG"
+        }
+      ]
+    },
+    {
+      "slug": "fdrp-direito-ribeirao",
+      "institution": "Faculdade de Direito de Ribeirão Preto (FDRP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["direito"],
+      "description": "Página oficial da FDRP para a transferência externa, com edital, formulário, gabarito e resultados do processo mais recente.",
+      "resource": {
+        "title": "Transferência Externa da FDRP",
+        "url": "https://www.direitorp.usp.br/graduacao/publico-externo/transferencias/externa/#:~:text=PROCESSO%20SELETIVO%202025-2026&text=Edital%20ATAc%20n%C2%BA%2002/2025%20%E2%80%93%20ETAPA%20DE%20SELE%C3%87%C3%83O",
+        "kind": "page",
+        "edition": "2025/2026",
+        "link_label": "Página oficial"
       }
     },
     {
