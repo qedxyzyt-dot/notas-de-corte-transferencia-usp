@@ -1225,29 +1225,85 @@ function listarRecursosOficiais(entry) {
     });
 }
 
+function normalizarCursoParaMatch(texto) {
+    return compactarNormalizado(texto)
+        .replace(/\*/g, "")
+        .replace(/^bacharelado e licenciatura em\s+/g, "")
+        .replace(/^licenciatura e bacharelado em\s+/g, "")
+        .replace(/^bacharelado em\s+/g, "")
+        .replace(/^licenciatura em\s+/g, "")
+        .replace(/^curso de graduacao em\s+/g, "")
+        .replace(/^curso de\s+/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function cursoCasaPattern(infoCurso, pattern) {
+    const patternCompacto = compactarNormalizado(pattern);
+    const patternNormalizado = normalizarCursoParaMatch(pattern);
+    const candidatos = [
+        infoCurso?.rotuloCompacto,
+        infoCurso?.baseCompacta,
+        infoCurso?.rotuloNormalizado,
+        infoCurso?.baseNormalizada
+    ].filter(Boolean);
+
+    return candidatos.some(candidato =>
+        candidato === patternCompacto ||
+        candidato === patternNormalizado ||
+        candidato.startsWith(patternCompacto + " —") ||
+        candidato.startsWith(patternCompacto + " (") ||
+        candidato.startsWith(patternNormalizado + " —") ||
+        candidato.startsWith(patternNormalizado + " (")
+    );
+}
+
 function resolverEditaisOficiais(registros, atribs) {
     const entries = Array.isArray(EDITAIS_TRANSFERENCIA?.entries) ? EDITAIS_TRANSFERENCIA.entries : [];
     if (!entries.length || !registros?.length) return [];
 
-    const cursos = registros.map(([, r]) => compactarNormalizado(r.curso));
+    const cursos = registros.map(([, r]) => {
+        const rotulo = extrairRotuloBusca(r.curso) || extrairBase(r.curso) || r.curso;
+        const base = extrairBase(r.curso) || rotulo;
+        const locOriginal = atribs.get(r)?.loc || LOC_PADRAO_IMPLICITA;
+        return {
+            cursoOriginal: r.curso,
+            rotuloCompacto: compactarNormalizado(rotulo),
+            baseCompacta: compactarNormalizado(base),
+            rotuloNormalizado: normalizarCursoParaMatch(rotulo),
+            baseNormalizada: normalizarCursoParaMatch(base),
+            locOriginal,
+            locCompacta: compactarNormalizado(locOriginal)
+        };
+    });
     const locs = new Set(
-        registros
-            .map(([, r]) => compactarNormalizado(atribs.get(r)?.loc || LOC_PADRAO_IMPLICITA))
-            .filter(Boolean)
+        cursos.map(info => info.locCompacta).filter(Boolean)
     );
 
     return entries
-        .filter(entry => {
+        .map(entry => {
             const patterns = Array.isArray(entry.patterns) ? entry.patterns.map(compactarNormalizado).filter(Boolean) : [];
-            if (!patterns.length) return false;
+            if (!patterns.length) return null;
 
-            const casaCurso = cursos.some(curso => patterns.some(pattern => curso.includes(pattern)));
-            if (!casaCurso) return false;
+            const cursosCasados = cursos.filter(infoCurso => patterns.some(pattern => cursoCasaPattern(infoCurso, pattern)));
+            if (!cursosCasados.length) return null;
 
             const entryLocs = Array.isArray(entry.locations) ? entry.locations.map(compactarNormalizado).filter(Boolean) : [];
-            if (!entryLocs.length) return true;
-            return entryLocs.some(loc => locs.has(loc));
+            if (entryLocs.length && !entryLocs.some(loc => locs.has(loc))) return null;
+
+            const matchedLocations = Array.from(new Set(
+                cursosCasados
+                    .filter(infoCurso => !entryLocs.length || entryLocs.includes(infoCurso.locCompacta))
+                    .map(infoCurso => infoCurso.locOriginal)
+                    .filter(Boolean)
+            ));
+
+            return {
+                ...entry,
+                _matchedLocations: matchedLocations.length ? matchedLocations : (entry.locations || [])
+            };
         })
+        .filter(Boolean)
         .sort((a, b) => (a.institution || "").localeCompare(b.institution || "", "pt-BR", { sensitivity: "base" }));
 }
 
@@ -1270,7 +1326,9 @@ function renderBlocoEditaisOficiais(nomeCurso, editais) {
         const recursos = listarRecursosOficiais(entry);
         const recurso = recursos[0] || entry.resource || {};
         const tags = [];
-        if (Array.isArray(entry.locations)) {
+        if (Array.isArray(entry._matchedLocations) && entry._matchedLocations.length) {
+            tags.push(...entry._matchedLocations);
+        } else if (Array.isArray(entry.locations)) {
             tags.push(...entry.locations);
         }
         if (recurso.edition) {
