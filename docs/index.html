@@ -519,6 +519,12 @@ tbody tr:hover { background: var(--hover); }
     color: var(--texto-sec);
     font-size: 0.92rem;
 }
+.edital-oficial-item__match {
+    margin-top: 0.45rem;
+    color: var(--texto-sec);
+    font-size: 0.8rem;
+    opacity: 0.88;
+}
 .edital-oficial-item__tags {
     display: flex;
     flex-wrap: wrap;
@@ -1268,6 +1274,8 @@ function resolverEditaisOficiais(registros, atribs) {
         const locOriginal = atribs.get(r)?.loc || LOC_PADRAO_IMPLICITA;
         return {
             cursoOriginal: r.curso,
+            rotuloOriginal: rotulo,
+            baseOriginal: base,
             rotuloCompacto: compactarNormalizado(rotulo),
             baseCompacta: compactarNormalizado(base),
             rotuloNormalizado: normalizarCursoParaMatch(rotulo),
@@ -1291,16 +1299,24 @@ function resolverEditaisOficiais(registros, atribs) {
             const entryLocs = Array.isArray(entry.locations) ? entry.locations.map(compactarNormalizado).filter(Boolean) : [];
             if (entryLocs.length && !entryLocs.some(loc => locs.has(loc))) return null;
 
+            const cursosFiltrados = cursosCasados.filter(
+                infoCurso => !entryLocs.length || entryLocs.includes(infoCurso.locCompacta)
+            );
+            if (!cursosFiltrados.length) return null;
+
             const matchedLocations = Array.from(new Set(
-                cursosCasados
-                    .filter(infoCurso => !entryLocs.length || entryLocs.includes(infoCurso.locCompacta))
-                    .map(infoCurso => infoCurso.locOriginal)
+                cursosFiltrados.map(infoCurso => infoCurso.locOriginal).filter(Boolean)
+            ));
+            const matchedVariants = Array.from(new Set(
+                cursosFiltrados
+                    .map(infoCurso => `${infoCurso.rotuloOriginal}${infoCurso.locOriginal ? ` — ${infoCurso.locOriginal}` : ""}`)
                     .filter(Boolean)
             ));
 
             return {
                 ...entry,
-                _matchedLocations: matchedLocations.length ? matchedLocations : (entry.locations || [])
+                _matchedLocations: matchedLocations.length ? matchedLocations : (entry.locations || []),
+                _matchedVariants: matchedVariants
             };
         })
         .filter(Boolean)
@@ -1334,11 +1350,14 @@ function renderBlocoEditaisOficiais(nomeCurso, editais) {
         if (recurso.edition) {
             tags.push(recurso.edition);
         }
+        const correspondencia = Array.isArray(entry._matchedVariants) ? entry._matchedVariants.slice(0, 3) : [];
+        const correspondenciaTexto = correspondencia.join(" • ");
 
         html += `<article class="edital-oficial-item">
             <div class="edital-oficial-item__info">
                 <h4>${escaparHtml(entry.institution || "Unidade USP")}</h4>
                 <p class="edital-oficial-item__descricao">${escaparHtml(entry.description || recurso.title || "Recurso oficial da unidade")}</p>
+                ${correspondenciaTexto ? `<p class="edital-oficial-item__match">Correspondência nesta busca: ${escaparHtml(correspondenciaTexto)}</p>` : ""}
                 ${tags.length ? `<div class="edital-oficial-item__tags">${tags.map(tag => `<span class="edital-oficial-item__tag">${escaparHtml(tag)}</span>`).join("")}</div>` : ""}
             </div>
             <div class="edital-oficial-item__acoes">${recursos.map(renderLinkRecursoOficialFlex).join("")}</div>
