@@ -1,0 +1,484 @@
+{
+  "last_reviewed_at": "2026-04-05",
+  "scope": "anexo_ii_transferencia_externa_usp_2026_2027",
+  "selection_policy": "Sempre priorizar a página oficial mais atual da PRG USP (2026/2027). Quando a unidade ainda não publicou a edição nova, manter o edital ou página específica oficial mais recente encontrada, em geral 2025/2026.",
+  "current_process": {
+    "title": "Página central da Pró-Reitoria de Graduação da USP",
+    "url": "https://prg.usp.br/transferencia-externa-usp/",
+    "kind": "page",
+    "edition": "2026/2027"
+  },
+  "entries": [
+    {
+      "slug": "each-gestao-ambiental",
+      "institution": "Escola de Artes, Ciências e Humanidades (EACH)",
+      "locations": ["São Paulo"],
+      "patterns": ["gestao ambiental"],
+      "resource": {
+        "title": "Transferência Externa 2025/2026 da EACH",
+        "url": "https://portal2025.each.usp.br/avisos-graduacao/transferencia-externa-2025-26/",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eca-transferencia-externa",
+      "institution": "Escola de Comunicações e Artes (ECA)",
+      "locations": ["São Paulo"],
+      "patterns": [
+        "relacoes publicas",
+        "biblioteconomia e ciencia da informacao",
+        "educomunicacao",
+        "musica",
+        "turismo"
+      ],
+      "resource": {
+        "title": "Transferência da ECA — seção de Transferência Externa",
+        "url": "https://www.eca.usp.br/graduacao/transferencia#:~:text=Transfer%C3%AAncia%20externa%20-%20para%20estudantes%20da%20ECA",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eefe-educacao-fisica",
+      "institution": "Escola de Educação Física e Esporte (EEFE)",
+      "locations": ["São Paulo"],
+      "patterns": ["educacao fisica"],
+      "resource": {
+        "title": "Transferência Externa da EEFE",
+        "url": "https://www.eefe.usp.br/transferencia",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eeferp-educacao-fisica",
+      "institution": "Escola de Educação Física e Esporte de Ribeirão Preto (EEFERP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["educacao fisica"],
+      "resource": {
+        "title": "Transferência Externa da EEFERP",
+        "url": "http://www.eeferp.usp.br/graduacao/formas-de-ingresso-no-curso/transferencia-externa-0#:~:text=Transfer%C3%AAncia%20Externa",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eerp-enfermagem",
+      "institution": "Escola de Enfermagem de Ribeirão Preto (EERP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["enfermagem"],
+      "resource": {
+        "title": "Formas de Ingresso da EERP — seção de Transferência Externa",
+        "url": "http://www.eerp.usp.br/formas-de-ingresso/#:~:text=Outras%20formas%20de%20ingresso%3A&text=TRANSFER%C3%8ANCIA%20EXTERNA",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "esalq-transferencia",
+      "institution": "Escola Superior de Agricultura Luiz de Queiroz (ESALQ)",
+      "locations": ["Piracicaba"],
+      "patterns": [
+        "ciencias biologicas",
+        "ciencias dos alimentos",
+        "engenharia agronomica",
+        "engenharia florestal",
+        "administracao",
+        "ciencias economicas",
+        "gestao ambiental"
+      ],
+      "resource": {
+        "title": "Transferência na Graduação da ESALQ",
+        "url": "https://www.esalq.usp.br/graduacao/transferencia",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fcf-farmacia",
+      "institution": "Faculdade de Ciências Farmacêuticas (FCF)",
+      "locations": ["São Paulo"],
+      "patterns": ["farmacia"],
+      "resource": {
+        "title": "Edital de Transferência Externa da FCF",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-Transf-EXTERNA-2025-para-o-curso-de-Farmacia-9013-ingresso-2026.pdf",
+        "kind": "pdf",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fe-pedagogia",
+      "institution": "Faculdade de Educação (FE)",
+      "locations": ["São Paulo"],
+      "patterns": ["pedagogia"],
+      "resource": {
+        "title": "Edital de Transferência Externa da FEUSP",
+        "url": "https://www4.fe.usp.br/wp-content/uploads/feusp-edital-transf-externa-2025-corrigido-05.04.2025.pdf",
+        "kind": "pdf",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "ffclrp-transferencia-externa",
+      "institution": "Faculdade de Filosofia, Ciências e Letras de Ribeirão Preto (FFCLRP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": [
+        "ciencias biologicas",
+        "ciencia da computacao",
+        "fisica medica",
+        "matematica aplicada a negocios",
+        "quimica",
+        "biblioteconomia e ciencia da informacao",
+        "musica",
+        "pedagogia"
+      ],
+      "resource": {
+        "title": "Informações acadêmicas da FFCLRP — seção de Transferência Externa",
+        "url": "https://www.ffclrp.usp.br/graduacoes/informacoesacademicas/graduacao_informacoes.php#:~:text=Transfer%C3%AAncia%20Externa%20%E2%80%93%202%C2%BA%20Semestre%20de%202025",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fm-fisioterapia",
+      "institution": "Faculdade de Medicina (FM) — Fisioterapia",
+      "locations": ["São Paulo"],
+      "patterns": ["fisioterapia"],
+      "description": "PDF oficial mais recente da transferência externa e página institucional da graduação para acompanhar futuras atualizações.",
+      "resource": {
+        "title": "Edital da 2ª fase de Fisioterapia (FM)",
+        "url": "https://prg.usp.br/wp-content/uploads/Fisioterapia-da-Faculdade-de-Medicina-edital-2afase.pdf",
+        "kind": "pdf",
+        "edition": "2025/2026",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital da 2ª fase de Fisioterapia (FM)",
+          "url": "https://prg.usp.br/wp-content/uploads/Fisioterapia-da-Faculdade-de-Medicina-edital-2afase.pdf",
+          "kind": "pdf",
+          "edition": "2025/2026",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Graduação FMUSP — curso de Fisioterapia",
+          "url": "https://fm.usp.br/graduacao/cursos/fisioterapia#:~:text=Fisioterapia&text=graduacao@fm.usp.br",
+          "kind": "page",
+          "edition": "2025/2026",
+          "link_label": "Página institucional"
+        }
+      ]
+    },
+    {
+      "slug": "fm-fonoaudiologia",
+      "institution": "Faculdade de Medicina (FM) — Fonoaudiologia",
+      "locations": ["São Paulo"],
+      "patterns": ["fonoaudiologia"],
+      "description": "Página oficial do processo geral de transferência externa USP e página institucional do curso para acompanhamento do contexto da unidade.",
+      "resource": {
+        "title": "Página central da PRG para Transferência Externa USP",
+        "url": "https://prg.usp.br/transferencia-externa-usp/",
+        "kind": "page",
+        "edition": "2026/2027",
+        "link_label": "Página PRG"
+      },
+      "resources": [
+        {
+          "title": "Página central da PRG para Transferência Externa USP",
+          "url": "https://prg.usp.br/transferencia-externa-usp/",
+          "kind": "page",
+          "edition": "2026/2027",
+          "link_label": "Página PRG"
+        },
+        {
+          "title": "Graduação FMUSP — curso de Fonoaudiologia",
+          "url": "https://fm.usp.br/graduacao/fonoaudiologia/apresentacao#:~:text=Curso%20de%20Fonoaudiologia%20da%20FMUSP&text=graduacao@fm.usp.br",
+          "kind": "page",
+          "edition": "2025/2026",
+          "link_label": "Página institucional"
+        }
+      ]
+    },
+    {
+      "slug": "fm-terapia-ocupacional",
+      "institution": "Faculdade de Medicina (FM) — Terapia Ocupacional",
+      "locations": ["São Paulo"],
+      "patterns": ["terapia ocupacional"],
+      "description": "PDF oficial mais recente da transferência externa e página institucional da graduação para acompanhar futuras atualizações.",
+      "resource": {
+        "title": "Edital da 2ª fase de Terapia Ocupacional (FM)",
+        "url": "https://prg.usp.br/wp-content/uploads/Terapia-Ocupacional-da-Faculdade-de-Medicina-edital-2a-fase.pdf",
+        "kind": "pdf",
+        "edition": "2025/2026",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital da 2ª fase de Terapia Ocupacional (FM)",
+          "url": "https://prg.usp.br/wp-content/uploads/Terapia-Ocupacional-da-Faculdade-de-Medicina-edital-2a-fase.pdf",
+          "kind": "pdf",
+          "edition": "2025/2026",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Graduação FMUSP — curso de Terapia Ocupacional",
+          "url": "https://fm.usp.br/graduacao/terapia-ocupacional/apresentacao#:~:text=Curso%20de%20Terapia%20Ocupacional%20da%20FMUSP&text=graduacao@fm.usp.br",
+          "kind": "page",
+          "edition": "2025/2026",
+          "link_label": "Página institucional"
+        }
+      ]
+    },
+    {
+      "slug": "fm-if-fisica-medica",
+      "institution": "Faculdade de Medicina (FM) e Instituto de Física (IF) — Física Médica",
+      "locations": ["São Paulo"],
+      "patterns": ["fisica medica"],
+      "description": "Página oficial de transferência externa do IFUSP e página institucional do curso interunidades para acompanhar publicações futuras sem depender de um PDF indevido.",
+      "resource": {
+        "title": "Transferência Externa do IFUSP",
+        "url": "https://portal.if.usp.br/salunos/pt-br/transfer%C3%AAncia-externa-usp#:~:text=Transfer%C3%AAncia%20Externa%20USP&text=edital%20da%20Transfer%C3%AAncia%20Externa%202026/2027",
+        "kind": "page",
+        "edition": "2026/2027",
+        "link_label": "Página IFUSP"
+      },
+      "resources": [
+        {
+          "title": "Transferência Externa do IFUSP",
+          "url": "https://portal.if.usp.br/salunos/pt-br/transfer%C3%AAncia-externa-usp#:~:text=Transfer%C3%AAncia%20Externa%20USP&text=edital%20da%20Transfer%C3%AAncia%20Externa%202026/2027",
+          "kind": "page",
+          "edition": "2026/2027",
+          "link_label": "Página IFUSP"
+        },
+        {
+          "title": "Graduação FMUSP — curso de Física Médica",
+          "url": "https://fm.usp.br/graduacao/fisica-medica---interunidades---instituto-de-fisica-e-faculdade-de-medicina/apresentacao#:~:text=curso%20de%20bacharelado%20em%20F%C3%ADsica%20M%C3%A9dica&text=graduacao@fm.usp.br",
+          "kind": "page",
+          "edition": "2025/2026",
+          "link_label": "Página institucional"
+        }
+      ]
+    },
+    {
+      "slug": "fo-odontologia",
+      "institution": "Faculdade de Odontologia (FO)",
+      "locations": ["São Paulo"],
+      "patterns": ["odontologia"],
+      "resource": {
+        "title": "Edital da Faculdade de Odontologia (FO)",
+        "url": "https://prg.usp.br/wp-content/uploads/EDITAL-FO-2026_publicacao.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027"
+      }
+    },
+    {
+      "slug": "fob-fono-odonto",
+      "institution": "Faculdade de Odontologia de Bauru (FOB)",
+      "locations": ["Bauru"],
+      "patterns": ["fonoaudiologia", "odontologia"],
+      "resource": {
+        "title": "Editais da graduação da FOB — Transferência Externa",
+        "url": "https://graduacao.fob.usp.br/pb/editais/#:~:text=Transfer%C3%AAncia%20Externa%20para%20os%20cursos%20de%20gradua%C3%A7%C3%A3o%202026",
+        "kind": "page",
+        "edition": "2026/2027"
+      }
+    },
+    {
+      "slug": "fsp-nutricao",
+      "institution": "Faculdade de Saúde Pública (FSP)",
+      "locations": ["São Paulo"],
+      "patterns": ["nutricao"],
+      "resource": {
+        "title": "Transferência Externa da FSP",
+        "url": "https://www.fsp.usp.br/site/graduacao/mostra/7333",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fzea-cursos",
+      "institution": "Faculdade de Zootecnia e Engenharia de Alimentos (FZEA)",
+      "locations": ["Pirassununga"],
+      "patterns": ["engenharia de alimentos", "engenharia de biossistemas", "zootecnia"],
+      "resource": {
+        "title": "Seção de Transferência Externa da FZEA",
+        "url": "https://graduacao.fzea.usp.br/servicos-oferecidos#h.gdemime282s5:~:text=Formas%20de%20Ingresso%20na%20FZEA%20e%20Transfer%C3%AAncias&text=Transfer%C3%AAncia%20EXTERNA",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "ib-ciencias-biologicas",
+      "institution": "Instituto de Biociências (IB)",
+      "locations": ["São Paulo"],
+      "patterns": ["ciencias biologicas"],
+      "resource": {
+        "title": "Transferência do IB — seção de Transferência Externa",
+        "url": "https://graduacao.ib.usp.br/informacoes/transferencia.html#:~:text=TRANSFER%C3%8ANCIA%20EXTENA%202025/2026&text=EDITAL%20-%202%C2%AA%20fase%20(IB)%20-%202025/2026",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eel-engenharias",
+      "institution": "Escola de Engenharia de Lorena (EEL)",
+      "locations": ["Lorena"],
+      "patterns": [
+        "engenharia ambiental",
+        "engenharia bioquimica",
+        "engenharia de materiais",
+        "engenharia fisica",
+        "engenharia quimica"
+      ],
+      "resource": {
+        "title": "Comissão de Graduação da EEL — seção de editais",
+        "url": "https://www.eel.usp.br/institucional/organizacao-administrativa/colegiados/comissao-de-graduacao#:~:text=Editais&text=TRANSFER%C3%8ANCIA%20EXTERNA",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "eesc-engenharias",
+      "institution": "Escola de Engenharia de São Carlos (EESC)",
+      "locations": ["São Carlos"],
+      "patterns": ["engenharia ambiental", "engenharia civil", "engenharia de materiais e manufatura"],
+      "resource": {
+        "title": "Transferência Externa da EESC",
+        "url": "https://eesc.usp.br/graduacao/ingresso.php?anchor=transferencia",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "ep-poli",
+      "institution": "Escola Politécnica (Poli)",
+      "locations": ["São Paulo"],
+      "patterns": [
+        "engenharia civil",
+        "engenharia de minas/petroleo",
+        "engenharia eletrica",
+        "engenharia naval e oceanica",
+        "engenharia ambiental",
+        "engenharia de materiais/metalurgica e nuclear",
+        "engenharia quimica",
+        "engenharia mecanica",
+        "engenharia mecatronica"
+      ],
+      "resource": {
+        "title": "Transferência Externa da Poli",
+        "url": "https://www.poli.usp.br/ensino/graduacao/transferencia-externa/",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "iag-geofisica-meteorologia",
+      "institution": "Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG)",
+      "locations": ["São Paulo"],
+      "patterns": ["geofisica", "meteorologia"],
+      "resource": {
+        "title": "Edital de Transferência Externa do IAG",
+        "url": "https://www.iag.usp.br/noticias/edital-de-transferencia-externa-iag-2025-26#:~:text=edital%20de%20transfer%C3%AAncia%20externa%20IAG%202025/26&text=Consulte%20o%20edital%20e%20anexos",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "icmc-exatas",
+      "institution": "Instituto de Ciências Matemáticas e de Computação (ICMC)",
+      "locations": ["São Carlos"],
+      "patterns": ["estatistica e ciencia de dados", "matematica"],
+      "resource": {
+        "title": "Seção de Transferência Externa do ICMC",
+        "url": "https://icmc.usp.br/graduacao/ingresso#7:~:text=Transfer%C3%AAncia%20externa",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "if-fisica",
+      "institution": "Instituto de Física (IF)",
+      "locations": ["São Paulo"],
+      "patterns": ["fisica"],
+      "resource": {
+        "title": "Transferência Externa do IFUSP",
+        "url": "https://portal.if.usp.br/salunos/pt-br/transfer%C3%AAncia-externa-usp#:~:text=Transfer%C3%AAncia%20Externa%20USP&text=edital%20da%20Transfer%C3%AAncia%20Externa%202026/2027",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "ime-exatas",
+      "institution": "Instituto de Matemática e Estatística (IME)",
+      "locations": ["São Paulo"],
+      "patterns": ["ciencia da computacao", "estatistica", "matematica"],
+      "resource": {
+        "title": "Transferência Externa do IME",
+        "url": "https://www.ime.usp.br/graduacao/transferencia-externa/#:~:text=Transfer%C3%AAncia%20externa&text=EDITAL%20%E2%80%93%202%C2%AA%20ETAPA%20(SELE%C3%87%C3%83O)",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "igc-geociencias",
+      "institution": "Instituto de Geociências (IGc)",
+      "locations": ["São Paulo"],
+      "patterns": ["geociencias e educacao ambiental"],
+      "resource": {
+        "title": "Transferência Externa do IGc",
+        "url": "https://igc.usp.br/graduacao/transferencia/#:~:text=Transfer%C3%AAncia%20Externa&text=Edital%20ser%C3%A1%20disponibilizado%20em%20abril%20de%202026",
+        "kind": "page",
+        "edition": "2026/2027"
+      }
+    },
+    {
+      "slug": "io-oceanografia",
+      "institution": "Instituto Oceanográfico (IO)",
+      "locations": ["São Paulo"],
+      "patterns": ["oceanografia"],
+      "resource": {
+        "title": "Ingresso no IO — seção de Transferência Externa",
+        "url": "https://www.io.usp.br/index.php/graduacao/bacharelado-iousp/ingresso.html#:~:text=Transfer%C3%AAncia%20externa&text=A%20divulga%C3%A7%C3%A3o%20do%20edital%20de%20transfer%C3%AAncia%20ocorre%20anualmente",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "iqsc-quimica",
+      "institution": "Instituto de Química de São Carlos (IQSC)",
+      "locations": ["São Carlos"],
+      "patterns": ["quimica"],
+      "resource": {
+        "title": "Transferência Externa do IQSC",
+        "url": "https://graduacao.iqsc.usp.br/2025/04/07/transferencia-externa/",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "iau-arquitetura",
+      "institution": "Instituto de Arquitetura e Urbanismo (IAU)",
+      "locations": ["São Carlos"],
+      "patterns": ["arquitetura e urbanismo"],
+      "resource": {
+        "title": "Transferência do IAU — seção de Transferência Externa",
+        "url": "https://www.iau.usp.br/graduacao/transferencia/#:~:text=Transfer%C3%AAncia%20Externa&text=Processo%20de%20Transfer%C3%AAncia%20Externa%202025",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "iri-relacoes-internacionais",
+      "institution": "Instituto de Relações Internacionais (IRI)",
+      "locations": ["São Paulo"],
+      "patterns": ["relacoes internacionais"],
+      "resource": {
+        "title": "Transferência Externa do IRI",
+        "url": "https://www.iri.usp.br/br/graduacao/ingresso-graduacao/outras-formas-de-ingresso/transferencia-externa#:~:text=As%20vagas%20remanescentes%20do%20processo%20de%20Transfer%C3%AAncia%20Interna%20s%C3%A3o%20disponibilizadas%20para%20a%20Transfer%C3%AAncia%20Externa&text=Edital%20do%20IRI%20para%20segunda%20fase",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    }
+  ]
+}
