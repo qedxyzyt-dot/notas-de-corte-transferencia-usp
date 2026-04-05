@@ -219,6 +219,99 @@ header p {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
+.select-native {
+    position: absolute;
+    inset: auto auto auto auto;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.select-custom {
+    position: relative;
+}
+.select-custom__trigger {
+    width: 100%;
+    padding: 0.72rem 0.9rem;
+    padding-right: 2.7rem;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: linear-gradient(180deg, var(--input-bg), var(--input-bg-2));
+    color: var(--texto);
+    line-height: 1.4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    text-align: left;
+    cursor: pointer;
+}
+.select-custom__value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.select-custom__icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    color: #566f92;
+    transition: transform 0.18s ease;
+}
+.select-custom.is-open .select-custom__trigger {
+    outline: none;
+    border-color: var(--usp-azul);
+    box-shadow: 0 0 0 4px rgba(0,74,141,0.12);
+}
+.select-custom.is-open .select-custom__icon {
+    transform: rotate(180deg);
+}
+.select-custom__menu {
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0;
+    z-index: 80;
+    width: 100%;
+    max-height: 18rem;
+    overflow-y: auto;
+    background: var(--menu-bg);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    box-shadow: var(--sombra-flutuante);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 0.25rem;
+}
+.select-custom__menu[hidden] {
+    display: none;
+}
+.select-custom__option {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--texto);
+    text-align: left;
+    padding: 0.72rem 0.82rem;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    cursor: pointer;
+}
+.select-custom__option:hover,
+.select-custom__option:focus {
+    background: var(--usp-azul-claro);
+    outline: none;
+}
+.select-custom__option.is-selected {
+    background: rgba(0, 74, 141, 0.12);
+    color: var(--usp-azul);
+    font-weight: 700;
+}
 .filtro-grupo select {
     appearance: none;
     -webkit-appearance: none;
@@ -640,6 +733,26 @@ footer a { color: var(--usp-azul); }
             inset 0 1px 0 rgba(255, 255, 255, 0.05),
             inset 0 -1px 0 rgba(0, 0, 0, 0.18);
     }
+    .select-custom__icon {
+        color: #bdd8ff;
+    }
+    .select-custom__trigger {
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.05),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+    }
+    .select-custom__menu {
+        border-color: rgba(147, 176, 212, 0.18);
+        background: linear-gradient(180deg, rgba(20, 31, 46, 0.98), rgba(15, 24, 37, 0.96));
+    }
+    .select-custom__option:hover,
+    .select-custom__option:focus {
+        background: rgba(123, 188, 255, 0.14);
+    }
+    .select-custom__option.is-selected {
+        background: rgba(123, 188, 255, 0.18);
+        color: #e7f3ff;
+    }
     .filtro-grupo select {
         color-scheme: dark;
         background-image:
@@ -749,6 +862,14 @@ footer a { color: var(--usp-azul); }
     .filtro-grupo input, .filtro-grupo select {
         font-size: 0.98rem;
         padding: 0.76rem 0.82rem;
+    }
+    .select-custom__trigger {
+        font-size: 0.98rem;
+        padding: 0.76rem 0.82rem;
+        padding-right: 2.5rem;
+    }
+    .select-custom__option {
+        font-size: 0.95rem;
     }
     .lista-sugestoes {
         width: 100%;
@@ -868,12 +989,30 @@ footer a { color: var(--usp-azul); }
             <div id="busca-sugestoes" class="lista-sugestoes" hidden></div>
         </div>
         <div class="filtro-grupo">
-            <label for="sel-loc">Localização</label>
-            <select id="sel-loc"><option value="__all__">Todas</option></select>
+            <label for="sel-loc-trigger">Localização</label>
+            <select id="sel-loc" class="select-native"><option value="__all__">Todas</option></select>
+            <div class="select-custom" data-select-id="sel-loc">
+                <button type="button" id="sel-loc-trigger" class="select-custom__trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="sel-loc-menu">
+                    <span class="select-custom__value">Todas</span>
+                    <svg class="select-custom__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div id="sel-loc-menu" class="select-custom__menu" role="listbox" hidden></div>
+            </div>
         </div>
         <div class="filtro-grupo">
-            <label for="sel-per">Período</label>
-            <select id="sel-per"><option value="__all__">Todos</option></select>
+            <label for="sel-per-trigger">Período</label>
+            <select id="sel-per" class="select-native"><option value="__all__">Todos</option></select>
+            <div class="select-custom" data-select-id="sel-per">
+                <button type="button" id="sel-per-trigger" class="select-custom__trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="sel-per-menu">
+                    <span class="select-custom__value">Todos</span>
+                    <svg class="select-custom__icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </button>
+                <div id="sel-per-menu" class="select-custom__menu" role="listbox" hidden></div>
+            </div>
         </div>
     </div>
 
@@ -1427,11 +1566,123 @@ function preencherSelect(selectEl, opcoes, valorSelecionado = null) {
     if (valorSelecionado !== null && [...selectEl.options].some(opt => opt.value === valorSelecionado)) {
         selectEl.value = valorSelecionado;
     }
+    sincronizarSelectCustomizado(selectEl);
 }
 
 function atualizarTituloSelect(selectEl) {
     const selecionada = selectEl.options[selectEl.selectedIndex];
     selectEl.title = selecionada ? selecionada.textContent : "";
+    const custom = obterEstruturaSelectCustomizado(selectEl);
+    if (custom?.valueEl) {
+        custom.valueEl.textContent = selecionada ? selecionada.textContent : "";
+    }
+    if (custom?.trigger) {
+        custom.trigger.title = selecionada ? selecionada.textContent : "";
+    }
+}
+
+function obterEstruturaSelectCustomizado(selectEl) {
+    if (!selectEl) return null;
+    const grupo = selectEl.closest(".filtro-grupo");
+    if (!grupo) return null;
+    const root = grupo.querySelector(`.select-custom[data-select-id="${selectEl.id}"]`);
+    if (!root) return null;
+    return {
+        root,
+        trigger: root.querySelector(".select-custom__trigger"),
+        valueEl: root.querySelector(".select-custom__value"),
+        menu: root.querySelector(".select-custom__menu")
+    };
+}
+
+function fecharSelectsCustomizados(except = null) {
+    document.querySelectorAll(".select-custom.is-open").forEach(root => {
+        if (except && root === except) return;
+        root.classList.remove("is-open");
+        const trigger = root.querySelector(".select-custom__trigger");
+        const menu = root.querySelector(".select-custom__menu");
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+        if (menu) menu.hidden = true;
+    });
+}
+
+function sincronizarSelectCustomizado(selectEl) {
+    const custom = obterEstruturaSelectCustomizado(selectEl);
+    if (!custom?.menu) return;
+
+    const { root, menu } = custom;
+    menu.innerHTML = "";
+
+    [...selectEl.options].forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "select-custom__option";
+        if (opt.value === selectEl.value) btn.classList.add("is-selected");
+        btn.textContent = opt.textContent;
+        btn.title = opt.textContent;
+        btn.dataset.value = opt.value;
+        btn.setAttribute("role", "option");
+        btn.setAttribute("aria-selected", opt.value === selectEl.value ? "true" : "false");
+        btn.addEventListener("click", () => {
+            selectEl.value = opt.value;
+            atualizarTituloSelect(selectEl);
+            fecharSelectsCustomizados();
+            selectEl.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+        btn.addEventListener("keydown", e => {
+            if (e.key === "Escape") {
+                fecharSelectsCustomizados();
+                custom.trigger?.focus();
+            }
+            if (e.key === "ArrowDown") {
+                e.preventDefault();
+                const prox = menu.children[idx + 1];
+                if (prox) prox.focus();
+            }
+            if (e.key === "ArrowUp") {
+                e.preventDefault();
+                const ant = menu.children[idx - 1];
+                if (ant) ant.focus();
+                else custom.trigger?.focus();
+            }
+        });
+        menu.appendChild(btn);
+    });
+
+    atualizarTituloSelect(selectEl);
+    root.classList.remove("is-open");
+    menu.hidden = true;
+    custom.trigger?.setAttribute("aria-expanded", "false");
+}
+
+function inicializarSelectCustomizado(selectId) {
+    const selectEl = document.getElementById(selectId);
+    const custom = obterEstruturaSelectCustomizado(selectEl);
+    if (!selectEl || !custom?.trigger || !custom?.menu) return;
+
+    custom.trigger.addEventListener("click", () => {
+        const abrindo = !custom.root.classList.contains("is-open");
+        fecharSelectsCustomizados(custom.root);
+        custom.root.classList.toggle("is-open", abrindo);
+        custom.menu.hidden = !abrindo;
+        custom.trigger.setAttribute("aria-expanded", abrindo ? "true" : "false");
+        if (abrindo) {
+            const atual = custom.menu.querySelector(".select-custom__option.is-selected") || custom.menu.querySelector(".select-custom__option");
+            atual?.focus();
+        }
+    });
+
+    custom.trigger.addEventListener("keydown", e => {
+        if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            custom.trigger.click();
+        }
+        if (e.key === "Escape") {
+            fecharSelectsCustomizados();
+        }
+    });
+
+    sincronizarSelectCustomizado(selectEl);
 }
 
 function fecharSugestoesBusca() {
@@ -1943,6 +2194,8 @@ function aplicarFiltrosEDashboard() {
 // Inicialização
 // ==========================================================================
 let debounceTimer;
+inicializarSelectCustomizado("sel-loc");
+inicializarSelectCustomizado("sel-per");
 document.getElementById("busca").addEventListener("input", () => {
     renderizarSugestoesBusca(document.getElementById("busca").value);
     clearTimeout(debounceTimer);
@@ -1967,6 +2220,7 @@ document.getElementById("sel-per").addEventListener("change", () => {
 });
 document.addEventListener("click", e => {
     if (!document.getElementById("busca").closest(".filtro-grupo").contains(e.target)) fecharSugestoesBusca();
+    if (!e.target.closest(".select-custom")) fecharSelectsCustomizados();
 });
 
 const MEDIA_DARK_MODE = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
