@@ -83,6 +83,13 @@
     --subtle-button-bg-hover: #e7f1fd;
     --subtle-button-border: rgba(0, 74, 141, 0.18);
     --subtle-button-border-hover: rgba(0, 74, 141, 0.28);
+    --glass-panel-tint: rgba(255, 255, 255, 0.34);
+    --glass-panel-tint-2: rgba(225, 238, 252, 0.18);
+    --glass-panel-border: rgba(255, 255, 255, 0.52);
+    --glass-panel-border-strong: rgba(0, 74, 141, 0.22);
+    --glass-panel-shadow: 0 24px 52px rgba(8, 31, 58, 0.16);
+    --glass-highlight: rgba(255, 255, 255, 0.92);
+    --glass-highlight-soft: rgba(183, 216, 255, 0.34);
     --chart-text: #5d6878;
     --chart-grid: rgba(20, 32, 51, 0.1);
     --chart-tooltip-bg: rgba(17, 28, 45, 0.92);
@@ -175,8 +182,8 @@ header p {
 
 /* Filtros */
 .filtros {
-    background: var(--surface-panel);
-    border: 1px solid var(--borda);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+    border: 1px solid var(--glass-panel-border-strong);
     border-radius: 18px;
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
@@ -184,10 +191,82 @@ header p {
     grid-template-columns: minmax(0, 1.75fr) minmax(12.5rem, 0.9fr) minmax(12.5rem, 0.9fr);
     gap: 1rem;
     align-items: end;
-    box-shadow: var(--sombra-card);
+    box-shadow: var(--glass-panel-shadow);
     position: relative;
     z-index: 20;
     overflow: visible;
+    isolation: isolate;
+    --glass-pointer-x: 50%;
+    --glass-pointer-y: 32%;
+    --glass-highlight-opacity: 0.5;
+    --glass-tilt-x: 0px;
+    --glass-tilt-y: 0px;
+    --glass-edge-width: 1.2px;
+}
+.filtros > :not(.liquid-glass-panel__backdrop):not(.liquid-glass-panel__glow):not(.liquid-glass-panel__specular) {
+    position: relative;
+    z-index: 3;
+}
+.liquid-glass-panel__backdrop,
+.liquid-glass-panel__glow,
+.liquid-glass-panel__specular {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    contain: paint;
+}
+.liquid-glass-panel__backdrop {
+    z-index: 0;
+    background:
+        radial-gradient(circle at 16% 14%, rgba(255, 255, 255, 0.72), transparent 34%),
+        linear-gradient(145deg, var(--glass-panel-tint), rgba(255, 255, 255, 0.1) 34%, var(--glass-panel-tint-2) 100%);
+    border: 1px solid var(--glass-panel-border);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.54),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.16),
+        0 12px 24px rgba(7, 25, 47, 0.08);
+    backdrop-filter: blur(18px) saturate(1.35) contrast(1.04);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) contrast(1.04);
+    filter: url(#liquid-glass-displacement-filter);
+    transform: translate3d(var(--glass-tilt-x), var(--glass-tilt-y), 0);
+    will-change: transform;
+}
+.liquid-glass-panel__glow {
+    z-index: 1;
+    inset: 1px;
+    border-radius: calc(18px - 1px);
+    background:
+        radial-gradient(circle at var(--glass-pointer-x) var(--glass-pointer-y), rgba(255, 255, 255, calc(0.26 * var(--glass-highlight-opacity))) 0%, rgba(255, 255, 255, calc(0.18 * var(--glass-highlight-opacity))) 15%, transparent 36%),
+        radial-gradient(circle at calc(var(--glass-pointer-x) * 0.82) calc(var(--glass-pointer-y) * 1.08), rgba(124, 180, 248, calc(0.18 * var(--glass-highlight-opacity))) 0%, transparent 52%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 32%, rgba(123, 181, 247, 0.12) 100%);
+    mix-blend-mode: screen;
+    opacity: 0.95;
+    transform: translate3d(calc(var(--glass-tilt-x) * -0.34), calc(var(--glass-tilt-y) * -0.34), 0);
+    will-change: transform, opacity;
+}
+.liquid-glass-panel__specular {
+    z-index: 2;
+    inset: -1px;
+    padding: var(--glass-edge-width);
+    background:
+        radial-gradient(circle at var(--glass-pointer-x) var(--glass-pointer-y), rgba(255, 255, 255, calc(0.74 * var(--glass-highlight-opacity))) 0%, rgba(255, 255, 255, calc(0.3 * var(--glass-highlight-opacity))) 14%, transparent 34%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.18) 28%, rgba(255, 255, 255, 0.04) 46%, var(--glass-highlight-soft) 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+        inset 0 0 18px rgba(255, 255, 255, 0.06);
+    mix-blend-mode: screen;
+    opacity: 0.96;
+    transform: translate3d(calc(var(--glass-tilt-x) * -0.55), calc(var(--glass-tilt-y) * -0.55), 0);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    will-change: transform, opacity;
 }
 .filtro-grupo { position: relative; display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; z-index: 1; }
 .filtro-grupo:focus-within { z-index: 35; }
@@ -383,6 +462,91 @@ tbody tr:hover { background: var(--hover); }
     flex: 0 0 auto;
 }
 
+.editais-oficiais {
+    background: var(--surface-panel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 1.2rem 1.35rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--sombra-card);
+}
+.editais-oficiais__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+.editais-oficiais__eyebrow {
+    display: inline-block;
+    font-family: var(--fonte-display);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--usp-azul);
+    margin-bottom: 0.32rem;
+}
+.editais-oficiais__header h3 {
+    font-family: var(--fonte-display);
+    font-size: 1.02rem;
+    color: var(--texto);
+    letter-spacing: -0.02em;
+}
+.editais-oficiais__intro {
+    color: var(--texto-sec);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+.editais-oficiais__grade {
+    display: grid;
+    gap: 0.9rem;
+}
+.edital-oficial-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--borda-suave);
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(241,247,254,0.95));
+}
+.edital-oficial-item__info {
+    min-width: 0;
+}
+.edital-oficial-item__info h4 {
+    font-family: var(--fonte-display);
+    font-size: 0.96rem;
+    color: var(--texto);
+    margin-bottom: 0.25rem;
+}
+.edital-oficial-item__descricao {
+    color: var(--texto-sec);
+    font-size: 0.92rem;
+}
+.edital-oficial-item__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.5rem;
+}
+.edital-oficial-item__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.18rem 0.52rem;
+    border-radius: 999px;
+    background: rgba(0, 74, 141, 0.08);
+    color: var(--usp-azul);
+    font-family: var(--fonte-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+.edital-oficial-item .pdf-link {
+    flex: 0 0 auto;
+}
+
 /* Gráficos */
 .graficos { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1.5rem; }
 .grafico-card {
@@ -538,6 +702,13 @@ footer a { color: var(--usp-azul); }
         --subtle-button-bg-hover: linear-gradient(180deg, rgba(146, 203, 255, 0.26), rgba(85, 143, 221, 0.18));
         --subtle-button-border: rgba(170, 209, 255, 0.26);
         --subtle-button-border-hover: rgba(170, 209, 255, 0.44);
+        --glass-panel-tint: rgba(181, 221, 255, 0.12);
+        --glass-panel-tint-2: rgba(72, 112, 163, 0.12);
+        --glass-panel-border: rgba(182, 221, 255, 0.28);
+        --glass-panel-border-strong: rgba(123, 188, 255, 0.24);
+        --glass-panel-shadow: 0 24px 56px rgba(0, 0, 0, 0.38);
+        --glass-highlight: rgba(255, 255, 255, 0.82);
+        --glass-highlight-soft: rgba(123, 188, 255, 0.26);
         --chart-text: #b8c8dc;
         --chart-grid: rgba(184, 200, 220, 0.14);
         --chart-tooltip-bg: rgba(7, 12, 20, 0.94);
@@ -555,6 +726,15 @@ footer a { color: var(--usp-azul); }
     .vazio {
         box-shadow: var(--sombra-card);
         backdrop-filter: blur(22px);
+    }
+    .liquid-glass-panel__backdrop {
+        background:
+            radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.22), transparent 32%),
+            linear-gradient(160deg, rgba(18, 35, 57, 0.5), rgba(8, 14, 24, 0.34) 38%, rgba(28, 62, 104, 0.24) 100%);
+        box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.04),
+            0 18px 34px rgba(0, 0, 0, 0.3);
     }
     .filtro-grupo input,
     .filtro-grupo select,
@@ -586,6 +766,15 @@ footer a { color: var(--usp-azul); }
     }
     footer a {
         color: #9fd0ff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .liquid-glass-panel__backdrop,
+    .liquid-glass-panel__glow,
+    .liquid-glass-panel__specular {
+        transition: none;
+        transform: none;
     }
 }
 
@@ -673,6 +862,18 @@ footer a { color: var(--usp-azul); }
         padding: 0.32rem 0.52rem;
         font-size: 0.68rem;
     }
+    .editais-oficiais {
+        padding: 1rem;
+    }
+    .editais-oficiais__header,
+    .edital-oficial-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .edital-oficial-item .pdf-link {
+        width: 100%;
+        justify-content: center;
+    }
     .grafico-card {
         padding: 0.95rem 0.85rem;
         border-radius: 16px;
@@ -740,6 +941,16 @@ footer a { color: var(--usp-azul); }
 </head>
 <body>
 
+<svg class="liquid-glass-defs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+        <filter id="liquid-glass-displacement-filter" x="-14%" y="-14%" width="128%" height="128%" color-interpolation-filters="sRGB">
+            <feImage id="liquid-glass-map-image" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="glassMap"></feImage>
+            <feDisplacementMap id="liquid-glass-displacement" in="SourceGraphic" in2="glassMap" scale="24" xChannelSelector="R" yChannelSelector="G" result="glassDistorted"></feDisplacementMap>
+            <feComposite in="glassDistorted" in2="SourceAlpha" operator="in"></feComposite>
+        </filter>
+    </defs>
+</svg>
+
 <header>
     <h1>Notas de Corte — Transferência Externa USP (FUVEST)</h1>
     <p>Dashboard interativo com dados dos editais oficiais (2019–2026)</p>
@@ -753,6 +964,9 @@ footer a { color: var(--usp-azul); }
 <div class="container">
     <!-- Filtros -->
     <div class="filtros">
+        <div class="liquid-glass-panel__backdrop" aria-hidden="true"></div>
+        <div class="liquid-glass-panel__glow" aria-hidden="true"></div>
+        <div class="liquid-glass-panel__specular" aria-hidden="true"></div>
         <div class="filtro-grupo filtro-grupo--curso">
             <label for="busca">Curso</label>
             <input type="text" id="busca" placeholder="Digite o curso desejado..." autocomplete="off">
@@ -788,6 +1002,7 @@ footer a { color: var(--usp-azul); }
 let DADOS = {};
 let ESTADO = { cursoSelecionado: "", resultados: [], atribs: new Map(), filtrados: [], breakdowns: {} };
 let LISTA_CURSOS = [];
+let EDITAIS_TRANSFERENCIA = null;
 
 const LOC_CONHECIDAS = [
     "São Paulo Quadrilátero", "São Paulo Leste",
@@ -820,6 +1035,276 @@ const PDFS_OFICIAIS = {
 // ==========================================================================
 function normalizar(t) {
     return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+function escaparHtml(texto) {
+    return String(texto ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+function compactarNormalizado(texto) {
+    return normalizar(String(texto ?? "")).replace(/\s+/g, " ").trim();
+}
+function clamp(valor, minimo, maximo) {
+    return Math.min(maximo, Math.max(minimo, valor));
+}
+function lerp(inicio, fim, progresso) {
+    return inicio + (fim - inicio) * progresso;
+}
+function smoothstep(minimo, maximo, valor) {
+    if (minimo === maximo) return valor < minimo ? 0 : 1;
+    const t = clamp((valor - minimo) / (maximo - minimo), 0, 1);
+    return t * t * (3 - 2 * t);
+}
+function normalizarVetor3(x, y, z) {
+    const mag = Math.hypot(x, y, z) || 1;
+    return [x / mag, y / mag, z / mag];
+}
+function produtoEscalar3(a, b) {
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+}
+function refratarVetor(incidente, normal, eta) {
+    const cosi = clamp(produtoEscalar3(incidente, normal), -1, 1);
+    const k = 1 - eta * eta * (1 - cosi * cosi);
+    if (k < 0) {
+        return [
+            incidente[0] - 2 * cosi * normal[0],
+            incidente[1] - 2 * cosi * normal[1],
+            incidente[2] - 2 * cosi * normal[2]
+        ];
+    }
+    return [
+        eta * incidente[0] - (eta * cosi + Math.sqrt(k)) * normal[0],
+        eta * incidente[1] - (eta * cosi + Math.sqrt(k)) * normal[1],
+        eta * incidente[2] - (eta * cosi + Math.sqrt(k)) * normal[2]
+    ];
+}
+function distanciaSignedRoundedRect(x, y, meioW, meioH, raio) {
+    const dx = Math.abs(x) - (meioW - raio);
+    const dy = Math.abs(y) - (meioH - raio);
+    const ax = Math.max(dx, 0);
+    const ay = Math.max(dy, 0);
+    return Math.hypot(ax, ay) + Math.min(Math.max(dx, dy), 0) - raio;
+}
+function amostrarPerfilBorda(x, y, params) {
+    const px = x - params.width / 2;
+    const py = y - params.height / 2;
+    const sd = distanciaSignedRoundedRect(px, py, params.halfWidth, params.halfHeight, params.radius);
+    const bandaInterna = 1 - smoothstep(0, params.edgeWidth, -sd);
+    const bandaExterna = 1 - smoothstep(0, params.edgeWidth * 0.72, sd);
+    const shell = Math.pow(clamp(bandaInterna * bandaExterna, 0, 1), 1.15);
+    const distanciaCentro = Math.hypot(px / Math.max(params.halfWidth, 1), py / Math.max(params.halfHeight, 1));
+    const viesCanto = 0.82 + 0.28 * Math.pow(clamp(distanciaCentro, 0, 1), 1.5);
+    return shell * viesCanto;
+}
+function calcularNormalSuperficie(x, y, params) {
+    const eps = params.sampleStep;
+    const alturaL = amostrarPerfilBorda(x - eps, y, params);
+    const alturaR = amostrarPerfilBorda(x + eps, y, params);
+    const alturaT = amostrarPerfilBorda(x, y - eps, params);
+    const alturaB = amostrarPerfilBorda(x, y + eps, params);
+    return normalizarVetor3(
+        -(alturaR - alturaL) * params.heightScale,
+        -(alturaB - alturaT) * params.heightScale,
+        1
+    );
+}
+function gerarMapaDeslocamentoSnell({ width, height, radius, edgeWidth, ior }) {
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d", { willReadFrequently: true });
+    const imageData = ctx.createImageData(width, height);
+    const pixels = imageData.data;
+    const params = {
+        width,
+        height,
+        halfWidth: width / 2,
+        halfHeight: height / 2,
+        radius,
+        edgeWidth,
+        sampleStep: 1.15,
+        heightScale: 8.4
+    };
+    const incidente = [0, 0, -1];
+
+    for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+            const idx = (y * width + x) * 4;
+            const altura = amostrarPerfilBorda(x + 0.5, y + 0.5, params);
+            const normal = calcularNormalSuperficie(x + 0.5, y + 0.5, params);
+            const refratado = refratarVetor(incidente, normal, 1 / ior);
+            const profundidade = Math.max(0.34, Math.abs(refratado[2]));
+            const deslocX = clamp(refratado[0] / profundidade, -1, 1) * (0.58 + altura * 0.68);
+            const deslocY = clamp(refratado[1] / profundidade, -1, 1) * (0.58 + altura * 0.68);
+
+            pixels[idx] = Math.round(clamp(128 + deslocX * 127, 0, 255));
+            pixels[idx + 1] = Math.round(clamp(128 + deslocY * 127, 0, 255));
+            pixels[idx + 2] = 128;
+            pixels[idx + 3] = Math.round(72 + altura * 183);
+        }
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+    return canvas.toDataURL("image/png");
+}
+
+const LIQUID_GLASS_STATE = {
+    panel: null,
+    mapImage: null,
+    displacement: null,
+    reducedMotionMedia: window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null,
+    reducedMotion: false,
+    currentX: 0.5,
+    currentY: 0.32,
+    targetX: 0.5,
+    targetY: 0.32,
+    currentEnergy: 0.35,
+    targetEnergy: 0.35,
+    baseScale: 24,
+    animationFrame: 0,
+    resizeFrame: 0,
+    resizeObserver: null,
+    lastMapKey: ""
+};
+
+function aplicarVarsLiquidGlass() {
+    const state = LIQUID_GLASS_STATE;
+    if (!state.panel) return;
+    const px = `${(state.currentX * 100).toFixed(2)}%`;
+    const py = `${(state.currentY * 100).toFixed(2)}%`;
+    state.panel.style.setProperty("--glass-pointer-x", px);
+    state.panel.style.setProperty("--glass-pointer-y", py);
+    state.panel.style.setProperty("--glass-highlight-opacity", state.currentEnergy.toFixed(3));
+    state.panel.style.setProperty("--glass-tilt-x", `${((state.currentX - 0.5) * 9).toFixed(2)}px`);
+    state.panel.style.setProperty("--glass-tilt-y", `${((state.currentY - 0.5) * 7).toFixed(2)}px`);
+}
+function animarLiquidGlass() {
+    const state = LIQUID_GLASS_STATE;
+    state.animationFrame = 0;
+    state.currentX = lerp(state.currentX, state.targetX, state.reducedMotion ? 0.2 : 0.18);
+    state.currentY = lerp(state.currentY, state.targetY, state.reducedMotion ? 0.2 : 0.18);
+    state.currentEnergy = lerp(state.currentEnergy, state.targetEnergy, state.reducedMotion ? 0.18 : 0.14);
+    aplicarVarsLiquidGlass();
+
+    const aindaAnimando =
+        Math.abs(state.currentX - state.targetX) > 0.001 ||
+        Math.abs(state.currentY - state.targetY) > 0.001 ||
+        Math.abs(state.currentEnergy - state.targetEnergy) > 0.0015;
+
+    if (aindaAnimando) {
+        state.animationFrame = requestAnimationFrame(animarLiquidGlass);
+    }
+}
+function solicitarFrameLiquidGlass() {
+    if (!LIQUID_GLASS_STATE.animationFrame) {
+        LIQUID_GLASS_STATE.animationFrame = requestAnimationFrame(animarLiquidGlass);
+    }
+}
+function atualizarTargetLiquidGlass(evento) {
+    const state = LIQUID_GLASS_STATE;
+    if (!state.panel || state.reducedMotion) return;
+    const rect = state.panel.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    state.targetX = clamp((evento.clientX - rect.left) / rect.width, 0, 1);
+    state.targetY = clamp((evento.clientY - rect.top) / rect.height, 0, 1);
+    const dx = state.targetX - 0.5;
+    const dy = state.targetY - 0.5;
+    const proximidadeCentro = 1 - clamp(Math.hypot(dx, dy) / 0.72, 0, 1);
+    state.targetEnergy = 0.54 + proximidadeCentro * 0.28;
+    solicitarFrameLiquidGlass();
+}
+function agendarAtualizacaoMapaLiquidGlass() {
+    const state = LIQUID_GLASS_STATE;
+    if (state.resizeFrame) return;
+    state.resizeFrame = requestAnimationFrame(() => {
+        state.resizeFrame = 0;
+        atualizarMapaLiquidGlass();
+    });
+}
+function atualizarMapaLiquidGlass() {
+    const state = LIQUID_GLASS_STATE;
+    if (!state.panel || !state.mapImage || !state.displacement) return;
+    const rect = state.panel.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
+    const larguraMapa = Math.round(clamp(rect.width * 0.72, 140, 360));
+    const alturaMapa = Math.round(clamp(rect.height * 1.2, 110, 240));
+    const radiusCss = parseFloat(getComputedStyle(state.panel).borderTopLeftRadius) || 18;
+    const raioMapa = clamp(radiusCss * (larguraMapa / rect.width), 12, larguraMapa * 0.22);
+    const edgeWidth = clamp(Math.min(larguraMapa, alturaMapa) * 0.14, 12, 28);
+    const mapKey = [larguraMapa, alturaMapa, raioMapa.toFixed(1), edgeWidth.toFixed(1)].join("|");
+    if (mapKey === state.lastMapKey) return;
+
+    const dataUrl = gerarMapaDeslocamentoSnell({
+        width: larguraMapa,
+        height: alturaMapa,
+        radius: raioMapa,
+        edgeWidth,
+        ior: 1.18
+    });
+    state.mapImage.setAttribute("href", dataUrl);
+    state.baseScale = clamp(Math.min(rect.width, rect.height) * 0.11, 18, 34);
+    state.displacement.setAttribute("scale", state.baseScale.toFixed(2));
+    state.lastMapKey = mapKey;
+}
+function definirMotionLiquidGlass() {
+    const state = LIQUID_GLASS_STATE;
+    state.reducedMotion = Boolean(state.reducedMotionMedia?.matches);
+    if (state.reducedMotion) {
+        state.targetX = 0.5;
+        state.targetY = 0.28;
+        state.targetEnergy = 0.4;
+        solicitarFrameLiquidGlass();
+    }
+}
+function inicializarLiquidGlass() {
+    const panel = document.querySelector(".filtros");
+    const mapImage = document.getElementById("liquid-glass-map-image");
+    const displacement = document.getElementById("liquid-glass-displacement");
+    if (!panel || !mapImage || !displacement) return;
+
+    LIQUID_GLASS_STATE.panel = panel;
+    LIQUID_GLASS_STATE.mapImage = mapImage;
+    LIQUID_GLASS_STATE.displacement = displacement;
+    definirMotionLiquidGlass();
+    aplicarVarsLiquidGlass();
+    atualizarMapaLiquidGlass();
+    solicitarFrameLiquidGlass();
+
+    panel.addEventListener("pointerenter", atualizarTargetLiquidGlass, { passive: true });
+    panel.addEventListener("pointermove", atualizarTargetLiquidGlass, { passive: true });
+    panel.addEventListener("pointerleave", () => {
+        if (LIQUID_GLASS_STATE.reducedMotion) return;
+        LIQUID_GLASS_STATE.targetX = 0.5;
+        LIQUID_GLASS_STATE.targetY = 0.28;
+        LIQUID_GLASS_STATE.targetEnergy = 0.38;
+        solicitarFrameLiquidGlass();
+    }, { passive: true });
+
+    if (typeof ResizeObserver !== "undefined") {
+        LIQUID_GLASS_STATE.resizeObserver = new ResizeObserver(() => {
+            LIQUID_GLASS_STATE.lastMapKey = "";
+            agendarAtualizacaoMapaLiquidGlass();
+        });
+        LIQUID_GLASS_STATE.resizeObserver.observe(panel);
+    } else {
+        window.addEventListener("resize", () => {
+            LIQUID_GLASS_STATE.lastMapKey = "";
+            agendarAtualizacaoMapaLiquidGlass();
+        }, { passive: true });
+    }
+
+    if (LIQUID_GLASS_STATE.reducedMotionMedia) {
+        const handler = () => definirMotionLiquidGlass();
+        if (typeof LIQUID_GLASS_STATE.reducedMotionMedia.addEventListener === "function") {
+            LIQUID_GLASS_STATE.reducedMotionMedia.addEventListener("change", handler);
+        } else if (typeof LIQUID_GLASS_STATE.reducedMotionMedia.addListener === "function") {
+            LIQUID_GLASS_STATE.reducedMotionMedia.addListener(handler);
+        }
+    }
 }
 function tokenizarBusca(texto) {
     return normalizar(texto)
@@ -919,7 +1404,7 @@ function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, 
 }
 function renderLinkPdfAno(ano) {
     const href = PDFS_OFICIAIS[String(ano)];
-    if (!href) return "â€”";
+    if (!href) return "—";
     const titulo = `Abrir listagem oficial da FUVEST de ${ano}`;
     return `<a class="pdf-link" href="${href}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
         <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -927,6 +1412,83 @@ function renderLinkPdfAno(ano) {
         </svg>
         <span>PDF</span>
     </a>`;
+}
+
+function renderLinkRecursoOficial(recurso) {
+    if (!recurso?.url) return "";
+    const titulo = recurso.kind === "pdf" ? "Abrir PDF oficial" : "Abrir página oficial";
+    const rotulo = recurso.kind === "pdf" ? "PDF oficial" : "Página oficial";
+    return `<a class="pdf-link" href="${escaparHtml(recurso.url)}" target="_blank" rel="noopener" title="${titulo}" aria-label="${titulo}">
+        <svg class="pdf-link__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <path d="M10 3.25v7m0 0 2.75-2.75M10 10.25 7.25 7.5M4.25 13v1.5c0 .69.56 1.25 1.25 1.25h9c.69 0 1.25-.56 1.25-1.25V13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>${rotulo}</span>
+    </a>`;
+}
+
+function resolverEditaisOficiais(registros, atribs) {
+    const entries = Array.isArray(EDITAIS_TRANSFERENCIA?.entries) ? EDITAIS_TRANSFERENCIA.entries : [];
+    if (!entries.length || !registros?.length) return [];
+
+    const cursos = registros.map(([, r]) => compactarNormalizado(r.curso));
+    const locs = new Set(
+        registros
+            .map(([, r]) => compactarNormalizado(atribs.get(r)?.loc || LOC_PADRAO_IMPLICITA))
+            .filter(Boolean)
+    );
+
+    return entries
+        .filter(entry => {
+            const patterns = Array.isArray(entry.patterns) ? entry.patterns.map(compactarNormalizado).filter(Boolean) : [];
+            if (!patterns.length) return false;
+
+            const casaCurso = cursos.some(curso => patterns.some(pattern => curso.includes(pattern)));
+            if (!casaCurso) return false;
+
+            const entryLocs = Array.isArray(entry.locations) ? entry.locations.map(compactarNormalizado).filter(Boolean) : [];
+            if (!entryLocs.length) return true;
+            return entryLocs.some(loc => locs.has(loc));
+        })
+        .sort((a, b) => (a.institution || "").localeCompare(b.institution || "", "pt-BR", { sensitivity: "base" }));
+}
+
+function renderBlocoEditaisOficiais(nomeCurso, editais) {
+    if (!editais?.length) return "";
+
+    const processoAtual = EDITAIS_TRANSFERENCIA?.current_process;
+    let html = `<section class="editais-oficiais">
+        <div class="editais-oficiais__header">
+            <div>
+                <span class="editais-oficiais__eyebrow">Editais oficiais</span>
+                <h3>Referências oficiais para ${escaparHtml(nomeCurso)}</h3>
+            </div>
+            ${processoAtual ? renderLinkRecursoOficial(processoAtual) : ""}
+        </div>
+        <p class="editais-oficiais__intro">Universo restrito às ofertas do Anexo II da Transferência Externa USP 2026/2027. Quando a unidade ainda não publicou a edição nova, mantemos o recurso oficial específico mais recente encontrado.</p>
+        <div class="editais-oficiais__grade">`;
+
+    for (const entry of editais) {
+        const recurso = entry.resource || {};
+        const tags = [];
+        if (Array.isArray(entry.locations)) {
+            tags.push(...entry.locations);
+        }
+        if (recurso.edition) {
+            tags.push(recurso.edition);
+        }
+
+        html += `<article class="edital-oficial-item">
+            <div class="edital-oficial-item__info">
+                <h4>${escaparHtml(entry.institution || "Unidade USP")}</h4>
+                <p class="edital-oficial-item__descricao">${escaparHtml(recurso.title || "Recurso oficial da unidade")}</p>
+                ${tags.length ? `<div class="edital-oficial-item__tags">${tags.map(tag => `<span class="edital-oficial-item__tag">${escaparHtml(tag)}</span>`).join("")}</div>` : ""}
+            </div>
+            ${renderLinkRecursoOficial(recurso)}
+        </article>`;
+    }
+
+    html += `</div></section>`;
+    return html;
 }
 
 function segmentarNomeCurso(nome) {
@@ -1320,7 +1882,7 @@ function mostrarEstadoDashboard(html) {
     container.innerHTML = html;
 }
 
-function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
+function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns, editaisOficiais = []) {
     destruirCharts();
     const container = document.getElementById("dashboard");
     container.classList.remove("vazio");
@@ -1330,6 +1892,7 @@ function renderDashboard(nomeCurso, dados, filtroTexto, breakdowns) {
 
 
     let html = "";
+    html += renderBlocoEditaisOficiais(nomeCurso, editaisOficiais);
 
     // Tabela
     html += `<div class="tabela-container"><table>
@@ -1711,7 +2274,8 @@ function aplicarFiltrosEDashboard() {
         breakdowns["Período"] = bd;
     }
 
-    renderDashboard(nomeCurso, dados, filtroTexto, breakdowns);
+    const editaisOficiais = resolverEditaisOficiais(filtrados, ESTADO.atribs);
+    renderDashboard(nomeCurso, dados, filtroTexto, breakdowns, editaisOficiais);
 }
 
 // ==========================================================================
@@ -1758,10 +2322,20 @@ if (MEDIA_DARK_MODE) {
     }
 }
 
-fetch("dados.json")
-    .then(r => r.json())
-    .then(d => {
+inicializarLiquidGlass();
+
+Promise.all([
+    fetch("dados.json").then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status} ao carregar dados.json`);
+        return r.json();
+    }),
+    fetch("editais_transferencia.json")
+        .then(r => (r.ok ? r.json() : null))
+        .catch(() => null)
+])
+    .then(([d, editais]) => {
         DADOS = d;
+        EDITAIS_TRANSFERENCIA = editais;
         // Preencher sugestões com cursos únicos de busca
         const basesMap = new Map();
         for (const regs of Object.values(d)) {
