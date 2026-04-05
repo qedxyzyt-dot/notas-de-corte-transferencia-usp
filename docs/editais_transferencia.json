@@ -13,7 +13,15 @@
       "slug": "each-gestao-ambiental",
       "institution": "Escola de Artes, Ciências e Humanidades (EACH)",
       "locations": ["São Paulo"],
-      "patterns": ["gestao ambiental"],
+      "patterns": [
+        "gestao ambiental",
+        "curso de graduacao em gerontologia",
+        "bacharelado em biotecnologia",
+        "gestao de politicas publicas",
+        "licenciatura em ciencias da natureza",
+        "bacharelado em textil e moda"
+      ],
+      "description": "Página institucional da EACH para a transferência externa mais recente encontrada. Mesmo quando nem todos os cursos têm oferta na edição vigente, ela ajuda o usuário a acompanhar futuras publicações oficiais da unidade.",
       "resource": {
         "title": "Transferência Externa 2025/2026 da EACH",
         "url": "https://portal2025.each.usp.br/avisos-graduacao/transferencia-externa-2025-26/",
@@ -26,8 +34,12 @@
       "institution": "Escola de Comunicações e Artes (ECA)",
       "locations": ["São Paulo"],
       "patterns": [
+        "artes cenicas",
+        "biblioteconomia",
         "relacoes publicas",
         "biblioteconomia e ciencia da informacao",
+        "biblioteconomia e ciencias da informacao",
+        "comunicacao social",
         "educomunicacao",
         "musica",
         "turismo"
@@ -108,6 +120,38 @@
       }
     },
     {
+      "slug": "fcfrp-farmacia",
+      "institution": "Faculdade de Ciências Farmacêuticas de Ribeirão Preto (FCFRP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["farmacia"],
+      "description": "Página institucional da FCFRP que explica as formas de ingresso e a lógica anual da transferência externa, inclusive quando a unidade informa ausência de vagas em determinada edição.",
+      "resource": {
+        "title": "Como Estudar na FCFRP/USP — seção de Transferência Externa",
+        "url": "https://fcfrp.usp.br/pt/ensino/graduacao/como-estudar/#:~:text=TRANSFER%C3%8ANCIAS&text=TRANSFER%C3%8ANCIA%20EXTERNA%20(TE)",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "fea-transferencia-externa",
+      "institution": "Faculdade de Economia, Administração e Contabilidade (FEA)",
+      "locations": ["São Paulo"],
+      "patterns": [
+        "administracao",
+        "economia",
+        "ciencias contabeis",
+        "bacharelado em ciencias atuariais",
+        "ciencias atuariais"
+      ],
+      "description": "Página oficial da FEA para transferência externa. Mesmo sem vagas em 2025/2026, ela é um ponto institucional robusto para acompanhar novas publicações da unidade.",
+      "resource": {
+        "title": "Transferência Externa da FEA",
+        "url": "https://www.fea.usp.br/administracao/graduacao/transferencia/externas#:~:text=processo%20de%20transfer%C3%AAncia%20externa&text=A%20FEA%20n%C3%A3o%20disponibilizar%C3%A1%20vaga%20para%20este%20processo",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
       "slug": "fe-pedagogia",
       "institution": "Faculdade de Educação (FE)",
       "locations": ["São Paulo"],
@@ -170,10 +214,14 @@
       "patterns": [
         "ciencias biologicas",
         "ciencia da computacao",
+        "ciencias da computacao",
         "fisica medica",
         "matematica aplicada a negocios",
         "quimica",
+        "educacao artistica",
+        "biblioteconomia",
         "biblioteconomia e ciencia da informacao",
+        "biblioteconomia e ciencias da informacao",
         "musica",
         "pedagogia"
       ],
@@ -213,6 +261,19 @@
           "link_label": "Página institucional"
         }
       ]
+    },
+    {
+      "slug": "fmbru-medicina",
+      "institution": "Faculdade de Medicina de Bauru (FMBRU)",
+      "locations": ["Bauru"],
+      "patterns": ["medicina"],
+      "description": "Página institucional da FMBRU sobre formas de ingresso. Ela informa explicitamente a existência da transferência externa e orienta o acompanhamento anual do edital.",
+      "resource": {
+        "title": "Como ingressar no curso de Medicina da FMBRU",
+        "url": "https://fmbru.usp.br/como-ingressar-no-curso/#:~:text=Transfer%C3%AAncia%20externa%3A&text=A%20divulga%C3%A7%C3%A3o%20do%20edital%20de%20transfer%C3%AAncia%20ocorre%20anualmente",
+        "kind": "page",
+        "edition": "institucional"
+      }
     },
     {
       "slug": "fm-fonoaudiologia",
@@ -341,6 +402,19 @@
       }
     },
     {
+      "slug": "fsp-saude-publica",
+      "institution": "Faculdade de Saúde Pública (FSP)",
+      "locations": ["São Paulo"],
+      "patterns": ["saude publica"],
+      "description": "Página institucional da FSP sobre formas de ingresso do Bacharelado em Saúde Pública, com referência explícita aos processos anuais de transferência interna e externa.",
+      "resource": {
+        "title": "Formas de Ingresso do Bacharelado em Saúde Pública",
+        "url": "https://www.fsp.usp.br/site/graduacao/mostra/792#:~:text=Os%20prazos%20dos%20processos%20de%20transfer%C3%AAncia%20interna%20e%20externa",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
       "slug": "fzea-cursos",
       "institution": "Faculdade de Zootecnia e Engenharia de Alimentos (FZEA)",
       "locations": ["Pirassununga"],
@@ -365,6 +439,19 @@
       }
     },
     {
+      "slug": "icb-ciencias-biomedicas",
+      "institution": "Instituto de Ciências Biomédicas (ICB)",
+      "locations": ["São Paulo"],
+      "patterns": ["ciencias biomedicas"],
+      "description": "Página de graduação do ICB voltada às transferências do curso de Ciências Biomédicas, com explicação institucional e histórico de processos seletivos.",
+      "resource": {
+        "title": "Transferências — Ciências Biomédicas (ICB)",
+        "url": "https://ww3.icb.usp.br/gra/transferencias-biomedicas/#:~:text=Transfer%C3%AAncia%20externa%3A%20de%20outras%20institui%C3%A7%C3%B5es&text=Processo%20Seletivo%202026",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
       "slug": "eel-engenharias",
       "institution": "Escola de Engenharia de Lorena (EEL)",
       "locations": ["Lorena"],
@@ -373,7 +460,8 @@
         "engenharia bioquimica",
         "engenharia de materiais",
         "engenharia fisica",
-        "engenharia quimica"
+        "engenharia quimica",
+        "engenharia de producao"
       ],
       "resource": {
         "title": "Comissão de Graduação da EEL — seção de editais",
@@ -386,7 +474,15 @@
       "slug": "eesc-engenharias",
       "institution": "Escola de Engenharia de São Carlos (EESC)",
       "locations": ["São Carlos"],
-      "patterns": ["engenharia ambiental", "engenharia civil", "engenharia de materiais e manufatura"],
+      "patterns": [
+        "engenharia ambiental",
+        "engenharia civil",
+        "engenharia de materiais e manufatura",
+        "engenharia aeronautica",
+        "engenharia eletrica",
+        "engenharia mecanica",
+        "engenharia mecatronica"
+      ],
       "resource": {
         "title": "Transferência Externa da EESC",
         "url": "https://eesc.usp.br/graduacao/ingresso.php?anchor=transferencia",
@@ -397,14 +493,18 @@
     {
       "slug": "ep-poli",
       "institution": "Escola Politécnica (Poli)",
-      "locations": ["São Paulo"],
+      "locations": ["São Paulo", "Santos"],
       "patterns": [
         "engenharia civil",
-        "engenharia de minas/petroleo",
+        "engenharia de minas",
+        "engenharia de petroleo",
         "engenharia eletrica",
-        "engenharia naval e oceanica",
+        "engenharia naval",
+        "engenharia oceanica",
         "engenharia ambiental",
-        "engenharia de materiais/metalurgica e nuclear",
+        "engenharia de materiais",
+        "engenharia metalurgica",
+        "engenharia nuclear",
         "engenharia quimica",
         "engenharia mecanica",
         "engenharia mecatronica"
@@ -420,7 +520,7 @@
       "slug": "iag-geofisica-meteorologia",
       "institution": "Instituto de Astronomia, Geofísica e Ciências Atmosféricas (IAG)",
       "locations": ["São Paulo"],
-      "patterns": ["geofisica", "meteorologia"],
+      "patterns": ["astronomia", "geofisica", "meteorologia"],
       "resource": {
         "title": "Edital de Transferência Externa do IAG",
         "url": "https://www.iag.usp.br/noticias/edital-de-transferencia-externa-iag-2025-26#:~:text=edital%20de%20transfer%C3%AAncia%20externa%20IAG%202025/26&text=Consulte%20o%20edital%20e%20anexos",
@@ -432,7 +532,14 @@
       "slug": "icmc-exatas",
       "institution": "Instituto de Ciências Matemáticas e de Computação (ICMC)",
       "locations": ["São Carlos"],
-      "patterns": ["estatistica e ciencia de dados", "matematica"],
+      "patterns": [
+        "ciencia de dados",
+        "estatistica",
+        "estatistica e ciencia de dados",
+        "ciencias de computacao",
+        "sistemas de informacao",
+        "matematica"
+      ],
       "resource": {
         "title": "Seção de Transferência Externa do ICMC",
         "url": "https://icmc.usp.br/graduacao/ingresso#7:~:text=Transfer%C3%AAncia%20externa",
@@ -468,7 +575,7 @@
       "slug": "igc-geociencias",
       "institution": "Instituto de Geociências (IGc)",
       "locations": ["São Paulo"],
-      "patterns": ["geociencias e educacao ambiental"],
+      "patterns": ["geociencias e educacao ambiental", "geologia"],
       "resource": {
         "title": "Transferência Externa do IGc",
         "url": "https://igc.usp.br/graduacao/transferencia/#:~:text=Transfer%C3%AAncia%20Externa&text=Edital%20ser%C3%A1%20disponibilizado%20em%20abril%20de%202026",
@@ -510,6 +617,103 @@
         "url": "https://www.iau.usp.br/graduacao/transferencia/#:~:text=Transfer%C3%AAncia%20Externa&text=Processo%20de%20Transfer%C3%AAncia%20Externa%202025",
         "kind": "page",
         "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fau-arquitetura-design",
+      "institution": "Faculdade de Arquitetura e Urbanismo e de Design (FAU)",
+      "locations": ["São Paulo"],
+      "patterns": ["arquitetura e urbanismo", "design"],
+      "description": "Página da Secretaria da Comissão de Graduação da FAU com informações institucionais sobre transferências interna e externa, inclusive nos anos em que não houve vagas.",
+      "resource": {
+        "title": "Secretaria da Comissão de Graduação da FAU — seção de Transferências",
+        "url": "https://www.fau.usp.br/ensino/graduacao/apoio-ao-aluno/secretaria-cg/#:~:text=Transfer%C3%AAncias&text=EXTERNA%20-%20de%20outras%20institui%C3%A7%C3%B5es",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "fearp-transferencia-externa",
+      "institution": "Faculdade de Economia, Administração e Contabilidade de Ribeirão Preto (FEA-RP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["ciencias contabeis"],
+      "description": "Página oficial da FEA-RP para a transferência externa, com publicação anual de orientações e editais da unidade.",
+      "resource": {
+        "title": "Transferência Externa da FEA-RP",
+        "url": "https://fearp.usp.br/grd/venha-estudar-na-fearp/transferencia-externa#:~:text=processo%20de%20transfer%C3%AAncia%20externa%20ocorre%20uma%20vez%20ao%20ano",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "fflch-geografia",
+      "institution": "Faculdade de Filosofia, Letras e Ciências Humanas (FFLCH)",
+      "locations": ["São Paulo"],
+      "patterns": ["geografia"],
+      "description": "Página de transferências da FFLCH com bloco específico para Geografia e histórico de editais e resultados da transferência externa.",
+      "resource": {
+        "title": "Transferências da FFLCH — seção de Geografia",
+        "url": "https://graduacao.fflch.usp.br/transferencias#:~:text=GEOGRAFIA&text=Edital%20de%202%C2%AA%20fase%20da%20Transfer%C3%AAncia%20Externa%202024/2025",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "fmrp-transferencia-externa",
+      "institution": "Faculdade de Medicina de Ribeirão Preto (FMRP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": [
+        "medicina",
+        "fisioterapia",
+        "fonoaudiologia",
+        "nutricao e metabolismo",
+        "terapia ocupacional"
+      ],
+      "description": "Página oficial da Comissão de Graduação da FMRP para transferência externa, com quadro por curso e atualização anual de vagas, editais e resultados.",
+      "resource": {
+        "title": "Transferência Externa da FMRP",
+        "url": "https://cg.fmrp.usp.br/pb/venha-estudar-na-fmrp-usp/transferencia-externa/#:~:text=PROCESSO%20SELETIVO%20DE%20TRANSFER%C3%8ANCIA%20EXTERNA%20PARA%20INGRESSO%20EM%202026",
+        "kind": "page",
+        "edition": "2025/2026"
+      }
+    },
+    {
+      "slug": "fmvz-medicina-veterinaria",
+      "institution": "Faculdade de Medicina Veterinária e Zootecnia (FMVZ)",
+      "locations": ["São Paulo", "Pirassununga"],
+      "patterns": ["medicina veterinaria"],
+      "description": "Página institucional da FMVZ sobre transferências, útil como referência oficial mesmo quando a unidade informa ausência de vagas na edição mais recente.",
+      "resource": {
+        "title": "Transferências na FMVZ",
+        "url": "https://graduacao.fmvz.usp.br/transferencia/",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "forp-odontologia",
+      "institution": "Faculdade de Odontologia de Ribeirão Preto (FORP)",
+      "locations": ["Ribeirão Preto"],
+      "patterns": ["odontologia"],
+      "description": "Página oficial de formas de ingresso da FORP, com orientação institucional sobre transferência externa e indicação de acompanhamento anual via site da unidade e FUVEST.",
+      "resource": {
+        "title": "Formas de Ingresso da FORP",
+        "url": "https://www.forp.usp.br/?page_id=3703#:~:text=%C3%89%20permitida%2C%20tamb%C3%A9m%2C%20a%20transfer%C3%AAncia%20de%20alunos%20de%20outras%20institui%C3%A7%C3%B5es&text=Para%20maiores%20informa%C3%A7%C3%B5es%20sobre%20a%20transfer%C3%AAncia%20externa%2C%20consulte%20o%20site%20da%20FUVEST",
+        "kind": "page",
+        "edition": "institucional"
+      }
+    },
+    {
+      "slug": "iq-usp-quimica",
+      "institution": "Instituto de Química (IQUSP)",
+      "locations": ["São Paulo"],
+      "patterns": ["quimica", "bacharelado e licenciatura em quimica"],
+      "description": "Página institucional de formas de ingresso do IQUSP, usada como ponto estável para acompanhar a transferência externa do curso de Química em São Paulo.",
+      "resource": {
+        "title": "Formas de Ingresso do IQUSP",
+        "url": "https://www.iq.usp.br/portaliqusp/?q=pt-br%2Fformas-de-ingresso#:~:text=Transfer%C3%AAncia%20Externa",
+        "kind": "page",
+        "edition": "institucional"
       }
     },
     {
