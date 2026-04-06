@@ -1188,6 +1188,7 @@ const pluginRotulosBarras = {
         if (!config?.display) return;
         const tema = obterTemaGraficos();
         const { ctx, chartArea } = chart;
+        if (!chartArea) return;
         const formatter = typeof config.formatter === "function"
             ? config.formatter
             : value => fmtBrFlex(value);
@@ -1206,8 +1207,12 @@ const pluginRotulosBarras = {
             if (meta.hidden) return;
 
             meta.data.forEach((barra, dataIndex) => {
-                const valor = Number(dataset.data[dataIndex]);
+                const bruto = dataset.data[dataIndex];
+                if (bruto === null || bruto === undefined) return;
+
+                const valor = Number(bruto);
                 if (!Number.isFinite(valor)) return;
+                if (!barra || barra.hidden || barra.skip) return;
 
                 const texto = formatter(valor, {
                     chart,
@@ -1218,9 +1223,19 @@ const pluginRotulosBarras = {
                 });
                 if (!texto) return;
 
-                const pos = barra.tooltipPosition();
-                const y = Math.max(pos.y - offset, chartArea.top + fontSize + 2);
-                ctx.fillText(String(texto), pos.x, y);
+                const props = typeof barra.getProps === "function"
+                    ? barra.getProps(["x", "y", "base"], true)
+                    : barra;
+                const x = Number(props?.x);
+                const y = Number(props?.y);
+                const base = Number(props?.base);
+                if (!Number.isFinite(x) || !Number.isFinite(y)) return;
+
+                const yRotulo = Number.isFinite(base) && base < y
+                    ? Math.min(y + fontSize + offset, chartArea.bottom - 2)
+                    : Math.max(y - offset, chartArea.top + fontSize + 2);
+
+                ctx.fillText(String(texto), x, yRotulo);
             });
         });
 
