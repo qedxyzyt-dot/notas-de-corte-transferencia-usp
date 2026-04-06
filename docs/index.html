@@ -1144,7 +1144,7 @@ const pluginRotulosBarras = {
         const formatter = config.format === "int"
             ? value => fmtInt(value)
             : value => fmtBrFlex(value);
-        const offset = Number.isFinite(config.offset) ? config.offset : 8;
+        const offset = Number.isFinite(config.offset) ? config.offset : 10;
         const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
         const fontWeight = config.fontWeight || "700";
 
@@ -1194,7 +1194,63 @@ const pluginRotulosBarras = {
         ctx.restore();
     }
 };
-Chart.register(pluginRotulosBarras);
+const pluginRotulosLinhas = {
+    id: "rotulosLinhas",
+    afterDatasetsDraw(chart) {
+        if (chart.config.type !== "line") return;
+        const config = chart.options?.plugins?.rotulosLinhas;
+        if (!config?.display) return;
+        const tema = obterTemaGraficos();
+        const { ctx, chartArea } = chart;
+        if (!chartArea) return;
+        const formatter = config.format === "flex"
+            ? value => fmtBrFlex(value)
+            : value => fmtInt(value);
+        const offset = Number.isFinite(config.offset) ? config.offset : 10;
+        const stackStep = Number.isFinite(config.stackStep) ? config.stackStep : 10;
+        const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
+        const fontWeight = config.fontWeight || "700";
+
+        ctx.save();
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+        ctx.font = `${fontWeight} ${fontSize}px Manrope, sans-serif`;
+
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+            const meta = chart.getDatasetMeta(datasetIndex);
+            if (meta.hidden) return;
+
+            const corDataset = Array.isArray(dataset.pointBackgroundColor)
+                ? dataset.pointBackgroundColor[0]
+                : (dataset.pointBackgroundColor || dataset.borderColor || tema.texto);
+            ctx.fillStyle = corDataset || tema.texto;
+
+            meta.data.forEach((ponto, dataIndex) => {
+                const bruto = dataset.data[dataIndex];
+                if (bruto === null || bruto === undefined) return;
+
+                const valor = Number(bruto);
+                if (!Number.isFinite(valor)) return;
+                if (!ponto || ponto.hidden || ponto.skip) return;
+
+                const props = typeof ponto.getProps === "function"
+                    ? ponto.getProps(["x", "y"], true)
+                    : ponto;
+                const x = Number(props?.x);
+                const y = Number(props?.y);
+                if (!Number.isFinite(x) || !Number.isFinite(y)) return;
+
+                const texto = formatter(valor);
+                const deslocamento = offset + ((datasetIndex % 3) * stackStep);
+                const yRotulo = Math.max(y - deslocamento, chartArea.top + fontSize + 2);
+                ctx.fillText(String(texto), x, yRotulo);
+            });
+        });
+
+        ctx.restore();
+    }
+};
+Chart.register(pluginRotulosBarras, pluginRotulosLinhas);
 
 function opcoesChartBase({
     yTitle = "",
@@ -1203,15 +1259,24 @@ function opcoesChartBase({
     tooltipLabel = null,
     yTickCallback = null,
     showBarValueLabels = false,
-    barValueFormat = "flex"
+    barValueFormat = "flex",
+    barValueOffset = 10,
+    showLineValueLabels = false,
+    lineValueFormat = "int",
+    lineValueOffset = 10,
+    lineValueStackStep = 10
 } = {}) {
     const tema = obterTemaGraficos();
+    const topPadding = Math.max(
+        showBarValueLabels ? barValueOffset + 18 : 0,
+        showLineValueLabels ? lineValueOffset + (lineValueStackStep * 2) + 12 : 0
+    );
     const options = {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
             padding: {
-                top: showBarValueLabels ? 20 : 0
+                top: topPadding
             }
         },
         plugins: {
@@ -1237,7 +1302,14 @@ function opcoesChartBase({
             },
             rotulosBarras: {
                 display: showBarValueLabels,
-                format: barValueFormat
+                format: barValueFormat,
+                offset: barValueOffset
+            },
+            rotulosLinhas: {
+                display: showLineValueLabels,
+                format: lineValueFormat,
+                offset: lineValueOffset,
+                stackStep: lineValueStackStep
             }
         },
         scales: {
@@ -1247,7 +1319,7 @@ function opcoesChartBase({
             },
             y: {
                 beginAtZero,
-                grace: showBarValueLabels ? "12%" : 0,
+                grace: showLineValueLabels ? "22%" : (showBarValueLabels ? "12%" : 0),
                 ticks: { color: tema.texto },
                 grid: { color: tema.grade, drawBorder: false }
             }
@@ -2038,7 +2110,13 @@ function buildChartNotas(anos, dados) {
                 { label: "Nota máxima (convocado)", data: notasMax, borderColor: "#27ae60", backgroundColor: "rgba(39,174,96,0.1)", pointRadius: 5, pointBackgroundColor: "#27ae60", pointStyle: "rectRot", tension: 0.2, fill: false }
             ]
         },
-        options: opcoesChartBase({ yTitle: "Pontos" })
+        options: opcoesChartBase({
+            yTitle: "Pontos",
+            showLineValueLabels: true,
+            lineValueFormat: "int",
+            lineValueOffset: 10,
+            lineValueStackStep: 12
+        })
     });
 }
 function buildChartConc(anos, dados) {
@@ -2055,7 +2133,8 @@ function buildChartConc(anos, dados) {
             tooltipLabel: formatarTooltipNumero,
             yTickCallback: value => fmtBrFlex(value),
             showBarValueLabels: true,
-            barValueFormat: "flex"
+            barValueFormat: "flex",
+            barValueOffset: 10
         })
     });
 }
@@ -2077,7 +2156,8 @@ function buildChartVI(anos, dados) {
             yTitle: "Quantidade",
             beginAtZero: true,
             showBarValueLabels: true,
-            barValueFormat: "int"
+            barValueFormat: "int",
+            barValueOffset: 10
         })
     });
 }
@@ -2177,7 +2257,8 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
                     tooltipLabel: formatarTooltipNumero,
                     yTickCallback: value => fmtBrFlex(value),
                     showBarValueLabels: true,
-                    barValueFormat: "flex"
+                    barValueFormat: "flex",
+                    barValueOffset: 14
                 })
             });
         }
@@ -2207,7 +2288,13 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
             charts[`${bdId}-notas`] = new Chart(ctxN, {
                 type: "line",
                 data: { labels: anos, datasets },
-                options: opcoesChartBase({ yTitle: "Pontos" })
+                options: opcoesChartBase({
+                    yTitle: "Pontos",
+                    showLineValueLabels: true,
+                    lineValueFormat: "int",
+                    lineValueOffset: 10,
+                    lineValueStackStep: 12
+                })
             });
         }
     });
