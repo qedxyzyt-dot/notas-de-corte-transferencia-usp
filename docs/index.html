@@ -1208,13 +1208,16 @@ const pluginRotulosLinhas = {
             : value => fmtInt(value);
         const offset = Number.isFinite(config.offset) ? config.offset : 10;
         const stackStep = Number.isFinite(config.stackStep) ? config.stackStep : 10;
-        const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
+        const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 12;
         const fontWeight = config.fontWeight || "700";
+        const outlineColor = config.outlineColor || lerVarCss("--card", "#ffffff");
+        const outlineWidth = Number.isFinite(config.outlineWidth) ? config.outlineWidth : 4;
 
         ctx.save();
         ctx.textAlign = "center";
         ctx.textBaseline = "bottom";
         ctx.font = `${fontWeight} ${fontSize}px Manrope, sans-serif`;
+        ctx.lineJoin = "round";
 
         chart.data.datasets.forEach((dataset, datasetIndex) => {
             const meta = chart.getDatasetMeta(datasetIndex);
@@ -1243,6 +1246,9 @@ const pluginRotulosLinhas = {
                 const texto = formatter(valor);
                 const deslocamento = offset + ((datasetIndex % 3) * stackStep);
                 const yRotulo = Math.max(y - deslocamento, chartArea.top + fontSize + 2);
+                ctx.strokeStyle = outlineColor;
+                ctx.lineWidth = outlineWidth;
+                ctx.strokeText(String(texto), x, yRotulo);
                 ctx.fillText(String(texto), x, yRotulo);
             });
         });
