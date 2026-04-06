@@ -1099,6 +1099,11 @@ function chaveBuscaTexto(texto) {
 function fmtBr(v, casas = 2) {
     return v.toFixed(casas).replace(".", ",");
 }
+function fmtInt(v) {
+    const num = Number(v);
+    if (!Number.isFinite(num)) return String(v);
+    return String(Math.round(num));
+}
 function fmtBrFlex(v) {
     const num = Number(v);
     if (!Number.isFinite(num)) return String(v);
