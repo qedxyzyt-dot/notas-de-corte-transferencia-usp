@@ -1189,8 +1189,8 @@ const pluginRotulosBarras = {
         const tema = obterTemaGraficos();
         const { ctx, chartArea } = chart;
         if (!chartArea) return;
-        const formatter = typeof config.formatter === "function"
-            ? config.formatter
+        const formatter = config.format === "int"
+            ? value => fmtInt(value)
             : value => fmtBrFlex(value);
         const offset = Number.isFinite(config.offset) ? config.offset : 8;
         const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
@@ -1251,7 +1251,7 @@ function opcoesChartBase({
     tooltipLabel = null,
     yTickCallback = null,
     showBarValueLabels = false,
-    barValueFormatter = null
+    barValueFormat = "flex"
 } = {}) {
     const tema = obterTemaGraficos();
     const options = {
@@ -1285,7 +1285,7 @@ function opcoesChartBase({
             },
             rotulosBarras: {
                 display: showBarValueLabels,
-                formatter: barValueFormatter
+                format: barValueFormat
             }
         },
         scales: {
@@ -2107,7 +2107,7 @@ function buildChartConc(anos, dados) {
             tooltipLabel: formatarTooltipNumero,
             yTickCallback: value => fmtBrFlex(value),
             showBarValueLabels: true,
-            barValueFormatter: value => fmtBrFlex(value)
+            barValueFormat: "flex"
         })
     });
 }
@@ -2122,7 +2122,7 @@ function buildChartVI(anos, dados) {
         showLegend: false,
         tooltipLabel: formatarTooltipNumero,
         showBarValueLabels: true,
-        barValueFormatter: value => fmtInt(value)
+        barValueFormat: "int"
     });
     optionsVagas.scales.y.ticks.color = "#27ae60";
     if (optionsVagas.scales.y.title) optionsVagas.scales.y.title.display = false;
@@ -2135,7 +2135,7 @@ function buildChartVI(anos, dados) {
         showLegend: false,
         tooltipLabel: formatarTooltipNumero,
         showBarValueLabels: true,
-        barValueFormatter: value => fmtInt(value)
+        barValueFormat: "int"
     });
     optionsInsc.scales.y.ticks.color = "#c0392b";
     if (optionsInsc.scales.y.title) optionsInsc.scales.y.title.display = false;
@@ -2305,7 +2305,7 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
                     tooltipLabel: formatarTooltipNumero,
                     yTickCallback: value => fmtBrFlex(value),
                     showBarValueLabels: true,
-                    barValueFormatter: value => fmtBrFlex(value)
+                    barValueFormat: "flex"
                 })
             });
         }
