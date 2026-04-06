@@ -1127,11 +1127,73 @@ function obterTemaGraficos() {
         tooltipTexto: lerVarCss("--chart-tooltip-text", "#f8fbff")
     };
 }
-function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, tooltipLabel = null, yTickCallback = null } = {}) {
+const pluginRotulosBarras = {
+    id: "rotulosBarras",
+    afterDatasetsDraw(chart) {
+        if (chart.config.type !== "bar") return;
+        const config = chart.options?.plugins?.rotulosBarras;
+        if (!config?.display) return;
+        const tema = obterTemaGraficos();
+        const { ctx, chartArea } = chart;
+        const formatter = typeof config.formatter === "function"
+            ? config.formatter
+            : value => fmtBrFlex(value);
+        const offset = Number.isFinite(config.offset) ? config.offset : 8;
+        const fontSize = Number.isFinite(config.fontSize) ? config.fontSize : 11;
+        const fontWeight = config.fontWeight || "700";
+
+        ctx.save();
+        ctx.fillStyle = config.color || tema.texto;
+        ctx.font = `${fontWeight} ${fontSize}px Manrope, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+            const meta = chart.getDatasetMeta(datasetIndex);
+            if (meta.hidden) return;
+
+            meta.data.forEach((barra, dataIndex) => {
+                const valor = Number(dataset.data[dataIndex]);
+                if (!Number.isFinite(valor)) return;
+
+                const texto = formatter(valor, {
+                    chart,
+                    dataset,
+                    datasetIndex,
+                    dataIndex,
+                    label: chart.data.labels?.[dataIndex]
+                });
+                if (!texto) return;
+
+                const pos = barra.tooltipPosition();
+                const y = Math.max(pos.y - offset, chartArea.top + fontSize + 2);
+                ctx.fillText(String(texto), pos.x, y);
+            });
+        });
+
+        ctx.restore();
+    }
+};
+Chart.register(pluginRotulosBarras);
+
+function opcoesChartBase({
+    yTitle = "",
+    beginAtZero = false,
+    showLegend = true,
+    tooltipLabel = null,
+    yTickCallback = null,
+    showBarValueLabels = false,
+    barValueFormatter = null
+} = {}) {
     const tema = obterTemaGraficos();
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+            padding: {
+                top: showBarValueLabels ? 20 : 0
+            }
+        },
         plugins: {
             legend: {
                 display: showLegend,
@@ -1152,6 +1214,10 @@ function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, 
                 titleColor: tema.tooltipTexto,
                 bodyColor: tema.tooltipTexto,
                 padding: 12
+            },
+            rotulosBarras: {
+                display: showBarValueLabels,
+                formatter: barValueFormatter
             }
         },
         scales: {
@@ -1161,6 +1227,7 @@ function opcoesChartBase({ yTitle = "", beginAtZero = false, showLegend = true, 
             },
             y: {
                 beginAtZero,
+                grace: showBarValueLabels ? "12%" : 0,
                 ticks: { color: tema.texto },
                 grid: { color: tema.grade, drawBorder: false }
             }
@@ -1966,7 +2033,9 @@ function buildChartConc(anos, dados) {
             beginAtZero: true,
             showLegend: false,
             tooltipLabel: formatarTooltipNumero,
-            yTickCallback: value => fmtBrFlex(value)
+            yTickCallback: value => fmtBrFlex(value),
+            showBarValueLabels: true,
+            barValueFormatter: value => fmtBrFlex(value)
         })
     });
 }
@@ -1984,7 +2053,12 @@ function buildChartVI(anos, dados) {
                 { label: "Inscritos", data: insc, backgroundColor: "rgba(192,57,43,0.6)", borderColor: "#c0392b", borderWidth: 1 }
             ]
         },
-        options: opcoesChartBase({ yTitle: "Quantidade", beginAtZero: true })
+        options: opcoesChartBase({
+            yTitle: "Quantidade",
+            beginAtZero: true,
+            showBarValueLabels: true,
+            barValueFormatter: value => fmtInt(value)
+        })
     });
 }
 
@@ -2081,7 +2155,9 @@ function renderBreakdown(categoria, nomeCurso, subcats) {
                     beginAtZero: true,
                     showLegend: false,
                     tooltipLabel: formatarTooltipNumero,
-                    yTickCallback: value => fmtBrFlex(value)
+                    yTickCallback: value => fmtBrFlex(value),
+                    showBarValueLabels: true,
+                    barValueFormatter: value => fmtBrFlex(value)
                 })
             });
         }
