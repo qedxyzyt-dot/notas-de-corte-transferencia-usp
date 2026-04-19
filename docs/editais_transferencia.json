@@ -1,5 +1,5 @@
 {
-  "last_reviewed_at": "2026-04-05",
+  "last_reviewed_at": "2026-04-19",
   "scope": "anexo_ii_transferencia_externa_usp_2026_2027",
   "selection_policy": "Sempre priorizar a página oficial mais atual da PRG USP (2026/2027). Quando a unidade ainda não publicou a edição nova, manter o edital ou página específica oficial mais recente encontrada, em geral 2025/2026. Para cursos fora da edição vigente, aceitar páginas institucionais úteis da unidade quando elas ajudarem o usuário a acompanhar futuras publicações oficiais.",
   "current_process": {
@@ -56,12 +56,30 @@
       "institution": "Escola de Educação Física e Esporte (EEFE)",
       "locations": ["São Paulo"],
       "patterns": ["educacao fisica"],
+      "description": "Edital retificado 2026/2027 da EEFE para Licenciatura em Educação Física, com a página institucional da unidade mantida como apoio para acompanhamento de comunicados.",
       "resource": {
-        "title": "Transferência Externa da EEFE",
-        "url": "https://www.eefe.usp.br/transferencia",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital retificado de Transferência Externa 2026/2027 da EEFE",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-de-trans-ext-2026-2027-retificado.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital retificado de Transferência Externa 2026/2027 da EEFE",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-de-trans-ext-2026-2027-retificado.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Transferência Externa da EEFE",
+          "url": "https://www.eefe.usp.br/transferencia",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página EEFE"
+        }
+      ]
     },
     {
       "slug": "eeferp-educacao-fisica",
@@ -80,12 +98,30 @@
       "institution": "Escola de Enfermagem de Ribeirão Preto (EERP)",
       "locations": ["Ribeirão Preto"],
       "patterns": ["enfermagem"],
+      "description": "Edital oficial 2026/2027 da EERP para Enfermagem, com a página institucional da unidade preservada para acompanhamento de publicações e resultados.",
       "resource": {
-        "title": "Formas de Ingresso da EERP — seção de Transferência Externa",
-        "url": "http://www.eerp.usp.br/formas-de-ingresso/#:~:text=Outras%20formas%20de%20ingresso%3A&text=TRANSFER%C3%8ANCIA%20EXTERNA",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital CG nº 01/2026 — Transferência Externa 2026/2027 da EERP",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_EERP-2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital CG nº 01/2026 — Transferência Externa 2026/2027 da EERP",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_EERP-2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Formas de Ingresso da EERP — seção de Transferência Externa",
+          "url": "http://www.eerp.usp.br/formas-de-ingresso/#:~:text=Outras%20formas%20de%20ingresso%3A&text=TRANSFER%C3%8ANCIA%20EXTERNA",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página EERP"
+        }
+      ]
     },
     {
       "slug": "esalq-transferencia",
@@ -100,12 +136,30 @@
         "ciencias economicas",
         "gestao ambiental"
       ],
+      "description": "Edital oficial da ESALQ para a segunda etapa da transferência externa 2026/2027, com a página institucional da graduação mantida como apoio.",
       "resource": {
-        "title": "Transferência na Graduação da ESALQ",
-        "url": "https://www.esalq.usp.br/graduacao/transferencia",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital de Transferência Externa 2026/2027 da ESALQ",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_ESALQ-2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital de Transferência Externa 2026/2027 da ESALQ",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_ESALQ-2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Transferência na Graduação da ESALQ",
+          "url": "https://www.esalq.usp.br/graduacao/transferencia",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página ESALQ"
+        }
+      ]
     },
     {
       "slug": "fcf-farmacia",
@@ -113,10 +167,10 @@
       "locations": ["São Paulo"],
       "patterns": ["farmacia"],
       "resource": {
-        "title": "Edital de Transferência Externa da FCF",
-        "url": "https://prg.usp.br/wp-content/uploads/Edital-Transf-EXTERNA-2025-para-o-curso-de-Farmacia-9013-ingresso-2026.pdf",
+        "title": "Edital de Transferência Externa 2026/2027 da FCF",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-Transf-EXTERNA-2026-2027-para-o-curso-de-Farmacia-9013-ingresso-2027.pdf",
         "kind": "pdf",
-        "edition": "2025/2026"
+        "edition": "2026/2027"
       }
     },
     {
@@ -225,12 +279,30 @@
         "musica",
         "pedagogia"
       ],
+      "description": "Edital retificado FFCLRP-SG 01/2026 da segunda etapa da transferência externa 2026/2027, que contempla Física Médica e os demais cursos com vagas listados pela unidade.",
       "resource": {
-        "title": "Informações acadêmicas da FFCLRP — seção de Transferência Externa",
-        "url": "https://www.ffclrp.usp.br/graduacoes/informacoesacademicas/graduacao_informacoes.php#:~:text=Transfer%C3%AAncia%20Externa%20%E2%80%93%202%C2%BA%20Semestre%20de%202025",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital FFCLRP-SG 01/2026 — Transferência Externa 2026/2027",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-Transferencia-Externa-2o-sem-2026-Retificado-Assinado-1.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital FFCLRP-SG 01/2026 — Transferência Externa 2026/2027",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-Transferencia-Externa-2o-sem-2026-Retificado-Assinado-1.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Informações acadêmicas da FFCLRP — seção de Transferência Externa",
+          "url": "https://www.ffclrp.usp.br/graduacoes/informacoesacademicas/graduacao_informacoes.php#:~:text=Transfer%C3%AAncia%20Externa%20%E2%80%93%202%C2%BA%20Semestre%20de%202025",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página FFCLRP"
+        }
+      ]
     },
     {
       "slug": "fm-fisioterapia",
@@ -406,25 +478,60 @@
       "institution": "Faculdade de Saúde Pública (FSP)",
       "locations": ["São Paulo"],
       "patterns": ["saude publica"],
-      "description": "Página institucional da FSP sobre formas de ingresso do Bacharelado em Saúde Pública, com referência explícita aos processos anuais de transferência interna e externa.",
+      "description": "Edital oficial 2026/2027 da FSP para o Bacharelado em Saúde Pública, com a página institucional do curso mantida como apoio.",
       "resource": {
-        "title": "Formas de Ingresso do Bacharelado em Saúde Pública",
-        "url": "https://www.fsp.usp.br/site/graduacao/mostra/792#:~:text=Os%20prazos%20dos%20processos%20de%20transfer%C3%AAncia%20interna%20e%20externa",
-        "kind": "page",
-        "edition": "institucional"
-      }
+        "title": "Edital de Transferência Externa 2026/2027 da FSP — Saúde Pública",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_FSP-2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital de Transferência Externa 2026/2027 da FSP — Saúde Pública",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-de-Transferencia-Externa_FSP-2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Formas de Ingresso do Bacharelado em Saúde Pública",
+          "url": "https://www.fsp.usp.br/site/graduacao/mostra/792#:~:text=Os%20prazos%20dos%20processos%20de%20transfer%C3%AAncia%20interna%20e%20externa",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página institucional"
+        }
+      ]
     },
     {
       "slug": "fzea-cursos",
       "institution": "Faculdade de Zootecnia e Engenharia de Alimentos (FZEA)",
       "locations": ["Pirassununga"],
       "patterns": ["engenharia de alimentos", "engenharia de biossistemas", "zootecnia"],
+      "description": "Edital oficial 2026/2027 da FZEA para Engenharia de Alimentos, Engenharia de Biossistemas e Zootecnia, com a página da graduação mantida como apoio.",
       "resource": {
-        "title": "Seção de Transferência Externa da FZEA",
-        "url": "https://graduacao.fzea.usp.br/servicos-oferecidos#h.gdemime282s5:~:text=Formas%20de%20Ingresso%20na%20FZEA%20e%20Transfer%C3%AAncias&text=Transfer%C3%AAncia%20EXTERNA",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital DVACAD/FZEA 10/2026 — Transferência Externa 2026/2027",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-FZEA-TransfExterna-2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital DVACAD/FZEA 10/2026 — Transferência Externa 2026/2027",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-FZEA-TransfExterna-2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Seção de Transferência Externa da FZEA",
+          "url": "https://graduacao.fzea.usp.br/servicos-oferecidos#h.gdemime282s5:~:text=Formas%20de%20Ingresso%20na%20FZEA%20e%20Transfer%C3%AAncias&text=Transfer%C3%AAncia%20EXTERNA",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página FZEA"
+        }
+      ]
     },
     {
       "slug": "ib-ciencias-biologicas",
@@ -460,14 +567,45 @@
         "engenharia bioquimica",
         "engenharia de materiais",
         "engenharia fisica",
-        "engenharia quimica",
-        "engenharia de producao"
+        "engenharia quimica"
       ],
+      "description": "Edital oficial 2026/2027 da EEL para os cursos atualmente listados pela unidade, com a página institucional mantida como apoio.",
+      "resource": {
+        "title": "Edital CG-EEL 001/2026 — Transferência Externa 2026/2027",
+        "url": "https://prg.usp.br/wp-content/uploads/EDITAL-DE-TRANSFERENCIA-EXTERNA-2_2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital CG-EEL 001/2026 — Transferência Externa 2026/2027",
+          "url": "https://prg.usp.br/wp-content/uploads/EDITAL-DE-TRANSFERENCIA-EXTERNA-2_2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Comissão de Graduação da EEL — seção de editais",
+          "url": "https://www.eel.usp.br/institucional/organizacao-administrativa/colegiados/comissao-de-graduacao#:~:text=Editais&text=TRANSFER%C3%8ANCIA%20EXTERNA",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página EEL"
+        }
+      ]
+    },
+    {
+      "slug": "eel-engenharia-de-producao",
+      "institution": "Escola de Engenharia de Lorena (EEL) — Engenharia de Produção",
+      "locations": ["Lorena"],
+      "patterns": ["engenharia de producao"],
+      "description": "Página institucional da Comissão de Graduação da EEL para acompanhar futuras publicações; o edital 2026/2027 divulgado pela PRG não lista Engenharia de Produção.",
       "resource": {
         "title": "Comissão de Graduação da EEL — seção de editais",
         "url": "https://www.eel.usp.br/institucional/organizacao-administrativa/colegiados/comissao-de-graduacao#:~:text=Editais&text=TRANSFER%C3%8ANCIA%20EXTERNA",
         "kind": "page",
-        "edition": "2025/2026"
+        "edition": "institucional",
+        "link_label": "Página EEL"
       }
     },
     {
@@ -509,12 +647,30 @@
         "engenharia mecanica",
         "engenharia mecatronica"
       ],
+      "description": "Edital oficial da Poli para a transferência externa 2026/2027, com a página institucional da unidade mantida como apoio.",
       "resource": {
-        "title": "Transferência Externa da Poli",
-        "url": "https://www.poli.usp.br/ensino/graduacao/transferencia-externa/",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital da Transferência Externa 2026/2027 da Poli",
+        "url": "https://prg.usp.br/wp-content/uploads/Edital-TE-final-com-anexo-1.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital da Transferência Externa 2026/2027 da Poli",
+          "url": "https://prg.usp.br/wp-content/uploads/Edital-TE-final-com-anexo-1.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Transferência Externa da Poli",
+          "url": "https://www.poli.usp.br/ensino/graduacao/transferencia-externa/",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página Poli"
+        }
+      ]
     },
     {
       "slug": "iag-geofisica-meteorologia",
@@ -564,12 +720,30 @@
       "institution": "Instituto de Matemática e Estatística (IME)",
       "locations": ["São Paulo"],
       "patterns": ["ciencia da computacao", "estatistica", "matematica"],
+      "description": "Edital oficial 2026/2027 do IME para Ciência da Computação, Estatística e Matemática, com a página institucional mantida como apoio.",
       "resource": {
-        "title": "Transferência Externa do IME",
-        "url": "https://www.ime.usp.br/graduacao/transferencia-externa/#:~:text=Transfer%C3%AAncia%20externa&text=EDITAL%20%E2%80%93%202%C2%AA%20ETAPA%20(SELE%C3%87%C3%83O)",
-        "kind": "page",
-        "edition": "2025/2026"
-      }
+        "title": "Edital de Transferência Externa 2026/2027 do IME",
+        "url": "https://prg.usp.br/wp-content/uploads/EDITAL-2026.pdf",
+        "kind": "pdf",
+        "edition": "2026/2027",
+        "link_label": "PDF oficial"
+      },
+      "resources": [
+        {
+          "title": "Edital de Transferência Externa 2026/2027 do IME",
+          "url": "https://prg.usp.br/wp-content/uploads/EDITAL-2026.pdf",
+          "kind": "pdf",
+          "edition": "2026/2027",
+          "link_label": "PDF oficial"
+        },
+        {
+          "title": "Transferência Externa do IME",
+          "url": "https://www.ime.usp.br/graduacao/transferencia-externa/#:~:text=Transfer%C3%AAncia%20externa&text=EDITAL%20%E2%80%93%202%C2%AA%20ETAPA%20(SELE%C3%87%C3%83O)",
+          "kind": "page",
+          "edition": "institucional",
+          "link_label": "Página IME"
+        }
+      ]
     },
     {
       "slug": "igc-geociencias",
@@ -669,12 +843,12 @@
         "nutricao e metabolismo",
         "terapia ocupacional"
       ],
-      "description": "Página oficial da Comissão de Graduação da FMRP para transferência externa, com quadro por curso e atualização anual de vagas, editais e resultados.",
+      "description": "Página oficial atual da Comissão de Graduação da FMRP para a transferência externa 2026/2027, com o quadro por curso e os encaminhamentos específicos da unidade.",
       "resource": {
         "title": "Transferência Externa da FMRP",
-        "url": "https://cg.fmrp.usp.br/pb/venha-estudar-na-fmrp-usp/transferencia-externa/#:~:text=PROCESSO%20SELETIVO%20DE%20TRANSFER%C3%8ANCIA%20EXTERNA%20PARA%20INGRESSO%20EM%202026",
+        "url": "https://cg.fmrp.usp.br/pb/transferencias/transferencia-externa/",
         "kind": "page",
-        "edition": "2025/2026"
+        "edition": "2026/2027"
       }
     },
     {
