@@ -247,6 +247,7 @@ header p {
 }
 .select-custom__trigger {
     width: 100%;
+    min-height: 3rem;
     padding: 0.72rem 0.9rem;
     padding-right: 2.7rem;
     border: 1px solid var(--borda);
@@ -369,6 +370,7 @@ header p {
     box-shadow: var(--sombra-flutuante);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    padding: 0.25rem;
 }
 .lista-sugestoes[hidden] { display: none; }
 .sugestao-btn {
@@ -376,16 +378,17 @@ header p {
     width: 100%;
     border: 0;
     background: transparent;
-    padding: 0.7rem 0.85rem;
+    padding: 0.72rem 0.82rem;
     text-align: left;
-    font-size: 0.88rem;
+    font-size: 1rem;
     line-height: 1.35;
     color: var(--texto);
     cursor: pointer;
     white-space: normal;
+    border-radius: 10px;
 }
 .sugestao-btn + .sugestao-btn {
-    border-top: 1px solid #eef1f4;
+    border-top: 1px solid var(--borda-suave);
 }
 .sugestao-btn:hover, .sugestao-btn:focus {
     background: var(--usp-azul-claro);
@@ -1279,14 +1282,18 @@ footer a { color: var(--usp-azul); }
 .comparacao__slot-campo input,
 .comparacao__slot-campo select,
 .comparacao__select-trigger {
-    padding: 0.55rem 0.7rem;
+    min-height: 3rem;
+    padding: 0.72rem 0.9rem;
     border: 1px solid var(--borda);
-    border-radius: 10px;
-    font-size: 0.92rem;
+    border-radius: 12px;
+    font-size: 1rem;
     background: linear-gradient(180deg, var(--input-bg), var(--input-bg-2));
     color: var(--texto);
     width: 100%;
-    line-height: 1.3;
+    line-height: 1.4;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 .comparacao__select {
     position: relative;
@@ -1312,28 +1319,47 @@ footer a { color: var(--usp-azul); }
     white-space: nowrap;
 }
 .comparacao__select-icon {
-    width: 0.9rem;
-    height: 0.9rem;
+    width: 1rem;
+    height: 1rem;
     flex: 0 0 auto;
     color: #566f92;
     transition: transform 0.18s ease;
 }
+.comparacao__select-trigger:focus-visible {
+    outline: none;
+    border-color: var(--cmp-cor, var(--usp-azul));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
+}
 .comparacao__select.is-open .comparacao__select-trigger {
     border-color: var(--cmp-cor, var(--usp-azul));
-    box-shadow: 0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
 }
 .comparacao__select.is-open .comparacao__select-icon {
     transform: rotate(180deg);
 }
 .comparacao__dropdown {
     z-index: 110;
-    max-height: 14rem;
+    max-height: 18rem;
 }
 .comparacao__select-menu {
     padding: 0.25rem;
 }
 .comparacao__select-option {
     border-radius: 10px;
+}
+.comparacao__select-option + .comparacao__select-option {
+    border-top: 0;
+}
+.comparacao__select-option:focus,
+.comparacao__select-option:focus-visible {
+    outline: none !important;
+    border-color: transparent;
+    box-shadow: none !important;
+    background: var(--usp-azul-claro);
 }
 .comparacao__select-option.is-selected {
     background: var(--usp-azul-claro);
@@ -1357,7 +1383,9 @@ footer a { color: var(--usp-azul); }
 .comparacao__slot-campo select:focus {
     outline: none;
     border-color: var(--cmp-cor, var(--usp-azul));
-    box-shadow: 0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
 }
 .comparacao__slot-msg {
     font-size: 0.78rem;
@@ -3436,7 +3464,15 @@ function cmpSelecionarCurso(idx, nome) {
     cmpFecharMenus();
     cmpRenderSlots();
     cmpRender();
-    document.getElementById(`cmp-curso-${idx}`)?.focus();
+    const input = document.getElementById(`cmp-curso-${idx}`);
+    if (input) {
+        input.dataset.cmpSuprimirSugestoes = "1";
+        input.focus({ preventScroll: true });
+        requestAnimationFrame(() => {
+            delete input.dataset.cmpSuprimirSugestoes;
+            cmpFecharMenus();
+        });
+    }
 }
 
 function cmpRenderSugestoesCurso(input) {
@@ -3495,6 +3531,7 @@ function cmpAtacharEventosSlots() {
             cmpRenderSugestoesCurso(input);
         });
         input.addEventListener("focus", () => {
+            if (input.dataset.cmpSuprimirSugestoes === "1") return;
             cmpRenderSugestoesCurso(input);
         });
         input.addEventListener("keydown", e => {
