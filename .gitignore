@@ -9,3 +9,4 @@ venv/
 relatorio_*.pdf
 _debug_tex.*
 out/
+.claude/

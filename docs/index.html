@@ -1117,6 +1117,299 @@ footer a { color: var(--usp-azul); }
         font-size: 0.64rem;
     }
 }
+
+/* Comparação de cursos */
+.comparacao {
+    margin: 0 0 1.5rem;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: var(--surface-panel);
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+}
+.comparacao[open] { background: var(--surface-emphasis); }
+.comparacao__summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.85rem;
+    row-gap: 0.18rem;
+    align-items: center;
+    padding: 1rem 1.2rem;
+    user-select: none;
+}
+.comparacao__summary::-webkit-details-marker { display: none; }
+.comparacao__summary::marker { display: none; }
+.comparacao__summary:hover { background: var(--usp-azul-claro); }
+.comparacao__summary:focus-visible {
+    outline: 3px solid rgba(0, 74, 141, 0.28);
+    outline-offset: -3px;
+}
+.comparacao__summary-badge {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background: var(--usp-azul);
+    color: #fff;
+    font-family: var(--fonte-display);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.32rem 0.6rem;
+    border-radius: 999px;
+    box-shadow: 0 6px 14px rgba(0, 74, 141, 0.24);
+}
+.comparacao__summary-title {
+    grid-column: 2;
+    grid-row: 1;
+    font-family: var(--fonte-display);
+    font-size: 1.04rem;
+    font-weight: 800;
+    color: var(--usp-azul);
+    letter-spacing: -0.01em;
+}
+.comparacao__summary-desc {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.88rem;
+    color: var(--texto-sec);
+}
+.comparacao__summary-chevron {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 1.05rem;
+    height: 1.05rem;
+    color: var(--usp-azul);
+    transition: transform 0.18s ease;
+}
+.comparacao[open] .comparacao__summary-chevron { transform: rotate(180deg); }
+.comparacao__body {
+    padding: 0 1.2rem 1.2rem;
+    border-top: 1px solid var(--borda-suave);
+}
+.comparacao__intro {
+    font-size: 0.92rem;
+    color: var(--texto-sec);
+    margin: 0.95rem 0 0.85rem;
+}
+.comparacao__slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+.comparacao__slot {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 0.85rem 0.95rem;
+    border: 1px solid var(--borda-suave);
+    border-radius: 14px;
+    background: var(--card);
+    border-top: 3px solid var(--cmp-cor, var(--usp-azul));
+}
+.comparacao__slot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.comparacao__slot-rotulo {
+    font-family: var(--fonte-display);
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--cmp-cor, var(--usp-azul));
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.comparacao__slot-remover {
+    border: 0;
+    background: transparent;
+    color: var(--texto-sec);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.45rem;
+    border-radius: 8px;
+}
+.comparacao__slot-remover:hover {
+    background: rgba(192, 57, 43, 0.1);
+    color: var(--vermelho);
+}
+.comparacao__slot-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+}
+.comparacao__slot-campo label {
+    font-family: var(--fonte-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--texto-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.comparacao__slot-campo input,
+.comparacao__slot-campo select {
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    font-size: 0.92rem;
+    background: linear-gradient(180deg, var(--input-bg), var(--input-bg-2));
+    color: var(--texto);
+    width: 100%;
+    line-height: 1.3;
+}
+.comparacao__slot-campo select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    padding-right: 2.2rem;
+    background-image:
+        linear-gradient(180deg, var(--input-bg), var(--input-bg-2)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23566f92' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, right 0.7rem center;
+    background-size: auto, 0.85rem 0.85rem;
+}
+.comparacao__slot-campo input:focus,
+.comparacao__slot-campo select:focus {
+    outline: none;
+    border-color: var(--cmp-cor, var(--usp-azul));
+    box-shadow: 0 0 0 3px rgba(0, 74, 141, 0.14);
+}
+.comparacao__slot-msg {
+    font-size: 0.78rem;
+    color: var(--vermelho);
+    min-height: 0.95rem;
+}
+.comparacao__add {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.95rem;
+    border: 1px dashed var(--subtle-button-border);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--usp-azul);
+    font-family: var(--fonte-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.comparacao__add:hover {
+    background: var(--subtle-button-bg-hover);
+    border-color: var(--subtle-button-border-hover);
+}
+.comparacao__add[hidden] { display: none; }
+.comparacao__resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+.comparacao__resultados:empty { display: none; }
+.comparacao__placeholder {
+    text-align: center;
+    color: var(--texto-sec);
+    font-size: 0.95rem;
+    padding: 1.4rem 1rem;
+    border: 1px dashed rgba(0, 74, 141, 0.18);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.5);
+}
+.comparacao__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.75rem;
+}
+.comparacao__card {
+    border: 1px solid var(--borda-suave);
+    border-left: 4px solid var(--cmp-cor, var(--usp-azul));
+    border-radius: 12px;
+    background: var(--card);
+    padding: 0.75rem 0.95rem;
+    box-shadow: var(--sombra-card);
+}
+.comparacao__card-titulo {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    color: var(--texto);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.25;
+}
+.comparacao__card-meta {
+    font-size: 0.78rem;
+    color: var(--texto-sec);
+    margin-bottom: 0.45rem;
+}
+.comparacao__card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 0.6rem;
+}
+.comparacao__card-stat-rotulo {
+    font-size: 0.68rem;
+    color: var(--texto-sec);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.comparacao__card-stat-valor {
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    color: var(--cmp-cor, var(--usp-azul));
+    font-size: 1.02rem;
+}
+.comparacao__charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+}
+.comparacao__alerta {
+    background: rgba(230, 126, 34, 0.12);
+    border: 1px solid rgba(230, 126, 34, 0.32);
+    color: #8a4f10;
+    padding: 0.6rem 0.85rem;
+    border-radius: 10px;
+    font-size: 0.86rem;
+}
+.comparacao__tabela th.cmp-curso-1 { background: rgba(0, 74, 141, 0.85); }
+.comparacao__tabela th.cmp-curso-2 { background: rgba(192, 57, 43, 0.85); }
+.comparacao__tabela th.cmp-curso-3 { background: rgba(39, 174, 96, 0.85); }
+@media (prefers-color-scheme: dark) {
+    .comparacao__alerta {
+        background: rgba(230, 126, 34, 0.18);
+        color: #ffd0a0;
+    }
+    .comparacao__placeholder { background: rgba(255, 255, 255, 0.04); }
+    .comparacao__slot,
+    .comparacao__card { background: rgba(20, 31, 47, 0.6); }
+    .comparacao__slot-campo select {
+        color-scheme: dark;
+        background-image:
+            linear-gradient(180deg, var(--input-bg), var(--input-bg-2)),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23bdd8ff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    }
+    .comparacao__slot-campo select option { background: #182536; color: #eef5ff; }
+}
+@media (max-width: 700px) {
+    .comparacao__summary {
+        padding: 0.85rem 0.95rem;
+        column-gap: 0.6rem;
+    }
+    .comparacao__summary-title { font-size: 0.96rem; }
+    .comparacao__summary-desc { font-size: 0.82rem; }
+    .comparacao__body { padding: 0 0.95rem 1rem; }
+    .comparacao__charts { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -1171,6 +1464,25 @@ footer a { color: var(--usp-azul); }
     <div id="dashboard" class="vazio">
         <p>Digite ao menos duas letras do curso desejado para visualizar os dados.</p>
     </div>
+
+    <!-- Comparação de cursos -->
+    <details id="comparacao" class="comparacao">
+        <summary class="comparacao__summary" aria-label="Abrir o painel de comparação de cursos">
+            <span class="comparacao__summary-badge">Novo</span>
+            <span class="comparacao__summary-title">Comparar cursos</span>
+            <span class="comparacao__summary-desc">Compare lado a lado as métricas históricas de até 3 cursos, com filtros próprios para cada um.</span>
+            <svg class="comparacao__summary-chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </summary>
+        <div class="comparacao__body">
+            <p class="comparacao__intro">Cada slot tem filtros próprios de localização e período. Os dados são exibidos sobrepostos para facilitar a comparação.</p>
+            <datalist id="comparacao-cursos-datalist"></datalist>
+            <div id="comparacao-slots" class="comparacao__slots"></div>
+            <button type="button" id="comparacao-add" class="comparacao__add" hidden>+ Adicionar 3º curso</button>
+            <div id="comparacao-resultados" class="comparacao__resultados"></div>
+        </div>
+    </details>
 </div>
 </main>
 
@@ -2842,11 +3154,390 @@ function aplicarFiltrosEDashboard() {
 }
 
 // ==========================================================================
+// Comparação de cursos
+// ==========================================================================
+const CMP_CORES = ["#004A8D", "#c0392b", "#27ae60"];
+const CMP_CORES_FILL = ["rgba(0,74,141,0.12)", "rgba(192,57,43,0.12)", "rgba(39,174,96,0.12)"];
+const CMP_MAX_SLOTS = 3;
+const CMP = {
+    visiveis: 2,
+    slots: [
+        { nome: "", loc: "__all__", per: "__all__" },
+        { nome: "", loc: "__all__", per: "__all__" },
+        { nome: "", loc: "__all__", per: "__all__" }
+    ],
+    charts: {}
+};
+
+function cmpDestruirCharts() {
+    Object.values(CMP.charts).forEach(c => { try { c.destroy(); } catch (_) {} });
+    CMP.charts = {};
+}
+
+function cmpAtualizarDatalist() {
+    const dl = document.getElementById("comparacao-cursos-datalist");
+    if (!dl) return;
+    dl.innerHTML = "";
+    for (const nome of LISTA_CURSOS) {
+        const opt = document.createElement("option");
+        opt.value = nome;
+        dl.appendChild(opt);
+    }
+}
+
+function cmpResolverNome(termo) {
+    const limpo = (termo || "").trim();
+    if (!limpo) return null;
+    const termoChave = chaveBuscaTexto(limpo);
+    const exato = LISTA_CURSOS.find(nome => chaveBuscaTexto(nome) === termoChave);
+    if (exato) return exato;
+    const tnorm = normalizar(limpo);
+    const aproximado = LISTA_CURSOS.find(nome => normalizar(nome) === tnorm);
+    if (aproximado) return aproximado;
+    return null;
+}
+
+function cmpDadosSlot(slot) {
+    const nome = cmpResolverNome(slot.nome);
+    if (!nome) return null;
+    const resultados = buscarCursosPorRotulo(DADOS, nome);
+    if (!resultados.length) return null;
+    const atribs = inferirAtributos(resultados);
+    return { nome, resultados, atribs };
+}
+
+function cmpAplicarFiltrosSlot(slot, base) {
+    if (!base) return [];
+    let filtrados = base.resultados;
+    if (slot.loc !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const loc = base.atribs.get(r)?.loc;
+            return loc === slot.loc || !loc;
+        });
+    }
+    if (slot.per !== "__all__") {
+        filtrados = filtrados.filter(([, r]) => {
+            const per = base.atribs.get(r)?.per;
+            return per === slot.per || !per;
+        });
+    }
+    return filtrados;
+}
+
+function cmpOpcoesFiltro(base, campo, rotuloTodos) {
+    const set = {};
+    if (base) {
+        for (const [, r] of base.resultados) {
+            const valor = base.atribs.get(r)?.[campo];
+            if (valor) set[normalizar(valor)] = valor;
+        }
+    }
+    return [
+        { value: "__all__", label: rotuloTodos },
+        ...Object.values(set).sort().map(v => ({ value: v, label: v }))
+    ];
+}
+
+function cmpRenderSlots() {
+    const cont = document.getElementById("comparacao-slots");
+    if (!cont) return;
+    cont.innerHTML = "";
+    for (let i = 0; i < CMP.visiveis; i++) {
+        const slot = CMP.slots[i];
+        const cor = CMP_CORES[i];
+        const base = cmpDadosSlot(slot);
+        const opcoesLoc = cmpOpcoesFiltro(base, "loc", "Todas as localizações");
+        const opcoesPer = cmpOpcoesFiltro(base, "per", "Todos os períodos");
+        if (!opcoesLoc.some(o => o.value === slot.loc)) slot.loc = "__all__";
+        if (!opcoesPer.some(o => o.value === slot.per)) slot.per = "__all__";
+        const msg = slot.nome && !base
+            ? `Curso "${escaparHtml(slot.nome)}" não encontrado.`
+            : "";
+        const card = document.createElement("div");
+        card.className = "comparacao__slot";
+        card.style.setProperty("--cmp-cor", cor);
+        card.innerHTML = `
+            <div class="comparacao__slot-header">
+                <span class="comparacao__slot-rotulo">Curso ${i + 1}</span>
+                ${i >= 2 ? `<button type="button" class="comparacao__slot-remover" data-cmp-remove="${i}" aria-label="Remover este curso">Remover</button>` : ""}
+            </div>
+            <div class="comparacao__slot-campo">
+                <label for="cmp-curso-${i}">Curso</label>
+                <input id="cmp-curso-${i}" data-cmp-idx="${i}" data-cmp-field="nome" list="comparacao-cursos-datalist" placeholder="Digite o curso..." value="${escaparHtml(slot.nome)}" autocomplete="off">
+            </div>
+            <div class="comparacao__slot-campo">
+                <label for="cmp-loc-${i}">Localização</label>
+                <select id="cmp-loc-${i}" data-cmp-idx="${i}" data-cmp-field="loc">
+                    ${opcoesLoc.map(o => `<option value="${escaparHtml(o.value)}"${o.value === slot.loc ? " selected" : ""}>${escaparHtml(o.label)}</option>`).join("")}
+                </select>
+            </div>
+            <div class="comparacao__slot-campo">
+                <label for="cmp-per-${i}">Período</label>
+                <select id="cmp-per-${i}" data-cmp-idx="${i}" data-cmp-field="per">
+                    ${opcoesPer.map(o => `<option value="${escaparHtml(o.value)}"${o.value === slot.per ? " selected" : ""}>${escaparHtml(o.label)}</option>`).join("")}
+                </select>
+            </div>
+            <div class="comparacao__slot-msg">${msg}</div>
+        `;
+        cont.appendChild(card);
+    }
+    const btnAdd = document.getElementById("comparacao-add");
+    if (btnAdd) btnAdd.hidden = CMP.visiveis >= CMP_MAX_SLOTS;
+    cmpAtacharEventosSlots();
+}
+
+function cmpAtacharEventosSlots() {
+    document.querySelectorAll("[data-cmp-remove]").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const idx = Number(btn.dataset.cmpRemove);
+            CMP.slots[idx] = { nome: "", loc: "__all__", per: "__all__" };
+            CMP.visiveis = Math.max(2, CMP.visiveis - 1);
+            cmpRenderSlots();
+            cmpRender();
+        });
+    });
+    document.querySelectorAll(".comparacao__slot input[data-cmp-field='nome']").forEach(input => {
+        input.addEventListener("change", () => {
+            const idx = Number(input.dataset.cmpIdx);
+            CMP.slots[idx].nome = input.value.trim();
+            CMP.slots[idx].loc = "__all__";
+            CMP.slots[idx].per = "__all__";
+            cmpRenderSlots();
+            cmpRender();
+        });
+        input.addEventListener("input", () => {
+            const idx = Number(input.dataset.cmpIdx);
+            CMP.slots[idx].nome = input.value.trim();
+        });
+    });
+    document.querySelectorAll(".comparacao__slot select[data-cmp-field]").forEach(sel => {
+        sel.addEventListener("change", () => {
+            const idx = Number(sel.dataset.cmpIdx);
+            const field = sel.dataset.cmpField;
+            CMP.slots[idx][field] = sel.value;
+            cmpRender();
+        });
+    });
+}
+
+function cmpRender() {
+    cmpDestruirCharts();
+    const cont = document.getElementById("comparacao-resultados");
+    if (!cont) return;
+
+    const series = [];
+    for (let i = 0; i < CMP.visiveis; i++) {
+        const slot = CMP.slots[i];
+        if (!slot.nome) continue;
+        const base = cmpDadosSlot(slot);
+        if (!base) continue;
+        const filtrados = cmpAplicarFiltrosSlot(slot, base);
+        if (!filtrados.length) continue;
+        const dados = consolidar(filtrados);
+        if (!Object.keys(dados).length) continue;
+        series.push({
+            idx: i,
+            slot,
+            nome: base.nome,
+            dados,
+            cor: CMP_CORES[i],
+            corFill: CMP_CORES_FILL[i]
+        });
+    }
+
+    if (!series.length) {
+        cont.innerHTML = `<div class="comparacao__placeholder">Selecione cursos nos campos acima para visualizar a comparação.</div>`;
+        return;
+    }
+
+    const anosSet = new Set();
+    for (const s of series) {
+        for (const ano of Object.keys(s.dados)) anosSet.add(Number(ano));
+    }
+    const anos = [...anosSet].sort((a, b) => a - b);
+
+    let html = `<div class="comparacao__cards">${series.map(cmpRenderCard).join("")}</div>`;
+
+    const temAlgumaConc = series.some(s => Object.values(s.dados).some(r => "vagas" in r && r.vagas > 0));
+
+    html += `<div class="comparacao__charts">
+        <div class="grafico-card"><h3>Notas mínimas — comparação</h3><div class="chart-wrapper"><canvas id="cmp-chart-notas"></canvas></div></div>`;
+    if (temAlgumaConc) {
+        html += `<div class="grafico-card"><h3>Concorrência (cand./vaga) — comparação</h3><div class="chart-wrapper"><canvas id="cmp-chart-conc"></canvas></div></div>`;
+    }
+    html += `</div>`;
+
+    html += cmpRenderTabela(series, anos);
+
+    cont.innerHTML = html;
+
+    cmpBuildChartNotas(anos, series);
+    if (temAlgumaConc) cmpBuildChartConc(anos, series);
+    if (typeof prepararFocoGraficos === "function") prepararFocoGraficos(cont);
+    if (typeof estabilizarLayoutGraficos === "function") estabilizarLayoutGraficos(cont);
+}
+
+function cmpRenderCard(s) {
+    const anos = Object.keys(s.dados).map(Number).sort((a, b) => a - b);
+    const minimos = [], maximos = [], concs = [];
+    for (const a of anos) {
+        const r = s.dados[a];
+        const mn = r.pontos_minimo ?? r.nota_de_corte ?? null;
+        const mx = r.pontos_maximo ?? r.nota_de_corte ?? null;
+        if (mn != null) minimos.push(mn);
+        if (mx != null) maximos.push(mx);
+        if ("vagas" in r) {
+            const c = calcConc(r);
+            if (c > 0) concs.push(c);
+        }
+    }
+    const periodoTxt = anos.length ? `${anos[0]}–${anos[anos.length - 1]} (${anos.length} ${anos.length === 1 ? "ano" : "anos"})` : "—";
+    const filtrosTxt = [];
+    if (s.slot.loc !== "__all__") filtrosTxt.push(s.slot.loc);
+    if (s.slot.per !== "__all__") filtrosTxt.push(s.slot.per);
+    const meta = `${periodoTxt}${filtrosTxt.length ? " · " + filtrosTxt.join(" · ") : ""}`;
+    const nMaxMax = maximos.length ? Math.max(...maximos) : null;
+    const nMinMin = minimos.length ? Math.min(...minimos) : null;
+    const concMed = concs.length ? concs.reduce((a, b) => a + b, 0) / concs.length : null;
+    return `<div class="comparacao__card" style="--cmp-cor:${s.cor}">
+        <div class="comparacao__card-titulo">${escaparHtml(s.nome)}</div>
+        <div class="comparacao__card-meta">${escaparHtml(meta)}</div>
+        <div class="comparacao__card-stats">
+            <div>
+                <div class="comparacao__card-stat-rotulo">Nota mín. (mín.)</div>
+                <div class="comparacao__card-stat-valor">${nMinMin ?? "—"}</div>
+            </div>
+            <div>
+                <div class="comparacao__card-stat-rotulo">Nota máx. (máx.)</div>
+                <div class="comparacao__card-stat-valor">${nMaxMax ?? "—"}</div>
+            </div>
+            <div>
+                <div class="comparacao__card-stat-rotulo">Conc. média</div>
+                <div class="comparacao__card-stat-valor">${concMed != null ? fmtBr(concMed) : "—"}</div>
+            </div>
+            <div>
+                <div class="comparacao__card-stat-rotulo">Anos com dado</div>
+                <div class="comparacao__card-stat-valor">${anos.length}</div>
+            </div>
+        </div>
+    </div>`;
+}
+
+function cmpRenderTabela(series, anos) {
+    let html = `<div class="tabela-container"><table class="comparacao__tabela">
+        <thead>
+            <tr>
+                <th rowspan="2">Ano</th>
+                ${series.map(s => `<th colspan="3" class="cmp-curso-${s.idx + 1}">${escaparHtml(s.nome)}</th>`).join("")}
+            </tr>
+            <tr>
+                ${series.map(s => `<th class="cmp-curso-${s.idx + 1}">N. mín.</th><th class="cmp-curso-${s.idx + 1}">N. máx.</th><th class="cmp-curso-${s.idx + 1}">Conc.</th>`).join("")}
+            </tr>
+        </thead>
+        <tbody>`;
+    for (const ano of anos) {
+        html += `<tr><td>${ano}</td>`;
+        for (const s of series) {
+            const r = s.dados[ano];
+            if (!r) {
+                html += `<td>—</td><td>—</td><td>—</td>`;
+            } else {
+                const mn = r.pontos_minimo ?? r.nota_de_corte ?? "—";
+                const mx = r.pontos_maximo ?? r.nota_de_corte ?? "—";
+                const conc = "vagas" in r ? (calcConc(r) > 0 ? fmtBr(calcConc(r)) : "—") : "—";
+                html += `<td>${mn}</td><td>${mx}</td><td>${conc}</td>`;
+            }
+        }
+        html += `</tr>`;
+    }
+    html += `</tbody></table></div>`;
+    return html;
+}
+
+function cmpBuildChartNotas(anos, series) {
+    const ctx = document.getElementById("cmp-chart-notas");
+    if (!ctx) return;
+    const datasets = series.map(s => ({
+        label: s.nome,
+        data: anos.map(a => {
+            const r = s.dados[a];
+            if (!r) return null;
+            return r.pontos_minimo ?? r.nota_de_corte ?? null;
+        }),
+        borderColor: s.cor,
+        backgroundColor: s.corFill,
+        pointBackgroundColor: s.cor,
+        pointRadius: 4,
+        tension: 0.2,
+        spanGaps: true,
+        fill: false
+    }));
+    CMP.charts.notas = new Chart(ctx, {
+        type: "line",
+        data: { labels: anos, datasets },
+        options: opcoesChartBase({
+            yTitle: "Pontos",
+            showLineValueLabels: true,
+            lineValueFormat: "int",
+            lineValueOffset: 10,
+            lineValueStackStep: 12
+        })
+    });
+}
+
+function cmpBuildChartConc(anos, series) {
+    const ctx = document.getElementById("cmp-chart-conc");
+    if (!ctx) return;
+    const datasets = series.map(s => ({
+        label: s.nome,
+        data: anos.map(a => {
+            const r = s.dados[a];
+            if (!r || !("vagas" in r)) return null;
+            const c = calcConc(r);
+            return c > 0 ? c : null;
+        }),
+        borderColor: s.cor,
+        backgroundColor: s.corFill,
+        pointBackgroundColor: s.cor,
+        pointRadius: 4,
+        tension: 0.2,
+        spanGaps: true,
+        fill: false
+    }));
+    CMP.charts.conc = new Chart(ctx, {
+        type: "line",
+        data: { labels: anos, datasets },
+        options: opcoesChartBase({
+            yTitle: "Cand./vaga",
+            beginAtZero: true,
+            tooltipLabel: formatarTooltipNumero,
+            yTickCallback: value => fmtBrFlex(value),
+            showLineValueLabels: true,
+            lineValueFormat: "flex",
+            lineValueOffset: 10,
+            lineValueStackStep: 12
+        })
+    });
+}
+
+function cmpInicializar() {
+    cmpRenderSlots();
+    document.getElementById("comparacao-add")?.addEventListener("click", () => {
+        if (CMP.visiveis < CMP_MAX_SLOTS) {
+            CMP.visiveis += 1;
+            cmpRenderSlots();
+            cmpRender();
+        }
+    });
+}
+
+// ==========================================================================
 // Inicialização
 // ==========================================================================
 let debounceTimer;
 inicializarSelectCustomizado("sel-loc");
 inicializarSelectCustomizado("sel-per");
+cmpInicializar();
 document.getElementById("busca").addEventListener("input", () => {
     renderizarSugestoesBusca(document.getElementById("busca").value);
     clearTimeout(debounceTimer);
@@ -2915,6 +3606,8 @@ Promise.all([
             }
         }
         LISTA_CURSOS = ordenarBases([...basesMap.values()]);
+        cmpAtualizarDatalist();
+        cmpRenderSlots();
         atualizarTituloSelect(document.getElementById("sel-loc"));
         atualizarTituloSelect(document.getElementById("sel-per"));
         // Check URL hash
