@@ -61,6 +61,21 @@
     --vermelho: #c0392b;
     --verde: #27ae60;
     --laranja: #e67e22;
+    --cmp-curso-1: #a16207;
+    --cmp-curso-1-fill: rgba(161, 98, 7, 0.14);
+    --cmp-curso-1-focus: rgba(161, 98, 7, 0.24);
+    --cmp-curso-1-table: #a16207;
+    --cmp-curso-1-table-text: #fff;
+    --cmp-curso-2: #c0392b;
+    --cmp-curso-2-fill: rgba(192, 57, 43, 0.12);
+    --cmp-curso-2-focus: rgba(192, 57, 43, 0.2);
+    --cmp-curso-2-table: rgba(192, 57, 43, 0.85);
+    --cmp-curso-2-table-text: #fff;
+    --cmp-curso-3: #27ae60;
+    --cmp-curso-3-fill: rgba(39, 174, 96, 0.12);
+    --cmp-curso-3-focus: rgba(39, 174, 96, 0.2);
+    --cmp-curso-3-table: rgba(39, 174, 96, 0.85);
+    --cmp-curso-3-table-text: #fff;
     --sombra-card: 0 18px 38px rgba(13, 31, 55, 0.08);
     --sombra-flutuante: 0 14px 32px rgba(15, 23, 42, 0.14);
     --header-sheen: rgba(255,255,255,0.08);
@@ -821,6 +836,11 @@ footer a { color: var(--usp-azul); }
         --edital-item-border: rgba(147, 176, 212, 0.16);
         --edital-tag-bg: rgba(123, 188, 255, 0.18);
         --edital-tag-text: #d8ebff;
+        --cmp-curso-1: #f2c94c;
+        --cmp-curso-1-fill: rgba(242, 201, 76, 0.16);
+        --cmp-curso-1-focus: rgba(242, 201, 76, 0.28);
+        --cmp-curso-1-table: #d9a928;
+        --cmp-curso-1-table-text: #18202d;
         --chart-text: #b8c8dc;
         --chart-grid: rgba(184, 200, 220, 0.14);
         --chart-tooltip-bg: rgba(7, 12, 20, 0.94);
@@ -1120,7 +1140,7 @@ footer a { color: var(--usp-azul); }
 
 /* Comparação de cursos */
 .comparacao {
-    margin: 0 0 1.5rem;
+    margin: 1.5rem 0 1.5rem;
     border: 1px solid var(--borda);
     border-radius: 18px;
     background: var(--surface-panel);
@@ -1283,7 +1303,7 @@ footer a { color: var(--usp-azul); }
 .comparacao__slot-campo select:focus {
     outline: none;
     border-color: var(--cmp-cor, var(--usp-azul));
-    box-shadow: 0 0 0 3px rgba(0, 74, 141, 0.14);
+    box-shadow: 0 0 0 3px var(--cmp-cor-foco, rgba(0, 74, 141, 0.14));
 }
 .comparacao__slot-msg {
     font-size: 0.78rem;
@@ -1381,9 +1401,18 @@ footer a { color: var(--usp-azul); }
     border-radius: 10px;
     font-size: 0.86rem;
 }
-.comparacao__tabela th.cmp-curso-1 { background: rgba(0, 74, 141, 0.85); }
-.comparacao__tabela th.cmp-curso-2 { background: rgba(192, 57, 43, 0.85); }
-.comparacao__tabela th.cmp-curso-3 { background: rgba(39, 174, 96, 0.85); }
+.comparacao__tabela th.cmp-curso-1 {
+    background: var(--cmp-curso-1-table);
+    color: var(--cmp-curso-1-table-text);
+}
+.comparacao__tabela th.cmp-curso-2 {
+    background: var(--cmp-curso-2-table);
+    color: var(--cmp-curso-2-table-text);
+}
+.comparacao__tabela th.cmp-curso-3 {
+    background: var(--cmp-curso-3-table);
+    color: var(--cmp-curso-3-table-text);
+}
 @media (prefers-color-scheme: dark) {
     .comparacao__alerta {
         background: rgba(230, 126, 34, 0.18);
@@ -3156,8 +3185,32 @@ function aplicarFiltrosEDashboard() {
 // ==========================================================================
 // Comparação de cursos
 // ==========================================================================
-const CMP_CORES = ["#004A8D", "#c0392b", "#27ae60"];
-const CMP_CORES_FILL = ["rgba(0,74,141,0.12)", "rgba(192,57,43,0.12)", "rgba(39,174,96,0.12)"];
+const CMP_PALETA = [
+    {
+        corVar: "--cmp-curso-1",
+        fillVar: "--cmp-curso-1-fill",
+        focusVar: "--cmp-curso-1-focus",
+        cor: "#a16207",
+        fill: "rgba(161,98,7,0.14)",
+        focus: "rgba(161,98,7,0.24)"
+    },
+    {
+        corVar: "--cmp-curso-2",
+        fillVar: "--cmp-curso-2-fill",
+        focusVar: "--cmp-curso-2-focus",
+        cor: "#c0392b",
+        fill: "rgba(192,57,43,0.12)",
+        focus: "rgba(192,57,43,0.2)"
+    },
+    {
+        corVar: "--cmp-curso-3",
+        fillVar: "--cmp-curso-3-fill",
+        focusVar: "--cmp-curso-3-focus",
+        cor: "#27ae60",
+        fill: "rgba(39,174,96,0.12)",
+        focus: "rgba(39,174,96,0.2)"
+    }
+];
 const CMP_MAX_SLOTS = 3;
 const CMP = {
     visiveis: 2,
@@ -3168,6 +3221,16 @@ const CMP = {
     ],
     charts: {}
 };
+
+function cmpEstiloIndice(i) {
+    const base = CMP_PALETA[i] || CMP_PALETA[0];
+    return {
+        cor: lerVarCss(base.corVar, base.cor),
+        corFill: lerVarCss(base.fillVar, base.fill),
+        corCss: `var(${base.corVar}, ${base.cor})`,
+        focoCss: `var(${base.focusVar}, ${base.focus})`
+    };
+}
 
 function cmpDestruirCharts() {
     Object.values(CMP.charts).forEach(c => { try { c.destroy(); } catch (_) {} });
@@ -3244,7 +3307,7 @@ function cmpRenderSlots() {
     cont.innerHTML = "";
     for (let i = 0; i < CMP.visiveis; i++) {
         const slot = CMP.slots[i];
-        const cor = CMP_CORES[i];
+        const estilo = cmpEstiloIndice(i);
         const base = cmpDadosSlot(slot);
         const opcoesLoc = cmpOpcoesFiltro(base, "loc", "Todas as localizações");
         const opcoesPer = cmpOpcoesFiltro(base, "per", "Todos os períodos");
@@ -3255,7 +3318,8 @@ function cmpRenderSlots() {
             : "";
         const card = document.createElement("div");
         card.className = "comparacao__slot";
-        card.style.setProperty("--cmp-cor", cor);
+        card.style.setProperty("--cmp-cor", estilo.corCss);
+        card.style.setProperty("--cmp-cor-foco", estilo.focoCss);
         card.innerHTML = `
             <div class="comparacao__slot-header">
                 <span class="comparacao__slot-rotulo">Curso ${i + 1}</span>
@@ -3335,13 +3399,15 @@ function cmpRender() {
         if (!filtrados.length) continue;
         const dados = consolidar(filtrados);
         if (!Object.keys(dados).length) continue;
+        const estilo = cmpEstiloIndice(i);
         series.push({
             idx: i,
             slot,
             nome: base.nome,
             dados,
-            cor: CMP_CORES[i],
-            corFill: CMP_CORES_FILL[i]
+            cor: estilo.cor,
+            corFill: estilo.corFill,
+            corCss: estilo.corCss
         });
     }
 
@@ -3399,7 +3465,7 @@ function cmpRenderCard(s) {
     const nMaxMax = maximos.length ? Math.max(...maximos) : null;
     const nMinMin = minimos.length ? Math.min(...minimos) : null;
     const concMed = concs.length ? concs.reduce((a, b) => a + b, 0) / concs.length : null;
-    return `<div class="comparacao__card" style="--cmp-cor:${s.cor}">
+    return `<div class="comparacao__card" style="--cmp-cor:${s.corCss || s.cor}">
         <div class="comparacao__card-titulo">${escaparHtml(s.nome)}</div>
         <div class="comparacao__card-meta">${escaparHtml(meta)}</div>
         <div class="comparacao__card-stats">
@@ -3569,6 +3635,10 @@ const MEDIA_DARK_MODE = window.matchMedia ? window.matchMedia("(prefers-color-sc
 function reaplicarTemaSeNecessario() {
     if (ESTADO.resultados && ESTADO.resultados.length) {
         aplicarFiltrosEDashboard();
+    }
+    if (CMP.slots.some(slot => slot.nome)) {
+        cmpRenderSlots();
+        cmpRender();
     }
 }
 if (MEDIA_DARK_MODE) {
